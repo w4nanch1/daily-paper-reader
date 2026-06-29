@@ -1,4 +1,5 @@
 import importlib.util
+import io
 import pathlib
 import sys
 import unittest
@@ -56,6 +57,52 @@ class PublicConferenceSupabaseDeployTest(unittest.TestCase):
         self.assertEqual(args[0], "https://api.supabase.com/v1/projects/project-ref/database/query")
         self.assertEqual(kwargs["headers"]["Authorization"], "Bearer secret-token")
         self.assertEqual(kwargs["json"], {"query": "select 1;", "read_only": False})
+
+    def test_parse_content_range_reads_total_count(self):
+        self.assertEqual(self.mod.parse_content_range("0-0/106"), 106)
+        self.assertIsNone(self.mod.parse_content_range("0-0/*"))
+        self.assertIsNone(self.mod.parse_content_range(""))
+
+    def test_verify_table_uses_anon_rest_and_count_header(self):
+        response = Mock()
+        response.headers = {"content-range": "0-0/616"}
+        response.json.return_value = [{"id": "ndss-2026-demo", "pdf_url": "https://example.test/demo.pdf"}]
+        response.raise_for_status.return_value = None
+        with patch.object(self.mod.requests, "get", return_value=response) as get:
+            count = self.mod.verify_table(
+                supabase_url="https://example.supabase.co",
+                anon_key="anon-key",
+                table="ndss_papers",
+                expected_count=600,
+            )
+        self.assertEqual(count, 616)
+        args, kwargs = get.call_args
+        self.assertEqual(args[0], "https://example.supabase.co/rest/v1/ndss_papers")
+        self.assertEqual(kwargs["headers"]["apikey"], "anon-key")
+        self.assertEqual(kwargs["headers"]["Prefer"], "count=exact")
+
+    def test_verify_rpc_posts_payload_to_rest_rpc_endpoint(self):
+        response = Mock()
+        response.json.return_value = [{"id": "osdi-2025-demo", "pdf_url": "https://example.test/demo.pdf"}]
+        response.raise_for_status.return_value = None
+        with patch.object(self.mod.requests, "post", return_value=response) as post:
+            rows = self.mod.verify_rpc(
+                supabase_url="https://example.supabase.co",
+                anon_key="anon-key",
+                rpc_name="match_osdi_papers_bm25",
+                payload={"query_text": "operating system", "match_count": 1},
+            )
+        self.assertEqual(len(rows), 1)
+        args, kwargs = post.call_args
+        self.assertEqual(args[0], "https://example.supabase.co/rest/v1/rpc/match_osdi_papers_bm25")
+        self.assertEqual(kwargs["json"], {"query_text": "operating system", "match_count": 1})
+        self.assertEqual(kwargs["headers"]["apikey"], "anon-key")
+
+    def test_verify_flag_without_yes_stays_dry_run(self):
+        argv = ["public_conference_supabase_deploy.py", "--verify"]
+        with patch.object(sys, "argv", argv), patch.object(self.mod.requests, "post") as post, patch("sys.stdout", new_callable=io.StringIO):
+            self.mod.main()
+        post.assert_not_called()
 
 
 if __name__ == "__main__":
