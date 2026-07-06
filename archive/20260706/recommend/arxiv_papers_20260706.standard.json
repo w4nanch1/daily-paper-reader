@@ -1,0 +1,213 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-06T20:53:56.658775+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.00627v1",
+      "source": "arxiv",
+      "title": "AGI Maze as a Benchmark Framework for World-Modeling Agents",
+      "abstract": "Large language models (LLMs) are powerful pattern-completion systems, but their default operating mode - predicting the next token from a static context - does not reliably produce persistent, manipulable representations of an external world. Many tasks that look like \"reasoning\" in text become substantially harder once the environment is partially observable, stateful, and requires memory and structured hypotheses about hidden state. AGI Maze is a lightweight framework for building such environments without requiring high-dimensional sensory inputs. It provides a family of grid-based maze tasks with a clean API and multiple difficulty regimes. The goal is to create benchmarks where agents must learn and use world state representations, not just infer a local rule over readily provided observations. We provide an initial evaluation of several vanilla LLMs on simple mazes showing that they fail to represent mazes internally at LLM inference time. We also introduce a baseline agent, which is allowed to use its message history as a working memory to construct descriptions of observations at agentic runtime. Although this can improve performance, it is still insufficient for an LLM agent to reliably solve even small mazes within a step budget that is more than enough for humans.",
+      "authors": [
+        "Alexey Potapov"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-01T08:43:08+00:00",
+      "link": "https://arxiv.org/pdf/2607.00627v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmark framework for world-modeling agents",
+      "llm_evidence_cn": "世界建模代理基准框架",
+      "llm_evidence": "世界建模代理基准框架",
+      "canonical_evidence": "世界建模代理基准框架",
+      "llm_tldr_en": "AGI Maze provides a lightweight framework to benchmark world-modeling agents on partially observable maze tasks requiring memory and state representation.",
+      "llm_tldr_cn": "当前大语言模型默认的下一词预测模式难以产生持久可操作的世界表征。本文提出AGI Maze框架，提供一组网格迷宫任务，要求代理学习并使用世界状态表征。框架轻量、API简洁、支持多种难度，为评估代理的世界建模能力提供了标准化平台。",
+      "llm_tldr": "当前大语言模型默认的下一词预测模式难以产生持久可操作的世界表征。本文提出AGI Maze框架，提供一组网格迷宫任务，要求代理学习并使用世界状态表征。框架轻量、API简洁、支持多种难度，为评估代理的世界建模能力提供了标准化平台。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.00836v2",
+      "source": "arxiv",
+      "title": "From World Models to World Action Models: A Concise Tutorial for Robotics",
+      "abstract": "World models are increasingly used in embodied intelligence and generative simulation, yet their scope remains ambiguous across communities. This tutorial presents a design-space view of world models as action-conditioned predictive models that estimate the future evolution of task-relevant observations or states. We categorize existing methods into observation-space and state-space world models, comparing their trade-offs in visual fidelity, spatial structure, physical interpretability, and control usability. We further introduce world action models, which connect predicted futures with executable robot actions, and summarize four representative paradigms: imagine-then-execute, video-feature-conditioned action prediction, joint video-action modeling, and auxiliary video prediction for policy learning. The goal of this tutorial is to clarify the conceptual scope of world (action) models and provide a structured taxonomy for embodied prediction and control.",
+      "authors": [
+        "Xiaoxiong Zhang",
+        "Xiong Zeng",
+        "Wei Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "eess.SY"
+      ],
+      "published": "2026-07-01T11:56:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.00836v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Tutorial on world models and world action models for robotics",
+      "llm_evidence_cn": "关于世界模型和世界动作模型的机器人教程",
+      "llm_evidence": "关于世界模型和世界动作模型的机器人教程",
+      "canonical_evidence": "关于世界模型和世界动作模型的机器人教程",
+      "llm_tldr_en": "A tutorial that introduces world models as action-conditioned predictive models and further presents world action models connecting predicted futures with robot actions, summarizing four paradigms.",
+      "llm_tldr_cn": "当前世界模型在具身智能和生成模拟中应用广泛但定义模糊。本文从设计空间视角将世界模型定义为动作条件预测模型，并进一步介绍世界动作模型，连接预测未来与机器人可执行动作。教程总结了四种代表性范式：想象再执行、视频特征条件动作预测、联合视频-动作建模等。该工作为世界动作模型研究提供了系统化的分类与指导。",
+      "llm_tldr": "当前世界模型在具身智能和生成模拟中应用广泛但定义模糊。本文从设计空间视角将世界模型定义为动作条件预测模型，并进一步介绍世界动作模型，连接预测未来与机器人可执行动作。教程总结了四种代表性范式：想象再执行、视频特征条件动作预测、联合视频-动作建模等。该工作为世界动作模型研究提供了系统化的分类与指导。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.01060v1",
+      "source": "arxiv",
+      "title": "RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation",
+      "abstract": "Video world models are emerging as a scalable alternative for evaluating generalist robot policies, bypassing the physical constraints and engineering burdens of real-world deployment. However, evaluating policies with video world models remains challenging, as world-model errors can make generated rollouts unreliable and slow inference limits large-scale throughput. We introduce RoboWorld, an automated evaluation pipeline that pairs a fast autoregressive video world model with a task-progress-aware vision-language model scoring. To enable reliable long-horizon autoregressive world-model rollouts, we propose Step Forcing, which combines anchored and one-step self-forwarded contexts to reduce train--test mismatch while preserving action--observation dynamics. Together, these components enable RoboWorld to align strongly with real-world robot evaluation across tasks and environments, achieving Pearson's r = 0.989 and Spearman's \\r{ho} = 0.970.",
+      "authors": [
+        "Byeongguk Jeon",
+        "Seonghyeon Ye",
+        "JaeHyeok Doo",
+        "Sungdong Kim",
+        "Minjoon Seo",
+        "Hyungmok Son",
+        "Kimin Lee"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-01T15:22:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.01060v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "video world model for robot policy evaluation",
+      "llm_evidence_cn": "用于机器人策略评估的视频世界模型",
+      "llm_evidence": "用于机器人策略评估的视频世界模型",
+      "canonical_evidence": "用于机器人策略评估的视频世界模型",
+      "llm_tldr_en": "RoboWorld pairs a fast autoregressive video world model with task-progress-aware VLM scoring for reliable policy evaluation.",
+      "llm_tldr_cn": "针对视频世界模型评估策略时不可靠且推理慢的问题，提出RoboWorld流水线，采用快速自回归视频世界模型与任务进度感知的VLM评分。提出Step Forcing技术减少训练-测试不匹配，实现可靠的长程滚动。在多个仿真环境上验证了评估准确性。",
+      "llm_tldr": "针对视频世界模型评估策略时不可靠且推理慢的问题，提出RoboWorld流水线，采用快速自回归视频世界模型与任务进度感知的VLM评分。提出Step Forcing技术减少训练-测试不匹配，实现可靠的长程滚动。在多个仿真环境上验证了评估准确性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.01060v1"
+    },
+    {
+      "id": "2607.02403v1",
+      "source": "arxiv",
+      "title": "ACID: Action Consistency via Inverse Dynamics for Planning with World Models",
+      "abstract": "Decision-time planning with action-conditioned world models has become a popular paradigm for embodied control. However, the standard planning cost judges a candidate solely by how close its predicted terminal state lies to the goal, leaving the realizability of the intermediate transitions unchecked -- a predicted trajectory can look convincing while the environment rollout drifts away from it. In this paper, we propose ACID, a decision-time planning framework that introduces cycle action consistency: the action inferred backward from a predicted transition by an inverse dynamics model should recover the one that was conditioned on. We fold this per-step residual into the planning cost via a scale-invariant adaptive weight. Across four action-conditioned world models and six tasks spanning rigid and deformable manipulation, articulated control, and visual navigation, ACID consistently improves planning and matches the baseline's accuracy with substantially less planning compute.",
+      "authors": [
+        "Gawon Seo",
+        "Dongwon Kim",
+        "Suha Kwak"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-02T16:38:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.02403v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "action consistency via inverse dynamics in world models",
+      "llm_evidence_cn": "通过逆动力学实现世界模型中的动作一致性",
+      "llm_evidence": "通过逆动力学实现世界模型中的动作一致性",
+      "canonical_evidence": "通过逆动力学实现世界模型中的动作一致性",
+      "llm_tldr_en": "ACID improves planning with world models by enforcing cycle action consistency using inverse dynamics, ensuring intermediate trajectory realizability.",
+      "llm_tldr_cn": "针对基于世界模型的规划中忽略中间轨迹可实现性的问题，提出ACID框架，通过逆动力学引入循环动作一致性约束，将每步残差融入规划代价。实验表明该方法显著提升规划鲁棒性，保证了规划轨迹的实际可执行性。",
+      "llm_tldr": "针对基于世界模型的规划中忽略中间轨迹可实现性的问题，提出ACID框架，通过逆动力学引入循环动作一致性约束，将每步残差融入规划代价。实验表明该方法显著提升规划鲁棒性，保证了规划轨迹的实际可执行性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "carryover_cache",
+      "paper_id": "2607.02403v1"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2606.29384v1",
+      "source": "arxiv",
+      "title": "Event-VLA: Action-Conditioned Event Fusion for Robust Vision-Language-Action Model",
+      "abstract": "Vision-Language-Action (VLA) models have become an important paradigm of embodied AI. However, existing VLA models typically assume well-lit and stable indoor settings, while real-world embodied manipulation may involve degraded RGB observations caused by illumination shifts, posing critical challenges for robust robotic manipulation. To address this gap, we propose \\textbf{Event-VLA}, an event-enhanced VLA framework for generalizable manipulation across varying illumination conditions. We formulate VLA-based manipulation under degraded visibility as a practical robustness problem for RGB-centric policies, and introduce event streams as an illumination-robust, motion-sensitive complementary observation to improve robustness across visibility levels. Specifically, unlike conventional multimodal fusion that directly merges event features into the global semantic token space, Event-VLA injects event information through an action-query routing pathway. It uses learnable action queries to extract task-relevant semantics from the VLA reasoning process, and selectively aggregates event tokens via gated cross-attention to construct event-aware action representations. This design preserves the pretrained RGB-language semantic priors while effectively leveraging event information for robust action prediction. Experiments in simulation and real-world deployment show that Event-VLA maintains strong manipulation performance under normal lighting and improves success rates under low-light degradation and near-dark real-world settings.",
+      "authors": [
+        "Jiaxin Liu",
+        "Xun Xu",
+        "Zhenhao Zhang",
+        "Hanqing Wang",
+        "Ruiqi Chen",
+        "Shi Chang",
+        "Weiyu Guo",
+        "Laurent Kneip"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-06-28T13:19:11+00:00",
+      "link": "https://arxiv.org/pdf/2606.29384v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "action-conditioned VLA model with event fusion for robust manipulation",
+      "llm_evidence_cn": "动作条件VLA模型融合事件流以增强鲁棒性",
+      "llm_evidence": "动作条件VLA模型融合事件流以增强鲁棒性",
+      "canonical_evidence": "动作条件VLA模型融合事件流以增强鲁棒性",
+      "llm_tldr_en": "Event-VLA enhances VLA models with event cameras to provide illumination-robust world observations, improving manipulation robustness across varying visibility conditions.",
+      "llm_tldr_cn": "现有视觉-语言-动作（VLA）模型在光照变化下性能退化。本文提出Event-VLA，引入事件相机作为光照鲁棒的运动敏感观测，与RGB融合以构建更稳健的世界表征。实验表明，该方法在多种照明条件下的操作任务中显著提升鲁棒性，为VLA模型在实际场景中的应用提供了新思路。",
+      "llm_tldr": "现有视觉-语言-动作（VLA）模型在光照变化下性能退化。本文提出Event-VLA，引入事件相机作为光照鲁棒的运动敏感观测，与RGB融合以构建更稳健的世界表征。实验表明，该方法在多种照明条件下的操作任务中显著提升鲁棒性，为VLA模型在实际场景中的应用提供了新思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
