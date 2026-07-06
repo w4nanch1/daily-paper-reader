@@ -1,0 +1,388 @@
+Title: Rethinking Foundation Model Collaboration: Enhancing Specialized Models through Proxy Task Reasoning
+
+URL Source: https://arxiv.org/pdf/2606.31157v1
+
+Published Time: Wed, 01 Jul 2026 00:40:11 GMT
+
+Number of Pages: 12
+
+Markdown Content:
+# Rethinking Foundation Model Collaboration: Enhancing Specialized Models through Proxy Task Reasoning 
+
+## Hongyi Lin 1,2, Yang Liu 1, Jinhua Zhao 2, and Xiaobo Qu 1
+
+> 1
+
+School of Vehicle and Mobility, Tsinghua University, Beijing, China 
+
+> 2
+
+Department of Urban Studies and Planning, Massachusetts Institute of Technology, Cambridge, MA, USA 
+
+# Abstract 
+
+Foundation models are increasingly integrated into embodied intelligence systems, but directly assigning them structured prediction tasks requires precise geometric and numerical esti-mation, where specialized models often remain stronger. This capability mismatch raises a key question: should foundation models replace task-specific predictors, or should they collab-orate through tasks better aligned with their strengths? We propose FAT, a foundation-model-augmented task-specific rea-soning framework that treats collaboration as task decomposition rather than model replacement. FAT decomposes structured prediction into specialist prediction, information-space recon-struction, and foundation-model proxy reasoning. The specialist generates geometrically and physically valid hypotheses in the native output space, while the foundation model performs a bounded proxy task, such as selection or verification, over recon-structed multimodal candidates. We instantiate this principle as ProxySelect with a vision–language model. Across 2D object detection, 3D object detection, trajectory prediction, and seman-tic segmentation, ProxySelect consistently improves specialized baselines and substantially outperforms direct foundation-model regression at lower computational cost. These results suggest a general collaboration principle: specialized models preserve task-specific structure, while foundation models refine their hypotheses through contextual proxy reasoning. 
+
+# 1 Introduction 
+
+Foundation models are becoming general interfaces for percep-tion, reasoning, and decision support in embodied intelligence systems. In transportation, robotics, and autonomous driving, large multimodal models have been used for knowledge organi-zation, scene understanding, planning assistance, and language-conditioned decision making [1–6]. Their broad visual and linguistic priors make them effective at interpreting context, rec-ognizing unusual situations, and connecting observations with task instructions. However, many embodied intelligence tasks are not purely semantic. A 3D bounding box, a dense segmenta-tion mask, or a future trajectory is a structured output with strict geometric, physical, and numerical requirements. Small depth or yaw errors can change obstacle localization; discontinuous waypoints can imply infeasible motion; and boundary leakage can affect free-space estimation. This creates a fundamental question for foundation-model collaboration: should a foundation model directly solve the original specialized task, or should it be assigned a role better aligned with its strengths? Existing integration strategies of-ten treat foundation models as direct predictors or end-to-end replacements for task-specific modules. Although this design benefits from generalization, it also forces the foundation model to perform precise metric estimation, structured decoding, and domain-specific calibration, where carefully trained specialized models often remain stronger. Consequently, the complementary strengths of the two models are not fully utilized: specialized models are strong at precise numerical estimation, whereas foun-dation models are naturally stronger at semantic understanding, contextual reasoning, and comparative judgment. We argue that effective collaboration should arise not from replacing specialized models, but from assigning each model the task that best matches its capability. Direct structured prediction requires searching a high-dimensional continuous output space, whereas many decision processes surrounding structured predic-tion can be reformulated as bounded reasoning problems over a finite set of hypotheses. Tasks such as comparison, verification, ranking, consistency checking, and ambiguity resolution largely rely on semantic and contextual reasoning instead of precise metric regression, making them substantially better aligned with the strengths of foundation models. Our intuition is inspired by human annotation workflows. When correcting machine-generated results, annotators rarely redo the original prediction from scratch. Instead, they compare candidate boxes, verify segmentation boundaries, select plau-sible trajectories, or refine uncertain regions. In this process, a difficult structured prediction problem is converted into a simpler proxy reasoning task. This decomposition is one reason human annotation can efficiently produce high-quality labels: quality is achieved through comparison, verification, and refine-ment over structured hypotheses, rather than repeated prediction from scratch. This observation suggests that foundation models may contribute more effectively by reasoning over structured hypotheses than by directly generating them. Based on this hypothesis, we propose a Foundation-Model-Augmented Task-Specific Reasoning framework, termed FAT. The framework decomposes the original prediction process into three stages: specialized-model prediction, information-space reconstruction, and foundation-model proxy reasoning. First, a task-specific model generates geometrically or physically grounded hypotheses in its native output space. Second, these hypotheses are reconstructed into a foundation-model-readable 1
+
+> arXiv:2606.31157v1 [cs.CV] 30 Jun 2026
+
+information space through overlays, projections, structured descriptions, or region identifiers. Third, the foundation model solves a bounded proxy task, such as selection, verification, comparison, or consistency checking. The final output is mapped back to the specialized model’s structured output space, rather than being freely generated by the foundation model. We instantiate this framework as ProxySelect, a vision– language proxy-task learner for structured prediction. In this instantiation, the specialized model generates candidate boxes, trajectories, or mask regions; these candidates are rendered into 2D image-based multimodal representations; and the VLM selects or verifies the most plausible candidate. The comparison with direct VLM regression is therefore a comparison between two collaboration paradigms: using the foundation model as the primary structured regressor, or using it as a proxy reasoner that improves specialist-generated hypotheses. Our contributions are threefold: 
+
+• We propose FAT, which reframes foundation-model collabo-ration as proxy-task reasoning rather than model replacement. 
+
+• We instantiate FAT as ProxySelect, mapping boxes, trajec-tories, and masks into a unified multimodal interface for selection and verification. 
+
+• We validate the framework across four embodied intelligence tasks, showing consistent gains over specialists and better efficiency than direct foundation-model regression. 
+
+# 2 Related Work 
+
+Generalist–specialist collaboration. Recent autonomous-driving and robotics systems increasingly combine multimodal foundation models with task-specific modules. DriveVLM integrates VLM-based scene description, scene analysis, and hierarchical planning for autonomous driving [5]; GRAPE uses preference alignment and VLM-proposed constraints to improve robot policies [7]; and VLM-AD uses a foundation model as an offline supervisor for end-to-end driving [8]. Complementary perception studies retain specialist metric modules for BEV fusion, sensor calibration, and novel-object detection [9–11], while scene-description supervision has been explored for end-to-end autonomous driving [12]. These studies demonstrate the value of collaboration between general-purpose models and specialized modules. FAT differs by making this collabora-tion explicit as proxy-task reasoning: the specialized model constructs task-valid hypotheses, the representation module re-constructs them into a foundation-model-readable information space, and the foundation model performs bounded reasoning over the reconstructed alternatives. 
+
+Structured prediction with multimodal models. Multimodal and grounded vision-language models can emit or support structured visual outputs such as boxes, points, masks, and grounded object regions [13–15]. Sequence-based detection and reasoning segmentation further demonstrate the flexibility of generative or language-conditioned structured prediction [16, 17]. Nevertheless, directly decoding numerical structures remains challenging when outputs must satisfy tight coordinate conventions, physical continuity, or dense-boundary constraints. Our focus is therefore not whether a foundation model can be fine-tuned to generate structured outputs, but whether direct generation is the most reliable allocation of responsibility in embodied intelligence systems. 
+
+Candidate generation and comparative reasoning. Candi-date generation and reranking are established tools in structured prediction. Motion forecasting methods such as MultiPath and CoverNet represent future motion with finite trajectory sets [18, 19], while HPNet produces multimodal futures through historical prediction attention [20]. Generative transportation research has progressed from GAN-based augmentation [21] to large-model-guided and risk-controllable driving scenario synthesis [22, 23]; these methods enrich the hypothesis space, whereas our work focuses on bounded arbitration over specialist-generated hypotheses. Preference learning and comparative judgment similarly exploit relative evaluation rather than requir-ing a single unconstrained output [24, 25]. FAT extends this propose–judge pattern to embodied structured prediction by con-ditioning a foundation model on the original scene and explicit visualizations of specialist hypotheses, with ProxySelect serving as a concrete selection- and verification-based instantiation. 
+
+# 3 Foundation-Model-Augmented Task-Specific Reasoning 
+
+## 3.1 Framework overview 
+
+FAT formulates foundation-model collaboration as proxy-task reasoning rather than direct replacement of specialized models. Given an original structured prediction task, the framework decomposes the prediction process into three role-aligned stages. First, a task-specific model produces an initial prediction or a finite set of hypotheses in its native output space. This stage preserves the geometric, dynamic, or dense spatial con-straints learned from domain-specific supervision. Second, an information-space reconstruction module converts these hypotheses into a foundation-model-readable representation, such as image overlays, camera projections, map-conditioned trajectory visualizations, structured candidate descriptions, or numbered mask regions. Third, the foundation model solves a bounded proxy task over the reconstructed information, such as selecting the best candidate, verifying uncertain regions, com-paring alternatives, ranking hypotheses, or checking semantic consistency. The proxy decision is then mapped back to the original structured output space. This decomposition assigns each component a role aligned with its strengths. The specialized model remains responsible for metric structure and physical validity, while the foundation model contributes contextual reasoning and comparative judgment. Fig. 1 illustrates this workflow. In the experiments, we instantiate FAT as ProxySelect, where the proxy task is implemented mainly as candidate selection or region verification. 2Figure 1. Overview of the FAT framework and its ProxySelect instantiation. A task-specific model first generates structurally valid hypotheses. These hypotheses are reconstructed into a foundation-model-readable information space through overlays, projections, structured descriptions, or numbered regions. The foundation model then solves a bounded proxy task, such as selection, verification, comparison, ranking, or consistency checking, and the proxy decision is mapped back to the original structured output space. 
+
+## 3.2 Probabilistic formulation 
+
+Let 𝑥 ∈ X denote the original multimodal input and 𝑦 ∈ Y 
+
+denote the desired structured output. A conventional supervised formulation directly models 
+
+𝑝 𝜃 (𝑦 | 𝑥 ), (1) or learns a deterministic mapping 𝑓 𝜃 : 𝑥 ↦ → 𝑦 . This formulation asks one model to perform semantic reasoning, metric estimation, and structured decoding simultaneously. FAT instead introduces three intermediate variables: a spe-cialist hypothesis object 𝑦 ′, an augmented information repre-sentation 𝑥 ′, and a proxy decision 𝑎 . The induced prediction distribution can be written as 
+
+𝑝 FAT (𝑦 | 𝑥, 𝑝 ) =∑︁ 
+
+> 𝑦 ′
+
+∫
+
+𝑝 𝜂 (𝑥 ′ | 𝑥, 𝑦 ′) 𝑝 𝜓 (𝑦 ′ | 𝑥 )×∑︁   
+
+> 𝑎 ∈ A ( 𝑦 ′)
+
+1[𝑦 = 𝑀 (𝑦 ′, 𝑎 )] × 𝑝 𝜙 (𝑎 | 𝑥, 𝑥 ′, 𝑦 ′, 𝑝 ) 𝑑𝑥 ′.
+
+(2) where 𝑝 𝜓 (𝑦 ′ | 𝑥 ) denotes the task-specific model’s predic-tion or hypothesis-generation process, 𝑝 𝜂 (𝑥 ′ | 𝑥, 𝑦 ′) denotes information-space reconstruction, 𝑝 𝜙 (𝑎 | 𝑥, 𝑥 ′, 𝑦 ′, 𝑝 ) denotes foundation-model proxy reasoning under instruction 𝑝 , and 
+
+𝑀 (𝑦 ′, 𝑎 ) maps the proxy decision back to the original structured output space. The action space A ( 𝑦 ′) depends on the proxy task: it may contain candidate indices, region subsets, rankings, verification labels, or consistency decisions. Equation (2) formalizes the central distinction between direct prediction and proxy-task reasoning. The foundation model is not required to synthesize 𝑦 from scratch. Instead, it reasons over a reconstructed representation of specialist-generated hy-potheses and outputs a bounded proxy decision. In deterministic implementations, Eq. (2) reduces to a three-stage pipeline: 
+
+𝑦 ′ = 𝐺 𝜓 (𝑥 ), 𝑥 ′ = 𝑅 𝜂 (𝑥, 𝑦 ′), ˆ𝑦 = 𝑀  𝑦 ′, 𝐻 𝜙 (𝑥, 𝑥 ′, 𝑦 ′, 𝑝 ) .
+
+(3) 
+
+## 3.3 ProxySelect as a selection and verification instantiation 
+
+In this paper, we instantiate FAT as ProxySelect. For most tasks, the specialist produces a finite candidate set 
+
+𝐶 (𝑥 ) = {𝑦 1, . . . , 𝑦 𝐾 }, (4) where each 𝑦 𝑖 is a valid structured output in the specialist’s native output space. The reconstruction module renders or projects the candidates into a multimodal representation 
+
+𝑥 ′ = 𝑅 𝜂 (𝑥, 𝐶 (𝑥 )) . (5) The proxy action is a candidate identifier 𝑎 = 𝑖 . The VLM assigns a score to each candidate, 
+
+𝑠 𝑖 = 𝑠 𝜙 (𝑖 | 𝑥, 𝑥 ′, 𝐶 (𝑥 ), 𝑝 ), (6) and the corresponding categorical probability is 
+
+𝑃 𝜙 (𝑖 | 𝑥, 𝑥 ′, 𝐶 (𝑥 ), 𝑝 ) = exp (𝑠 𝑖 )
+
+Í𝐾 𝑘 =1 exp (𝑠 𝑘 ) . (7) The selected output is 
+
+ˆ𝑖 = arg max  
+
+> 1≤𝑖 ≤𝐾
+
+𝑃 𝜙 (𝑖 | 𝑥, 𝑥 ′, 𝐶 (𝑥 ), 𝑝 ), ˆ𝑦 = 𝑀 (𝐶 (𝑥 ), ˆ𝑖 ). (8) For supervised proxy-task learning, the target candidate is defined by the task metric, 
+
+𝑖 gt = arg min  
+
+> 𝑖
+
+𝑑 (𝑦 𝑖 , 𝑦 gt ),
+
+Lsel = − log 𝑃 𝜙 (𝑖 gt | 𝑥, 𝑥 ′, 𝐶 (𝑥 ), 𝑝 ), (9) 3where 𝑑 (· , ·) is the task-specific discrepancy, such as box mis-match, displacement error, or mask mismatch. Ground truth is used only to construct training labels and compute evaluation metrics; it is not provided to the foundation model at inference. Semantic segmentation uses a set-valued proxy decision. The specialist provides a high-confidence semantic prior and a set of atomic regions. The VLM returns a subset of region identifiers, and the mapping back to the output space unions the retained specialist mask with the selected atomic regions: 
+
+ˆ𝑚 = 𝑚 high ∪
+
+Ø 
+
+> 𝑗 ∈𝑆 𝜙
+
+𝑟 𝑗 , (10) where 𝑚 high is the retained high-confidence specialist mask, {𝑟 𝑗 }
+
+are candidate atomic regions, and 𝑆 𝜙 is the VLM-confirmed region subset. Thus, selection and verification are both instances of the same proxy-task formulation. The direct-regression baseline and ProxySelect represent two different foundation-model collaboration paradigms. The direct baseline assigns the foundation model the original structured prediction task, whereas ProxySelect assigns it a proxy task over specialist-generated hypotheses. Both use the same Qwen2.5-VL-7B backbone and LoRA adaptation strategy [14, 26]; the difference lies in the role assigned to the foundation model. 
+
+## 3.4 Candidate generation and randomization 
+
+The specialist model can be interpreted as defining a posterior distribution over plausible structured outputs. Candidate sets may come from multimodal decoding heads, stochastic predic-tions, multiple models, or local perturbations. When a specialist provides one prediction ˆ𝑦 (0) = 𝑔 𝜓 (𝑥 ), we use 
+
+𝐶 (𝑥 ) = { ˆ𝑦 (0) } ∪ 𝑇 𝑗 ( ˆ𝑦 (0) ; 𝜖 𝑗 ) 𝐾 −1 
+
+> 𝑗 =1
+
+, (11) where 𝑇 𝑗 alters task-relevant dimensions such as position, size, orientation, category, speed profile, endpoint, or mask mem-bership. Candidate quality and diversity jointly determine the upper bound available to the selector. Before rendering each training or evaluation sample, candi-dates are randomly permuted and renumbered, and labels are remapped after the permutation. No detector proposal, trajec-tory mode, specialist output, or perturbation source therefore occupies a fixed index. The same randomization is applied independently within each 2D target group and to numbered atomic regions in segmentation. 
+
+## 3.5 Information-space reconstruction and bounded proxy reasoning 
+
+The information-space reconstruction layer exposes the con-sequences of each hypothesis to the foundation model. Two-dimensional boxes are overlaid on the image and accompanied by coordinates and classes; 3D boxes are projected into the camera view and described by location, dimensions, yaw, and category; trajectories are drawn against map geometry; and uncertain segmentation regions are numbered. The foundation model performs comparative analysis and returns a candidate identifier or a list of region identifiers. The selected output is mapped back to the corresponding specialist-generated structure. The foundation model never needs to synthesize new coordinates, contours, or motion sequences in the proxy-task pipeline. A deployment implementation should preserve bounded au-thority. Invalid indices, malformed outputs, or low-confidence selections can trigger a deterministic fallback to the original specialist result. This fallback is not counted as a claim of safety; it is a practical mechanism that localizes failure and prevents an invalid language-model string from directly entering a downstream control interface. 
+
+## 3.6 Task instantiations 
+
+2D object detection. The candidate pool combines RT-DETR and YOLO-family detector outputs [27]. For each RT-DETR anchor, five local perturbations modify center position, width, height, aspect ratio, and class. The VLM sees candidate overlays and a structured list of coordinates and categories, and selection is performed independently within each target group. Every inference-time candidate is a detector output or a perturbation of one; no ground-truth box is used. 
+
+3D object detection. The specialist is 3D-MOOD [28]. Each input contains one specialist box and nine alternatives that per-turb 3D position, dimensions, yaw, and category. Wrong-class candidates are included during training. Training candidates are perturbed around annotated boxes, whereas inference candidates are generated only from the specialist prediction. 
+
+Trajectory prediction. The specialist is HPNet [20]. Six HPNet modes are augmented with four alternatives containing mild waypoint noise, a gradual direction change, a rapid mid-to-late speed drop, or an incorrect endpoint. The representation includes agent history, lane geometry, a gray inference-time reference trajectory, and colored candidate futures. The gray reference is distinct from the annotated future; the latter is used only for training labels and ADE/FDE evaluation. 
+
+Semantic segmentation. Mask2Former supplies category-aware predictions and FastSAM supplies atomic geometric partitions [29, 30]. Instances with confidence above 0.500 form a high-confidence mask retained directly. A FastSAM partition is excluded when at least 0.700 of it is already covered by that mask or when its uncovered ratio is below 0.100 . Remaining regions are numbered for VLM verification, and the final mask is the union of the high-confidence Mask2Former result and VLM-confirmed atomic regions. 
+
+# 4 Experiments 
+
+## 4.1 Experimental setup 
+
+Datasets. We use COCO 2017 [31], KITTI [32], Argoverse [33], and Cityscapes [34] to cover 2D localization, metric 3D perception, map-conditioned motion forecasting, and dense urban scene understanding, respectively. This selection evaluates 4the same proxy-task principle across complementary structured outputs and different levels of geometric support. 
+
+Models and training. The foundation-model component in all four task instantiations uses Qwen2.5-VL-7B with LoRA fine-tuning. Training was conducted on two NVIDIA A100 GPUs. The direct-regression and proxy-task variants use the same VLM backbone and adaptation strategy; they differ only in the role assigned to the foundation model and in the information provided to it. Candidate order is randomized for every sample. Table 1 summarizes the task-specific protocols. The main text reports normalized system-level cost for compact comparison, while complete task-specific metrics and absolute GFLOPs per sample are reported in Appendix A. Absolute GFLOPs are rounded to the nearest integer, and performance metrics are reported to three decimals. 
+
+## 4.2 Main results 
+
+Table 2 reports one primary metric per task, following the same task order and metric definitions as the ablations in Table 3. Direct foundation-model regression is consistently less accurate than the corresponding specialist and incurs substantially higher inference cost. In contrast, ProxySelect improves every special-ist baseline with only a modest cost increase, indicating that assigning the foundation model a bounded proxy task is more effective than using it as a direct structured regressor. For 2D detection, AP 50 improves from 0.644 to 0.682, with a relatively small gain due to the maturity of modern 2D detectors. For 3D detection, overall AP rises from 0.222 to 0.295. For tra-jectory prediction, ADE decreases from 1.339 to 0.812, whereas direct regression reaches 5.391. For semantic segmentation, the fusion pipeline raises mIoU from 0.599 to 0.742. Complete AP/AR, category-wise AP, ADE/FDE, precision/recall, and absolute GFLOPs are provided in Appendix A. 
+
+## 4.3 Ablation studies 
+
+4.3.1 Source of gains 
+
+Table 3 separates candidate coverage from selection quality. Random selection uses the same candidate sets and is averaged over five seeds. Confidence selection uses specialist confidences or mode probabilities when available; perturbed candidates inherit the parent confidence with a magnitude penalty. Heuristic reranking uses projected alignment and aspect-ratio priors for boxes, curvature and lane-compliance penalties for trajectories, and overlap/coverage rules for mask partitions. The oracle selects the ground-truth-best candidate and therefore serves only as an upper bound on candidate-set coverage, rather than a deployable method. The results show that proxy reasoning over candidate struc-tures brings clear improvements, but also that choosing the best candidate remains nontrivial. Random selection generally fails to match the specialist, indicating that candidate expansion alone does not explain the gains. Confidence-based and heuristic selection recover part of the available improvement, while LoRA adaptation and explicit comparative reasoning further enhance selection quality. Nevertheless, the remaining gap to the oracle indicates that even a learned proxy reasoner cannot always iden-tify the best candidate from the set, leaving room for stronger comparative reasoning and candidate-ranking mechanisms. 
+
+4.3.2 Design sensitivity 
+
+Candidate-set size and perturbation scale control the balance between hypothesis coverage and proxy-task difficulty. Table 4 shows rapid improvement from 𝐾 = 1 to 𝐾 = 10 , followed by saturation at the largest task-dependent set ( 𝐾 = 15 or 20 ). We therefore use 𝐾 = 10 as the main operating point: larger sets provide only marginal gains while increasing prompt length and visual clutter. The base perturbation scale, 1.000 ×, performs best across all four tasks; smaller perturbations provide insufficient diversity, whereas larger perturbations introduce implausible distractors. The same table also analyzes supervision and information-space reconstruction. The selector already recovers most of its final performance with only a limited fraction of the fine-tuning data, and performance largely saturates as the data scale increases. This suggests that the proxy task is data-efficient because the foundation model only needs to learn comparative reasoning over structured alternatives, rather than the full metric prediction task. Prompt representation further confirms the importance of reconstruction: text-only proxy reasoning provides limited gains, whereas image-based overlays make the geometric consequences of specialist hypotheses directly visible to the foundation model. These results indicate that the effectiveness of FAT depends not only on candidate generation, but also on reconstructing candidates into a representation where contextual comparison becomes easy. 
+
+## 4.4 Qualitative analysis 
+
+The task-level visualizations in Figs. 2–5 illustrate how the proxy reasoner complements rather than replaces the specialist. These examples are qualitative evidence rather than substitutes for quantitative evaluation, but they provide intuitive evidence of the failure modes addressed by bounded comparative reasoning. Across all tasks, the foundation model does not freely synthesize new coordinates, masks, or trajectories. Instead, it evaluates the visual and contextual consequences of specialist-generated hypotheses and returns a bounded decision, such as a candidate index or a set of verified region identifiers. 
+
+Detection. Fig. 2 shows a representative 2D detection case in which detector proposals and local perturbations produce several plausible boxes with different extents, alignments, and overlaps with the visible targets. The selected result suppresses redundant or poorly aligned alternatives while retaining detector-generated coordinates for both the person and the surfboard. Fig. 3 further illustrates the role of image-conditioned comparison in 3D detection. Even when candidates share the same semantic class, their projected boxes may differ in apparent depth, yaw, object extent, and alignment with image evidence. Because the proxy decision returns an existing candidate identifier, the final output 5Table 1. Task-specific experimental protocols. 
+
+Task Candidate pool and selector output Fine-tuning data Evaluation 2D detection RT-DETR anchor, five local perturbations, and YOLO-family proposals; one selected box per target group 118,000 images COCO 2017; AP and AR 3D detection One 3D-MOOD box and nine perturbations of position, dimensions, yaw, and class; one selected 3D box 3,000 KITTI images KITTI; AP and AP 50 
+
+Trajectory prediction Six HPNet modes and four perturbed alternatives; one selected trajectory index 15,000 trajectories Argoverse evaluation set (10,000 trajectories); ADE and FDE Semantic segmentation Mask2Former high-confidence prior and filtered FastSAM atomic partitions; selected region indices 14,115 Cityscapes samples Cityscapes validation set, car category; mIoU, mPrecision, and mRecall 
+
+Table 2. Representative evidence across four structured-prediction tasks. Relative cost is reported as specialist/direct regression/selection. The comparison is between collaboration paradigms: the proxy learner receives specialist candidates, whereas the direct regressor does not. Complete task-specific metrics and absolute GFLOPs are reported in Appendix A. Task Metric Specialist Direct VLM Selector Relative cost 2D object detection AP@0.50 ↑ 0.644 0.554 0.682 1.0/4.9/1.4×
+
+3D object detection AP ↑ 0.222 0.148 0.295 1.0/5.1/1.5×
+
+Trajectory prediction ADE ↓ 1.339 5.391 0.812 1.0/4.3/1.5×
+
+Semantic segmentation mIoU ↑ 0.599 0.544 0.742 1.0/7.1/1.8×
+
+Table 3. Source-of-gain ablation. Bold marks the best deployable variant; the oracle is a non-deployable upper bound over the same candidate set. 
+
+Variant 2D AP 50 ↑ 3D AP ↑ Traj. ADE ↓ Seg. mIoU ↑
+
+Specialist only 0.644 0.222 1.339 0.599 Random over candidates 0.612 0.203 1.520 0.610 Confidence selection 0.648 0.228 1.190 0.651 Heuristic reranking 0.651 0.235 0.980 0.704 Base VLM selector, no LoRA 0.649 0.242 0.974 0.712 LoRA selector, no comparative reasoning 0.663 0.253 0.878 0.725 ProxySelect, LoRA + comparative reasoning 0.682 0.295 0.812 0.742 
+
+Oracle best-of-𝐾 0.711 0.322 0.594 0.803 
+
+Table 4. Unified design ablations. † marks the main 𝐾 = 10 operating point; bold denotes the best value within each ablation block. 
+
+Setting 2D AP 50 ↑ 3D AP ↑ Traj. ADE ↓ Seg. mIoU ↑
+
+Candidate-set size 𝐾 𝐾 = 1 0.644 0.222 1.339 0.599 
+
+𝐾 = 3 0.654 0.242 1.012 0.702 
+
+𝐾 = 6 0.673 0.274 0.871 0.731 
+
+𝐾 = 10 † 0.682 0.295 0.812 0.742 
+
+𝐾 = 15 /20 0.682 0.295 0.805 0.745 
+
+Perturbation scale 
+
+Low, 0.500 × 0.657 0.264 0.925 0.721 Base, 1.000 × 0.682 0.295 0.812 0.742 
+
+High, 1.500 × 0.654 0.276 0.865 0.736 
+
+Selector fine-tuning data 
+
+10% 0.678 0.291 0.819 0.739 25% 0.681 0.293 0.813 0.742 50% 0.682 0.294 0.813 0.741 100% 0.682 0.295 0.812 0.742 
+
+Prompt representation 
+
+Text + comparative reasoning 0.646 0.223 1.332 0.604 Image Overlay + comparative reasoning 0.682 0.295 0.812 0.742 
+
+preserves a valid box parameterization rather than relying on free-form numerical decoding by the VLM. 
+
+Trajectory prediction. The trajectory examples in Fig. 4 il-lustrate two complementary aspects of the proposed proxy-task formulation. Fig. 4(a) compares direct VLM regression with HPNet and shows that direct regression can suffer from endpoint deviation and reduced continuity with the observed motion, especially toward the prediction horizon. In contrast, Fig. 4(b) visualizes proxy selection over HPNet modes and perturbed can-6didates in map context. By rendering candidate futures together with the observed history and lane geometry, the proxy task makes continuity, lane compliance, and destination plausibility directly comparable. The returned trajectory is therefore se-lected from a precomputed, structurally valid candidate set. The gray reference path is an inference-time reference and is distinct from the annotated future used for supervision and evaluation. 
+
+Semantic segmentation. Fig. 5 demonstrates the division of labor between semantic priors and boundary support in Cityscapes. High-confidence Mask2Former regions provide category-aware semantic predictions, while FastSAM supplies atomic partitions that preserve local boundary structure. The VLM then verifies which numbered regions are associated with the target car category. This design allows the final fusion to recover disconnected or partially missed target regions without requiring the VLM to generate pixels, polygons, or contours directly. Across the four visualized tasks, the same pattern emerges: task-specific specialists preserve geometric, dynamic, and dense spatial validity, while the foundation model contributes contextual comparison and proxy-level reasoning over bounded alternatives.      
+
+> Figure 2. 2D detection in a surfer scene. Specialist proposals and local perturbations form the candidate set; the VLM selects one existing box for each target group.
+> Figure 3. Qualitative 3D detection. Panels (a) and (b) show selected projected boxes; in panel (c), green denotes ProxySelect and blue denotes direct VLM regression.
+> Figure 4. Trajectory prediction. Panel (a) compares direct VLM regression with HPNet against the annotated future, illustrating endpoint deviation and continuity errors in direct regression. Panel (b) shows proxy selection over HPNet modes and perturbed candidates in map context. The gray reference path is used only as an inference-time reference and is distinct from the annotated future used for supervision and evaluation.
+> Figure 5. Cityscapes semantic segmentation. Panels (a) and (b) show two representative examples. Each example includes the ground-truth car mask, Mask2Former predictions, numbered FastSAM partitions, VLM-confirmed regions, and the fused result.
+
+75 Discussion and Limitations 
+
+Why proxy-task reasoning helps. Direct regression maps an observation into a large continuous output space and re-quires precise numerical calibration, valid serialization, and task-specific structural consistency. Proxy-task reasoning con-verts this open-ended prediction problem into bounded reasoning over viable hypotheses that have already been generated by a spe-cialist. The foundation model can therefore focus on semantic consistency, contextual comparison, and ambiguity resolution without relearning the full geometry, dynamics, or dense spatial structure of the original task. The oracle gaps in Table 3 show that candidate coverage is necessary, whereas the differences among random selection, heuristic reranking, and learned proxy reasoning show that coverage alone is not sufficient. 
+
+Not a conventional ensemble. Standard ensembles often com-bine predictions through fixed averaging, voting, or confidence-based rules, and their constituent models need not inspect one another’s outputs. In ProxySelect, the foundation model explic-itly conditions on the original scene and on the reconstructed visual consequences of each specialist-generated hypothesis. It evaluates what each candidate implies in context and returns a bounded proxy decision, such as a candidate identifier or a set of verified regions. This preserves the structured output space of the specialist instead of averaging incompatible predictions or asking the foundation model to synthesize new geometry. 
+
+Limitations. The proposed framework cannot recover a cor-rect answer if it is absent from the candidate set. Crowded overlays may cause index confusion, and semantically salient objects may attract attention even when their geometric align-ment is inferior. Candidate generators and foundation models may also share dataset or scene biases, so proxy reasoning does not guarantee independent error correction. Our experiments use one VLM backbone and a limited set of specialist models, and they evaluate open-loop task metrics rather than closed-loop driving or robotic safety. Future work should report calibrated selection confidence, invalid-output rates, oracle-conditioned accuracy, robustness to adversarial near-duplicate candidates, distribution-shift performance, and closed-loop effects. A deter-ministic specialist fallback remains necessary for deployment, but it is not a substitute for task-specific validation, confidence calibration, and safety testing. The same bounded-authority interface is also compatible with human-in-the-loop correction and takeover mechanisms [35]. 
+
+# 6 Conclusion 
+
+We presented FAT, a role-aligned foundation-model collabo-ration framework that enhances specialized models through proxy-task reasoning, and instantiated it as ProxySelect for struc-tured prediction. Across four tasks, this allocation improves specialist accuracy, substantially outperforms direct foundation-model regression, and preserves task-specific geometric and physical constraints. The ablations show that strong performance requires both useful candidate coverage and learned multimodal comparison. More broadly, our results support a practical de-sign rule for embodied intelligence systems: specialized models should construct valid hypotheses, while foundation models should reason over bounded proxy tasks to refine them. 
+
+# References 
+
+[1] X. Qu, H. Lin, and Y. Liu. “Envisioning the Future of Transportation: Inspiration of ChatGPT and Large Models”. In: Communications in Transportation Research 3 (2023), p. 100103. doi : 10.1016/j.commtr. 2023.100103 .[2] S. Kuang, Y. Liu, X. Wang, X. Wu, and Y. Wei. “Harnessing Multimodal Large Language Models for Traffic Knowledge Graph Generation and Decision-Making”. In: Communications in Transportation Research 4.4 (2024), p. 100146. doi : 10.1016/j.commtr.2024.100146 .[3] Z. Hu, M. Xu, and Q. Cheng. “Multimodal Large-Language Model Empowering Next-Generation Autonomous Driving Systems”. In: Jour-nal of Intelligent and Connected Vehicles 8.2 (2025), p. 9210059. doi :
+
+10.26599/JICV.2025.9210059 .[4] X. Zhou, M. Liu, E. Yurtsever, B. L. Zagar, W. Zimmer, H. Cao, and A. C. Knoll. “Vision language models in autonomous driving: A survey and outlook”. In: IEEE Transactions on Intelligent Vehicles (2024), pp. 1–20. 
+
+doi : 10.1109/TIV.2024.3402136 .[5] X. Tian, J. Gu, B. Li, Y. Liu, Y. Wang, Z. Zhao, K. Zhan, P. Jia, X. Lang, and H. Zhao. “DriveVLM: The convergence of autonomous driving and large vision–language models”. In: Proceedings of the 8th Conference on Robot Learning . Vol. 270. Proceedings of Machine Learning Research. PMLR, 2025, pp. 4698–4726. [6] R. Mon-Williams, G. Li, R. Long, W. Du, and C. G. Lucas. “Embodied large language models enable robots to complete complex tasks in unpredictable environments”. In: Nature Machine Intelligence 7 (2025), pp. 592–601. doi : 10.1038/s42256-025-01005-x .[7] Z. Zhang, K. Zheng, Z. Chen, J. Jang, Y. Li, S. Han, C. Wang, M. Ding, D. Fox, and H. Yao. “GRAPE: Generalizing robot policy via preference alignment”. In: arXiv preprint arXiv:2411.19309 (2024). arXiv: 2411.19309 [cs.RO] .[8] Y. Xu, Y. Hu, Z. Zhang, G. P. Meyer, S. K. Mustikovela, S. Srinivasa, E. M. Wolff, and X. Huang. “VLM-AD: End-to-end autonomous driving through vision–language model supervision”. In: Proceedings of the 9th Conference on Robot Learning . Vol. 305. Proceedings of Machine Learning Research. PMLR, 2025, pp. 3778–3803. [9] H. Lin, S. Ming, Y. Liu, and X. Qu. “AEFusion: An Attention-Based Ensemble Learning Approach for BEV Fusion Perception in Autonomous Modular Buses”. In: IEEE Transactions on Intelligent Vehicles 10.5 (2025), pp. 3468–3480. doi : 10.1109/TIV.2024.3454288 .[10] H. Lin, Y. Liu, L. Wang, and X. Qu. “A High-Precision Calibration and Evaluation Method Based on Binocular Cameras and LiDAR for Intelligent Vehicles”. In: IEEE Transactions on Vehicular Technology 
+
+74.5 (2025), pp. 7404–7415. doi : 10.1109/TVT.2025.3530479 .[11] Y. Zhuang, P. Liu, H. Yang, K. Zhang, Y. Wang, and Z. Pu. “Few-Shot Learning for Novel Object Detection in Autonomous Driving”. In: 
+
+Communications in Transportation Research 5.3 (2025), p. 100194. doi :
+
+10.1016/j.commtr.2025.100194 .[12] P. Liu, H. Lin, Y. Zhao, Y. Liu, and X. Qu. “DesEAD: Enhancing End-to-End Autonomous Driving with Scene Descriptions”. In: 2025 IEEE 28th International Conference on Intelligent Transportation Systems . 2025, pp. 2906–2912. doi : 10.1109/ITSC60802.2025.11423106 .[13] Z. Yang et al. “The dawn of LMMs: Preliminary explorations with GPT-4V(ision)”. In: arXiv preprint arXiv:2309.17421 (2023). arXiv: 
+
+2309.17421 [cs.CV] .[14] S. Bai et al. “Qwen2.5-VL technical report”. In: arXiv preprint arXiv:2502.13923 (2025). arXiv: 2502.13923 [cs.CV] .[15] S. Liu et al. “Grounding DINO: Marrying DINO with grounded pre-training for open-set object detection”. In: Computer Vision – ECCV 2024 . Vol. 15118. Lecture Notes in Computer Science. Springer, 2024, pp. 38–55. doi : 10.1007/978-3-031-72970-6_3 .[16] T. Chen, S. Saxena, L. Li, D. J. Fleet, and G. Hinton. “Pix2Seq: A Language Modeling Framework for Object Detection”. In: International Conference on Learning Representations . 2022. 
+
+8[17] X. Lai, Z. Tian, Y. Chen, Y. Li, Y. Yuan, S. Liu, and J. Jia. “LISA: Reasoning Segmentation via Large Language Model”. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition .2024. [18] Y. Chai, B. Sapp, M. Bansal, and D. Anguelov. “MultiPath: Multiple Probabilistic Anchor Trajectory Hypotheses for Behavior Prediction”. In: Proceedings of the Conference on Robot Learning . 2019. [19] J. Philion, A. Kar, S. Fidler, and M. Behl. “CoverNet: Multimodal Behavior Prediction Using Trajectory Sets”. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition .2020. [20] X. Tang, M. Kan, S. Shan, Z. Ji, J. Bai, and X. Chen. “HPNet: Dynamic trajectory forecasting with historical prediction attention”. In: Proceed-ings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition . 2024, pp. 15261–15270. [21] H. Lin, Y. Liu, S. Li, and X. Qu. “How Generative Adversarial Networks Promote the Development of Intelligent Transportation Systems: A Survey”. In: IEEE/CAA Journal of Automatica Sinica 10.9 (2023), pp. 1781–1796. doi : 10.1109/JAS.2023.123744 .[22] S. Zhang, H. Lin, M. Wang, B. Wei, Y. Liu, and X. Qu. “A Dynamic Prompting and Scenario Generation Method for Autonomous Driving Perception via Large-Model Optimization”. In: Transportation Research Part C: Emerging Technologies 188 (2026), p. 105672. doi : 10.1016/ j.trc.2026.105672 .[23] H. Lin, W. Shi, H. Huang, D. Zhuang, S. Zhang, Y. Liu, X. Qu, and J. Zhao. “Risk-Controllable Multi-View Diffusion for Driving Scenario Generation”. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops . June 2026, pp. 5169–5178. [24] L. Ouyang et al. “Training language models to follow instructions with human feedback”. In: Advances in Neural Information Processing Systems . Vol. 35. 2022, pp. 27730–27744. [25] S. Verhavert, R. Bouwer, V. Donche, and S. De Maeyer. “A meta-analysis on the reliability of comparative judgement”. In: Assessment in Education: Principles, Policy & Practice 26.5 (2019), pp. 541–562. doi :
+
+10.1080/0969594X.2019.1602027 .[26] E. J. Hu, Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang, and W. Chen. “LoRA: Low-Rank Adaptation of Large Language Models”. In: International Conference on Learning Representations . 2022. [27] Y. Zhao, W. Lv, S. Xu, J. Wei, G. Wang, Q. Dang, Y. Liu, and J. Chen. “DETRs beat YOLOs on real-time object detection”. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition .2024, pp. 16965–16974. [28] Y. -H. Yang, L. Piccinelli, M. Segu, S. Li, R. Huang, Y. Fu, M. Pollefeys, H. Blum, and Z. Bauer. “3D-MOOD: Lifting 2D to 3D for monocular open-set object detection”. In: Proceedings of the IEEE/CVF International Conference on Computer Vision . 2025, pp. 7429–7439. [29] B. Cheng, I. Misra, A. G. Schwing, A. Kirillov, and R. Girdhar. “Masked-attention mask transformer for universal image segmentation”. In: Pro-ceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition . 2022, pp. 1290–1299. [30] X. Zhao, W. Ding, Y. An, Y. Du, T. Yu, M. Li, M. Tang, and J. Wang. “Fast Segment Anything”. In: arXiv preprint arXiv:2306.12156 (2023). arXiv: 2306.12156 [cs.CV] .[31] T. -Y. Lin et al. “Microsoft COCO: Common objects in context”. In: 
+
+Computer Vision – ECCV 2014 . Vol. 8693. Lecture Notes in Computer Science. Springer, 2014, pp. 740–755. doi : 10.1007/978- 3- 319-10602-1_48 .[32] A. Geiger, P. Lenz, C. Stiller, and R. Urtasun. “Vision meets robotics: The KITTI dataset”. In: The International Journal of Robotics Research 
+
+32.11 (2013), pp. 1231–1237. doi : 10.1177/0278364913491297 .[33] M. -F. Chang et al. “Argoverse: 3D tracking and forecasting with rich maps”. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition . 2019, pp. 8748–8757. [34] M. Cordts, M. Omran, S. Ramos, T. Rehfeld, M. Enzweiler, R. Benenson, U. Franke, S. Roth, and B. Schiele. “The Cityscapes dataset for semantic urban scene understanding”. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition . 2016, pp. 3213–3223. [35] J. Wu, Z. Huang, Z. Hu, and C. Lv. “Toward Human-in-the-Loop AI: Enhancing Deep Reinforcement Learning via Real-Time Human Guidance for Autonomous Driving”. In: Engineering 21.2 (2023), pp. 75– 91. doi : 10.1016/j.eng.2022.05.017 .
+
+9Appendix 
+
+This appendix reports the complete task-specific metrics and absolute inference costs omitted from the compact main-text comparison, followed by implementation details and the full selector and direct-regression prompts. 
+
+# A Complete Experimental Results 
+
+Table 2 retains one primary metric and normalized cost per task for readability. Tables A1–A4 report every measured task-specific metric and the corresponding absolute inference cost. Performance values are shown to three decimals and GFLOPs per sample are rounded to integers. 
+
+## A.1 Two-dimensional object detection 
+
+Table A1. Two-dimensional detection performance on COCO 2017. Method AP (0.50:0.95) AR (0.50:0.95) AP@0.50 AR@0.50 GFLOPs/sample RT-DETR 0.485 0.374 0.644 0.580 198 Direct VLM regression 0.307 0.230 0.554 0.507 966 ProxySelect 0.542 0.440 0.682 0.618 270 
+
+ProxySelect improves all reported AP and AR values over RT-DETR. The gain is smaller than in the other tasks, consistent with the maturity and strong inductive bias of modern 2D detectors. 
+
+## A.2 Three-dimensional object detection 
+
+Table A2. Category-wise three-dimensional detection performance on KITTI. Method Pedestrian AP@50 Car AP@50 Cyclist AP@50 Overall AP GFLOPs/sample 3D-MOOD 0.261 0.623 0.222 0.222 405 Direct VLM regression 0.174 0.501 0.167 0.148 2050 ProxySelect 0.323 0.685 0.297 0.295 620 
+
+Selection improves all three reported categories and raises overall AP from 0.222 to 0.295. AP@50 denotes class-specific average precision at an intersection-over-union threshold of 0.50; overall AP follows the reported 3D-MOOD evaluation protocol. 
+
+## A.3 Trajectory prediction 
+
+Table A3. Trajectory prediction performance on Argoverse. Method ADE ↓ FDE ↓ GFLOPs/sample HPNet 1.339 2.850 270 Direct VLM regression 5.391 10.309 1170 ProxySelect 0.812 1.660 418 
+
+The evaluation set contains 10,000 trajectories. Selection over HPNet modes and perturbations reduces both average and final displacement error, while direct regression exhibits substantially larger endpoint error. 
+
+## A.4 Semantic segmentation 
+
+Table A4. Semantic segmentation performance on the Cityscapes validation set for the car category. Method mIoU ↑ mPrecision ↑ mRecall ↑ GFLOPs/sample Mask2Former 0.599 0.632 0.929 265 Direct VLM regression 0.544 0.819 0.592 1877 Mask2Former + FastSAM + VLM 0.742 0.792 0.918 489 
+
+Mask2Former provides high recall but incomplete high-confidence coverage. Direct mask regression is more precise but loses substantial recall. The selection pipeline preserves specialist geometry while recovering semantically valid atomic regions, yielding the strongest mIoU. 10 B Implementation Details 
+
+## B.1 Candidate labels, randomization, and parsing 
+
+For 2D and 3D detection, the target candidate is defined by the highest task-matched overlap with the annotation. For trajectory prediction, the target minimizes displacement error. Semantic segmentation uses the set of atomic regions whose union best matches the target category. Candidate identifiers are randomly permuted before every rendered sample, and labels are remapped after permutation; no candidate source therefore occupies a fixed index. The direct baseline decodes deterministic, fixed output schemas. Invalid JSON, out-of-range coordinates, malformed polygons, or an incorrect number of trajectory waypoints are treated as parse failures. The selector parser extracts the final candidate identifier, one identifier per 2D target group, or a comma-separated list of segmentation-region identifiers. In deployment, invalid selector output should trigger the unmodified specialist prediction. 
+
+## B.2 Task-specific candidate construction 
+
+2D object detection. The original selection template lists six candidates. When additional YOLO-family proposals are available, their records are appended in the same format. The prompt’s use of “IoU” refers to qualitative visual overlap with the visible target; no ground-truth IoU is available at inference. 
+
+3D object detection. Candidate descriptions include class, 3D location, dimensions, and yaw. Training includes category perturbations to prevent the selector from relying only on geometry. At inference, all candidates derive from the 3D-MOOD output. 
+
+Trajectory prediction. Candidate descriptions summarize continuity, endpoint plausibility relative to the gray inference-time reference, driving realism, and road compliance. The annotated future is used only to construct training labels and compute ADE/FDE. It is never shown to the selector. 
+
+Semantic segmentation. Mask2Former high-confidence regions pass through unchanged. FastSAM atomic partitions that are largely covered by the high-confidence prior or contain too little uncovered area are filtered before VLM verification. The VLM returns region indices rather than pixels or polygon vertices. 
+
+# Datasets and Responsible Use 
+
+The experiments use KITTI, Argoverse, COCO 2017, and Cityscapes. These benchmarks are used under their respective licenses. The proposed proxy-task framework is not a safety-certified component. Its outputs should be validated through task-specific constraints, confidence calibration, fallback behavior, and closed-loop testing before any real-world deployment. 
+
+# C Prompt and Output Specifications 
+
+The following templates reproduce the selector and direct-regression interfaces. Candidate fields are populated with task-specific values at runtime. Candidates are randomly permuted and renumbered before each query, and target labels are remapped after permutation. 
+
+## C.1 Selection prompts 
+
+> 2D object detection – selection prompt
+> Analyze the following 2D bounding box candidates and select the most accurate one step −by −step: Candidate 1: Class: xxx, Position: (x=..., y=...), Size: (width:..., height=...), Area:... Candidate 2: Class: xxx, Position: (x=..., y=...), Size: (width:..., height=...), Area:... ... Candidate 6: Class: xxx, Position: (x=..., y=...), Size: (width:..., height=...), Area:... Please follow these steps: 1. Analyze the position of each candidate (horizontal and vertical alignment) 2. Analyze the size and aspect ratio of each candidate 3. Evaluate the overlap (IoU) with the target object 4. Verify the class accuracy of each candidate 5. Select the most suitable candidate based on comprehensive analysis Finally answer: Candidate X is the best choice.
+> 3D object detection – selection prompt
+> Analyze the following 3D bounding box candidates and select the most accurate one through step −by −step analysis of each candidate 's characteristics: Candidate 0: class xx, location x y z, dimensions w h l, rotation_y yaw Candidate 1: class xx, location x y z, dimensions w h l, rotation_y yaw ... Candidate 9: class xx, location x y z, dimensions w h l, rotation_y yaw Please follow these steps for analysis: 1. Analyze the position characteristics of each candidate 2. Analyze the size characteristics of each candidate 3. Analyze the orientation characteristics of each candidate 4. Based on the above analysis, select the most suitable candidate Finally answer: Candidate X is the best choice.
+
+11 Trajectory prediction – selection prompt 
+
+You are analyzing a trajectory prediction scenario. The image shows: 
+
+− Green solid line with dots: vehicle historical trajectory 
+
+− Gray lines: road lane boundaries and centerlines 
+
+− Gray line: reference trajectory for comparison 
+
+− Colored dashed lines: future trajectory candidates Your task is to select the BEST trajectory among the candidates. Evaluation Criteria: 1. Visual Continuity: Does it smoothly continue from the historical path? 2. Endpoint Accuracy: Does it reach a reasonable destination based on the reference? 3. Driving Realism: Would a human driver naturally follow this path? 4. Road Compliance: Does it follow the road structure shown in gray? Select the candidate that best balances these criteria. Respond with ONLY the number (e.g., "Candidate 3" or "3"). 
+
+Semantic segmentation – selection prompt 
+
+Query category: <TARGET_CATEGORY> The image shows N candidate masks outlined in different colors and numbered 1 −N. Select all masks that belong to the query category. If there are multiple, separate them with commas; if none, answer None. 
+
+## C.2 Direct-regression prompts and output schemas 
+
+For the system-level comparison, the direct baseline receives the raw task input and a deterministic output specification but no specialist predictions or candidate overlays. 
+
+2D object detection – direct-regression prompt 
+
+Detect all requested objects in the image and directly predict their image −coordinate bounding boxes. Return valid JSON only: {"objects":[{"class":"<class>","x1":<float>,"y1":<float>,"x2":<float>,"y2":<float>}]} Requirements: 
+
+− coordinates must satisfy x1 < x2 and y1 < y2 and remain inside the image bounds; 
+
+− use the requested class vocabulary; 
+
+− do not add markdown or explanatory text; 
+
+− if no requested object is visible, return {"objects":[]}. 
+
+3D object detection – direct-regression prompt 
+
+Detect the requested objects in the camera image and directly predict one 3D bounding box per object using the dataset coordinate convention. Return valid JSON only: {"objects":[{"class":"<class>","x":<float>,"y":<float>,"z":<float>,"w":<float>,"h":<float>,"l":<float>,"yaw":<float>}]} Requirements: 
+
+− use the requested class vocabulary; 
+
+− use finite numerical values only; 
+
+− do not add markdown or explanatory text; 
+
+− if no requested object is visible, return {"objects":[]}. 
+
+Trajectory prediction – direct-regression prompt 
+
+Given the agent 's observed history and the map or lane context, directly predict T future positions in the local coordinate system at the specified time interval. Return valid JSON only: {"trajectory":[[x1,y1],[x2,y2],...,[xT,yT]]} Requirements: 
+
+− output exactly T ordered waypoints; 
+
+− the first point must continue from the observed history; 
+
+− use finite numerical values only; 
+
+− do not output multiple modes, prose, markdown, or confidence values. 
+
+Semantic segmentation – direct-regression prompt 
+
+Segment every visible instance of <TARGET_CATEGORY> directly from the original image. Return valid JSON only: {"category":"<TARGET_CATEGORY>","polygons":[[[x1,y1],[x2,y2],...,[xn,yn]],...]} Requirements: each polygon has at least three vertices; vertices follow the visible boundary and do not self −intersect; use multiple polygons for disconnected components; exclude background and other categories; return {"category":"<TARGET_CATEGORY>","polygons":[]} if absent; do not add prose, markdown, or confidence values. For evaluation, polygons are rasterized at the original resolution; invalid JSON, out −of −range coordinates, or invalid polygons are parse failures. 
+
+12

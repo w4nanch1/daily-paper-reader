@@ -1,0 +1,350 @@
+Title: Path-Measure Dynamics of Attention-Driven World Models: A Nonlocal Onsager–Machlup Approach
+
+URL Source: https://arxiv.org/pdf/2607.02154v1
+
+Published Time: Fri, 03 Jul 2026 01:04:49 GMT
+
+Number of Pages: 8
+
+Markdown Content:
+# Path-Measure Dynamics of Attention-Driven World Models: A Nonlocal Onsager–Machlup Approach 
+
+Gunn Kim 1
+
+> 1
+
+Department of Physics, Sejong University, Seoul 05006, Republic of Korea 
+
+(Dated: July 3, 2026) Attention enables a world model to condition on its entire history, providing long-term memory that facilitates long-range predictions. While the local Onsager–Machlup theory in our companion paper assumes a temporally local predictive action, we investigate the conditions under which this lo-cality holds. We derive the predictive path measure for latent dynamics that become non-Markovian due to attention-induced memory, demonstrating that this measure is the projection of a hidden linear Markov augmentation. Eliminating the auxiliary field results in a nonlocal Onsager–Machlup action, where memory manifests as a nonlocal quadratic form rather than a force. These kernels are completely monotone and exactly match a hidden Markov embedding with a finite relaxation spectrum; otherwise, the dynamics remain fundamentally nonlocal. By expanding the action in terms of the scale-separation parameter ϵ = τmem /τ dyn , we show that the leading order recovers the local action of the companion paper, establishing locality as the short-memory limit of a nonlocal theory. We verify the reversible sector of this expansion term by term against an exactly solvable vector linear model. 
+
+I. INTRODUCTION 
+
+Long-horizon prediction is a significant challenge for world models. A model’s ability to carry history is what enables it to reach far into the future. Attention gives the latent dynamics a memory that no fixed-size state can summarize. The question we take up is what physical de-scription this memory admits, and when it can be treated as if it were absent. In the companion paper [1] we ar-gued that the predictive object of a world model [2, 3] is a measure over future paths, P [Γ] ∝ e−A [Γ] , and that in a local regime its action takes the Onsager–Machlup form, unifying prediction, planning, and uncertainty in one functional. The idea that prediction and control involve inference over trajectories is related to the free-energy principle [4], control as probabilistic inference [5], and trajectory-based generative models [6–9]. Every result there rested on one assumption: that the action is local in time, a single-time Lagrangian integral A = R dt L(z, ˙z). Our main result is that the predictive path measure of such a model is generally a nonlocal Onsager–Machlup functional, while the conventional local action appears as its short-memory asymptotic limit. An attention layer [11] makes the update p(zt+1 |
+
+z≤t) depend on the whole past context through history-dependent conditional kernels. Related dynamical views of attention treat it as an interacting-particle flow [12] or an associative memory [13], and recurrent predictors are known to organize onto low-dimensional latent dynam-ics [14]. However, unless that history collapses onto a finite sufficient statistic, that is, unless the dynamics ad-mits a finite Markov state, these kernels induce an effec-tive non-Markovian latent dynamics that no single-time Lagrangian can represent. Thus, the natural question is then not why attention may be viewed as a local action, but under what conditions the induced non-Markovian dynamics contracts to one. We emphasize that atten-tion enters here not as a new physical variable but as the origin of the history dependence. It is what makes the latent dynamics non-Markovian, and the memory ker-nel below is the precise object through which that de-pendence acts. The physics is carried by the kernel and the path measure, not by attention as a separate degree of freedom. More precisely, the construction applies to any latent dynamics whose history dependence does not close on a finite sufficient statistic. We formulate it for attention-based world models because they are the dom-inant contemporary realization of such dynamics. In this paper, we show that the predictive path mea-sure of such a dynamics is a nonlocal Onsager–Machlup action, and that the local action assumed in existing for-mulations is not an independent postulate but the short-memory limit of the nonlocal action. The route is direct. Starting from a non-Markovian latent dynamics and pro-jecting out the fast degrees of freedom causes a general-ized Langevin dynamics with a memory kernel K, whose path measure defines a nonlocal Onsager–Machlup ac-tion. Memory enters not as a new force in the equation of motion but as a nonlocal quadratic form in the action. Expanding this action in the local scale-separation pa-rameter ϵ = τmem /τ dyn , the leading term is exactly the local Onsager–Machlup action presented in the compan-ion paper [1], and the memory corrections to its reversible part are organized as a power series in ϵ. Thus, the local theory is the short-memory effective theory of a nonlocal one. The tools are standard. The path measure of a non-Markovian dynamics and the gradient expansion of a memory kernel are both textbook constructions. What is new is where they lead. Aimed at addressing the ques-tion of locality in world models, they turn the local action of the companion paper [1] from an independent starting point into a derived limit. They also identify the kernels that can arise as a sharply characterized class rather than an arbitrary memory. This places the work at a junction that, to our knowl-
+
+> arXiv:2607.02154v1 [cond-mat.stat-mech] 2 Jul 2026
+
+2edge, has not been crossed. Three lines run nearby but stop short of it. In machine learning, the non-Markovian character of attention and recurrent latent dynamics is recognized, but addressed empirically, by lengthening context or adding state-space recurrence, rather than treated as a path-measure question [2, 3, 14]. The Onsager–Machlup functional has entered machine learning through transition-path sampling and genera-tive modeling [6, 7, 9], as a tool for sampling trajectories, not as the predictive object of a world model. Projection with memory kernels is the standard language of model reduction [15–17, 19], but it is applied to physical degrees of freedom, not to the latent dynamics of a learned pre-dictor. In the discrete-sequence setting, a complemen-tary result shows that autoregressive language models and sequence-level energy-based models are related by an exact bijection [10]. There, the one-step conditional is conditioned on the entire history, so the question of locality does not arise. In our setting, the local object is Markovian and finite-dimensional. Its correspondence with the nonlocal path measure is not an identity, but rather a controlled short-memory limit. The novel as-pect here is the connection: the predictive path measure of an attention-driven world model is identified as a non-local Onsager–Machlup measure, that measure is shown to be the projection of a hidden linear-Markov augmen-tation with a completely monotone kernel, and the local theory from the companion paper [1] is recovered as its short-memory limit. This is also what distinguishes the construction from existing generalized Onsager–Machlup and colored-noise formulations [16, 18], which take the memory kernel as given. Here, the kernel is generated by the projection, and the contribution is this structural identification. Formulating the predictive path measure as a nonlo-cal Onsager–Machlup action connects empirical attention mechanisms to nonequilibrium statistical mechanics, and this connection opens questions of interpretation, com-parison across architectures, and empirical test that we take up in the Discussion section. The tasks of carry-ing out these analyses, particularly estimating the kernel and ϵ in trained models, are the subject of our future study of measurement, and are not attempted here. We deliberately limit ourselves to one claim. Measurement in trained models and field-theoretic and renormalization structures are left for future work. The main assertion of this paper is that an attention-driven world model is fundamentally nonlocal. The local Onsager–Machlup ac-tion, presented in the companion paper [1], emerges as the short-memory limit of the nonlocal path measure. Section III provides this statement in exact form.   
+
+> II. MODEL: NONLOCALITY AS A PROJECTED MARKOV AUGMENTATION A. From causal self-attention to a memory kernel
+
+Before postulating the augmented dynamics, we mo-tivate its kernel structure directly from attention. In the companion paper, a single attention layer reads out Attn( zt) = P 
+
+> s
+
+as(zt) vs over context keys s, with 
+
+as(zt) ∝ ess(zt) the softmax weight [11]. When the con-text is the model’s own past trajectory, s ranges over past times, and the drift read out at time t is a weighted sum over the history, f (zt) = P 
+
+> s≤t
+
+as(zt) vs − zt. If the attention weight is approximately separable into a con-tent part and a lag part, as(zt) ≈ ϕ(t − s) ˜ as(zt), valid when the score does not vary too fast across the window it weights, this sum becomes, in the continuum limit, the convolution 
+
+feff (t) ≈
+
+Z ∞
+
+> 0
+
+du ϕ (u) ˜f [z(t − u)] , (1) with ϕ playing the role of a memory kernel and ˜f the content-weighted readout. This is a plausibility argu-ment, not a derivation, and the separability step is itself a strong restriction: in general the lag structure and the content of attention are entangled, as in induction heads or position-dependent weighting, and as(zt) need not fac-tor into a lag part times a content part. Where it does not, the history dependence is not captured by a content-independent kernel ϕ(t − s) at all. What the argument shows is thus only that a causal, history-reading atten-tion layer can produce a kernel-convolution structure of the form (6), motivating the ansatz below; it does not establish that the resulting ϕ lies in any particular kernel class, nor that a given attention layer is separable in the first place. That further restriction, to kernels generated by a linear auxiliary augmentation with positive spec-trum, is the tractable subclass we analyze, in the same sense that the companion paper analyzed the Markovian limit as the tractable local case: it is the working hy-pothesis whose validity Sec. V makes an explicit, falsifi-able question rather than an assumed universal feature of attention.  
+
+> B. Path space and reference measure
+
+Latent trajectories live in Ω = C([0 , T ], Rd) with the uniform topology and Borel σ-algebra B(Ω); the predic-tive object is a measure P ∈ P (Ω). The reference is the Wiener measure WD of covariance 2 D, and every action below is read as the negative logarithm of the Radon– Nikodym weight dP/d WD [20], that is, in the tube-limit sense P (∥z−φ1∥ < ε )/P (∥z−φ2∥ < ε ) → e−(A[φ1]−A [φ2]) 
+
+as ε → 0. 3 
+
+> C. Augmented Markov dynamics
+
+Guided by (1), we now construct the minimal exact mechanism that generates a kernel of this kind: not a nonlocal dynamics posited directly, but a Markovian one for the observed z ∈ Rd coupled to a hidden auxiliary field w,˙z = w + η, ˙w = 1
+
+> τ
+
+ f [z] − w, (2) 
+
+⟨η(t)η(t′)⊤⟩ = 2 D δ (t − t′) I. (3) The auxiliary field relaxes on the fast scale τ ; noise enters only the observed channel. Equation (2) is the minimal scalar-projection case ( P = I); the general linear closure class is (4) below. The augmented system is Markovian and has a standard Onsager–Machlup measure.  
+
+> D. Minimal closed structure and the generation of the kernel
+
+We restrict the auxiliary dynamics to the minimal lin-ear extension that closes under projection: minimal in the sense of using the fewest auxiliary degrees of free-dom, a single relaxation rate 1 /τ , needed to turn the postulated convolution (1) into an exact closed system. Larger, still-minimal realizations use one auxiliary field per relaxation rate and generate multi-exponential ker-nels, as in Sec. III B below; the single-field case is the base instance of that family, not a separate assumption. ˙w = 1
+
+> τ
+
+ Pf [z] − w, (4) with P a linear projection onto the observed space. Elim-inating w (the explicit realization of a Mori–Zwanzig pro-jection [15–17]) gives 
+
+w(t) = 
+
+Z ∞
+
+> 0
+
+du K (u) f [z(t − u)] , K(u) = 1 
+
+> τ
+
+e−u/τ ,
+
+(5) so that the memory kernel is not assumed but generated by the elimination, and the observed dynamics becomes the nonlocal generalized Langevin equation [16, 18] ˙z(t) = 
+
+Z ∞
+
+> 0
+
+du K (u) f [z(t − u)] + η(t). (6) This differs from the generic Mori–Zwanzig setting, where the memory kernel and the projected noise have no closed form: in the present linear construction the kernel closes exactly as a convolution and, as shown be-low, belongs to a definite class (completely monotone) for which the projection can be inverted. Representing a memory kernel by auxiliary Markovian variables in this way is standard in molecular dynamics [19]; we use it as a matter of principle rather than computation. Closure as a convolution holds precisely when the auxiliary cou-pling is linear with positive real spectrum; within this class the auxiliary spectrum sets the kernel shape (single field → exponential, finite → exponential sum, contin-uous → general completely monotone kernel). We set 
+
+m0 = R ∞ 
+
+> 0
+
+K(u) du = 1 by a rescaling of time, a normal-ization convention rather than a physical constraint, and write moments mn = R ∞ 
+
+> 0
+
+unK(u) du = cnτ n
+
+> mem
+
+; the drift 
+
+f ∈ C2 has bounded derivatives.  
+
+> E. Scale separation
+
+The control parameter is 
+
+ϵ(z) = τmem 
+
+τdyn (z) , τdyn (z) = ∥∇ f (z)∥−1, (7) which for a nonlinear drift is a local quantity varying along the trajectory rather than a single global con-stant. The expansion below is accordingly a pointwise short-memory expansion: at each time the convolution is expanded in the local ratio ϵ(z(t)), and the order la-bels O(ϵ), O(ϵ2) are to be read pointwise, valid where 
+
+ϵ(z(t)) ≪ 1. This requires τdyn to vary slowly over the memory support τmem , so that ∇f is approximately con-stant across the window the kernel averages; the expan-sion is controlled wherever this holds and breaks down where ∥∇ f ∥ varies sharply, such as near saddle points of the drift. We expand in this regime with fixed endpoints so that boundary terms vanish. All symbols needed be-low are now fixed.  
+
+> F. Assumptions
+
+For transparency we collect the hypotheses used in the derivation. (A1) The drift f ∈ C2(Rd, Rd) has bounded first derivative, so that τdyn = ∥∇ f ∥−1 is well defined. (A2) The memory kernel is completely monotone and normalized, m0 = R ∞ 
+
+> 0
+
+K(u) du = 1, with finite moments 
+
+mn = cnτ n
+
+> mem
+
+; equivalently, the auxiliary coupling is lin-ear with positive real spectrum. This is a working hy-pothesis on the class of dynamics considered, not a claim derived from attention’s nonlinearity (Sec. II A); its fail-ure is the falsifiable signature discussed in Sec. V. (A3) The reference measure is the Wiener measure WD , and the path measure is defined through the Radon–Nikodym weight in the tube-limit sense. (A4) Scale separation holds pointwise, ϵ(z) = τmem /τ dyn (z) ≪ 1 along the tra-jectory, with τdyn (z) = ∥∇ f (z)∥−1 varying slowly over the memory support so that ∇f is approximately con-stant across the kernel window. (A5) Endpoints are fixed, so total-derivative contributions integrate to boundary terms that vanish. The Stratonovich convention is fixed throughout. These are the hypotheses behind the results of the next section. 4 
+
+> III. NONLOCAL PATH MEASURE AND ITS SHORT-MEMORY LIMIT
+
+We now derive the path measure of the observed dy-namics, identify the kernel class it admits, and show that its short-memory limit is the local Onsager–Machlup the-ory of the companion paper. The augmented Markov system (2)–(4) is projected onto z by eliminating w, gen-erating the memory kernel; the resulting measure is the nonlocal Onsager–Machlup action (9), whose expansion in ϵ = τmem /τ dyn returns the local action (13) at leading order.  
+
+> A. Path measure from projection
+
+The joint measure of ( z, w) follows from the Gaussian noise weight e− 14D  
+
+> R|η|2dt
+
+with the dynamical constraints (2). Integrating out η through the constraint η = ˙ z − w
+
+leaves a weight exp( − 14D
+
+R | ˙z − w|2dt ) times a Jacobian. The auxiliary constraint ˙w = 1 
+
+> τ
+
+(f − w) then fixes w as the causal Green’s function solution of the linear operator (∂t + 1 
+
+> τ
+
+), 
+
+w =  ∂t + 1
+
+> τ
+
+−1 1 
+
+> τ
+
+f [z] = 
+
+Z ∞
+
+> 0
+
+du K (u) f [z(t − u)] , (8) that is w = ( K ∗ f )( t), the retarded solution and not an ad hoc substitution; the w-integration of the con-straint produces the operator determinant det( ∂t + 1 
+
+> τ
+
+)−1,which is independent of z for the linear coupling (4) (un-der the fixed-endpoint path measure) and is absorbed into normalization. Substituting (8) gives the z-marginal 
+
+P [z] ∝ e−A nonlocal [z] with the nonlocal Onsager–Machlup action 
+
+Anonlocal [z] = 14D
+
+Z T
+
+> 0
+
+|R [z]( t)|2 dt + AJac , (9) 
+
+R[z]( t) = ˙ z(t) −
+
+Z ∞
+
+> 0
+
+K(u) f [z(t − u)] du. (10) Memory thus enters the predictive object not as a force in the equation of motion but as a nonlocal quadratic form in the action, exactly as in the companion paper’s treatment of the local case. For the linear auxiliary cou-pling considered here the Jacobian AJac contributes only a z-independent normalization, consistent with the op-erator determinant above: the elimination is a causal (Volterra) map, whose functional determinant carries no bulk z-dependence. The local action’s 12
+
+R ∇· f dt term is recovered when the augmented representation passes to a genuinely Markovian dynamics as ϵ → 0, a passage that is sensitive to the discretization convention in the manner familiar from the colored-noise setting [19]; we therefore develop the short-memory expansion only for the reversible kinetic sector 14D
+
+R |R| 2 dt , which admits the controlled expansion below.  
+
+> B. The kernel class is completely monotone
+
+The kernel generated by (8) is, for the general linear closure (4), of the form K(u) = e⊤e−Au b with A the auxiliary relaxation operator and e, b fixed output and input vectors. When A has positive real spectrum (and positive spectral weights, the matrix analog of a posi-tive mixture), ( −1) nK(n)(u) = e⊤Ane−Au b ≥ 0, so K
+
+is completely monotone. Conversely, by the Bernstein– Widder representation [21] every completely monotone kernel is an exponential mixture 
+
+K(u) = 
+
+Z ∞
+
+> 0
+
+e−u/τ dμ (τ ), μ ≥ 0, (11) and each spectral component τ is realized by one auxil-iary field obeying (4): a finite point spectrum gives an exact finite-dimensional Markov embedding, and a gen-eral μ is the weak limit of such finite embeddings. 
+
+Representation result. Hypotheses: the observed dy-namics is generated by the augmented system (2)–(4) for some linear auxiliary coupling with positive real spec-trum (A2). Conclusion: the induced memory kernel 
+
+K(u) is completely monotone. For a finite spectrum this correspondence is exact and invertible: the augmenta-tion is a finite-dimensional Markov embedding, and ev-ery finite exponential-sum kernel with positive weights arises from one. For a general completely monotone ker-nel the Bernstein–Widder mixture (11) exhibits it as a limit of such finite embeddings; we treat the finite case as the operational content of the result and regard the continuous-spectrum extension as holding wherever the corresponding limit path measure exists, which we do not establish in general here. Within the class of linear passive auxiliary couplings with positive spectrum, then, a nonlocal dynamics with completely monotone memory and its hidden Markov augmentation are two views of the same object; nonlocality is the projection of a hid-den Markov structure. The augmentation is not unique (it is fixed only up to linear similarity transformations of the auxiliary state), and the correspondence is a repre-sentation statement within this linear class rather than a claim about arbitrary stochastic processes.  
+
+> C. Short-memory expansion and recovery of the local action
+
+For a kernel of width τmem much smaller than the dy-namical scale τdyn = ∥∇ f ∥−1, with ϵ = τmem /τ dyn de-fined locally and assumed slowly varying over the mem-ory support, the convolution expands in kernel moments 
+
+mn = R ∞ 
+
+> 0
+
+unK(u) du = cnτ n 
+
+> mem
+
+(with m0 = 1), so that with Dtf = ( ∇f ) ˙ z,(K ∗ f )( t) = m0 f − m1 Dtf + 12 m2 D2 
+
+> t
+
+f + · · · , (12) so that the residual is R = ( ˙ z −f )+ m1Dtf − 12 m2D2 
+
+> t
+
+f +
+
+· · · . Squaring and collecting orders gives Anonlocal =5
+
+AOM + A1 + A2 + O(ϵ3) with 
+
+AOM =
+
+Z T
+
+> 0
+
+dt 
+
+h 14D | ˙z − f |2 + 12 ∇· f
+
+i
+
+, (13) the local Onsager–Machlup action of the companion pa-per, and corrections 
+
+A1 = m1
+
+2D
+
+Z
+
+dt ˙z⊤(∇f )S ˙z = O(ϵ), (14) 
+
+A2 = 14D
+
+Z
+
+dt 
+
+h
+
+m21|(∇f ) ˙ z|2 − m2( ˙ z − f )·D2 
+
+> t
+
+f
+
+i
+
+= O(ϵ2).
+
+(15) In A1, with ( ∇f )S the symmetric part of the drift Ja-cobian, the total-derivative piece drops under fixed end-points, leaving a reversible renormalization of the kinetic metric; genuine non-Markovian inertia ( ¨ z) first appears in A2. As ϵ → 0, K → δ and Anonlocal → A OM , so the local theory is the short-memory limit of the nonlocal one. The structure of these corrections carries a concrete reading for practitioners. The O(ϵ0) term is the local-time Lagrangian already implicit in training a world model on one-step transitions; its recovery says that this standard local objective is not merely convenient but is the leading term of a controlled expansion, with a def-inite next correction rather than an uncontrolled error. That correction, A1, is not a new force added to the dy-namics but a reweighting of the kinetic term: through (∇f )S it renormalizes the effective metric on velocities by a fractional amount set by ϵ = τmem /τ dyn , the ratio of the memory time to the local relaxation time. Two uses follow, both internal to a single trained model and requir-ing no comparison to a ground-truth dynamics. First, 
+
+ϵ evaluated along latent trajectories is a dimensionless, coordinate-free gauge of how far a region of state space departs from the Markovian regime: where ϵ ≪ 1 a local readout of the drift already captures the dynamics, while regions of appreciable ϵ are exactly those where a mem-oryless update is expected to lose accuracy and where the nonlocal terms must be retained. Second, because ϵ
+
+is a property of the induced dynamics rather than of the network’s parameterization, it is comparable across mod-els that realize memory differently, so the same number can be read off architectures whose internal mechanisms are not otherwise commensurable. We stress that these are consequences of the expansion structure, not perfor-mance guarantees: relating ϵ to a downstream prediction metric requires the measurement program of the com-panion study and is not claimed here.  
+
+> D. Exactly solvable check
+
+The expansion above was derived by formal moment counting; here we confirm it is correctly derived by test-ing it against a case solvable in closed form. This is an internal consistency check, not an independent empirical validation: the linear drift below satisfies the same re-stricted class the theory is built on, so the check confirms that the general derivation reduces correctly to known exact algebra, not that the restriction to this class is it-self justified. For the vector linear drift f = −Az with exponential kernel K(u) = τ −1e−u/τ , the auxiliary field 
+
+w provides an exact Markov embedding (2); eliminat-ing it gives R = ˙ z + ( I + τ ∂ t)−1Az, and expanding the resolvent ( I + τ ∂ t)−1 = I − τ ∂ t + τ 2∂2 
+
+> t
+
+− · · · matches the moment expansion above order by order ( m1 = τ ,
+
+m2 = 2 τ 2), where AS and AA denote the symmetric and antisymmetric parts of A:
+
+O(ϵ0) : 14D
+
+R | ˙z + Az|2 dt, O(ϵ1) : − τ
+
+> 2D
+
+R ˙z⊤AS ˙z dt. (16) The O(ϵ0) and O(ϵ1) rows match (13)–(15) directly: set-ting ∇f = −A and m1 = τ in A1 reproduces the O(ϵ)row, and the O(ϵ0) row is AOM with drift −Az. At O(ϵ2)the resolvent expansion generates, besides a ˙z⊤A⊤A ˙z
+
+term, an inertial contribution involving ¨ z, exactly the ¨z-dependence that A2 first introduces through D2 
+
+> t
+
+f =
+
+−A ¨z; the two agree term by term once m2 = 2 τ 2 is in-serted, and we have verified this agreement between the exact action and AOM +A1 +A2 numerically, the residual scaling as O(ϵ3). We do not reduce the O(ϵ2) contribu-tion to a single quadratic in ˙z alone, since the inertial piece is not of that form. Two consistency checks follow. The Markov limit τ → 0 returns AOM with drift −Az.In the equilibrium limit of symmetric drift ( A = AS , i.e. 
+
+f = −∇ U ), the only time-reversal-odd piece of the ac-tion is the boundary term R ddt ( 12 z⊤AS z) dt , so the non-boundary odd part vanishes at every order and detailed balance is restored independently of the memory [22]. Broken detailed balance and its entropy production are central diagnostics of nonequilibrium dynamics in phys-ical and biological systems [23–25], quantified through fluctuation theorems [30, 31] and the thermodynamics of information [32], and provide the operational targets that a measurement program would later estimate [26–28].  
+
+> IV. THE IRREVERSIBLE CHANNEL IS PRESERVED
+
+The companion paper located the irreversibility of a predictive world model in the antisymmetric part of the drift, the channel AA (there written MA) that produces a circulating, non-gradient current, a structure famil-iar from nonreciprocal and odd-elastic systems [33] and from the decomposition of dissipation into oscillatory modes [34]. It is therefore important that this channel survive the projection. It does, and for a structural rea-son. The leading action (13) contains the cross term 
+
+> 12D
+
+R ˙z⊤Az dt , whose antisymmetric part ˙z⊤AAz is the time-reversal-odd, entropy-producing piece; the memory corrections (15), by contrast, are symmetric quadratic forms ( AS at O(ϵ), A⊤A at O(ϵ2)) and do not touch it. The reason is that the kernel K(u) here is scalar in 6the spatial index: it convolves the time argument while acting as the identity on the components of f , and so commutes with the decomposition of the drift Jacobian into symmetric and antisymmetric sectors. Projection and convolution therefore preserve the sector decompo-sition, and the antisymmetric sector passes through un-renormalized at leading order. This is where the spatial isotropy of the kernel is used: if the auxiliary relaxation instead mixed the spatial components, so that the kernel were matrix-valued Kij (u), the leading cross term would carry the spatial operator ¯KA with ¯K = R ∞ 
+
+> 0
+
+K(u) du ,whose antisymmetric part is antisym( ¯KA )̸ = AA in gen-eral, and the irreversible channel would be renormalized rather than preserved. The preservation statement is thus specific to the spatially scalar (isotropic) kernel gen-erated by (2); we note this restriction explicitly. Within it, memory renormalizes the reversible metric and leaves the irreversible channel intact. This also delimits what memory can and cannot do thermodynamically. The preserved channel above is the drift asymmetry AA; memory carries it but does not create it. Indeed, in the equilibrium check, a symmet-ric drift ( AA = 0) gave detailed balance at every order: with noise and kernel tied as in (2), memory adds no ir-reversibility of its own. A memory-sourced contribution to entropy production would therefore require breaking the relation between the noise covariance and the kernel, that is, a violation of the second fluctuation–dissipation relation [18, 22] that the present construction does not contain. That mechanism, and its measurable signature, is the subject of a separate paper; here we establish only that the nonlocal representation leaves the companion paper’s irreversible channel untouched.  
+
+> V. DISCUSSION AND OUTLOOK
+
+What is established mathematically are properties of stochastic path measures; reading these as statements about attention-driven world models is the interpretation that fixes the relevant class of dynamics, not a separate consequence of the derivation. This perspective suggests a shift in how we treat the predictive object of a learned world model: not as a one-step conditional, but as a measure over future paths. In this framework, memory becomes a structural feature of the action with a definite scaling, and locality is reduced from a defining property to a controlled approximation. The path measure, rather than a shared latent space, may thus serve as a common currency for relating sequence models with varying mem-ory structures. Concretely, because the kernel class and the scale-separation parameter ϵ are properties of the in-duced dynamics rather than any specific implementation, they could offer a model-independent basis for comparing different architectures, training objectives, and datasets: whether a model’s memory is short enough to be treated locally, and whether it falls within the completely mono-tone class. Establishing such estimators is the focus of our companion measurement study. We identify three primary research directions and one limitation of scope: 1. Empirical kernel measurement: From latent trajectories z(t) and the learned drift, the memory kernel can be recovered via regularized deconvolu-tion of the generalized Langevin equation (6). Its membership in the completely monotone class can be tested by fitting the estimate to an exponential sum (11); a negative (oscillatory) spectral weight would signal dynamics beyond the linear positive-spectrum class assumed here. 2. Measurement of action parameters: The pa-rameter ϵ and the coefficients of A1 and A2 are directly measurable, with irreversibility diagnostics supplied by entropy-production estimators [26–28] and thermodynamic-uncertainty bounds [29]. 3. Irreversibility and memory: Whether mem-ory can itself source irreversibility remains open. We have shown this requires a breaking of the fluctuation–dissipation relation, which the present construction does not contain and which is left to separate work. The long-range scaling of the non-local action, which would organize a field-theoretic and renormalization-group treatment, likewise lies beyond the present scope. 4. Scope and attribution (limitation): While we attribute the non-Markovian character to atten-tion, other components of a deep network, the residual stream, feedforward blocks, and normal-ization, also accumulate information across depth and could contribute to the effective memory ker-nel. Disentangling these from attention’s contribu-tion remains an empirical question. This paper establishes the foundation on which those rest: the local action is not an independent postulate, but the short-memory limit of a nonlocal path measure.  
+
+> VI. CONCLUSION
+
+An attention-driven world model is fundamentally non-local. Its predictive path measure is the projection of a hidden linear-Markov augmentation, with memory enter-ing as a nonlocal quadratic form in an Onsager–Machlup action whose kernels belong to the completely monotone class. The local Onsager–Machlup action of the com-panion paper is not an independent assumption but the short-memory limit of this nonlocal measure; notably, the irreversible channel identified in the companion pa-per survives this projection intact. This recovery is con-trolled for the reversible kinetic sector, which allows for a term-by-term short-memory expansion. The local ac-tion’s Jacobian term is instead fixed by the convention through which the augmented representation transitions to a genuinely Markovian dynamics, and we have not 7treated it as a series expansion in ϵ. In short, locality is a derived limit rather than a starting point. This reframes how the predictive object should be in-terpreted. Treating the world model as a measure over paths, rather than a one-step conditional, redefines its memory as a structural feature of the action with a defi-nite scaling in ϵ. It also transforms the locality assumed in earlier analyses into a controlled approximation with explicit corrections. The representation result provides a precise characterization of this: within the linear pas-sive class, asking whether a latent dynamics is nonlo-cal is equivalent to asking whether it masks a hidden Markov augmentation, and the completely monotone ker-nels mark exactly where the two coincide. Because the leading-order action is dimension-independent, the recov-ery of the local theory is an intrinsic property of the mechanism, not an artifact of the specific solvable exam-ple used for validation. The representation is also fal-sifiable: if the memory kernel estimated from a trained model fails to be completely monotone, for instance if its spectrum carries an oscillatory component, the dynam-ics lies outside the linear positive-spectrum projection assumed here, and the short-memory reduction to the local action need not hold. Locality, as a derived limit, is thus a statement that can be refuted by measurement. Within the larger program, this paper supplies the bridge between a local effective description and the un-derlying nonlocal dynamics. It leaves the reversible and irreversible sectors cleanly separated, making the next step well-posed: once memory is understood to renor-malize only the reversible metric, a memory-sourced con-tribution to irreversibility can be isolated as a genuine fluctuation–dissipation violation, rather than being con-flated with the kernel itself. The measurement of these quantities in trained models, and the scaling analysis that would extend the construction toward a field theory, now rest on a foundation where the central objects, the path measure and its short-memory limit, are already firmly established. 
+
+[1] G. Kim, “A Path-Space Formulation of Prediction in World Models: From a Single Action to Prediction, Plan-ning, and Irreversibility,” arXiv:2606.28751 (2026). [2] D. Ha and J. Schmidhuber, “World Models,” arXiv:1803.10122 (2018). [3] D. Hafner, J. Pasukonis, J. Ba, and T. Lillicrap, “Mastering Diverse Domains through World Models,” arXiv:2301.04104 (2023). [4] K. Friston, “The free-energy principle: a unified brain theory?” Nat. Rev. Neurosci. 11 , 127 (2010). [5] S. Levine, “Reinforcement Learning and Control as Prob-abilistic Inference,” arXiv:1805.00909 (2018). [6] Y. Song et al. , “Score-Based Generative Modeling through Stochastic Differential Equations,” in Int. Conf. on Learning Representations (ICLR) (2021). [7] Y. Lipman, R. T. Q. Chen, H. Ben-Hamu, M. Nickel, and M. Le, “Flow Matching for Generative Modeling,” in Int. Conf. on Learning Representations (ICLR) (2023). [8] J. Ho, A. Jain, and P. Abbeel, “Denoising Diffusion Probabilistic Models,” in Advances in Neural Informa-tion Processing Systems 33 (2020). [9] S. Raja et al. , “Action-Minimization Meets Generative Modeling: Efficient Transition Path Sampling with the Onsager–Machlup Functional,” in Proc. 42nd Int. Conf. on Machine Learning (ICML) , PMLR 267 , 50972 (2025). [10] M. Blondel, M. E. Sander, G. Vivier-Ardisson, T. Liu, and V. Roulet, “Autoregressive Language Models are Se-cretly Energy-Based Models: Insights into the Lookahead Capabilities of Next-Token Prediction,” in Proc. 43rd Int. Conf. on Machine Learning (ICML) , PMLR 306 (2026), arXiv:2512.15605. [11] A. Vaswani et al. , “Attention Is All You Need,” in Ad-vances in Neural Information Processing Systems 30 
+
+(2017). [12] B. Geshkovski, C. Letrouit, Y. Polyanskiy, and P. Rigol-let, “A mathematical perspective on Transformers,” arXiv:2312.10794 (2023). [13] H. Ramsauer et al. , “Hopfield Networks is All You Need,” in Int. Conf. on Learning Representations (ICLR) 
+
+(2021). [14] D. Sussillo and O. Barak, “Opening the Black Box: Low-Dimensional Dynamics in High-Dimensional Recurrent Neural Networks,” Neural Comput. 25 , 626 (2013). [15] H. Mori, “Transport, Collective Motion, and Brownian Motion,” Prog. Theor. Phys. 33 , 423 (1965). [16] R. Zwanzig, Nonequilibrium Statistical Mechanics (Ox-ford Univ. Press, 2001). [17] A. J. Chorin, O. H. Hald, and R. Kupferman, “Optimal prediction and the Mori–Zwanzig representation of irre-versible processes,” Proc. Natl. Acad. Sci. USA 97 , 2968 (2000). [18] R. Kubo, “The fluctuation-dissipation theorem,” Rep. Prog. Phys. 29 , 255 (1966). [19] M. Ceriotti, G. Bussi, and M. Parrinello, “Langevin Equation with Colored Noise for Constant-Temperature Molecular Dynamics Simulations,” Phys. Rev. Lett. 102 ,020601 (2009). [20] L. Onsager and S. Machlup, “Fluctuations and Irre-versible Processes,” Phys. Rev. 91 , 1505 (1953). [21] D. V. Widder, The Laplace Transform (Princeton Univ. Press, Princeton, NJ, 1941). [22] U. Seifert, “Stochastic thermodynamics, fluctuation the-orems and molecular machines,” Rep. Prog. Phys. 75 ,126001 (2012). [23] C. Battle et al. , “Broken detailed balance at mesoscopic scales in active biological systems,” Science 352 , 604 (2016). [24] F. S. Gnesotto, F. Mura, J. Gladrow, and C. P. Broed-ersz, “Broken detailed balance and non-equilibrium dy-namics in living systems: a review,” Rep. Prog. Phys. 
+
+81 , 066601 (2018). [25] C. W. Lynn et al. , “Broken detailed balance and entropy production in the human brain,” Proc. Natl. Acad. Sci. USA 118 , e2109889118 (2021). 8
+
+[26] A. Frishman and P. Ronceray, “Learning Force Fields from Stochastic Trajectories,” Phys. Rev. X 10 , 021009 (2020). [27] S. Otsubo, S. Ito, A. Dechant, and T. Sagawa, “Estimat-ing entropy production by machine learning of short-time fluctuating currents,” Phys. Rev. E 101 , 062106 (2020). [28] D.-K. Kim, Y. Bae, S. Lee, and H. Jeong, “Learning Entropy Production via Neural Networks,” Phys. Rev. Lett. 125 , 140604 (2020). [29] A. C. Barato and U. Seifert, “Thermodynamic Uncer-tainty Relation for Biomolecular Processes,” Phys. Rev. Lett. 114 , 158101 (2015). [30] C. Jarzynski, “Nonequilibrium Equality for Free Energy Differences,” Phys. Rev. Lett. 78 , 2690 (1997). [31] G. E. Crooks, “Entropy production fluctuation theorem and the nonequilibrium work relation for free energy dif-ferences,” Phys. Rev. E 60 , 2721 (1999). [32] J. M. R. Parrondo, J. M. Horowitz, and T. Sagawa, “Thermodynamics of information,” Nat. Phys. 11 , 131 (2015). [33] C. Scheibner et al. , “Odd elasticity,” Nat. Phys. 16 , 475 (2020). [34] D. Sekizawa, S. Ito, and M. Oizumi, “Decomposing ther-modynamic dissipation of linear Langevin systems via os-cillatory modes and its application to neural dynamics,” Phys. Rev. X 14 , 041003 (2024).

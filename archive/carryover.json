@@ -1,6 +1,95 @@
 {
-  "generated_at": "2026-03-06T19:11:18.471356+00:00",
-  "updated_date": "20260306",
+  "generated_at": "2026-07-06T12:47:00.743770+00:00",
+  "updated_date": "20260627-20260706",
   "carryover_days": 9,
-  "items": []
+  "tag_states": {
+    "world": {
+      "updated_date": "20260627-20260706",
+      "carryover_days": 9,
+      "items": [
+        {
+          "id": "2607.02403v1",
+          "source": "arxiv",
+          "title": "ACID: Action Consistency via Inverse Dynamics for Planning with World Models",
+          "abstract": "Decision-time planning with action-conditioned world models has become a popular paradigm for embodied control. However, the standard planning cost judges a candidate solely by how close its predicted terminal state lies to the goal, leaving the realizability of the intermediate transitions unchecked -- a predicted trajectory can look convincing while the environment rollout drifts away from it. In this paper, we propose ACID, a decision-time planning framework that introduces cycle action consistency: the action inferred backward from a predicted transition by an inverse dynamics model should recover the one that was conditioned on. We fold this per-step residual into the planning cost via a scale-invariant adaptive weight. Across four action-conditioned world models and six tasks spanning rigid and deformable manipulation, articulated control, and visual navigation, ACID consistently improves planning and matches the baseline's accuracy with substantially less planning compute.",
+          "authors": [
+            "Gawon Seo",
+            "Dongwon Kim",
+            "Suha Kwak"
+          ],
+          "primary_category": "cs.RO",
+          "categories": [
+            "cs.RO",
+            "cs.AI",
+            "cs.CV"
+          ],
+          "published": "2026-07-02T16:38:10+00:00",
+          "link": "https://arxiv.org/pdf/2607.02403v1",
+          "tags": [
+            "keyword:world",
+            "query:world"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "action consistency via inverse dynamics in world models",
+          "llm_evidence_cn": "通过逆动力学实现世界模型中的动作一致性",
+          "llm_evidence": "通过逆动力学实现世界模型中的动作一致性",
+          "canonical_evidence": "通过逆动力学实现世界模型中的动作一致性",
+          "llm_tldr_en": "ACID improves planning with world models by enforcing cycle action consistency using inverse dynamics, ensuring intermediate trajectory realizability.",
+          "llm_tldr_cn": "针对基于世界模型的规划中忽略中间轨迹可实现性的问题，提出ACID框架，通过逆动力学引入循环动作一致性约束，将每步残差融入规划代价。实验表明该方法显著提升规划鲁棒性，保证了规划轨迹的实际可执行性。",
+          "llm_tldr": "针对基于世界模型的规划中忽略中间轨迹可实现性的问题，提出ACID框架，通过逆动力学引入循环动作一致性约束，将每步残差融入规划代价。实验表明该方法显著提升规划鲁棒性，保证了规划轨迹的实际可执行性。",
+          "llm_tags": [
+            "query:world"
+          ],
+          "matched_query_tag": "query:world",
+          "matched_query_text": "action model with world representation",
+          "matched_requirement_id": "req-7",
+          "selection_source": "carryover_cache",
+          "paper_id": "2607.02403v1",
+          "carry_days": 1
+        },
+        {
+          "id": "2607.01060v1",
+          "source": "arxiv",
+          "title": "RoboWorld: Fast and Reliable Neural Simulators for Generalist Robot Policy Evaluation",
+          "abstract": "Video world models are emerging as a scalable alternative for evaluating generalist robot policies, bypassing the physical constraints and engineering burdens of real-world deployment. However, evaluating policies with video world models remains challenging, as world-model errors can make generated rollouts unreliable and slow inference limits large-scale throughput. We introduce RoboWorld, an automated evaluation pipeline that pairs a fast autoregressive video world model with a task-progress-aware vision-language model scoring. To enable reliable long-horizon autoregressive world-model rollouts, we propose Step Forcing, which combines anchored and one-step self-forwarded contexts to reduce train--test mismatch while preserving action--observation dynamics. Together, these components enable RoboWorld to align strongly with real-world robot evaluation across tasks and environments, achieving Pearson's r = 0.989 and Spearman's \\r{ho} = 0.970.",
+          "authors": [
+            "Byeongguk Jeon",
+            "Seonghyeon Ye",
+            "JaeHyeok Doo",
+            "Sungdong Kim",
+            "Minjoon Seo",
+            "Hyungmok Son",
+            "Kimin Lee"
+          ],
+          "primary_category": "cs.RO",
+          "categories": [
+            "cs.RO"
+          ],
+          "published": "2026-07-01T15:22:41+00:00",
+          "link": "https://arxiv.org/pdf/2607.01060v1",
+          "tags": [
+            "keyword:world",
+            "query:world"
+          ],
+          "llm_score": 8.0,
+          "llm_evidence_en": "video world model for robot policy evaluation",
+          "llm_evidence_cn": "用于机器人策略评估的视频世界模型",
+          "llm_evidence": "用于机器人策略评估的视频世界模型",
+          "canonical_evidence": "用于机器人策略评估的视频世界模型",
+          "llm_tldr_en": "RoboWorld pairs a fast autoregressive video world model with task-progress-aware VLM scoring for reliable policy evaluation.",
+          "llm_tldr_cn": "针对视频世界模型评估策略时不可靠且推理慢的问题，提出RoboWorld流水线，采用快速自回归视频世界模型与任务进度感知的VLM评分。提出Step Forcing技术减少训练-测试不匹配，实现可靠的长程滚动。在多个仿真环境上验证了评估准确性。",
+          "llm_tldr": "针对视频世界模型评估策略时不可靠且推理慢的问题，提出RoboWorld流水线，采用快速自回归视频世界模型与任务进度感知的VLM评分。提出Step Forcing技术减少训练-测试不匹配，实现可靠的长程滚动。在多个仿真环境上验证了评估准确性。",
+          "llm_tags": [
+            "query:world"
+          ],
+          "matched_query_tag": "query:world",
+          "matched_query_text": "world model",
+          "matched_requirement_id": "req-4",
+          "selection_source": "carryover_cache",
+          "paper_id": "2607.01060v1",
+          "carry_days": 1
+        }
+      ]
+    }
+  }
 }
