@@ -1,0 +1,557 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-09T21:14:55.008581+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 9,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2607.00836v3",
+      "source": "arxiv",
+      "title": "From World Models to World Action Models: A Concise Tutorial for Robotics",
+      "abstract": "World models are increasingly used in embodied intelligence and generative simulation, yet their scope remains ambiguous across communities. This tutorial presents a design-space view of world models as action-conditioned predictive models that estimate the future evolution of task-relevant observations or states. We categorize existing methods into observation-space and state-space world models, comparing their trade-offs in visual fidelity, spatial structure, physical interpretability, and control usability. We further introduce world action models, which connect predicted futures with executable robot actions, and summarize four representative paradigms: imagine-then-execute, video-feature-conditioned action prediction, joint video-action modeling, and auxiliary video prediction for policy learning. The goal of this tutorial is to clarify the conceptual scope of world (action) models and provide a structured taxonomy for embodied prediction and control.",
+      "authors": [
+        "Xiaoxiong Zhang",
+        "Xiong Zeng",
+        "Wei Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "eess.SY"
+      ],
+      "published": "2026-07-01T11:56:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.00836v3",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "tutorial on world action models for robotics",
+      "llm_evidence_cn": "关于机器人世界动作模型的教程",
+      "llm_evidence": "关于机器人世界动作模型的教程",
+      "canonical_evidence": "关于机器人世界动作模型的教程",
+      "llm_tldr_en": "This tutorial defines world action models as connecting predicted futures with executable robot actions, categorizes paradigms including imagine-then-execute and joint video-action modeling.",
+      "llm_tldr_cn": "该教程澄清了不同社区对世界模型的歧义，将世界动作模型定义为将预测未来与可执行机器人动作连接的模型。它分类了观测空间和状态空间的世界模型，并总结了四种世界动作模型范式：想象-执行、视频特征条件动作预测、联合视频-动作建模等。该教程为机器人领域世界动作模型的研究提供了设计空间视角。",
+      "llm_tldr": "该教程澄清了不同社区对世界模型的歧义，将世界动作模型定义为将预测未来与可执行机器人动作连接的模型。它分类了观测空间和状态空间的世界模型，并总结了四种世界动作模型范式：想象-执行、视频特征条件动作预测、联合视频-动作建模等。该教程为机器人领域世界动作模型的研究提供了设计空间视角。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.06216v1",
+      "source": "arxiv",
+      "title": "MoWorld: A Flash World Model",
+      "abstract": "The future of World Models depends not only on scaling model capability, but also on scaling practicality and inference efficiency. High-frame-rate inference enables responsive perception, planning, and control in real-world autonomous systems. To this end, we present MoWorld, a cost-effective yet high-performance Flash World Model with an end-to-end framework spanning data generation, pre-training, distillation, and efficient inference, enabling up to 50 FPS real-time interaction with cinematic visual quality without the need of high-end GPUs. To enable large-scale real-world deployment, MoWorld jointly optimizes model capability and cost throughout the entire development pipeline. Specifically, unlike existing approaches that primarily rely on large-scale video corpora, MoWorld is built upon a scalable 3D-native data engine accumulated from our large-scale 3D vision and generative modeling pipeline, enabling the efficient construction of geometrically consistent training data across diverse real-world and synthetic environments. Based on this foundation, a curriculum cross-frame pre-training strategy for stable and scalable World Model learning, an efficient denoising-step distillation algorithm to reduce diffusion training cost, and a mixed-precision parallel inference framework for low-cost real-time deployment. MoWorld is the first real-time interactive World Model built on the Neural Processing Unit (NPU) and can achieves up to 50 FPS in such the devices, enabling practical and efficient deployment at scale. Comprehensive evaluations demonstrate that MoWorld achieves leading performance; notably, its average inference cost is only 30\\%-50\\% of that of existing World Models, providing a practical foundation for large-scale real-world applications of World Models. We also demonstrate diverse applications of MoWorld.",
+      "authors": [
+        "Team Moxin",
+        "Deyi Ji",
+        "Tianrun Chen",
+        "Xin Zhang",
+        "Jiale Yang",
+        "Qi Zhu",
+        "An Zhao",
+        "Zihao Xie",
+        "Han Wang",
+        "Xuanyi Liu",
+        "Yixiang Zhou",
+        "Pei Liu",
+        "Yi Tan",
+        "Cheng Chen",
+        "Dayi Zhu",
+        "Mingyu Wei",
+        "Hanjie Xu",
+        "Jun Liao",
+        "Siqi Li",
+        "Lingyu Lu",
+        "Hongye Fang",
+        "Hongming Tan",
+        "Youjiang Zhu",
+        "Taiyu Zhang",
+        "Zejian Li",
+        "Chaotao Ding",
+        "Lanyun Zhu",
+        "Yunhe Pan",
+        "Lingyun Sun"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-07T12:41:19+00:00",
+      "link": "https://arxiv.org/pdf/2607.06216v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "flash world model",
+      "llm_evidence_cn": "快速世界模型",
+      "llm_evidence": "快速世界模型",
+      "canonical_evidence": "快速世界模型",
+      "llm_tldr_en": "MoWorld is a flash world model enabling 50 FPS real-time interaction with cinematic visual quality through an end-to-end efficient pipeline.",
+      "llm_tldr_cn": "世界模型的推理效率制约其实际部署。本文提出MoWorld，一种快速世界模型，通过数据生成、预训练、蒸馏和高效推理的端到端框架，在普通GPU上实现50 FPS的实时交互与电影级视觉质量，兼顾能力与成本。",
+      "llm_tldr": "世界模型的推理效率制约其实际部署。本文提出MoWorld，一种快速世界模型，通过数据生成、预训练、蒸馏和高效推理的端到端框架，在普通GPU上实现50 FPS的实时交互与电影级视觉质量，兼顾能力与成本。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.06401v1",
+      "source": "arxiv",
+      "title": "A Definition and Roadmap for World Models",
+      "abstract": "World models -- internal simulators that learn the structure and dynamics of an environment -- have become one of the most actively debated concepts in AI. From model-based reinforcement learning and video generation to embodied robotics and ultimately, physical AI, researchers across AI subfields are building systems that they call \"world models\", yet there is no consensus on what a world model fundamentally is, what it should predict, or how it should be built. This perspective article provides a scientific definition of world models, discussions of their key technical aspects, and a staged roadmap for developing effective world models.",
+      "authors": [
+        "Xinyuan Chen",
+        "Haoyu Guo",
+        "Shi Guo",
+        "Bingqi Jiang",
+        "Chunhua Shen",
+        "Xing Shen",
+        "Tianfan Xue",
+        "Yufei Xue",
+        "Mulin Yu",
+        "Weinan Zhang",
+        "Bin Zhao",
+        "Bowen Zhou",
+        "Ming Zhou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-07T15:31:32+00:00",
+      "link": "https://arxiv.org/pdf/2607.06401v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "definition and roadmap for world models",
+      "llm_evidence_cn": "世界模型的定义与路线图",
+      "llm_evidence": "世界模型的定义与路线图",
+      "canonical_evidence": "世界模型的定义与路线图",
+      "llm_tldr_en": "A perspective article providing a scientific definition of world models and a staged roadmap for their development.",
+      "llm_tldr_cn": "人工智能领域对世界模型缺乏统一定义和系统发展路径。本文以视角论文形式提出了世界模型的科学定义，讨论了关键技术方面，并规划了从模型基础到物理AI的分阶段路线图，为后续研究提供了概念框架。",
+      "llm_tldr": "人工智能领域对世界模型缺乏统一定义和系统发展路径。本文以视角论文形式提出了世界模型的科学定义，讨论了关键技术方面，并规划了从模型基础到物理AI的分阶段路线图，为后续研究提供了概念框架。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.06988v1",
+      "source": "arxiv",
+      "title": "WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time",
+      "abstract": "Steering robot foundation models (RFMs) toward new task variants or user-preferred behaviors remains challenging, often requiring additional robot demonstrations, task-specific fine-tuning, or long-context conditioning. We present WAM-TTT, a test-time training framework for steering world action models from raw human videos. Rather than treating human videos as trajectories to imitate, WAM-TTT absorbs them into a lightweight adaptive memory inside a frozen WAM through self-supervised video prediction. To make this memory useful for control, we introduce a meta-training stage that aligns human demonstrations with robot behaviors using paired human-robot data and a key--value memory reconstruction objective. At test time, only unlabeled human videos are required to adapt the memory, while the pretrained WAM remains frozen. This enables efficient and reusable steering without robot actions, human-side annotations, or task-specific fine-tuning, while preserving the generalization ability of the foundation model. Extensive experiments show that WAM-TTT consistently outperforms in-context human-video conditioning baselines across diverse manipulation tasks and generalization settings.",
+      "authors": [
+        "Yusen Feng",
+        "Bingchen Han",
+        "Jiangran Lyu",
+        "Kai Liu",
+        "Yixin Zheng",
+        "Yuxuan Wan",
+        "Weiheng Liu",
+        "Sun Han",
+        "Ruiqin Li",
+        "Yulong Zhang",
+        "Fangfu Liu",
+        "Xuesong Shi",
+        "Libin Liu",
+        "Yizhou Wang",
+        "Zhizheng Zhang",
+        "He Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-08T04:23:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.06988v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "world action model test-time training",
+      "llm_evidence_cn": "世界动作模型的测试时训练",
+      "llm_evidence": "世界动作模型的测试时训练",
+      "canonical_evidence": "世界动作模型的测试时训练",
+      "llm_tldr_en": "WAM-TTT steers world action models at test time using raw human videos via self-supervised video prediction and adaptive memory.",
+      "llm_tldr_cn": "机器人基础模型适应新任务通常需要额外演示或微调。本文提出WAM-TTT框架，通过自监督视频预测将人类视频吸收到世界动作模型的轻量自适应记忆中，无需机器人数据即可在测试时引导模型行为，提升了零样本泛化能力。",
+      "llm_tldr": "机器人基础模型适应新任务通常需要额外演示或微调。本文提出WAM-TTT框架，通过自监督视频预测将人类视频吸收到世界动作模型的轻量自适应记忆中，无需机器人数据即可在测试时引导模型行为，提升了零样本泛化能力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.07196v1",
+      "source": "arxiv",
+      "title": "Validate the Dream Before You Trust Its Verdict: Admissibility for World-Model Simulators",
+      "abstract": "Across robotics, World Models (WMs) are increasingly used to evaluate action policies by simulating the consequences of actions in an imagined world, and returning a success or safety verdict. Yet a verdict is only as trustworthy as the WM that produced it, and the WM itself needs to be certified. In video-generation WMs, fidelity metrics such as Fréchet Video Distance (FVD) reward visual realism, but ignore whether the world responds correctly to the policy's actions, including those unseen in training. Classical simulation-based validation assumes a trusted simulator evaluating an untrusted policy, whereas generative WMs are themselves unverified learned artifacts. Hence, we argue that any WM used as a test oracle must first be accredited before its verdicts can serve as evidence. Building on credibility practices from safety-critical simulation, including Verification, Validation & Accreditation (VV&A), Safety of the Intended Functionality (SOTIF), and scenario-based testing standards, we define an admissibility ladder (L0-L4) that a WM must climb before its closed-loop verdicts are accepted as assurance evidence. Our framework is embodiment-agnostic, and is instantiated in autonomous driving (AD), where assurance methods for traditional simulation are most mature. Applied to two driving WMs, the lower rungs reveal a reversal: the model that ranks higher on visual generation quality (L0) ranks lower on action-following (L1-L2), so visual fidelity does not predict the action-robustness a closed-loop verdict depends on.",
+      "authors": [
+        "Christian Oefinger",
+        "Finn Rasmus Schäfer",
+        "Korbinian Moller",
+        "Mattia Piccinini",
+        "Johannes Betz"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG",
+        "cs.SE"
+      ],
+      "published": "2026-07-08T09:30:31+00:00",
+      "link": "https://arxiv.org/pdf/2607.07196v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "certification of world model simulators for action policy evaluation",
+      "llm_evidence_cn": "世界模型模拟器用于动作策略评估的可信性认证",
+      "llm_evidence": "世界模型模拟器用于动作策略评估的可信性认证",
+      "canonical_evidence": "世界模型模拟器用于动作策略评估的可信性认证",
+      "llm_tldr_en": "Argues that world models used as test oracles in robotics must be certified for action-conditional correctness, proposing admissibility criteria beyond visual fidelity.",
+      "llm_tldr_cn": "针对生成式世界模型在机器人动作策略评估中作为测试预言机但缺乏可信性验证的问题，本文提出了世界模型模拟器的可接受性概念，指出仅靠视觉保真度（如FVD）不足以确保世界模型对动作的正确响应。论文论证了认证的必要性，为世界模型的可靠部署奠定了基础。",
+      "llm_tldr": "针对生成式世界模型在机器人动作策略评估中作为测试预言机但缺乏可信性验证的问题，本文提出了世界模型模拟器的可接受性概念，指出仅靠视觉保真度（如FVD）不足以确保世界模型对动作的正确响应。论文论证了认证的必要性，为世界模型的可靠部署奠定了基础。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.07534v1",
+      "source": "arxiv",
+      "title": "Infinite Worlds with Versatile Interactions",
+      "abstract": "We present LingBot-World 2.0 (also known as LingBot-World-Infinity), an advanced iteration of LingBot-World featuring four distinct upgrades. (1) Our model achieves an unbounded interaction horizon while maintaining consistent output quality, benefiting from a carefully crafted causal pretraining paradigm. (2) Through distilling a real-time variant from the base model, our system guarantees rapid response time, sufficient to drive 720p video streams at 60 fps. (3) Compared to the previous version, this update introduces highly diverse interactive elements, comprising a broader spectrum of actions (e.g., attacking, archery, spell-casting, and shooting) alongside a richer variety of text-driven events. (4) We pioneer the integration of an agentic harness within the domain of world modeling, wherein a pilot agent is tasked with planning and executing character behaviors, while a director agent is responsible for synthesizing novel environmental elements as the scene progresses. Additionally, to facilitate a shared experience, we develop an interface that permits multiple players to simultaneously immerse themselves in this vivid world simulator. We pair our primary 14B model with a lightweight 1.3B counterpart, which supports effortless deployment on a single GPU.",
+      "authors": [
+        "Zelin Gao",
+        "Qiuyu Wang",
+        "Jiapeng Zhu",
+        "Jingye Chen",
+        "Zichen Liu",
+        "Qingyan Bai",
+        "Jiahao Wang",
+        "Yufeng Yuan",
+        "Hanlin Wang",
+        "Yichong Lu",
+        "Ka Leong Cheng",
+        "Haojie Zhang",
+        "Jian Gao",
+        "Tianrui Feng",
+        "Yuzheng Liu",
+        "Yao Yao",
+        "Yinghao Xu",
+        "Xing Zhu",
+        "Yujun Shen",
+        "Hao Ouyang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-08T15:33:25+00:00",
+      "link": "https://arxiv.org/pdf/2607.07534v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "world model with unbounded interactions and diverse actions",
+      "llm_evidence_cn": "支持无界交互和多样动作的世界模型",
+      "llm_evidence": "支持无界交互和多样动作的世界模型",
+      "canonical_evidence": "支持无界交互和多样动作的世界模型",
+      "llm_tldr_en": "Presents LingBot-World 2.0, a world model with infinite interaction horizon, real-time video generation, and support for diverse actions like attacking and spell-casting.",
+      "llm_tldr_cn": "针对现有世界模型交互范围有限的问题，提出LingBot-World 2.0，通过因果预训练实现无界交互，并保证输出质量；通过蒸馏获得实时变体，支持60fps的720p视频流；引入多种交互动作（如攻击、射箭、施法）和丰富的文本驱动事件，并将智能体框架集成到世界领域。该系统在交互多样性和实时性上取得显著进步。",
+      "llm_tldr": "针对现有世界模型交互范围有限的问题，提出LingBot-World 2.0，通过因果预训练实现无界交互，并保证输出质量；通过蒸馏获得实时变体，支持60fps的720p视频流；引入多种交互动作（如攻击、射箭、施法）和丰富的文本驱动事件，并将智能体框架集成到世界领域。该系统在交互多样性和实时性上取得显著进步。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.02840v1",
+      "source": "arxiv",
+      "title": "TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training",
+      "abstract": "Vision-Language-Action (VLA) models have shown promising generalization in robotic manipulation, but they still struggle with contact-rich tasks, where minor contact perturbations can cause unrecoverable failures that are hard to detect from vision alone. Since these failures are localized rather than task-level semantic errors, tactile-aware corrective post-training offers an efficient way to improve recovery. However, scaling such supervision through human intervention is costly. Recent works have explored world models to synthesize imagined rollouts for policy improvement, but vision-only world models may produce visually plausible yet contact-inconsistent trajectories. We therefore introduce TACO, a tactile-aware world-model-driven framework for scalable VLA post-training in contact-rich manipulation. Given real robot rollouts, TACO follows a Recognize-Imagine-Label loop with a tactile-aware world model: a unified progress-action model recognizes failure-adjacent states using progress estimates, a visuo-tactile generation model imagines local correction segments, and the progress-action model labels them with executable corrective actions. To incorporate tactile corrective supervision into VLA post-training, TACO combines knowledge-insulated tactile adaptation with advantage-conditioned training, enabling the policy to learn from imagined corrections without degrading pretrained visual-language priors. These components enable TACO to convert real-world failures into imagined visuo-tactile corrections for iterative VLA post-training. Experiments on real-world contact-rich manipulation tasks show that TACO achieves 44% absolute success rate improvement over the base policy and 32% over the policy without knowledge-insulated tactile adaptation.",
+      "authors": [
+        "Shengbang Liu",
+        "Yueru Jia",
+        "Yuyang Yan",
+        "Jiaming Liu",
+        "Xinran Zhang",
+        "Qiuxuan Feng",
+        "Yandong Guo",
+        "Shiji Zhou",
+        "Boxin Shi",
+        "Shanghang Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-03T00:23:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.02840v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "tactile world model for VLA post-training",
+      "llm_evidence_cn": "触觉世界模型用于VLA后训练",
+      "llm_evidence": "触觉世界模型用于VLA后训练",
+      "canonical_evidence": "触觉世界模型用于VLA后训练",
+      "llm_tldr_en": "TACO uses a tactile-aware world model to synthesize imagined rollouts for post-training VLA policies, improving recovery in contact-rich manipulation tasks.",
+      "llm_tldr_cn": "针对VLA模型在接触丰富任务中难以从视觉检测的局部失败恢复的问题，TACO提出触觉感知的世界模型驱动框架。该方法利用触觉世界模型合成想象轨迹，用于策略后训练，从而在不需人工干预的情况下提升恢复能力。实验表明，TACO显著提高了VLA在接触丰富任务中的成功率，且无需额外人类标注。",
+      "llm_tldr": "针对VLA模型在接触丰富任务中难以从视觉检测的局部失败恢复的问题，TACO提出触觉感知的世界模型驱动框架。该方法利用触觉世界模型合成想象轨迹，用于策略后训练，从而在不需人工干预的情况下提升恢复能力。实验表明，TACO显著提高了VLA在接触丰富任务中的成功率，且无需额外人类标注。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.03585v1",
+      "source": "arxiv",
+      "title": "Modular Foundation Models for Time-Series Perception in Digital Twins",
+      "abstract": "Engineering Digital Twins and Prognostics and Health Management (PHM) systems rely on robust perception modules to extract actionable information from heterogeneous and non-stationary time-series data. However, most existing approaches remain task-specific, data-hungry, and difficult to integrate into scalable monitoring and decision-making pipelines. Moreover, purely data-driven models often lack robustness and transferability across varying operating conditions. To address these challenges, this paper proposes a modular foundation model for time-series perception based on a collection of pretrained representation encoders. The framework leverages self-supervised learning on heterogeneous datasets to learn transferable and task-agnostic representations, which can be reused across multiple PHM tasks. A gating mechanism is introduced to dynamically select relevant encoders for a given target dataset, enabling conditional computation and adaptive model composition. The selected representations are projected into a shared latent space and aggregated using a Transformer-based self-attention module that explicitly models cross-encoder interactions. The resulting architecture supports multiple downstream tasks, including imputation, long-term forecasting, and few-shot learning, through lightweight task-specific heads, while keeping pretrained encoders frozen during adaptation. Extensive ablation studies demonstrate the complementary roles of self-supervised pretraining, encoder selection, representation alignment, and adaptive aggregation. Experimental results on the ETT benchmark show competitive performance across tasks, while a real-world industrial case study on virtual sensing for hydro-generator rotor temperature highlights the practical relevance of the approach.",
+      "authors": [
+        "Quang Hung Pham",
+        "Ryad Zemouri",
+        "Martin Gagnon",
+        "Luc Vouligny"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-03T20:02:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.03585v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "modular foundation model for time-series",
+      "llm_evidence_cn": "用于时间序列的模块化基础模型",
+      "llm_evidence": "用于时间序列的模块化基础模型",
+      "canonical_evidence": "用于时间序列的模块化基础模型",
+      "llm_tldr_en": "Proposes a modular foundation model for time-series perception using pretrained representation encoders and self-supervised learning for digital twins.",
+      "llm_tldr_cn": "数字孪生中的时间序列感知依赖任务特定模型，缺乏可扩展性。本文提出模块化基础模型，利用预训练表征编码器集合和自监督学习，从异构数据中学习可迁移的通用表征，提升了鲁棒性和跨工况迁移能力。",
+      "llm_tldr": "数字孪生中的时间序列感知依赖任务特定模型，缺乏可扩展性。本文提出模块化基础模型，利用预训练表征编码器集合和自监督学习，从异构数据中学习可迁移的通用表征，提升了鲁棒性和跨工况迁移能力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.06757v1",
+      "source": "arxiv",
+      "title": "LLM-powered reasoning in agent-based modeling",
+      "abstract": "Agent-based modeling (ABM) has the capability to model millions of individuals and their interactions, which is useful for policy making. However, ABMs have traditionally relied on static prior, which prevents the models from adapting to real-time changes. Our research provides a novel approach to addressing this information gap. Large language models (LLMs) offer new opportunities to predict human decision-making. Here, we introduce a scalable Hybrid Agent-based and Language-driven Epidemic (HALE) modeling framework that leverages LLMs to predict human decision-making in an ABM simulation. As a proof-of-concept, we use HALE to simulate COVID-19 and its effects in Salt Lake County, UT.",
+      "authors": [
+        "Sifat Afroj Moon",
+        "Dakotah Maguire",
+        "Adam Spannaus",
+        "Joe Tuccillo",
+        "Maksudul Alam",
+        "Sudip K. Seal",
+        "John Gounley",
+        "Heidi Hanson"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-07-07T19:39:01+00:00",
+      "link": "https://arxiv.org/pdf/2607.06757v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "agent-based modeling with LLM world dynamics",
+      "llm_evidence_cn": "基于智能体的建模与LLM世界动态",
+      "llm_evidence": "基于智能体的建模与LLM世界动态",
+      "canonical_evidence": "基于智能体的建模与LLM世界动态",
+      "llm_tldr_en": "Introduces HALE, a hybrid LLM-agent-based modeling framework for simulating human decisions in epidemics.",
+      "llm_tldr_cn": "针对传统基于智能体建模依赖静态先验、无法适应实时变化的问题，提出HALE框架，将大语言模型融入ABM以预测人类决策，并在COVID-19模拟中验证有效性。",
+      "llm_tldr": "针对传统基于智能体建模依赖静态先验、无法适应实时变化的问题，提出HALE框架，将大语言模型融入ABM以预测人类决策，并在COVID-19模拟中验证有效性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.06925v1",
+      "source": "arxiv",
+      "title": "Grounding Spatial Relations in a Compact World Model: Instruction Leakage and a Goal-Free Dynamics Fix",
+      "abstract": "Compact world models that condition on a language goal promise to ground relations such as ``put the red block left of the blue block'' using a sparse set of explicit \\emph{reference anchors}. We ask when such references actually ground a relation, and identify a trap: a goal-conditioned predictor reaches a striking $0.90$ relation-readout accuracy, yet this is \\emph{instruction transcription}, not perception. Withholding the goal collapses it to chance ($0.90\\!\\to\\!0.27$, three seeds) and a counterfactual instruction makes the predicted anchors follow the \\emph{false} instruction $94.5\\%$ of the time (true scene $2.3\\%$; $N{=}256$). Tested across three settings and a within-task ablation, our central claim characterizes the confound: \\textbf{instruction leakage occurs when the scored quantity is transcribable from the instruction (when the instruction names the answer) and is essentially independent of how predictive the non-instruction inputs are.} Our tabletop and the external BabyAI benchmark leak, whereas a Language-Table forward-dynamics world model whose instruction names \\emph{referents} does not, until the instruction is augmented to name the direction; and degrading the action never increases leakage, the opposite of what predictor-competition predicts. The diagnosis prescribes the fix: keep the goal out of the dynamics (it belongs to the planner's cost) and supervise the \\emph{read} path, recovering genuine, instruction-independent grounding ($0.88$, identical with and without the goal). The detection protocol and remedy apply to any goal-conditioned world model whose instruction names the scored quantity.",
+      "authors": [
+        "Yufeng Wang",
+        "Lu Wei",
+        "Haibin Ling"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-08T02:38:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.06925v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Compact world model for grounding spatial relations",
+      "llm_evidence_cn": "用于空间关系基础的紧凑世界模型",
+      "llm_evidence": "用于空间关系基础的紧凑世界模型",
+      "canonical_evidence": "用于空间关系基础的紧凑世界模型",
+      "llm_tldr_en": "This paper identifies instruction leakage in compact world models and proposes a goal-free dynamics fix to ensure genuine grounding.",
+      "llm_tldr_cn": "紧凑的世界模型通过语言目标基准化空间关系时存在指令转录陷阱，看似0.90的准确率实为虚假基础。本文通过撤销目标使准确率降至0.27，并提出无目标动力学修正方法，揭示了模型真正感知还是转录指令的关键问题，为世界模型的基础能力提供了重要见解。",
+      "llm_tldr": "紧凑的世界模型通过语言目标基准化空间关系时存在指令转录陷阱，看似0.90的准确率实为虚假基础。本文通过撤销目标使准确率降至0.27，并提出无目标动力学修正方法，揭示了模型真正感知还是转录指令的关键问题，为世界模型的基础能力提供了重要见解。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.03693v1",
+      "source": "arxiv",
+      "title": "CoRE-VLA: Towards Scalable and Robust Vision-Language-Action Modeling via Conditional Routing of Experts",
+      "abstract": "Vision-language-action (VLA) models have advanced generalist robotic manipulation, yet real-world deployment reveals a fundamental challenge: robots are equipped with diverse and heterogeneous sensor configurations, auxiliary sensors can fail unexpectedly during operation, and different robot embodiments often lack certain sensors by design. A unified policy that can exploit auxiliary perceptual inputs when available while remaining reliable under sensor absence, whether incidental or by design, is therefore essential for practical deployment. However, existing VLA policies couple action generation to a fixed sensor set through shared dense computation, making them brittle when sensors are missing and limiting their ability to specialize across diverse tasks and long-horizon behaviors. We propose CoRE-VLA, a scalable and robust VLA framework that formulates action generation as context-conditioned sparse computation. Sensor availability gates modality-specialized experts, enabling graceful degradation under missing sensors without retraining. Task intent further routes action-side representations to task-relevant experts, improving specialization across diverse tasks and long-horizon subgoals. While the framework is designed to accommodate different auxiliary sensors, we focus on depth as a representative and practically important auxiliary modality in our experiments. Experiments on LIBERO, RoboCasa GR1 Tabletop, and real-world dual-arm manipulation show that CoRE-VLA achieves strong results on long-horizon and multi-task benchmarks, and outperforms both a dense-action-generator ablation and a strong pretrained VLA baseline, including in zero-shot generalization to unseen scenarios. Modality analysis shows that CoRE-VLA can exploit auxiliary depth when available while remaining robust when depth is unavailable during deployment.",
+      "authors": [
+        "Haozhe Zhang",
+        "Sixian Li",
+        "Yifei Zhang",
+        "Zezheng Huai",
+        "Hao Chen",
+        "Chunhua Shen",
+        "Jingjing Gong",
+        "Xipeng Qiu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-04T03:58:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.03693v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "vision-language-action model with conditional routing",
+      "llm_evidence_cn": "视觉-语言-动作模型与条件路由",
+      "llm_evidence": "视觉-语言-动作模型与条件路由",
+      "canonical_evidence": "视觉-语言-动作模型与条件路由",
+      "llm_tldr_en": "CoRE-VLA uses conditional routing of experts to handle heterogeneous and missing sensor inputs in VLA models.",
+      "llm_tldr_cn": "针对视觉-语言-动作模型在传感器缺失或异构时鲁棒性差的问题，提出条件专家路由机制，根据可用传感器动态激活专家子网络，实验表明在多种机器人操作任务中有效应对传感器缺失。",
+      "llm_tldr": "针对视觉-语言-动作模型在传感器缺失或异构时鲁棒性差的问题，提出条件专家路由机制，根据可用传感器动态激活专家子网络，实验表明在多种机器人操作任务中有效应对传感器缺失。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.07287v1",
+      "source": "arxiv",
+      "title": "TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation",
+      "abstract": "Dexterous manipulation in everyday environments requires both anticipation and reaction: a robot must predict how contact should evolve while rapidly correcting local errors caused by slip, misalignment, unstable grasping, or force mismatch. Vision and language provide semantic and geometric guidance, but they cannot reliably reveal hidden contact states such as force, slip, and contact stability. Although tactile sensing exposes these physical cues, most existing policies treat touch as a low-frequency observation stream within a monolithic action model, coupling slow task reasoning, action generation, and fast contact feedback in a single loop. We introduce TouchWorld, a predictive-and-reactive tactile foundation model for dexterous manipulation. TouchWorld uses a hierarchical policy that separates vision-language subtask planning, tactile world-model prediction, visuo-tactile goal-conditioned action generation, and high-frequency tactile residual refinement. A High-Level Planning Layer produces executable subtasks and predicts tactile subgoals; a Visuo-Tactile Goal-Conditioned Policy generates nominal action chunks; and a Tactile-Conditioned Refinement Policy performs online residual correction using recent tactile and proprioceptive feedback. By using touch as both a predictive contact reference and a fast feedback signal, TouchWorld preserves the semantic generalization of vision-language-action policies while improving local contact adaptation. Across six long-horizon and contact-rich dexterous manipulation tasks, TouchWorld achieves 65.0% success in the clean setting and 53.7% success under human perturbations, outperforming the strongest baseline by 15.7 and 18.5 percentage points, respectively.",
+      "authors": [
+        "Jianyi Zhou",
+        "Feiyang Hong",
+        "Yunhao Li",
+        "Yicheng Zhao",
+        "Yongjue Cen",
+        "Zirui Liu",
+        "Jiakang Huang",
+        "Zirui Chen",
+        "Ruiyang Zhang",
+        "Weizhuo Zhu",
+        "Xuhua Song",
+        "Shuo Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-08T11:28:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.07287v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "tactile foundation model for dexterous manipulation",
+      "llm_evidence_cn": "触觉基础模型用于灵巧操作",
+      "llm_evidence": "触觉基础模型用于灵巧操作",
+      "canonical_evidence": "触觉基础模型用于灵巧操作",
+      "llm_tldr_en": "TouchWorld: a predictive-and-reactive tactile foundation model for dexterous manipulation combining anticipation and rapid correction.",
+      "llm_tldr_cn": "针对灵巧操作中触觉反馈与动作生成耦合导致响应慢的问题，提出TouchWorld触觉基础模型，将触觉预测与快速反应解耦为独立模块，实验表明在多种操作任务上鲁棒性显著提升。",
+      "llm_tldr": "针对灵巧操作中触觉反馈与动作生成耦合导致响应慢的问题，提出TouchWorld触觉基础模型，将触觉预测与快速反应解耦为独立模块，实验表明在多种操作任务上鲁棒性显著提升。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}

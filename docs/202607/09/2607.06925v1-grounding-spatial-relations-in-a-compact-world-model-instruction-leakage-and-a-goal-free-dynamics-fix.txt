@@ -1,0 +1,326 @@
+Title: Grounding Spatial Relations in a Compact World Model: Instruction Leakage and a Goal-Free Dynamics Fix
+
+URL Source: https://arxiv.org/pdf/2607.06925v1
+
+Published Time: Thu, 09 Jul 2026 00:22:28 GMT
+
+Number of Pages: 13
+
+Markdown Content:
+# Grounding Spatial Relations in a Compact World Model: Instruction Leakage and a Goal-Free Dynamics Fix 
+
+Yufeng Wang ∗1 Lu Wei ∗1 Haibin Ling †21Stony Brook University 2Westlake University 
+
+> ∗
+
+Equal contribution †Corresponding author 
+
+## Abstract 
+
+Compact world models that condition on a language goal promise to ground relations such as “put the red block left of the blue block” using a sparse set of explicit reference anchors . We ask when such references actually ground a relation, and identify a trap: a goal-conditioned predictor reaches a striking 0.90 relation-readout accuracy, yet this is instruction transcrip-tion , not perception. Withholding the goal collapses it to chance ( 0.90 → 0.27 , three seeds) and a counterfactual instruction makes the predicted anchors follow the false instruction 
+
+94 .5% of the time (true scene 2.3% ; N =256 ). Tested across three settings and a within-task ablation, our central claim characterizes the confound: instruction leakage occurs when the scored quantity is transcribable from the instruction (when the in-struction names the answer) and is essentially independent of how predictive the non-instruction inputs are. Our tabletop and the external BabyAI benchmark leak, whereas a Language-Table forward-dynamics world model whose instruction names refer-ents does not, until the instruction is augmented to name the direction; and degrading the action never increases leakage, the opposite of what predictor-competition predicts. The diagnosis prescribes the fix: keep the goal out of the dynamics (it belongs to the planner’s cost) and supervise the read path, recovering genuine, instruction-independent grounding (0.88 , identical with and without the goal). The detection protocol and remedy apply to any goal-conditioned world model whose instruction names the scored quantity. 
+
+## 1 Introduction 
+
+A central promise of world models for embodied control is that they let an agent imagine the consequences of its actions and plan against a goal (Ha & Schmidhuber, 2018; Hafner et al., 2018; 2019; Hansen et al., 2024; Assran et al., 2025). For relational goals such as “put X to the left of Y”, the agent must represent not just appearance but the inter-object spatial relation. A popular and compact recipe pairs a joint-embedding predictive (JEPA) latent with a small set of explicit, metric reference anchors and a language goal token (Maes et al., 2026; Nam et al., 2026): the anchors localize the referents, the latent carries the rest, and the goal conditions behavior. The intuition is that explicit coordinates give a relation a place to live that an entangled global latent does not. We set out to measure this intuition rather than assert it: when, and why, do explicit references help a compact world model represent and act on a spatial relation, and when does a text-conditioned latent already suffice? We build a controlled 2D relational tabletop, a diagnostic task in the spirit of CLEVR (Johnson et al., 2016), in which referential ambiguity is a tunable knob (the number of duplicate distractors), train a ladder of models that vary the representation and the supervision, and evaluate them both as representations 
+
+(can a readout recover the relation?) and as controllers (can a planner achieve the relation?). The study turned on a confound that is worth stating up front because it is easy to fall into. A goal-conditioned model appears to ground relations extremely well: a geometric readout from its predicted anchors reaches 0.90 accuracy and is, deceptively, robust to ambiguity. That number is almost entirely an artifact: because the instruction names the relation being scored, the predictor transcribes the instruction rather 1arXiv:2607.06925v1 [cs.AI] 8 Jul 2026 than perceiving the scene. Two controls, withholding the goal and substituting a counterfactual one, make this precise; the apparent grounding evaporates under both. Generalizing the phenomenon into a falsifiable characterization is the paper’s central claim: instruction leakage in a goal-conditioned world model occurs when the scored quantity is transcribable from the instruction (when the instruction names the answer) and is essentially independent of how predictive the non-instruction inputs (action, state) are. We establish this across three settings: (1) our tabletop and the external BabyAI benchmark, where the instruction names the relation, both leak , (2) whereas Language-Table, a forward-dynamics world model whose instruction names referents rather than the answer, does not . (3) A within-task action-ablation in which degrading the action never increases leakage (the opposite of what competition with the action predicts) shows that the model transcribes even against a perfect action (§5.4). This diagnosis points directly at a fix. If the goal leaks through the dynamics, then the goal does not belong in the dynamics: a world model’s transition should predict the consequences of actions , and the goal should enter only through the planner’s cost, where we use it anyway. We therefore train a variant with goal-free dynamics (the predictor never sees the goal) and a supervised read path for the anchors. This model grounds relations genuinely (its anchors encode the relation independent of the instruction) and, on the control side, confirms that goal-conditioning was actively hurting: removing it recovers control to the level of the simplest no-goal baseline. The remaining gap to an oracle is attributable to dynamics fidelity rather than to the representation. 
+
+Contributions. Our contributions are summarized as follows: 1. A characterization of instruction leakage. We show, across three settings and a within-task ablation, that the confound is governed by transcribability : it appears when the instruction names the scored quantity and is essentially independent of non-instruction predictor strength. Tabletop and BabyAI (instruction names the relation) leak; a Language-Table forward-dynamics world model (instruction names referents) does not, and augmenting its instruction to name the direction induces the leak; an action-ablation dose-response finds leakage never increases as the action is degraded, the opposite of predictor-competition (§5.4). 2. A diagnosis with a validated detection protocol. A goal-conditioned model reaches 0.90 
+
+relation-readout accuracy that is pure transcription: it collapses to chance ( 0.90 → 0.27 , 3 seeds) when the goal is withheld and follows a counterfactual instruction 94 .5% of the time ( N =256 ;Fig. 2a, 2b). The goal-withheld and counterfactual probes (with a validated positive control: an engineered-leaky model fires them at 0.97 ) cleanly separate perception from transcription, and must be run on the training render distribution. 3. A fix, whose payoff is grounding. Moving the goal out of the dynamics and supervising the read path recovers genuine, instruction-independent grounding ( 0.88 , identical with and without the goal); no other variant does. Because the model leaks even against a perfect action, it is removing the goal from the dynamics , not better features, that is required. On control, goal-conditioning monotonically hurts (no-goal 0.30 > goal-as-predictor 0.14 > goal-in-rollout ≈ floor; 3 seeds); the fix recovers control to the simplest no-goal baseline (a tie at 0.29 , not a gain), so its value is grounded 
+
+perception .4. Honest boundaries. A sharp ambiguity boundary for the grounding (Fig. 4) that does not transfer across ambiguity levels, and a residual control gap (all variants ≪ oracle) attributable to dynamics fidelity, not the representation. 
+
+## 2 Related work 
+
+Compact JEPA world models. Our backbone follows the LeWM family (Maes et al., 2026) and instan-tiates the joint-embedding predictive architecture, or JEPA, framework (LeCun et al., 2022; Assran et al., 2023). In this setting, a compact latent representation is rolled forward by an action-conditioned predictor and used for goal-directed planning at test time. Related models predict dense visual features (Zhou et al., 2024) or scale JEPA-style prediction to video (Assran et al., 2025), but relational information, when present, 2is typically stored implicitly inside an opaque latent state. Our work asks whether adding an explicit anchor channel can make such relations more grounded. We find that this depends critically on how the goal enters the model: anchors help only when the model is forced to infer the relation from perception rather than copy it from the goal. 
+
+Structured, object-centric, and point-based world models. A broad line of work adds spatial struc-ture to world models through object-centric representations or point-based dynamics. Object-centric JEPAs (Nam et al., 2026; Wang et al., 2026b; Mosbach et al., 2024; Wu et al., 2022), building on slot-based object representations (Locatello et al., 2020), represent scenes as collections of object-like latents, while point and particle dynamics models (Huang et al., 2025a;b; Kim et al., 2026) model spatial change through explicit points or particles. The closest thread is object-centric JEPA (Nam et al., 2026): because object latents can already encode referential structure, explicit coordinates must provide information that the latent rep-resentation does not reliably capture on its own. Factored latent-action world models (Wang et al., 2026a) also decompose the scene, but they factor the action space through per-factor latent actions, without a JEPA joint-embedding objective or a text goal. In contrast, our factorization is representational : we use a latent state z together with explicit metric anchors, trained under a JEPA objective with a goal. We there-fore do not claim a new architecture; instead, we characterize a failure mode, instruction leakage through goal-conditioned dynamics, that can arise in many structured world models whenever the goal names the relation being evaluated. We also provide a remedy that these models can adopt. Prior work on privileged point supervision discarded at inference (Kim et al., 2026) is complementary to our persistent supervised read path, and known identity-drift failures in object-centric methods further motivate explicit supervision (Manasyan et al., 2025). 
+
+Language-conditioned planning and verify-then-edit. Conditioning the transition model on language is an established design choice, not a strawman. For example, Zhang et al. (2026) inject language features into the JEPA predictor using FiLM (Perez et al., 2018), and instruction-conditioned video models, world models, and language-conditioned manipulation policies (Shridhar et al., 2021; Jiang et al., 2023) commonly feed the instruction into the dynamics. Other approaches keep language out of the transition: some condition the JEPA cost instead of the predictor (Chahe & Zhou, 2026), some use language as a pretext signal (Sun et al., 2026), and others re-score actions or plans against a language goal at the control layer (Chen et al., 2025a;b). Related image-domain work verifies and edits generations according to spatial relations (Lyu et al., 2025). Our point is that feeding the goal into the transition can backfire in a specific but important setting: when the instruction directly names the relation being evaluated. In that case, the predictor can copy the goal information, allowing a relation readout to appear correct without requiring the model to perceive or ground the relation in the scene. Placing the goal in the cost rather than the dynamics follows the standard planning setup and, as we show, avoids this leakage. Thus, our contribution is not to claim that cost-conditioning is entirely new, but to show why goal-conditioned dynamics are unsafe for relation-naming instructions and to provide evidence for a safer alternative. 
+
+Shortcut learning. Instruction transcription is a form of shortcut learning (Geirhos et al., 2020): the model exploits a spurious but predictive signal, the instruction text, instead of the intended signal, the scene. This is analogous to hypothesis-only baselines in natural language inference, where the hypothesis alone can often solve the task (Poliak et al., 2018; Gururangan et al., 2018), and to language priors in visual question answering, where the question alone can predict the answer without using the image (Goyal et al., 2016; Agrawal et al.). Such shortcuts are also a manifestation of simplicity bias (Shah et al., 2020), where models prefer easier predictive signals even when those signals do not reflect the intended reasoning process. Our contribution is to identify a concrete and quantified instance of this problem in goal-conditioned world models, propose a detection protocol for exposing it, and show an architectural remedy that prevents relation readouts from being satisfied through instruction leakage alone. 
+
+## 3 Task and model 
+
+Relational tabletop. We procedurally generate scenes of N =4 colored shapes on a board. One object is the target (slot 0) and one the anchor (slot 1); the relation r ∈ { left , right , above , below } is the dominant 3leak path (removed by GoalFree )             
+
+> image sequence
+> ViT-tiny encoder latent z
+> point anchors p
+> action-cond. predictor
+> goal g
+> ˆz′,ˆp′planner cost (relation)
+> goal belongs here (cost), not in dynamics
+> Figure 1: PrismWM and the leak path. State factors into a JEPA latent z, sparse metric point anchors p,and a goal g. In the goal-conditioned model the goal enters the dynamics (red), letting the predictor transcribe the instruction into anchors. Our fix ( GoalFree ) deletes that edge: the goal enters only the planner cost (green), where it is used for control anyway.
+
+axis of the target relative to the anchor. Referential ambiguity a is the number of duplicate (color, shape) distractors ( a ∈ { 0, . . . , 4}), so language alone cannot always pick the referent. Each episode renders an image sequence; the target is pushed by a 2D action and the kinematics are a deterministic stepper, so the relation can be changed by acting. A language goal is tokenized from a template (“move the ⟨target ⟩ to the ⟨r⟩ of the ⟨anchor ⟩”). This template names r, the property that creates the leakage we study (§5.1). Four-way chance is 0.25 .
+
+PrismWM. The model (Fig. 1) factors state into a global JEPA latent z, a sparse set of metric point anchors p (read from patch features), and a goal embedding g. A ViT-tiny encoder produces z and features. A referential module reads anchors from features, conditions the latent on them, and decodes predicted anchors from the predicted latent. An action-conditioned transformer predictor rolls (z, p ) forward. Training minimizes next-latent prediction, a JEPA regularizer, an anchor (primitive) loss, and a goal loss. The 
+
+referential interface is pluggable (point anchors here; object-token latents as a baseline), so the representation is a measured choice, not an asserted one. 
+
+The ladder. We vary: anchors versus none ( NoGoal versus the text and latent baselines); goal ver-sus no goal; supervising only the predicted anchors ( GoalDyn ) versus also the observed (read) anchors (GoalDyn+Read ); and goal-free dynamics, which is our our fix (named GoalFree , §5.3). We also train learned 
+
+(unsupervised) anchors, but our geometric readout cannot fairly score them (§7), so we report them only as a flagged negative rather than as an interpreted axis. All models are trained per ambiguity level. 
+
+## 4 Evaluation protocol 
+
+We separate representation from control , and within representation we separate perception from transcription .
+
+Representation readouts. From a model’s anchors we compute the observed-anchor accuracy (relation read geometrically from the observed anchors of the current frame) and the predicted-anchor accuracy (from the anchors after a one-step action-conditioned rollout). We also fit a linear probe on the global latent z
+
+(within-distribution stratified split, balanced accuracy). All numbers use n=512 episodes and 1000 -sample bootstrap 95% intervals. 
+
+Leakage controls (the crux). Because the goal template names r, a goal-conditioned readout is con-founded. We add two controls: (i) goal withheld : zero the goal tokens and recompute the readout on the same in-distribution frames; and (ii) counterfactual goal : feed a goal naming a different relation and measure whether the anchors follow the (false) goal or the true scene. A genuine perceptual readout is invariant to (i) and follows the true scene under (ii). We verified that the encode and read path never uses the goal (its readout is identical with and without the goal for every model), so the observed-anchor accuracy is a clean perception measure; the predict path is where transcription occurs. 4Render distribution. Leakage-controlled readouts must run on the training render distribution. A quick variant on freshly generated scenes under-counted a render-sensitive supervised encoder ( 0.35 versus the in-distribution 0.84 ). We use dataset frames throughout and report the fresh-scene probe only for the render-invariant counterfactual. 
+
+Control. We turn the tabletop into a task: generate a scene whose goal relation differs from the current one, and plan an 8-step sequence of pushes by sampling-based model-predictive control (the cross-entropy method (Rubinstein & Kroese, 2004), as in model-based control with learned dynamics (Chua et al., 2018)) that, at each step, re-encodes the real scene, rolls the model’s anchors forward under candidate actions, and scores a soft relation-satisfaction cost. The first action is executed in the kinematic environment and the loop repeats. Success is the true relation achieved. We report the model against a random policy (floor) and an oracle planner that uses the true dynamics (ceiling). For the goal-conditioned models the planner uses the model as a pure forward predictor (goal applied externally in the cost); a goal-in-rollout ablation quantifies how leakage destroys the control signal. 
+
+## 5 Results 
+
+5.1 Apparent grounding is instruction transcription 
+
+A goal-conditioned model with supervised anchors appears to ground relations almost perfectly: its predicted-anchor accuracy is ≈ 0.90 and, deceptively, flat across ambiguity (Table 1, GoalDyn column). The leakage controls dismantle this. Withholding the goal collapses GoalDyn ’s predicted-anchor accuracy from 0.895 to 
+
+0.262 at medium ambiguity, i.e. chance, with non-overlapping intervals (Fig. 2a). The collapse is stable across three training seeds ( 0.900 ± 0.009 given → 0.270 ± 0.034 withheld; mean ±s.d.). Under a counterfactual goal, 
+
+GoalDyn ’s predicted anchors follow the false instruction 94 .5% [0.914,0.969] of the time and the true scene only 
+
+2.3% [0.008,0.047] (N =256 ; Fig. 2b), as visualized in Fig. 3. The predicted-anchor “grounding” is the model copying the instruction into coordinates; ambiguity-robustness is trivial because the answer is in the prompt. The same root cause shows up in control: feeding the goal into the planner’s rollout drops GoalDyn ’s control success to the random floor ( 0.047 at a=2 , ≤ 0.05 across ambiguities). 
+
+5.2 Where genuine perception lives, and where it breaks 
+
+Genuine, goal-independent perception does exist in the observed (read) anchors, when they are supervised. With observed-anchor supervision, GoalDyn+Read reads the true relation at 0.82 and 0.86 at ambiguity 0
+
+and 2. This is verified leakage-free: identical with the true goal and with the goal zeroed on the same frames (Table 1; both the observed-anchor accuracy and the latent probe are goal-invariant for all models). The relation is also partly linearly decodable from the global latent (latent probe 0.54 –0.60 for the supervised-read models), but the explicit anchor channel carries it more cleanly (the observed-anchor accuracy exceeds the latent probe throughout, e.g. 0.83 versus 0.54 for GoalFree at amb2), a quantitative form of the explicit-reference premise. Learned ( unsupervised ) anchors score at chance on the geometric readout ( ≈ 0.25 ). We 
+
+flag rather than interpret this, because the observed-anchor accuracy assumes the supervised slot convention and is not a fair readout for free anchors (§7). Without observed-supervision the read path is weak ( GoalDyn :
+
+≈ 0.37 ). The grounding also has a sharp boundary: at maximal ambiguity ( a=4 , all distractors duplicated) it collapses to chance ( 0.31 ). This is the boundary between where references help and where they do not that the study set out to find (Fig. 4). Moreover, the grounding does not transfer across ambiguity: an a=2 
+
+model reads 0.86 at a=2 but falls to chance ( 0.26 –0.33 ) at every other test ambiguity, including the easier 
+
+a=0 (verified clean: the a=0 data yields 0.82 for the a=0 -trained model). The learned grounding is thus narrowly tuned to its training ambiguity, not a general relational perceiver. 
+
+5.3 Goal-free dynamics recovers grounding; goal-conditioning hurts control 
+
+The diagnosis prescribes the fix: remove the goal from the dynamics. The proposed GoalFree trains the predictor without the goal (it is supplied only to the planner cost) and supervises the read path. 5GoalDyn 
+
+> (goal in dynamics)
+> GoalDyn+Read
+> (+ read sup.)
+> GoalFree
+> (goal-free, ours)
+
+0.0 
+
+0.2 
+
+0.4 
+
+0.6 
+
+0.8 
+
+1.0 
+
+> predicted-anchor accuracy (amb2)
+> chance
+> collapse
+> 0.90  0.27
+
+Goal-conditioned prediction transcribes the instruction; 
+
+goal-free dynamics does not  
+
+> goal given (confounded) goal withheld (leakage-controlled)
+
+(a) follows  
+
+> false goal
+> follows
+> true scene
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> fraction of episodes (N=256)
+> chance
+> 0.94
+> 0.02
+> Counterfactual goal:
+> the predictor copies the instruction
+
+(b) 
+
+Figure 2: Instruction transcription. (a) Predicted-anchor relation accuracy at medium ambiguity with the goal given (grey) versus withheld (color). The goal-conditioned model collapses to chance when the goal is withheld (leak-age); adding observed-supervision partly de-leaks the predictor; goal-free dynamics ( GoalFree , ours) is unchanged because it never uses the goal. (b) Under a counterfactual goal, GoalDyn ’s predicted anchors follow the false instruc-tion, not the scene. Error bars in (a) are mean ±s.d. over three seeds; (b) is a within-model probe with 95% bootstrap intervals; the dashed line is four-way chance. (a) true goal 
+
+> instruction: below
+> read-off: target left_of anchor
+> pred. anchor
+> pred. target
+> (b) goal withheld
+> instruction:
+> read-off: target right_of anchor
+> (c) counterfactual goal
+> instruction: left_of
+> read-off: target left_of anchor
+> True scene relation: target below anchor (GoalDyn predicted anchors)
+
+Figure 3: Transcription, visualized. One tabletop scene (true relation: target below anchor) with GoalDyn ’s 
+
+predicted anchors overlaid (target ◦, anchor □) under three instructions. (a) True goal: the predicted target satisfies the named relation. (b) Goal withheld: the placement is uninformative. (c) Counterfactual goal ( left of ): the predicted target moves to satisfy the false instruction, not the scene; the model draws the answer from the instruction rather than perceiving it. This is a representative example, quantified in Fig. 2a, 2b. 
+
+The payoff is genuine grounding. GoalFree ’s predicted-anchor accuracy is identical with and without the goal (single-seed 0.68 , 0.87 , 0.42 for a=0 , 2, 4): by construction there is nothing to leak. It is high where perception is available ( 0.87 at a=2 single-seed, 0.88 averaged over three seeds), versus the leaked 0.90 → 0.27 . No other variant gives instruction-independent predicted-anchor grounding; this is the fix’s unique contribution. 6Table 1: Leakage-controlled boundary sweep (n=512 , 95% bootstrap intervals). The latent probe and observed-anchor accuracy are goal-invariant (identical with the true and withheld goal) and measure genuine perception; for supervised-read models the anchor channel carries the relation better than the latent (e.g. GoalFree amb2: 0.83 vs. 
+
+0.54 ). Predicted-anchor accuracy is shown with the goal given vs. withheld; the gap is the leakage. Bold in the withheld column marks the key evidence per model: for GoalDyn , the collapse to chance (leakage); for GoalFree ,the match with the goal-given value (no leakage). Bold in the observed-anchor column marks genuine supervised perception ( GoalDyn+Read ). Chance = 0 .25 ; “n/a” = no anchor channel. Values are seed 0; three-seed mean ±s.d. for the headline rows is in §5.3. model amb latent probe obs. acc. pred. acc. (goal given) pred. acc. (withheld) 
+
+GoalDyn (goal in dynamics) 0 0.331 0.352 0.916 0.314 
+
+2 0.290 0.367 0.895 0.262 
+
+4 0.324 0.299 0.908 0.301 
+
+GoalDyn+Read (+ read sup.) 0 0.598 0.820 0.910 0.639 2 0.564 0.859 0.934 0.621 4 0.318 0.307 0.854 0.314 
+
+GoalFree (goal-free, ours) 0 0.456 0.635 0.678 0.678 
+
+2 0.543 0.826 0.869 0.869 
+
+4 0.292 0.318 0.422 0.422 
+
+NoGoal (no goal) 2 0.335 0.479 0.463 0.516 
+
+TextGoal (goal, no anchors) 2 0.284 ≈0.25 ≈0.25 ≈0.25 
+
+ObjToken (object latents) 2 0.303 n/a n/a n/a 0 2 4
+
+> scene ambiguity (number of duplicate distractors)
+> 0.0
+> 0.2
+> 0.4
+> 0.6
+> 0.8
+> 1.0
+> observed-anchor accuracy
+> (goal-independent)
+> collapse zone
+> (max ambiguity)
+> chance (0.25)
+> supervised read paths
+> collapse to chance
+> Supervised reference perception is real at low and medium
+> ambiguity and collapses at maximal ambiguity
+> GoalDyn+Read
+> GoalFree (ours)
+> NoGoal
+> GoalDyn (no read sup.)
+
+Figure 4: The ambiguity boundary of perception. Goal-independent observed-anchor accuracy versus scene ambiguity. Supervised read paths ( GoalDyn+Read , GoalFree ) ground the relation at low and medium ambiguity and collapse at a=4 ; without observed-supervision ( GoalDyn ) or without anchors the read path is near chance throughout. 
+
+For control, the clean result is that goal-conditioning hurts, not that our fix wins. We are deliberate here. The evidence is a monotone gradient in how much the goal drives the dynamics, and across three training seeds (mean ±s.d.) it is consistent: NoGoal (no goal) 0.30 ± 0.02 and GoalFree (goal-free) 0.29 ± 0.03 both exceed GoalDyn (goal as predictor, cost external) 0.14 ± 0.02 , which in turn exceeds GoalDyn with the goal in the rollout 0.03 ± 0.02 (at or below the random floor 0.055 ). The ordering holds in every seed: GoalFree 
+
+> GoalDyn in all three ( 0.31 , 0.31 , 0.27 versus 0.13 , 0.12 , 0.16 ), as does NoGoal > GoalDyn , so the single-seed marginal interval we previously hedged is no longer load-bearing. But removing the goal recovers control 
+
+only to the level of the simplest no-goal baseline : GoalFree 0.29 ± 0.03 ties NoGoal 0.30 ± 0.02 (a wash). We therefore do not claim a control gain from the fix over the natural baseline; the fix’s value is the supervised 
+
+perception NoGoal lacks (Table 1), while its control merely confirms that goal-conditioning was the thing 7Table 2: Closed-loop control success (n=128 , 95% bootstrap intervals). Ordered by goal-in-dynamics: control falls monotonically as the goal gains sway over the dynamics; the goal-free model ( GoalFree ) ties the simplest no-goal baseline ( NoGoal ), and all variants are far below the oracle (a dynamics-fidelity bottleneck). amb2 intervals: NoGoal 
+
+[0 .242 , 0.391] , GoalFree [0 .234 , 0.383] , GoalDyn [0 .078 , 0.195] , GoalDyn +goal-in-rollout [0 .016 , 0.086] . Values are seed 0; the three-seed mean ±s.d. underlies the §5.3 headlines and the abstract. model amb0 amb2 amb4 random oracle 
+
+NoGoal (no goal) 0.250 0.312 0.258 
+
+GoalFree (goal-free, ours) 0.258 0.312 0.219 0.05–0.06 0.71–0.79 
+
+GoalDyn+Read (goal in dynamics) 0.250 0.211 0.172 
+
+GoalDyn (goal as predictor) 0.164 0.133 0.102 
+
+GoalDyn + goal in rollout 0.039 0.047 0.023 NoGoal 
+
+> (no goal)
+> GoalFree
+> (goal-free, ours)
+> GoalDyn
+> (goal in cost)
+> GoalDyn
+> (goal in rollout)
+> 0.0
+> 0.1
+> 0.2
+> 0.3
+> 0.4
+> 0.5
+> 0.6
+> 0.7
+> 0.8
+> control success rate (amb2)  oracle (0.71)
+> random (0.06)
+> tie
+> Goal-in-dynamics monotonically hurts control;
+> goal-free ties the simplest no-goal baseline
+
+Figure 5: Goal-involvement gradient (medium ambiguity). Control falls monotonically as the goal gains sway over the dynamics (no goal → goal as predictor → goal in rollout); the goal-free model ( GoalFree ) ties the simplest no-goal baseline ( NoGoal ), so the fix’s payoff is grounded perception (Fig. 4, Table 1), not a control gain. The gap to the oracle ceiling is dynamics fidelity. Bars are mean ±s.d. over three seeds; the ordering holds in every seed. 
+
+dragging GoalDyn down ( GoalFree also exceeds GoalDyn+Read , 0.29 ± 0.03 versus 0.22 ± 0.03 , in every seed: goal-in-dynamics hurts even with the read path supervised). All variants remain well below the oracle (0.71 ): the residual gap is dynamics fidelity (a one-step-trained predictor whose multi-step rollouts drift, with under-estimated displacement), not the explicit-reference representation. 
+
+5.4 When does the leakage occur? Three settings and a dose-response 
+
+We now establish the central claim: leakage is governed by transcribability (whether the instruction names the scored quantity) and is essentially independent of how predictive the non-instruction inputs are. The counterfactual probe has a validated positive control throughout: an engineered-leaky model fires it at 0.97 
+
+(versus 0.03 for a no-goal baseline), so a “no leak” reading is a real measurement, not a dead instrument. 
+
+BabyAI (external validation: relation-naming instructions cause leakage). We further validate this failure mode on BabyAI (Chevalier-Boisvert et al., 2018), specifically the GoToLocal level of MiniGrid. This setting differs from our generator in environment, modality, and relation type: it uses a symbolic gridworld, and the evaluated relation is the egocentric left /right relation, which is explicitly named in 8Table 3: Action-ablation dose-response (counterfactual cosine; positive control 0.97 ; last column is the mean predicted-displacement magnitude under zero action). Degrading the action never increases leakage in any regime, the opposite of predictor-competition; leakage is governed by whether the instruction names the answer. The synthetic carries the positive (robust motion ≈ 0.13 ); the Language-Table regimes have ≈ 10 × smaller motion, so their cosine is low-signal. regime (counterfactual cosine) α=1 .0 α=0 .5 α=0 .0 disp. mag ( α:1 →0)synthetic (transcription available) 0.975 0.984 0.986 0.12 → 0.13              
+
+> Language-Table, referent-only (no transcription) −0.00 −0.01 −0.08 0.009 →0.010
+> Language-Table, +direction token (transcription on) 0.174 0.161 0.032 0.011 →0.011
+
+BabyAI instructions such as “. . . on your left.” A goal-conditioned readout that FiLMs the instruction into the predictor achieves a score of 1.00 under the true instruction, but also follows a counterfactual instruction with score 1.00 , while the true scene-consistent score is 0.00 . This occurs even though the perceptual problem itself is easy: an observation-only model reaches 0.86 . Thus, the failure is not due to insufficient perceptual information, but to a shortcut introduced by conditioning the dynamics on a relation-naming instruction. The same leakage therefore reproduces outside our own data generator. 
+
+Language-Table (external; instruction names referents ⇒ no leak). We escalate to a goal-conditioned forward-dynamics world model on Google’s Language-Table (Lynch et al., 2023) (2D block pushing; 46 ,426 goal-directed oracle transitions). Here the instruction names referents (“push the blue cube towards the red moon”), so the scored quantity (the direction the target should move) is not transcribable without the block positions. The same validated probe reports no leak (counterfactual cos ≈ 0); a no-goal baseline matches the goal model’s next-state MSE ( 5.08 ×10 −6 versus 5.06 ×10 −6), so the goal is not needed for dynamics. Critically, augmenting the instruction with a token that names the goal direction (making the answer transcribable) flips the counterfactual from ≈ 0 to 0.17 (capped by the small per-step motion): the leak appears exactly when the instruction names the answer. 
+
+Dose-response: leakage is independent of non-instruction predictor strength. A natural alter-native hypothesis is that the model leaks only when the non-instruction inputs (here, the action) are weak predictors. We refute this with a within-task ablation that scales the action input ( α : 1 → 0), holding everything else fixed (Table 3): degrading the action never increases leakage , the opposite of what predictor-competition predicts. With a transcribable instruction and meaningful motion it stays high even against a 
+
+perfect action (synthetic, 0.975 → 0.986 ); without transcription it stays at chance (referent-only, ≈ 0); and in the +direction regime it stays weak and even declines (0.174 → 0.032 ); in no case does weakening the action 
+
+induce leakage. The synthetic is the load-bearing positive: its predicted displacement magnitude is robust (≈ 0.13 , Table 3, last column), so the cosine is a strong probe there; the Language-Table regimes have ≈ 10 ×
+
+smaller motion ( ≈ 0.011 ), making the cosine low-signal, so we read Language-Table only as “transcription off 
+
+⇒ no leak, augmenting it on ⇒ a weak induced leak” and do not over-interpret the +direction within-regime trend. 1
+
+Which deployed designs are exposed? The characterization predicts a structural split, which a survey of recent goal-conditioned models bears out: designs that place the goal in the planner’s cost or re-score rollouts against it (Chen et al., 2025a;b; Chahe & Zhou, 2026) are immune (the predictor never sees the instruction), whereas designs that condition the predictor on language (FiLM-into-the-predictor, e.g. Zhang et al., 2026) are exposed. We were unable to probe a released external model directly: we found no public-weights world model that conditions its predictor on language, so our external evidence is the standard recipe trained on external environments (BabyAI, Language-Table) rather than a published pretrained model. Probing such a model is the one remaining step to turn this characterization into a field-wide audit (§7).         
+
+> 1We had hypothesized the +direction decline was a vanishing-motion floor; the magnitude column refutes that (it is roughly constant in α,≈0.011 ), so we do not attribute the decline to a floor, nor to competition (which predicts the opposite , an increase as α→0). The regime is simply low-signal.
+
+9Summary. Across our studies on tabletop, BabyAI, and Language-Table, the leak is present exactly when the instruction names the scored quantity, and the dose-response shows it does not depend on non-instruction predictor strength. Because the model transcribes even against a perfect action, the remedy must remove the goal from the dynamics (§5.3); better features cannot prevent it. 
+
+## 6 Discussion 
+
+The central lesson is methodological and transferable. When a goal-conditioned world model is evaluated on a relation whose name appears in the instruction, a high relation-readout is not evidence of grounding; it can be pure instruction transcription, and it contaminates control as well as representation. The inexpensive, decisive controls are to withhold the goal and to substitute a counterfactual one, on the training render distribution. The architectural remedy is equally simple and is, in fact, the textbook planning setup: the goal belongs to the cost, not the transition. With the goal removed from the dynamics and the reference read path supervised, explicit anchors do ground relations genuinely, up to a distractor threshold, which is the fix’s payoff. The control story is more sober: goal-conditioning monotonically hurts, and removing it merely recovers control to the simplest no-goal baseline rather than improving on it, so we claim grounded perception, not a control advantage. Two boundaries temper the positive result and are, we think, the more interesting science. The grounding is sharply bounded in ambiguity and does not transfer across ambiguity levels, which suggests the supervised anchors latch onto distribution-specific cues rather than a general relational percept. Moreover, once leakage is removed, the bottleneck for control is no longer the representation but the fidelity of the learned dynamics: a one-step predictor whose multi-step rollouts drift cannot plan as well as the true dynamics even when its one-step anchors are accurate. These point to concrete next steps (multi-step prediction, action calibration, mixed-ambiguity training) rather than to the representation. 
+
+## 7 Limitations 
+
+Our claims are bounded by the following, which we state plainly. (i) Seed and scale coverage is partial. Due to limited computational resources, the leakage collapse ( 0.90 → 0.27 ) and the control gradient are run at three training seeds (mean ±s.d.; orderings hold in every seed, §5.3), but the counterfactual probe ( 94 .5% and 
+
+2.3% , N =256 ) and the across-ambiguity curves (Fig. 4) are single-seed ; we do not run a full seed × ambiguity grid. The seed replication is at the medium-ambiguity operating point (amb2). (ii) Synthetic 2D task; no 3D or real-world validation. The relational tabletop is controlled and toy. Constrained by compute budget, we validate the leakage phenomenon on two external environments (BabyAI, Language-Table) but not on 3D scenes, real images, or high-dimensional action spaces. Scaling to such settings would strengthen the generality claim but requires substantially more training and data. (iii) No external pretrained model probed. We could not find a public-weights world model that conditions its predictor on language; our external evidence therefore uses the standard recipe trained on external environments rather than probing a published pretrained checkpoint. Demonstrating the leak in a released model is the key remaining step. 
+
+(iv) Dataset property. Our instructions name the target relation; this is what enables the leakage we study, and although our fix (goal-free dynamics) is leakage-free by construction regardless of the dataset, a stronger design would decorrelate the goal from the current relation. (v) Control: a tie, not a win, and below oracle. The de-leaked model’s control ties the simplest no-goal baseline ( NoGoal ) rather than beating it (the fix’s value is grounded perception, not a control gain), and all variants remain well short of the oracle, which we attribute to dynamics fidelity. A multi-step prediction objective and action calibration, which we leave to future work due to resource constraints, would likely narrow this gap. (vi) Learned-anchor metric. 
+
+Our geometric readout assumes the supervised slot convention and is therefore not a fair test of learned 
+
+(unsupervised) anchors; we do not report a learned-versus-supervised verdict. 
+
+## 8 Conclusion 
+
+On a controlled relational task, a compact world model with explicit references appears to ground spatial relations but is, under goal conditioning, transcribing the instruction: a shortcut that inflates representation 10 metrics and degrades control, and that is invisible without a goal-withheld or counterfactual control. Moving the goal out of the dynamics, where it does not belong, recovers genuine instruction-independent grounding (the fix’s payoff) and, for control, shows that goal-conditioning was the culprit: removing it restores control to the simplest no-goal baseline, with the residual gap to an oracle attributable to dynamics fidelity rather than the representation. The diagnosis, the detection protocol, and the one-line architectural fix apply to goal-conditioned world models whose instruction names the scored quantity. A survey of recent designs (§5.4) finds that the split between exposed and immune designs is structural: designs that place the goal in the planner’s cost (e.g. Chen et al., 2025a;b; Chahe & Zhou, 2026) are immune by construction, while designs that condition the predictor on language (e.g. FiLM-into-the-predictor Zhang et al., 2026) are exposed. We could not probe a released external model directly, as no public-weights world model conditions its predictor on language, so demonstrating the leak in a published pretrained model (rather than the standard recipe trained on external environments , as here) remains the key step to convert our characterization into a field-wide audit. 
+
+## References 
+
+Aishwarya Agrawal, Dhruv Batra, Devi Parikh, and Aniruddha Kembhavi. Don’t just assume; look and answer: Overcoming priors for visual question answering, june 2018. arXiv preprint arXiv:1712.00377 .Mahmoud Assran, Quentin Duval, Ishan Misra, Piotr Bojanowski, Pascal Vincent, Michael G. Rabbat, Yann LeCun, and Nicolas Ballas. Self-supervised learning from images with a joint-embedding predictive architecture. 2023 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , pp. 15619–15629, 2023. URL https://api.semanticscholar.org/CorpusID:255999752 .Mido Assran, Adrien Bardes, David Fan, Quentin Garrido, Russell Howes, Matthew Muckley, Ammar Rizvi, Claire Roberts, Koustuv Sinha, Artem Zholus, et al. V-jepa 2: Self-supervised video models enable understanding, prediction and planning. arXiv preprint arXiv:2506.09985 , 2025. Amirhosein Chahe and Lifeng Zhou. Policy-guided world model planning for language-conditioned visual navigation. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition ,pp. 834–841, 2026. Delong Chen, Theo Moutakanni, Willy Chung, Yejin Bang, Ziwei Ji, Allen Bolourchi, and Pascale Fung. Planning with reasoning using vision language world model. arXiv preprint arXiv:2509.02722 , 2025a. Jiaming Chen, Wentao Zhao, Ziyu Meng, Donghui Mao, Ran Song, Wei Pan, and Wei Zhang. Vision-language model predictive control for manipulation planning and trajectory generation. arXiv preprint arXiv:2504.05225 , 2025b. Maxime Chevalier-Boisvert, Dzmitry Bahdanau, Salem Lahlou, Lucas Willems, Chitwan Saharia, Thien Huu Nguyen, and Yoshua Bengio. Babyai: A platform to study the sample efficiency of grounded language learning. arXiv preprint arXiv:1810.08272 , 2018. Kurtland Chua, Roberto Calandra, Rowan Thomas McAllister, and Sergey Levine. Deep reinforcement learning in a handful of trials using probabilistic dynamics models. In Neural Information Processing Systems , 2018. URL https://api.semanticscholar.org/CorpusID:44177328 .Robert Geirhos, Jörn-Henrik Jacobsen, Claudio Michaelis, Richard Zemel, Wieland Brendel, Matthias Bethge, and Felix A Wichmann. Shortcut learning in deep neural networks. Nature Machine Intelli-gence , 2(11):665–673, 2020. Yash Goyal, Tejas Khot, Douglas Summers-Stay, Dhruv Batra, and Devi Parikh. Making the v in vqa matter: Elevating the role of image understanding in visual question answering. International Journal of Computer Vision , 127:398 – 414, 2016. URL https://api.semanticscholar.org/CorpusID:8081284 .Suchin Gururangan, Swabha Swayamdipta, Omer Levy, Roy Schwartz, Samuel R Bowman, and Noah A Smith. Annotation artifacts in natural language inference data. In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Tech-nologies, Volume 2 (Short Papers) , pp. 107–112, 2018. 11 David R Ha and Jürgen Schmidhuber. Recurrent world models facilitate policy evolution. In Neural Infor-mation Processing Systems , 2018. URL https://api.semanticscholar.org/CorpusID:52171619 .Danijar Hafner, Timothy P. Lillicrap, Ian S. Fischer, Ruben Villegas, David R Ha, Honglak Lee, and James Davidson. Learning latent dynamics for planning from pixels. ArXiv , abs/1811.04551, 2018. URL https: //api.semanticscholar.org/CorpusID:53280207 .Danijar Hafner, Timothy Lillicrap, Jimmy Ba, and Mohammad Norouzi. Dream to control: Learning behaviors by latent imagination. arXiv preprint arXiv:1912.01603 , 2019. Nick Hansen, Hao Su, and Xiaolong Wang. Td-mpc2: Scalable, robust world models for continuous control. In International Conference on Learning Representations , volume 2024, pp. 47376–47405, 2024. Suning Huang, Qianzhong Chen, Xiaohan Zhang, Jiankai Sun, and Mac Schwager. Particleformer: A 3d point cloud world model for multi-object, multi-material robotic manipulation. arXiv preprint arXiv:2506.23126 ,2025a. Yuanhui Huang, Weiliang Chen, Wenzhao Zheng, Xin Tao, Pengfei Wan, Jie Zhou, and Jiwen Lu. Terra: Explorable native 3d world model with point latents. arXiv preprint arXiv:2510.14977 , 2025b. Yunfan Jiang, Agrim Gupta, Zichen Zhang, Guanzhi Wang, Yongqiang Dou, Yanjun Chen, Fei-Fei Li, Anima Anandkumar, Yuke Zhu, and Linxi (Jim) Fan. Vima: Robot manipulation with multimodal prompts. In International Conference on Machine Learning , 2023. URL https://api.semanticscholar.org/ CorpusID:260844398 .Justin Johnson, Bharath Hariharan, Laurens van der Maaten, Li Fei-Fei, C. Lawrence Zitnick, and Ross B. Girshick. Clevr: A diagnostic dataset for compositional language and elementary visual reasoning. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , pp. 1988–1997, 2016. URL 
+
+https://api.semanticscholar.org/CorpusID:15458100 .Jisoo Kim, Jungbin Cho, Sanghyeok Chu, Ananya Bal, Jinhyung Kim, Gunhee Lee, Sihaeng Lee, Seung Hwan Kim, Bohyung Han, Hyunmin Lee, et al. Pri4r: Learning world dynamics for vision-language-action models with privileged 4d representation. arXiv preprint arXiv:2603.01549 , 2026. Yann LeCun et al. A path towards autonomous machine intelligence version 0.9. 2, 2022-06-27. Open Review ,62(1):1–62, 2022. Francesco Locatello, Dirk Weissenborn, Thomas Unterthiner, Aravindh Mahendran, Georg Heigold, Jakob Uszkoreit, Alexey Dosovitskiy, and Thomas Kipf. Object-centric learning with slot attention. ArXiv ,abs/2006.15055, 2020. URL https://api.semanticscholar.org/CorpusID:220127924 .Corey Lynch, Ayzaan Wahid, Jonathan Tompson, Tianli Ding, James Betker, Robert Baruch, Travis Arm-strong, and Pete Florence. Interactive language: Talking to robots in real time. IEEE Robotics and Automation Letters , 2023. Yuanhuiyi Lyu, Chi Kit Wong, Chenfei Liao, Lutao Jiang, Xu Zheng, Zexin Lu, Linfeng Zhang, and Xuming Hu. Understanding-in-generation: Reinforcing generative capability of unified model via infusing under-standing into generation. arXiv preprint arXiv:2509.18639 , 2025. Lucas Maes, Quentin Le Lidec, Damien Scieur, Yann LeCun, and Randall Balestriero. Leworldmodel: Stable end-to-end joint-embedding predictive architecture from pixels. arXiv preprint arXiv:2603.19312 , 2026. Anna Manasyan, Maximilian Seitzer, Filip Radovic, Georg Martius, and Andrii Zadaianchuk. Temporally consistent object-centric learning by contrasting slots. In Proceedings of the Computer Vision and Pattern Recognition Conference , pp. 5401–5411, 2025. Malte Mosbach, Jan Niklas Ewertz, Angel Villar-Corrales, and Sven Behnke. Sold: Slot object-centric latent dynamics models for relational manipulation learning from pixels. arXiv preprint arXiv:2410.08822 , 2024. 12 Heejeong Nam, Quentin Le Lidec, Lucas Maes, Yann LeCun, and Randall Balestriero. Causal-jepa: Learning world models through object-level latent interventions. arXiv preprint arXiv:2602.11389 , 2026. Ethan Perez, Florian Strub, Harm De Vries, Vincent Dumoulin, and Aaron Courville. Film: Visual rea-soning with a general conditioning layer. In Proceedings of the AAAI conference on artificial intelligence ,volume 32, 2018. Adam Poliak, Jason Naradowsky, Aparajita Haldar, Rachel Rudinger, and Benjamin Van Durme. Hypothesis only baselines in natural language inference. In Proceedings of the seventh joint conference on lexical and computational semantics , pp. 180–191, 2018. Reuven Y Rubinstein and Dirk P Kroese. The cross-entropy method: a unified approach to combinatorial optimization, Monte-Carlo simulation, and machine learning , volume 133. Springer, 2004. Harshay Shah, Kaustav Tamuly, Aditi Raghunathan, Prateek Jain, and Praneeth Netrapalli. The pitfalls of simplicity bias in neural networks. ArXiv , abs/2006.07710, 2020. URL https://api.semanticscholar. org/CorpusID:219687117 .Mohit Shridhar, Lucas Manuelli, and Dieter Fox. Cliport: What and where pathways for robotic manipula-tion. ArXiv , abs/2109.12098, 2021. URL https://api.semanticscholar.org/CorpusID:237396838 .Jingwen Sun, Wenyao Zhang, Zekun Qi, Shaojie Ren, Zezhi Liu, Hanxin Zhu, Guangzhong Sun, Xin Jin, and Zhibo Chen. Vla-jepa: Enhancing vision-language-action model with latent world model. arXiv preprint arXiv:2602.10098 , 2026. Zizhao Wang, Chang Shi, Jiaheng Hu, Kevin Rohling, Roberto Martín-Martín, Amy Zhang, and Peter Stone. Factored latent action world models. arXiv preprint arXiv:2602.16229 , 2026a. Zizhao Wang, Kaixin Wang, Li Zhao, Peter Stone, and Jiang Bian. Dyn-o: Building structured world mod-els with object-centric representations. Advances in Neural Information Processing Systems , 38:121788– 121812, 2026b. Ziyi Wu, Nikita Dvornik, Klaus Greff, Thomas Kipf, and Animesh Garg. Slotformer: Unsupervised visual dynamics simulation with object-centric models. arXiv preprint arXiv:2210.05861 , 2022. Haichao Zhang, Yijiang Li, Shwai He, Tushar Nagarajan, Mingfei Chen, Jianglin Lu, Ang Li, and Yun Fu. Thinkjepa: Empowering latent world models with large vision-language reasoning model. arXiv preprint arXiv:2603.22281 , 2026. Gaoyue Zhou, Hengkai Pan, Yann LeCun, and Lerrel Pinto. Dino-wm: World models on pre-trained visual features enable zero-shot planning. arXiv preprint arXiv:2411.04983 , 2024. 13
