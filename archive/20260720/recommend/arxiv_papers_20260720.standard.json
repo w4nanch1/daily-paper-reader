@@ -1,0 +1,304 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-20T21:26:34.351132+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.15898v1",
+      "source": "arxiv",
+      "title": "Orbis 2: A Hierarchical World Model for Driving",
+      "abstract": "Current world models operate at a single level of abstraction, with most prioritizing perceptual fidelity while lacking the spatial reasoning and semantic understanding required for real-world downstream tasks. We present a hierarchical driving world model that factorizes future prediction across two levels operating at distinct temporal and abstraction scales: a high-level predictor that forecasts coarse scene structure over extended temporal horizons, and a low-level generator that produces detailed predictions conditioned on the high-level output. This decomposition yields high perceptual fidelity while also capturing strong spatial and semantic representations. We further show that pretraining with a diffusion forcing objective yields substantially richer internal representations than the standard teacher forcing objective, while teacher forcing -- predicting only the next frame from clean context -- produces more stable autoregressive rollouts. We therefore introduce a generic two-stage training paradigm that pretrains the model with diffusion forcing and fine-tunes with teacher forcing, combining the representational benefits of the former with the rollout stability of the latter. Our approach achieves state-of-the-art results across the standard suite of driving world model evaluations on established benchmarks, including long-horizon generation fidelity, steering responsiveness evaluated on counterfactual scenarios, and internal representation quality. Project page with code, demo, checkpoints and qualitative results: https://lmb-freiburg.github.io/orbis2.github.io/",
+      "authors": [
+        "Sudhanshu Mittal",
+        "Arian Mousakhan",
+        "Silvio Galesso",
+        "Karim Farid",
+        "Jonannes Dienert",
+        "Rajat Sahay",
+        "Thomas Brox"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-07-17T12:12:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.15898v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "hierarchical world model for driving",
+      "llm_evidence_cn": "用于驾驶的分层世界模型",
+      "llm_evidence": "用于驾驶的分层世界模型",
+      "canonical_evidence": "用于驾驶的分层世界模型",
+      "llm_tldr_en": "Proposes a hierarchical world model that separates high-level coarse prediction from low-level detailed generation, achieving high perceptual fidelity and strong spatial-semantic representations. Pretraining with diffusion forcing yields richer internal representations.",
+      "llm_tldr_cn": "该论文提出一种分层驾驶世界模型Orbis 2，将未来预测分解为高层粗粒度预测和低层细粒度生成，提升了感知保真度和空间语义理解。通过扩散强迫预训练获得更丰富的内部表征，为世界模型在驾驶中的应用提供了新范式。",
+      "llm_tldr": "该论文提出一种分层驾驶世界模型Orbis 2，将未来预测分解为高层粗粒度预测和低层细粒度生成，提升了感知保真度和空间语义理解。通过扩散强迫预训练获得更丰富的内部表征，为世界模型在驾驶中的应用提供了新范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15901v1",
+      "source": "arxiv",
+      "title": "DSWorld: A Data Science World Model for Efficient Autonomous Agents",
+      "abstract": "Despite strong capabilities in data understanding and decision-making, autonomous data science agents still heavily rely on trial-and-error workflows that involve expensive computation. This bottleneck motivates models that can anticipate the effects of data science operations before real execution. In this paper, we introduce the concept of Data Science World Model, which model the data science execution environment by predicting environment state transitions conditioned on current workflow states and candidate operations. We further propose DSWorld, a practical framework that combines structured state construction, cost-aware routing, lightweight real execution, and an LLM-based simulator for expensive operations. To support training, we construct an 8K-scale transition trajectory dataset and introduce Reflective World Model Optimization, an error-aware reinforcement learning strategy for improving transition prediction. Experiments show that DSWorld accelerates RL-based agent training by approximately $14\\times$ and search-based inference by approximately $3$-$6\\times$ while maintaining competitive performance, and outperforms the strongest LLM baseline by 35.6% on transition prediction tasks. The code is available at https://anonymous.4open.science/r/DSWorld.",
+      "authors": [
+        "Zherui Yang",
+        "Fan Liu",
+        "Hao Liu"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-17T12:14:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.15901v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes Data Science World Model for predicting environment state transitions",
+      "llm_evidence_cn": "提出数据科学世界模型，用于预测环境状态转移",
+      "llm_evidence": "提出数据科学世界模型，用于预测环境状态转移",
+      "canonical_evidence": "提出数据科学世界模型，用于预测环境状态转移",
+      "llm_tldr_en": "Proposes DSWorld, a data science world model that predicts environment state transitions conditioned on workflow states and candidate operations, combining structured state construction, cost-aware routing, and an LLM-based simulator to reduce trial-and-error.",
+      "llm_tldr_cn": "针对自主数据科学代理在试错工作流中计算开销大的问题，论文提出数据科学世界模型（DSWorld）。该模型通过预测环境状态转移来避免昂贵的真实执行，结合结构化状态构建、成本感知路由和基于LLM的模拟器，实现对昂贵操作的高效仿真。实验表明该方法显著减少了试错次数，提升了代理效率，为世界模型在数据科学领域的应用奠定了基础。",
+      "llm_tldr": "针对自主数据科学代理在试错工作流中计算开销大的问题，论文提出数据科学世界模型（DSWorld）。该模型通过预测环境状态转移来避免昂贵的真实执行，结合结构化状态构建、成本感知路由和基于LLM的模拟器，实现对昂贵操作的高效仿真。实验表明该方法显著减少了试错次数，提升了代理效率，为世界模型在数据科学领域的应用奠定了基础。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.13597v1",
+      "source": "arxiv",
+      "title": "Semantic Anchoring for Robotic Action Representations",
+      "abstract": "Vision-Language-Action (VLA) models inherit rich semantic representations from pretrained Vision-Language Models, yet fine-tuning on limited robot demonstrations degrades this structure and undermines generalization. A fundamental question therefore arises: what constitutes a good action representation? Inspired by the mirror neuron theory's insight that observation and execution share an intention-level encoding, we examine whether a robot's action representations preserve the semantic structure captured by pretrained encoders. Systematic probing confirms that this structure erodes during finetuning, and that its quality synchronizes with both task success and out-of-distribution generalization. We further introduce a plug-and-play method that anchors action representations to a semantic manifold while decomposing representations into a shared semantic channel and a private channel, all discarded at inference, leaving the deployed model unchanged. Validated on different VLA backbones across simulation and real-world benchmarks, our method yields up to +18.7% on real-world in-distribution tasks and +21.5% on out-of-distribution generalization.",
+      "authors": [
+        "Yuan Xu",
+        "Youheng Shi",
+        "Chengyang Li",
+        "Wentao Zhu",
+        "Yizhou Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-15T08:45:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.13597v1",
+      "tags": [
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Anchors action representations in VLA models to preserve semantic structure from foundation models",
+      "llm_evidence_cn": "将VLA模型中的动作表示锚定到基础模型的语义结构",
+      "llm_evidence": "将VLA模型中的动作表示锚定到基础模型的语义结构",
+      "canonical_evidence": "将VLA模型中的动作表示锚定到基础模型的语义结构",
+      "llm_tldr_en": "Proposes semantic anchoring for robotic action representations to preserve pretrained semantic structure, improving generalization in VLA models.",
+      "llm_tldr_cn": "针对视觉-语言-动作（VLA）模型微调后语义结构退化的问题，提出了语义锚定方法，将动作表示与预训练基础模型的语义空间对齐。实验表明该方法在任务成功率和分布外泛化上均有提升，揭示了动作表示质量与泛化能力的关系。",
+      "llm_tldr": "针对视觉-语言-动作（VLA）模型微调后语义结构退化的问题，提出了语义锚定方法，将动作表示与预训练基础模型的语义空间对齐。实验表明该方法在任务成功率和分布外泛化上均有提升，揭示了动作表示质量与泛化能力的关系。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.15550v1",
+      "source": "arxiv",
+      "title": "SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction",
+      "abstract": "Mobile graphical user interface (GUI) agents have demonstrated remarkable capabilities in automating complex tasks, yet they introduce critical safety risks where a single erroneous action can lead to irreversible consequences. Existing safety mechanisms are primarily reactive, lacking the ability to assess risks before execution. In this paper, we introduce SeerGuard, a consequence-aware safety framework designed to mitigate these risks through pre-execution instruction-level screening and action-level risk assessment. Specifically, the action-level assessment analyzes agent-proposed actions within current GUI states, anticipating likely outcomes to identify risks before they are executed. To enable these capabilities, we construct a unified safety-augmented world model (SAWM) via multi-task learning, integrating semantic next-state prediction with safety risk assessment. Extensive experiments demonstrate that SeerGuard generalizes effectively across diverse mobile GUI agents. On Qwen3-VL-8B-Instruct, it increases the safety-utility score from $0.191$ to $0.596$ at $ω=0.8$ and reduces the risk-cost score from $0.347$ to $0.130$ at $α=0.8$. Further analyses on our SAWM validate the effectiveness of the instruction-level screening, alongside the capability of action risk assessment and next-state prediction.",
+      "authors": [
+        "Xue Yu",
+        "Bo Yuan",
+        "Pengshuai Yang",
+        "Kailin Zhao",
+        "Hong Hu",
+        "Junlan Feng"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-17T01:45:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.15550v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "world model prediction for safety in GUI agents",
+      "llm_evidence_cn": "世界模型预测用于GUI代理安全",
+      "llm_evidence": "世界模型预测用于GUI代理安全",
+      "canonical_evidence": "世界模型预测用于GUI代理安全",
+      "llm_tldr_en": "Proposes SeerGuard, a safety framework that uses a world model to predict outcomes of actions before execution, providing instruction-level screening and action-level risk assessment for mobile GUI agents.",
+      "llm_tldr_cn": "该论文提出SeerGuard框架，利用世界模型预测移动GUI代理动作的后果，在动作执行前进行风险识别。框架包含指令级筛选和动作级风险评估，通过统一的世界模型实现前瞻性安全监控，防止不可逆错误。",
+      "llm_tldr": "该论文提出SeerGuard框架，利用世界模型预测移动GUI代理动作的后果，在动作执行前进行风险识别。框架包含指令级筛选和动作级风险评估，通过统一的世界模型实现前瞻性安全监控，防止不可逆错误。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.15621v1",
+      "source": "arxiv",
+      "title": "Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving",
+      "abstract": "Large language models bring instruction following and scene reasoning to end-to-end driving, but their inference latency collides with the control rate a vehicle requires. Existing closed-loop agents hide this gap by invoking the model on alternate simulation ticks and replaying the previous command in between, so half of all control outputs ignore the newest observations. We present a fast-slow architecture that removes this compromise. A frozen 7B vision-language backbone acts as the slow system, digesting navigation instructions and visual history at low frequency while exposing its per-layer key-value cache as a standing representation of the scene. A lightweight action expert acts as the fast system, attending to this cache and to the current camera frame at every simulation tick to regress waypoints in a single forward pass. Since the cache lags behind the world at deployment, we train the expert under randomized staleness, aligning training with asynchronous execution. On LangAuto-Short routes in CARLA, our system produces fresh control at every 50 ms simulation tick and lifts route completion from 37.0 to 94.0 over the frame-skipping baseline. A frame-skip ablation with the same expert separates the two factors at work: the expert raises the driving score on its own, while per-tick freshness raises completion from 82.1 to 94.0 and cuts red-light violations by a third. Trained on a single town, the expert transfers zero-shot to two unseen towns, holding 84-94% route completion where the baseline reaches 31-41%. It reduces open-loop waypoint error by nearly a factor of four compared to the backbone's own action head, at a per-tick model cost of 32 ms that is independent of history length on a single consumer GPU.",
+      "authors": [
+        "Yun Li",
+        "Jiachen Gong",
+        "Simon Thompson",
+        "Ehsan Javanmardi",
+        "Qunli Zhang",
+        "Zifan Zeng",
+        "Shiming Liu",
+        "Peng Wang",
+        "Zixuan Guo",
+        "Manabu Tsukada"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-17T04:40:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.15621v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "fast-slow architecture with world representation and action expert",
+      "llm_evidence_cn": "快慢架构结合世界表示与动作专家",
+      "llm_evidence": "快慢架构结合世界表示与动作专家",
+      "canonical_evidence": "快慢架构结合世界表示与动作专家",
+      "llm_tldr_en": "Proposes an asynchronous fast-slow architecture where a frozen 7B VL backbone provides slow scene representation, and a lightweight action expert performs fast control, achieving closed-loop driving without latency compromise.",
+      "llm_tldr_cn": "该论文针对大语言模型推理延迟与驾驶控制速率冲突的问题，提出异步快慢架构。慢系统（冷冻7B视觉语言模型）低频消化指令与视觉历史并暴露场景表示，快系统（轻量动作专家）高频执行动作。该方法有效解耦了推理与动作，同时保持了场景理解能力。",
+      "llm_tldr": "该论文针对大语言模型推理延迟与驾驶控制速率冲突的问题，提出异步快慢架构。慢系统（冷冻7B视觉语言模型）低频消化指令与视觉历史并暴露场景表示，快系统（轻量动作专家）高频执行动作。该方法有效解耦了推理与动作，同时保持了场景理解能力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.13072v1",
+      "source": "arxiv",
+      "title": "HRO: Hierarchical Room-to-Object Framework for Zero-Shot Object Goal Navigation with Large Language Models",
+      "abstract": "Zero-shot object-goal navigation aims to enable an intelligent agent to explore and navigate to objects of unknown categories in an unfamiliar environment without specific target training. In zero-shot navigation tasks, pre-trained large models are usually employed to leverage their prior knowledge for guiding the agent's navigation. However, existing zero-shot object-goal navigation methods based on large language models (LLMs) merely utilize LLMs as flat reasoning tools to directly associate objects or regions. They lack the hierarchical spatial cognition modeling of human-like room semantics to object localization, which leads to strong blindness in exploration, insufficient accuracy in semantic association, and failure to fully unleash the common-sense reasoning potential of LLMs. This paper proposes an LLM-driven hierarchical room-to-object (HRO) framework for zero-shot object-goal navigation, which guides the agent to explore and navigate to the target object in a coarse-to-fine manner. Experiments on Gibson and HM3D datasets verify that our HRO framework achieves superior success rate and generalization over existing LLM-based methods, underscoring LLMs' strong potential for zero-shot object-goal navigation.",
+      "authors": [
+        "Luyuan Jia",
+        "Yinfeng Yu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "eess.SP"
+      ],
+      "published": "2026-07-12T06:28:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.13072v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "hierarchical framework for zero-shot object-goal navigation using LLMs for spatial reasoning and action selection",
+      "llm_evidence_cn": "使用LLM进行空间推理和动作选择的层次化零样本目标导航框架",
+      "llm_evidence": "使用LLM进行空间推理和动作选择的层次化零样本目标导航框架",
+      "canonical_evidence": "使用LLM进行空间推理和动作选择的层次化零样本目标导航框架",
+      "llm_tldr_en": "Proposes HRO, a hierarchical room-to-object framework for zero-shot object-goal navigation that leverages LLMs for hierarchical spatial reasoning, improving exploration efficiency and semantic association accuracy over flat reasoning baselines.",
+      "llm_tldr_cn": "针对零样本目标导航中现有LLM方法缺乏层次化空间认知导致探索盲目性大、语义关联不准的问题，论文提出层次化房间到对象（HRO）框架。该框架利用LLM模拟人类从房间语义到对象定位的层次推理，引导智能体高效探索。实验证明HRO在多种未知环境中显著提升了导航成功率和效率，为将LLM用于世界理解与动作规划提供了新思路。",
+      "llm_tldr": "针对零样本目标导航中现有LLM方法缺乏层次化空间认知导致探索盲目性大、语义关联不准的问题，论文提出层次化房间到对象（HRO）框架。该框架利用LLM模拟人类从房间语义到对象定位的层次推理，引导智能体高效探索。实验证明HRO在多种未知环境中显著提升了导航成功率和效率，为将LLM用于世界理解与动作规划提供了新思路。",
+      "llm_tags": [
+        "query:world:composite"
+      ],
+      "matched_query_tag": "query:world:composite",
+      "matched_query_text": "Papers central to 查找有关world action model的论文 可以是foundation model, especially work that connects or combines: r; m; w; world model; foundation model; world action model foundation model; action model with world representation.",
+      "matched_requirement_id": "req-composite-world",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.15641v1",
+      "source": "arxiv",
+      "title": "IMBench: A Benchmark for Intuitive Robotic Manipulation",
+      "abstract": "Humans combine reasoning and motor control to solve complex manipulation tasks under diverse constraints. They build an understanding of the physical world that helps them convert reasoning into actions and quickly adapt to new scenes, tasks, and rules. We refer to this capability as intuitive manipulation. Existing benchmarks fail to capture this integration: they evaluate physical reasoning in isolation from execution, or measure policy performance without requiring explicit reasoning. We introduce IMBENCH, a benchmark designed to evaluate intuitive manipulation as an integrated capability spanning perception, physical reasoning, action generation, and iterative execution. Our tasks require models to infer task-relevant physical structure and generate feasible action sequences under explicit constraints, including contact-rich manipulation, tool use, and multi-stage dependencies. We introduce a benchmark of 35 tasks, 14K filtered trajectories, and scalable tools for generating diverse scenarios. Experiments reveal a consistent gap: vision language models show partial physical reasoning ability but fail to produce executable plans, while state-of-the-art vision-language-action models struggle to satisfy task constraints and generalize across scenarios. These results identify intuitive manipulation as a missing axis in current foundation models and generalist robot policies, and position IMBENCH as a step toward evaluating and enabling more integrated, adaptive physical intelligence.",
+      "authors": [
+        "Anurag Maurya",
+        "Sukhvansh Jain",
+        "Prajwal Avhad",
+        "Gautham Balachandran",
+        "Ziyi Zhou",
+        "Atharva Kshirsagar",
+        "Satyam Singh",
+        "Bowen Li. Rishabh Mukund",
+        "Ritul Singh",
+        "Jatin Vira",
+        "Suvonil Chatterjee",
+        "Devesh K. Jha"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-17T05:34:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.15641v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "benchmark for intuitive robotic manipulation integrating physical reasoning and action generation",
+      "llm_evidence_cn": "集成物理推理与动作生成的直觉机器人操作基准",
+      "llm_evidence": "集成物理推理与动作生成的直觉机器人操作基准",
+      "canonical_evidence": "集成物理推理与动作生成的直觉机器人操作基准",
+      "llm_tldr_en": "IMBench evaluates intuitive manipulation as integrated capability spanning perception, physical reasoning, action generation and iterative execution, requiring models to infer physical structure and generate feasible actions.",
+      "llm_tldr_cn": "现有基准要么孤立评估物理推理，要么仅测量策略性能，缺乏对直觉操作的综合评价。本文提出IMBench，一个评估直觉机器人操作的基准，涵盖感知、物理推理、动作生成和迭代执行。任务要求模型推断任务相关的物理结构并生成可行动作，实现了对世界表征与动作生成能力的联合测试。",
+      "llm_tldr": "现有基准要么孤立评估物理推理，要么仅测量策略性能，缺乏对直觉操作的综合评价。本文提出IMBench，一个评估直觉机器人操作的基准，涵盖感知、物理推理、动作生成和迭代执行。任务要求模型推断任务相关的物理结构并生成可行动作，实现了对世界表征与动作生成能力的联合测试。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
