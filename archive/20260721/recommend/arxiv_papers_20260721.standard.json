@@ -1,0 +1,561 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-21T21:17:40.473825+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 10,
+    "deep_cap": 6,
+    "deep_selected": 7,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2607.17454v1",
+      "source": "arxiv",
+      "title": "Test-Time Scaling for World Action Models via Zero-Shot Geometric Evaluation",
+      "abstract": "Test-time scaling improves foundation-model inference by spending additional computation, but robot control requires deciding whether extra compute is useful before executing an action. World Action Models (WAMs) make this decision natural: each rollout exposes both an action chunk and predicted future observations. We propose \\methodgated, a training-free selective test-time scaling framework for WAMs. We first instantiate \\method, a fixed-budget Best-of-$N$ selector that ranks sampled rollouts by cross-view depth reprojection consistency of their predicted futures, computed with a frozen geometry foundation model. \\methodgated\\ adds a lightweight action--future consistency gate that invokes \\method\\ only when the initial rollout appears internally inconsistent. Across five benchmark--backbone settings on RoboCasa, LIBERO Long, and RoboTwin~2.0, fixed-budget \\method\\ improves $N{=}8$ task success in every setting, e.g., raising the RoboCasa group average from $66.3\\%$ to $68.4\\%$ with Cosmos Policy and from $80.8\\%$ to $82.5\\%$ with X-WAM. With gating enabled, \\methodgated\\ recovers on average $74.8\\%$ of the always-on success gain while triggering additional sampling on only $26.2\\%$ of decision points. Offline diagnostics show that cross-view reprojection is a strong task-label-free selector, and we identify false low-score selections as a failure mode that helps explain why performance can saturate or degrade as $N$ increases.",
+      "authors": [
+        "Zesen Zhao",
+        "Minkyoung Cho",
+        "Hui shen",
+        "Boyuan Zheng",
+        "Kunxiao Gao",
+        "Yulong Cao",
+        "Z. Morley Mao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-20T01:05:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.17454v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "World Action Models with test-time scaling",
+      "llm_evidence_cn": "世界动作模型与测试时扩展",
+      "llm_evidence": "世界动作模型与测试时扩展",
+      "canonical_evidence": "世界动作模型与测试时扩展",
+      "llm_tldr_en": "Proposes a training-free selective test-time scaling framework for World Action Models (WAMs), using cross-view depth reprojection consistency to rank rollouts and a gate to invoke scaling only when needed, improving computation-efficiency trade-off in robot control.",
+      "llm_tldr_cn": "机器人控制中测试时扩展虽能提升基础模型推理质量，但需判断何时值得额外计算。针对世界动作模型（WAM），本文提出无需训练的选择性测试时扩展框架：利用冻结几何基础模型计算跨视图深度重投影一致性来排序采样轨迹，并添加轻量级动作-未来一致性门控，仅在需要时激活扩展。实验表明该方法有效提升计算效率与性能平衡。",
+      "llm_tldr": "机器人控制中测试时扩展虽能提升基础模型推理质量，但需判断何时值得额外计算。针对世界动作模型（WAM），本文提出无需训练的选择性测试时扩展框架：利用冻结几何基础模型计算跨视图深度重投影一致性来排序采样轨迹，并添加轻量级动作-未来一致性门控，仅在需要时激活扩展。实验表明该方法有效提升计算效率与性能平衡。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.16602v1",
+      "source": "arxiv",
+      "title": "PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration",
+      "abstract": "Action-conditioned world models are a key component of embodied AI, serving as scalable policy evaluators that reduce reliance on expensive real-world rollouts. To accurately capture diverse action-induced dynamics, such models should satisfy three key objectives-Physical Plausibility (P), Action Adherence (A), and Visual Fidelity (V), collectively referred to as PAV-while remaining robust to both in-distribution (ID) expert demonstrations and out-of-distribution (OOD) actions. However, existing methods primarily rely on ID action-video pairs and pixel-level reconstruction losses, which do not explicitly optimize PAV objectives and generalize poorly beyond expert data. To address this, we propose PAVXploreRL, a reinforcement learning framework built on a pretrained latent world model that explicitly optimizes PAV objectives through reward-driven training. To improve action generalization, our method jointly leverages ID trajectories and noise-driven OOD action exploration, without paired video supervision. Experiments show that PAVXploreRL consistently outperforms pretrained baselines, achieving a 5.6% average gain across benchmarks and producing higher-quality PAV properties. As a policy evaluator, it also yields more reliable performance estimates and reduces the overestimation bias of prior expert-only world models such as Ctrl-World. Code: https://github.com/Social-AI-Studio/PAVXploreRL",
+      "authors": [
+        "Han Wang",
+        "Zijun Wang",
+        "Shuoshuo Xue",
+        "Rui Cao",
+        "Fenjiao Cheng",
+        "Xiaodang Liang",
+        "Roy Ka-Wei Lee"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-18T02:42:27+00:00",
+      "link": "https://arxiv.org/pdf/2607.16602v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "action-conditioned world model with physical plausibility and visual fidelity optimization",
+      "llm_evidence_cn": "动作条件世界模型的物理合理性、动作一致性和视觉保真度优化",
+      "llm_evidence": "动作条件世界模型的物理合理性、动作一致性和视觉保真度优化",
+      "canonical_evidence": "动作条件世界模型的物理合理性、动作一致性和视觉保真度优化",
+      "llm_tldr_en": "Proposes PAVXploreRL, a reinforcement learning method to optimize action-conditioned world models for physical plausibility, action adherence, and visual fidelity, improving robustness to OOD actions.",
+      "llm_tldr_cn": "针对现有动作条件世界模型在分布外泛化不足的问题，提出PAVXploreRL，通过强化学习显式优化物理合理性、动作一致性和视觉保真度三个目标。实验表明该方法在多种具身环境中的预测质量和鲁棒性显著优于基线，为世界模型在开放世界中的应用奠定了基础。",
+      "llm_tldr": "针对现有动作条件世界模型在分布外泛化不足的问题，提出PAVXploreRL，通过强化学习显式优化物理合理性、动作一致性和视觉保真度三个目标。实验表明该方法在多种具身环境中的预测质量和鲁棒性显著优于基线，为世界模型在开放世界中的应用奠定了基础。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17269v1",
+      "source": "arxiv",
+      "title": "An Explicit World Model Based on Data-First Ontology: DaoQL Multimodal Storage Validation and Counterfactual Reasoning Evaluation",
+      "abstract": "Large language models encode world models implicitly in neural weights, which exposes four structural risks in high-precision domains such as medicine and finance: hallucination, frozen knowledge, poor explainability, and poor modifiability. This paper proposes data-first ontology: LLMs are treated as reasoning and language engines, while deterministic knowledge is moved into an explicit multimodal database, DaoQL. We formalize an explicit world model and show that, under rule independence, deterministic evaluation, and fixed conflict resolution, explicit models provide a sufficient condition for composable counterfactual decomposability; implicit models lack atomic read/delta semantics and therefore provide no comparable architectural guarantee. The implemented system focuses on DaoQL's verified storage layer and explicit Eval path, integrating graph, column, vector, and full-text engines within one process. KVCache graph nodes, expert hot updates, and the DaoQL-Agent runtime remain future work. On an embedded same-machine setup, DaoQL reports graph BFS at 1.20 ms, HNSW at 83.1 us, and a Fluent hybrid query at 105.8 us; these results indicate engineering potential but must be interpreted with deployment-shape differences from client-server systems. Exploratory measurements on LDBC SNB SF1 and ANN-Benchmarks further show 34/34 query coverage with interactive-class queries mostly in the sub-millisecond to millisecond range, but only 1.8 QPS overall due to long-tail BI/IC queries; ANN-Benchmarks reaches Recall@10 >= 99% at thousand-level QPS after a bridge-edge protection fix. In a five-domain counterfactual experiment (n = 1250), DaoQL+GPT-4o achieves 94% composable counterfactual decomposability, 49 percentage points above GPT-4o alone. The paper explicitly separates provable structure, preliminary empirical evidence, and architectural roadmap claims.",
+      "authors": [
+        "Zhanbo Li",
+        "Shifeng Wu",
+        "Xiangjin Meng",
+        "Wenjie Cai"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "published": "2026-07-19T14:20:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.17269v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "explicit world model via data-first ontology",
+      "llm_evidence_cn": "基于数据优先本体的显式世界模型",
+      "llm_evidence": "基于数据优先本体的显式世界模型",
+      "canonical_evidence": "基于数据优先本体的显式世界模型",
+      "llm_tldr_en": "Proposes an explicit world model using DaoQL database to overcome hallucination and inflexibility of implicit neural world models, validated on counterfactual reasoning.",
+      "llm_tldr_cn": "大型语言模型在神经权重中隐式编码世界模型，但存在幻觉、知识冻结等问题。本文提出数据优先本体，将确定性知识转移到显式多模态数据库DaoQL中，形式化了一个显式世界模型。实验表明，在规则独立等条件下，显式模型具备可组合的反事实分解能力。该工作为高精度领域（如医疗、金融）提供了可靠的世界建模方案。",
+      "llm_tldr": "大型语言模型在神经权重中隐式编码世界模型，但存在幻觉、知识冻结等问题。本文提出数据优先本体，将确定性知识转移到显式多模态数据库DaoQL中，形式化了一个显式世界模型。实验表明，在规则独立等条件下，显式模型具备可组合的反事实分解能力。该工作为高精度领域（如医疗、金融）提供了可靠的世界建模方案。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17521v1",
+      "source": "arxiv",
+      "title": "GeoWorldAD: Geometry World Action Model for Autonomous Driving",
+      "abstract": "Autonomous driving requires both safe and efficient planning decisions in dynamic 3D environments. Although recent Vision/Video-Action models learn policies directly from visual observations and scale well with advances in vision transformers and large-scale training data, they often lack explicit geometric grounding and future-aware spatial guidance, limiting their ability to balance collision avoidance and driving progress. In this work, we propose GeoWorldAD, a geometry world action model that grounds trajectory planning in ego-aligned 3D space and anticipates short-horizon scene evolution with latent future geometry tokens. Present geometry provides essential spatial constraints for safe planning, while future geometry reveals how surrounding agents and ego-centric free space may evolve, reducing overly conservative decisions without sacrificing safety. To efficiently exploit these geometric cues, GeoWorldAD progressively aggregates multi-scale present geometry and latent future geometry through iterative trajectory refinement. Experiments on NAVSIM v1 and v2 demonstrate state-of-the-art performance, highlighting the effectiveness of explicit 3D geometry grounding and future geometry world modeling for safe and efficient autonomous driving.",
+      "authors": [
+        "Songyan Zhang",
+        "Jinyuan Tian",
+        "Hanbing Li",
+        "Daqi Liu",
+        "Hao Chen",
+        "Wenhui Huang",
+        "Fang Li",
+        "Guang Chen",
+        "Hangjun Ye",
+        "Long Chen",
+        "Kuiyuan Yang",
+        "Chen Lv"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-20T03:56:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.17521v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes a geometry world action model for autonomous driving",
+      "llm_evidence_cn": "提出了面向自动驾驶的几何世界行动模型",
+      "llm_evidence": "提出了面向自动驾驶的几何世界行动模型",
+      "canonical_evidence": "提出了面向自动驾驶的几何世界行动模型",
+      "llm_tldr_en": "Proposes GeoWorldAD, a geometry world action model that grounds trajectory planning in 3D space and anticipates scene evolution with latent future geometry tokens, addressing safe and efficient planning in dynamic environments.",
+      "llm_tldr_cn": "针对自动驾驶在动态三维环境中缺乏几何引导和未来感知的问题，提出GeoWorldAD几何世界行动模型，将轨迹规划锚定于自车对齐的三维空间，并使用潜在未来几何标记预测短时场景演化。实验表明该方法在安全性与效率上均优于现有Vision/Video-Action模型。该工作为世界行动模型与几何表示的融合提供了新范式。",
+      "llm_tldr": "针对自动驾驶在动态三维环境中缺乏几何引导和未来感知的问题，提出GeoWorldAD几何世界行动模型，将轨迹规划锚定于自车对齐的三维空间，并使用潜在未来几何标记预测短时场景演化。实验表明该方法在安全性与效率上均优于现有Vision/Video-Action模型。该工作为世界行动模型与几何表示的融合提供了新范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17747v1",
+      "source": "arxiv",
+      "title": "Mobile Network Control with a World Model",
+      "abstract": "The increasing complexity of mobile networks necessitates intelligent and dynamic control strategies for efficient, energy-conserving management. We propose a world model-based approach for network control that enables adaptive configuration of crucial parameters. The world model is trained from historical data and predicts the impact of its actions on future network states. Our controller leverages the model's uncertainty estimate to robustly find optimal network configuration changes. Furthermore, the optimization objective can be changed dynamically without model retraining. We demonstrate the effectiveness of the approach in simulated closed-loop control of a mobile network energy-saving feature. Our results show improved performance in balancing energy savings with quality of service, compared to traditional methods and reinforcement learning approaches. Finally, we show the world model performance on real network data from, and evaluate counterfactual actions proposed by the controller under various throughput constraints.",
+      "authors": [
+        "Maxime Bouton",
+        "Ioanna Mitsioni",
+        "Simon Lindståhl",
+        "Jaeseong Jeong"
+      ],
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T09:40:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.17747v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "world model for mobile network control",
+      "llm_evidence_cn": "用于移动网络控制的世界模型",
+      "llm_evidence": "用于移动网络控制的世界模型",
+      "canonical_evidence": "用于移动网络控制的世界模型",
+      "llm_tldr_en": "Proposes a world model-based approach for mobile network control that predicts future network states and uses uncertainty estimates to find optimal configuration changes, demonstrating improved energy-quality balance in simulated closed-loop control.",
+      "llm_tldr_cn": "移动网络控制面临复杂度高、需动态调整参数的挑战。本文提出基于世界模型的控制方法，从历史数据学习并预测动作对未来网络状态的影响，利用模型不确定性鲁棒地找到最优参数变更。支持动态切换优化目标而无需重训练。在模拟闭环节能实验中，有效平衡了节能与服务质量。",
+      "llm_tldr": "移动网络控制面临复杂度高、需动态调整参数的挑战。本文提出基于世界模型的控制方法，从历史数据学习并预测动作对未来网络状态的影响，利用模型不确定性鲁棒地找到最优参数变更。支持动态切换优化目标而无需重训练。在模拟闭环节能实验中，有效平衡了节能与服务质量。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17973v1",
+      "source": "arxiv",
+      "title": "SAGE: Subgoal-Conditioned Action Generation for Latent World Model Planning",
+      "abstract": "Latent world models have emerged as a powerful planning paradigm by learning action-conditioned predictive dynamics and using them as internal simulators to imagine and evaluate candidate action sequences. However, as the planning horizon grows, performance becomes increasingly constrained by proposal quality: a fixed candidate budget must search an exponentially larger action space, making it difficult to expose the world model to high-quality candidate futures for evaluation. In this paper, we introduce a prior-conditioned planner that replaces random proposal initialization with structured guidance. At each planning stage, a goal-conditioned generator predicts the next reachable latent subgoal for a specified duration, which is then used to condition the generation of candidate action sequences. To capture semantic information across temporal scales, we use subgoals of varying durations as priors, balancing fine-grained local control with higher-level long-horizon progress. Then the frozen world model evaluates and refines these subgoal-conditioned proposals before execution. Experiments on PushT and OGBench Cube show that coupling latent subgoal decomposition with prior-conditioned action generation substantially improves long-horizon planning while preserving strong short-horizon performance. To be specific, when the target offset is $150$, it raises PushT success from $12.7\\%$ to $64.7\\%$ and OGBench Cube success from $26.7\\%$ to $67.3\\%$.",
+      "authors": [
+        "Letian Cheng",
+        "Qi Zhang",
+        "Yisen Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T14:10:56+00:00",
+      "link": "https://arxiv.org/pdf/2607.17973v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "subgoal-conditioned action generation for latent world model planning",
+      "llm_evidence_cn": "为潜在世界模型规划生成子目标条件动作",
+      "llm_evidence": "为潜在世界模型规划生成子目标条件动作",
+      "canonical_evidence": "为潜在世界模型规划生成子目标条件动作",
+      "llm_tldr_en": "Proposes SAGE, a prior-conditioned planner that generates subgoal-conditioned action sequences for latent world model planning, improving candidate quality over random initialization.",
+      "llm_tldr_cn": "针对世界模型规划中随机初始化候选动作序列质量低的问题，提出SAGE框架，通过目标条件生成器预测每个阶段的可达子目标，从而引导动作搜索。该方法在复杂长期规划任务中显著提高了搜索效率和性能，证明了结构化先验对世界模型规划的重要性。",
+      "llm_tldr": "针对世界模型规划中随机初始化候选动作序列质量低的问题，提出SAGE框架，通过目标条件生成器预测每个阶段的可达子目标，从而引导动作搜索。该方法在复杂长期规划任务中显著提高了搜索效率和性能，证明了结构化先验对世界模型规划的重要性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.18154v1",
+      "source": "arxiv",
+      "title": "World Translation: Minimizing Sim-to-Real Gap with Backward Dynamics Extraction and Unpaired Domain Translation",
+      "abstract": "The gap between simulation and reality remains a fundamental challenge in deploying simulation-trained robotic policies in the real world. Real-to-sim methods narrow this gap from the real side, learning transition dynamics from real data to build a more realistic digital world. Learned dynamics models are their dominant instance. Such methods, however, face a partial observability problem: the same observation may branch to different transitions due to unobservable factors. Existing methods assume these factors can be recovered from observation history. However, this may fail whenever observation history is uninformative, such as a sudden contact event with no prior warning. To address this limitation, we propose \\textit{World Translation}, which exploits a complementary strength of simulators and learned dynamics. Simulators are deterministic but physically imperfect, while learned models are accurate but underdetermined under partial observability. Rather than predicting transitions forward from history, we extract the unobservable dynamics information backward from an observed transition, then translate this feature across simulation and reality as an unpaired domain-translation problem that preserves dynamics content while transferring domain style. Experiments across humanoid, quadruped, and manipulator platforms show that our method achieves more accurate dynamics modeling than baselines, with the largest gains when unobservable factors cannot be recovered from observation history. Real-robot deployment on Go2 quadruped confirms improved policy transfer.",
+      "authors": [
+        "Xinchen Yao",
+        "Leixin Chang",
+        "Hua Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-20T16:52:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.18154v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "world translation methods learning transition dynamics for sim-to-real",
+      "llm_evidence_cn": "通过学习转移动态的世界翻译方法减少模拟到现实差距",
+      "llm_evidence": "通过学习转移动态的世界翻译方法减少模拟到现实差距",
+      "canonical_evidence": "通过学习转移动态的世界翻译方法减少模拟到现实差距",
+      "llm_tldr_en": "World Translation minimizes sim-to-real gap by extracting backward dynamics and using unpaired domain translation to address partial observability in learned dynamics models.",
+      "llm_tldr_cn": "本文提出World Translation方法，通过提取后向动态和未配对域转换来最小化模拟到现实的差距。该方法解决了真实到模拟方法中因部分可观测性导致的动态学习歧义问题，例如无预警的接触事件。实验证明该方法能有效构建更真实的数字世界，提升模拟训练策略在真实环境中的迁移性能。",
+      "llm_tldr": "本文提出World Translation方法，通过提取后向动态和未配对域转换来最小化模拟到现实的差距。该方法解决了真实到模拟方法中因部分可观测性导致的动态学习歧义问题，例如无预警的接触事件。实验证明该方法能有效构建更真实的数字世界，提升模拟训练策略在真实环境中的迁移性能。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.16900v1",
+      "source": "arxiv",
+      "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
+      "abstract": "Training API-calling large language model (LLM) agents demands massive amounts of high-quality trajectories. However, collecting such data at scale typically requires fully implemented environments with executable APIs and realistic, pre-populated backend databases, creating a major bottleneck for scalability. To overcome this, we propose an environment-free synthetic data generation approach that leverages LLMs as on-the-fly digital world models. Given only API specifications, our method generates trajectories mimicking interactions between an agent and a stateful environment. Specifically, an LLM first generates diverse tasks solvable with the provided APIs. A teacher agent then iteratively solves each task while an LLM simulator generates coherent synthetic API responses conditioned on the task context and simulation history. Finally, an LLM judge filters the trajectories to ensure the quality of the resulting dataset. We evaluate our approach on the challenging AppWorld and OfficeBench benchmarks, which include both information-retrieval and state-changing tasks. Fine-tuning models on our synthetic data yields significant performance gains, demonstrating that effective supervision for API-calling agents can be generated without any executable environment. Our results establish LLM-based API simulation as a practical, scalable solution for training agents across diverse API ecosystems.",
+      "authors": [
+        "Seanie Lee",
+        "Sanjoy Chowdhury",
+        "Chao Jiang",
+        "Cheng-Yu Hsieh",
+        "Ting-Yao Hu",
+        "Alexander T Toshev",
+        "Oncel Tuzel",
+        "Raviteja Vemulapalli"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-18T17:36:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.16900v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "LLMs as on-the-fly digital world models for environment simulation",
+      "llm_evidence_cn": "将LLM作为即时数字世界模型用于环境模拟",
+      "llm_evidence": "将LLM作为即时数字世界模型用于环境模拟",
+      "canonical_evidence": "将LLM作为即时数字世界模型用于环境模拟",
+      "llm_tldr_en": "Proposes environment-free synthetic data generation for API agents by using LLMs as world simulators, generating coherent trajectories without real environments.",
+      "llm_tldr_cn": "训练API调用智能体需要大量高质量轨迹数据，但构建完整环境成本高昂。本文提出无需环境的合成数据生成方法，将LLM用作即时数字世界模型，仅根据API规格模拟智能体与环境交互。该方法由LLM生成任务，教师智能体求解，LLM模拟器生成连贯合成轨迹。实验证明该数据能有效训练API调用智能体。",
+      "llm_tldr": "训练API调用智能体需要大量高质量轨迹数据，但构建完整环境成本高昂。本文提出无需环境的合成数据生成方法，将LLM用作即时数字世界模型，仅根据API规格模拟智能体与环境交互。该方法由LLM生成任务，教师智能体求解，LLM模拟器生成连贯合成轨迹。实验证明该数据能有效训练API调用智能体。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.16636v1",
+      "source": "arxiv",
+      "title": "PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution",
+      "abstract": "Vision-language-action models, world models, and agentic planners each advance physical intelligence, yet their composition lacks a common execution abstraction, shared state, semantic verification, and persistent experience across heterogeneous embodiments. We present PhyAgentOS, a runtime foundation delivering scheduling, verification, memory, benchmarking, and safety as system-level services. Its Session-Centered Runtime treats a session, not an action, as the minimum unit of scheduling, compatibility preflight, supervised execution, evidence collection, and acceptance. To decouple cognition from physical execution, the cognition-physics boundary is a file system: the State-as-a-File protocol materializes cross-layer state as Markdown with YAML, yielding inspectable, versionable records without code dependencies between Agent and Runtime layers. These views form a unified cognitive state space aligning intent, capabilities, environment, execution, and experience. The SessionVerifier distinguishes execution termination from semantic task completion via evidence-grounded verdicts of success, failure, or replan. Verified outcomes are consolidated through epistemic memory into reusable knowledge and corrective lessons, closing a trial-and-error loop without retraining. Benchmarking reuses the deployment session and verification path, so results trace to real execution. Layered safety constrains both policy-driven and agent-driven execution: preflight, action bridges, SafetyGuard, heartbeat monitoring, and target-local constraints. Validation is progressive: games test cognitive planning, simulation adds dynamics and control, real robots add hardware noise, with the cognitive layer held constant. PhyAgentOS is benchmarked on Optimus-67, StarDojo, and DST-Dojo, validated on 19+ simulated and physical embodiments, and gains on LIBERO, Calvin, and RoboCasa365 across multiple VLA models.",
+      "authors": [
+        "Yang Liu",
+        "Weixing Chen",
+        "Xinshuai Song",
+        "Tao Pu",
+        "Siwen Mo",
+        "Yongjie Bai",
+        "Zihao Chen",
+        "Qianran Sun",
+        "Liruo Zhong",
+        "Ying Shen",
+        "Liang Lin"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-18T04:46:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.16636v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "operating system for embodied agents leveraging world models",
+      "llm_evidence_cn": "为具身智能体提供世界模型集成运行时",
+      "llm_evidence": "为具身智能体提供世界模型集成运行时",
+      "canonical_evidence": "为具身智能体提供世界模型集成运行时",
+      "llm_tldr_en": "PhyAgentOS provides a runtime foundation integrating vision-language-action models, world models, and planners with session-centered scheduling and State-as-a-File protocol.",
+      "llm_tldr_cn": "本文提出PhyAgentOS，一个自演化的操作系统，为具身智能体提供统一的运行时基础。它将视觉-语言-动作模型、世界模型和规划器集成在一起，采用会话为中心的调度和状态即文件协议，实现认知与物理执行的解耦。该系统提供调度、验证、记忆、基准测试和安全等系统级服务，促进了多种世界模型在具身任务中的可组合使用。",
+      "llm_tldr": "本文提出PhyAgentOS，一个自演化的操作系统，为具身智能体提供统一的运行时基础。它将视觉-语言-动作模型、世界模型和规划器集成在一起，采用会话为中心的调度和状态即文件协议，实现认知与物理执行的解耦。该系统提供调度、验证、记忆、基准测试和安全等系统级服务，促进了多种世界模型在具身任务中的可组合使用。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.16956v1",
+      "source": "arxiv",
+      "title": "G2-Nav: Grounded and Guarded Vision-Language Costmaps for Robot Social Navigation",
+      "abstract": "Social navigation requires the robot to reason and respond in complex real-world environments. While recent works attempt to incorporate human-level intelligence into robot planning using large Vision-Language Models (VLMs), end-to-end frameworks often create an unpredictable black-box, and existing instruction-following methods are not designed for full autonomy. To bridge this gap, we present G2-Nav, a novel framework that grounds abstract social reasoning and guards safe real-world deployment. Instead of asking the VLM for direct planning decisions, G2-Nav translates its semantic reasoning into a vision-language costmap with reliability and interpretability. The VLM evaluates traversable regions and social agents from open-set perception, mapping social context into the costmap. To improve real-world robustness, the VLM performs semantic verification on upstream tracking, and we introduce a high-frequency safety check to guard against system latency prior to trajectory generation. We demonstrate through real-world experiments that G2-Nav delivers safe, efficient, and socially compliant autonomous navigation in unstructured environments. Code will be made publicly available.",
+      "authors": [
+        "Yuwen Liao",
+        "Yihang Lan",
+        "Yizhuo Yang",
+        "Ruimeng Liu",
+        "Xinhang Xu",
+        "Shenghai Yuan",
+        "Lihua Xie"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-18T20:18:20+00:00",
+      "link": "https://arxiv.org/pdf/2607.16956v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "action model with world representation via vision-language costmap",
+      "llm_evidence_cn": "通过视觉语言代价图实现带世界表征的动作模型",
+      "llm_evidence": "通过视觉语言代价图实现带世界表征的动作模型",
+      "canonical_evidence": "通过视觉语言代价图实现带世界表征的动作模型",
+      "llm_tldr_en": "Proposes G2-Nav framework that translates VLM semantic reasoning into a vision-language costmap for robot social navigation, bridging abstract reasoning and safe deployment.",
+      "llm_tldr_cn": "社交导航要求机器人在复杂真实环境中推理和行动，但端到端VLM框架缺乏可解释性。G2-Nav将VLM的语义推理转化为可视化代价图，既保证可靠性又具备可解释性。实验表明该方法在开放环境中能有效评估可通行区域和社会代理，实现了安全自主导航。该框架为机器人提供了一种结合世界表征的动作模型。",
+      "llm_tldr": "社交导航要求机器人在复杂真实环境中推理和行动，但端到端VLM框架缺乏可解释性。G2-Nav将VLM的语义推理转化为可视化代价图，既保证可靠性又具备可解释性。实验表明该方法在开放环境中能有效评估可通行区域和社会代理，实现了安全自主导航。该框架为机器人提供了一种结合世界表征的动作模型。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.17560v1",
+      "source": "arxiv",
+      "title": "Reinforcement Learning: From Algorithms To Foundation Models",
+      "abstract": "Reinforcement learning (RL) provides a framework for sequential decision making under explicit objectives. In its classical form, RL studies how an agent should act to maximise long-term reward in a dynamic environment. In richer settings, the problem extends beyond a single agent and fixed environment: intelligent behavior may require strategic interaction, adaptation to uncertainty, and reasoning over high-dimensional worlds. This thesis studies RL from two perspectives: algorithms in games and RL in the era of foundation models.   The first part focuses on multi-agent RL in games. It examines how incentives, policies, and equilibrium concepts interact in competitive and general-sum environments, spanning two-player zero-sum games, large-scale video games, and multi-player settings with general structure. These works investigate learning in multi-agent systems and the behavior of RL methods in interactive environments. The second part studies RL with generative and foundation models, motivated by the idea that prior knowledge can enrich sequential decision making. Pretrained generative models and learned world models serve as representation tools and structured priors for planning, control, and policy optimization. The thesis develops diffusion-based world models, investigates RL for efficient video generation, explores generative models as policy classes, and studies interactive video world models in which actions shape future observations. It also addresses long-horizon modeling through architectures with memory. Together, these contributions present a unified view of RL as objective-driven adaptation in complex sequential domains. From strategic games to generative world models, the thesis highlights how RL connects decision making, environment modeling, and emerging foundation-model capabilities, offering a broader perspective on the principles underlying intelligent behavior.",
+      "authors": [
+        "Zihan Ding"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-20T05:09:36+00:00",
+      "link": "https://arxiv.org/pdf/2607.17560v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "surveys reinforcement learning in the era of foundation models",
+      "llm_evidence_cn": "综述强化学习在基础模型时代的发展",
+      "llm_evidence": "综述强化学习在基础模型时代的发展",
+      "canonical_evidence": "综述强化学习在基础模型时代的发展",
+      "llm_tldr_en": "Thesis examining reinforcement learning from classical algorithms to multi-agent games and foundation models, bridging decision-making and large-scale pretrained models.",
+      "llm_tldr_cn": "强化学习为顺序决策提供框架，本文从经典算法到多智能体博弈和基础模型时代进行了全面研究。论文包含两个部分：博弈中的多智能体强化学习，以及基础模型与强化学习的融合。探讨了激励、策略和均衡概念，为决策与大规模预训练模型的结合提供了理论基础。该工作对于理解世界动作模型和基础模型有重要参考价值。",
+      "llm_tldr": "强化学习为顺序决策提供框架，本文从经典算法到多智能体博弈和基础模型时代进行了全面研究。论文包含两个部分：博弈中的多智能体强化学习，以及基础模型与强化学习的融合。探讨了激励、策略和均衡概念，为决策与大规模预训练模型的结合提供了理论基础。该工作对于理解世界动作模型和基础模型有重要参考价值。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.17999v1",
+      "source": "arxiv",
+      "title": "Do Maps Still Matter for Machines: Revisiting the Role of Choropleth Maps in Foundation Model Spatial Understanding",
+      "abstract": "Spatial understanding is crucial for foundation models (FMs), and maps have long helped humans organize and reason about geographic information. This study examines whether choropleth maps remain useful for machine spatial understanding when models can directly process structured geodata. We introduce ChoroplethMap-Bench, a controlled benchmark containing 2,400 synthetic choropleth maps, corresponding GeoJSON data, and 12,000 questions across five cognitive dimensions: Identify, Spatial Recognition, Compare, Rank, and Delineate. We evaluate 22 open-source and proprietary models under three input conditions: Data Only, Map Only, and Data + Map. The results show that maps substantially improve spatial reasoning, especially when combined with symbolic data and for tasks requiring higher-level understanding of spatial patterns. We further analyze the effects of map type, color hue, and spatial structure, as well as prompting strategies, language, geographic context, decoding settings, classification methods, and response stability. Overall, the Data + Map condition achieves the strongest performance, demonstrating that maps remain valuable external representations for foundation model spatial reasoning.",
+      "authors": [
+        "Zhiwei Wei",
+        "Yonghe Sun",
+        "Zhenjia Liu",
+        "Wenjia Xu",
+        "Chao He",
+        "Weihua Dong",
+        "Chunbo Liu",
+        "Hua Liao"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-20T14:32:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.17999v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "evaluates foundation model spatial understanding with maps",
+      "llm_evidence_cn": "利用地图评估基础模型的空间理解能力",
+      "llm_evidence": "利用地图评估基础模型的空间理解能力",
+      "canonical_evidence": "利用地图评估基础模型的空间理解能力",
+      "llm_tldr_en": "Introduces ChoroplethMap-Bench, a benchmark to evaluate how maps improve foundation model spatial understanding, finding substantial gains when maps are provided.",
+      "llm_tldr_cn": "针对基础模型空间理解问题，构建了包含2400幅等值线图和12000个问题的基准ChoroplethMap-Bench。评估22个模型发现，即使在结构数据可用时，地图输入仍显著提升模型在识别、比较和排序等维度上的空间推理能力。该工作为基础模型的地理空间能力评估提供了标准化测试床。",
+      "llm_tldr": "针对基础模型空间理解问题，构建了包含2400幅等值线图和12000个问题的基准ChoroplethMap-Bench。评估22个模型发现，即使在结构数据可用时，地图输入仍显著提升模型在识别、比较和排序等维度上的空间推理能力。该工作为基础模型的地理空间能力评估提供了标准化测试床。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.17977v1",
+      "source": "arxiv",
+      "title": "RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model",
+      "abstract": "We present RynnBrain 1.1, a family of embodied foundation models spanning 2B, 9B, and 122B-A10B scales. Trained with a unified spatio-temporal and physically grounded framework, RynnBrain 1.1 supports embodied perception, spatial reasoning, localization, and planning. Compared with RynnBrain 1.0, it further introduces contact-point prediction across the model family and native 3D grounding for the 2B and 9B models, yielding representations and outputs that are more directly aligned with robot manipulation. We also develop RynnBrain-VLA with a unified cross-embodiment action space and embodiment-specific masking, and deploy it on Unitree G1, Astribot-S1, and Tianji-Wuji. RynnBrain 1.1 achieves strong results on embodied cognition, localization, and 3D grounding, with the 122B-A10B model outperforming all evaluated proprietary and open-source models on VSI-Bench, MMSI, and RefSpatial-Bench. Real-robot experiments show that RynnBrain-initialized policies outperform Qwen-based and representative generalist VLAs, while joint multi-task and multi-embodiment training improves process scores and success rates over per-task training.",
+      "authors": [
+        "Kehan Li",
+        "Bohan Hou",
+        "Minghao Zhu",
+        "Tianyi Zhang",
+        "Zesen Cheng",
+        "Zhikai Wang",
+        "Sicong Leng",
+        "Xin Li",
+        "Xiao Lin",
+        "Biying Yao",
+        "Minghua Zeng",
+        "Jiangpin Liu",
+        "Ronghao Dang",
+        "Jiayan Guo",
+        "Siteng Huang",
+        "Haoyu Zhao",
+        "Heng Ping",
+        "Yaxi Zhao",
+        "Kexiang Wang",
+        "Tong Lu",
+        "Shengke Xue",
+        "Jiahao Tang",
+        "Yulei Wang",
+        "Zejing Wang",
+        "Jianwei Gao",
+        "Shijian Lu",
+        "Chengju Liu",
+        "Jianfei Yang",
+        "Mingxiu Chen",
+        "Deli Zhao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-20T14:13:27+00:00",
+      "link": "https://arxiv.org/pdf/2607.17977v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "embodied foundation model for perception and planning",
+      "llm_evidence_cn": "具身基础模型，支持感知与规划",
+      "llm_evidence": "具身基础模型，支持感知与规划",
+      "canonical_evidence": "具身基础模型，支持感知与规划",
+      "llm_tldr_en": "RynnBrain 1.1 is a family of embodied foundation models spanning 2B to 122B parameters, trained with a unified spatio-temporal and physically grounded framework to support embodied perception, spatial reasoning, localization, and planning, and introduces contact-point prediction and native 3D grounding for robot manipulation.",
+      "llm_tldr_cn": "现有具身模型在通用性和操作对齐上存在不足。本文提出RynnBrain 1.1系列具身基础模型，通过统一时空与物理基础框架训练，支持感知、推理、定位与规划；新引入接触点预测和原生3D接地，使模型输出直接对齐机器人操作。在多个实体机器人上部署验证，在具身认知和定位等任务上取得优异表现。",
+      "llm_tldr": "现有具身模型在通用性和操作对齐上存在不足。本文提出RynnBrain 1.1系列具身基础模型，通过统一时空与物理基础框架训练，支持感知、推理、定位与规划；新引入接触点预测和原生3D接地，使模型输出直接对齐机器人操作。在多个实体机器人上部署验证，在具身认知和定位等任务上取得优异表现。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}
