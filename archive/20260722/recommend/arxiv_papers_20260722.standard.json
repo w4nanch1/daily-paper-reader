@@ -1,0 +1,549 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-22T20:55:59.865790+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2607.16602v2",
+      "source": "arxiv",
+      "title": "PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration",
+      "abstract": "Action-conditioned world models are a key component of embodied AI, serving as scalable policy evaluators that reduce reliance on expensive real-world rollouts. To accurately capture diverse action-induced dynamics, such models should satisfy three key objectives-Physical Plausibility (P), Action Adherence (A), and Visual Fidelity (V), collectively referred to as PAV-while remaining robust to both in-distribution (ID) expert demonstrations and out-of-distribution (OOD) actions. However, existing methods primarily rely on ID action-video pairs and pixel-level reconstruction losses, which do not explicitly optimize PAV objectives and generalize poorly beyond expert data. To address this, we propose PAVXploreRL, a reinforcement learning framework built on a pretrained latent world model that explicitly optimizes PAV objectives through reward-driven training. To improve action generalization, our method jointly leverages ID trajectories and noise-driven OOD action exploration, without paired video supervision. Experiments show that PAVXploreRL consistently outperforms pretrained baselines, achieving a 5.6% average gain across benchmarks and producing higher-quality PAV properties. As a policy evaluator, it also yields more reliable performance estimates and reduces the overestimation bias of prior expert-only world models such as Ctrl-World. Code: https://github.com/Social-AI-Studio/PAVXploreRL",
+      "authors": [
+        "Han Wang",
+        "Zijun Wang",
+        "Shuoshuo Xue",
+        "Rui Cao",
+        "Fengjiao Cheng",
+        "Xiaodan Liang",
+        "Roy Ka-Wei Lee"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-18T02:42:27+00:00",
+      "link": "https://arxiv.org/pdf/2607.16602v2",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "action-conditioned world model with PAV optimization",
+      "llm_evidence_cn": "动作条件世界模型及PAV优化",
+      "llm_evidence": "动作条件世界模型及PAV优化",
+      "canonical_evidence": "动作条件世界模型及PAV优化",
+      "llm_tldr_en": "PAVXploreRL proposes a reinforcement learning framework to train action-conditioned world models that optimize physical plausibility, action adherence, and visual fidelity, directly matching the world model requirement.",
+      "llm_tldr_cn": "该论文提出PAVXploreRL，一个强化学习框架，用于训练动作条件世界模型。该模型显式优化物理合理性、动作遵循度和视觉保真度三个目标，并采用动作探索策略应对分布外动作。实验表明，该方法在多个模拟环境中显著优于现有世界模型基线，为世界动作模型提供了一种高效训练范式。",
+      "llm_tldr": "该论文提出PAVXploreRL，一个强化学习框架，用于训练动作条件世界模型。该模型显式优化物理合理性、动作遵循度和视觉保真度三个目标，并采用动作探索策略应对分布外动作。实验表明，该方法在多个模拟环境中显著优于现有世界模型基线，为世界动作模型提供了一种高效训练范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.18715v1",
+      "source": "arxiv",
+      "title": "DWM: Separating World Effects from Actions in Latent World Models",
+      "abstract": "Latent world models underpin much of modern model-based control, yet current action-conditioned formulations supervise   the next-latent transition with a single, undifferentiated target, forcing a monolithic learning signal to absorb every   source of state change. In real world, however, transitions arise from two heterogeneous sources: an action-driven   component induced by the agent, and an action-invariant world effect -- the change that would still occur under a null   action, dictated by the environment's intrinsic dynamics (e.g., gravity-driven sliding, inertia, contact rebound, and   persistent drift). Fusing them into a single target entangles the two inside the latent transition, prevents the model   from attributing observed changes to their underlying causes, and undermines the transferability of the learned   dynamics. We introduce DWM (Decomposed World Model), a supervision-level framework that operationalizes this   decomposition. DWM augments the predictor of a latent world model with an auxiliary world head, regularized by a   normalized world-contrastive objective to be action-invariant, while the original pred head is coupled to it via an   orthogonality constraint; together, the two signals induce an explicit additive decomposition of the predicted   transition into an action-invariant and a complementary action-driven component, without altering the underlying   architecture or inference pipeline. To evaluate DWM under persistent world effects, we construct W-variants of three   standard control benchmarks -- PushT-W, Reacher-W, and TwoRoom-W -- each instantiating a distinct action-invariant   dynamic. DWM matches strong baselines on the flat counterparts and delivers a mean absolute improvement of 13.1% in CEM   planning success across the W-variants.",
+      "authors": [
+        "Yi-Ge Zhang",
+        "Tianqi Du",
+        "Qi Zhang",
+        "Yisen Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-21T05:13:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.18715v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Separates world effects from actions in latent world models",
+      "llm_evidence_cn": "在潜在世界模型中区分世界效应与动作效应",
+      "llm_evidence": "在潜在世界模型中区分世界效应与动作效应",
+      "canonical_evidence": "在潜在世界模型中区分世界效应与动作效应",
+      "llm_tldr_en": "Proposes DWM that explicitly separates action-driven and world-effect components in latent transitions for better model interpretability and accuracy.",
+      "llm_tldr_cn": "当前潜在世界模型将动作驱动和环境固有动态混合在单一转移目标中，限制了模型的可解释性和预测精度。本文提出DWM，将潜在转移分离为动作驱动分量和与动作无关的世界效应分量（如重力、惯性）。通过这种解耦，模型能更准确地归因状态变化来源。实验表明，该方法在预测准确性和模型可控性上优于传统方法，为世界模型提供了更精细的结构。",
+      "llm_tldr": "当前潜在世界模型将动作驱动和环境固有动态混合在单一转移目标中，限制了模型的可解释性和预测精度。本文提出DWM，将潜在转移分离为动作驱动分量和与动作无关的世界效应分量（如重力、惯性）。通过这种解耦，模型能更准确地归因状态变化来源。实验表明，该方法在预测准确性和模型可控性上优于传统方法，为世界模型提供了更精细的结构。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.18840v1",
+      "source": "arxiv",
+      "title": "WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory",
+      "abstract": "World Action Models (WAMs) offer a promising paradigm for robotic manipulation by jointly modeling visual state transitions and robot actions. However, existing WAMs are constrained by limited temporal context, coarse episode-level language supervision, and predominantly text-only conditioning, which hinder task-progress tracking and fine-grained language-video-action grounding while limiting visual-context reasoning and cross-embodiment transfer. In this paper, we introduce WorldScape Policy 2.0, a controllable WAM with reasoning-augmented long short-term memory. Its causal short-term visual memory supplies recent observations as DiT prefill to preserve local interaction dynamics, while its long short-term event memory organizes historical VLM outputs into global-history, local-active, and event-boundary representations for progress-aware retrieval. The retrieved history augments perception and autoregressively generated planning tokens, yielding an implicit subgoal condition for autonomous planning; semantic forcing further transfers event-level instruction semantics into this latent planning pathway. To establish fine-grained multimodal controllability, we construct ManipEvent-5M, an event-grounded embodied pretraining dataset containing nearly 5 million event segments with aligned action trajectories, episode-level task instructions, segment-level subtask captions, goal images, and video demonstrations. These designs provide a unified interface for autonomous planning from high-level instructions and controllable execution from fine-grained text, goal-image, or video-context prompts. Experiments in both simulation and real-world platforms demonstrate superior capabilities in long-horizon autonomous planning, fine-grained instruction following and in-context adaptation.",
+      "authors": [
+        "Haisheng Su",
+        "Zongdai Liu",
+        "Xin Jin",
+        "Haoxuan Dou",
+        "Chengming Hu",
+        "Baorun Li",
+        "Zhanwang Liu",
+        "Ruiyan Xu",
+        "Jianjie Fang",
+        "Xin Zhang",
+        "Zhenjie Yang",
+        "Xue Yang",
+        "Chen Gao",
+        "Junchi Yan",
+        "Yong Li",
+        "Wei Wu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-21T08:25:37+00:00",
+      "link": "https://arxiv.org/pdf/2607.18840v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "World Action Model with reasoning-augmented memory",
+      "llm_evidence_cn": "基于推理增强记忆的世界动作模型",
+      "llm_evidence": "基于推理增强记忆的世界动作模型",
+      "canonical_evidence": "基于推理增强记忆的世界动作模型",
+      "llm_tldr_en": "Proposes WorldScape Policy 2.0, a steerable WAM with reasoning-augmented long short-term memory to improve temporal context, language-video-action grounding, and cross-embodiment transfer for robotic manipulation.",
+      "llm_tldr_cn": "该论文提出了WorldScape Policy 2.0，一种具有推理增强长短时记忆的可控世界动作模型(WAM)。现有WAM受限于有限的时间上下文和粗粒度的语言监督。通过引入因果短时视觉记忆和长短时事件记忆，该方法增强了任务进度跟踪和细粒度语言-视频-动作对齐，同时支持跨形态迁移。实验表明该模型在机器人操作任务中取得了更优性能，为具身智能中的动作建模提供了新思路。",
+      "llm_tldr": "该论文提出了WorldScape Policy 2.0，一种具有推理增强长短时记忆的可控世界动作模型(WAM)。现有WAM受限于有限的时间上下文和粗粒度的语言监督。通过引入因果短时视觉记忆和长短时事件记忆，该方法增强了任务进度跟踪和细粒度语言-视频-动作对齐，同时支持跨形态迁移。实验表明该模型在机器人操作任务中取得了更优性能，为具身智能中的动作建模提供了新思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19191v1",
+      "source": "arxiv",
+      "title": "ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU",
+      "abstract": "We present ABot-World-0, an action-conditioned video world model for real-time, long-horizon closed-loop interaction, supported by a multi-source data infrastructure spanning AAA games, simulation engines, and internet videos to learn controllable world dynamics. WorldExplorer performs agent-driven collection guided by training feedback, while a unified pipeline applies 14 deterministic quality checks, VLM-based assessment, and synchronized action and text annotation. We progressively distill a bidirectional action-conditioned teacher into a causal student through teacher forcing and ODE distillation, and introduce LongForcing to align long student self-rollouts with an extended-horizon teacher, mitigating accumulated distribution shift and autoregressive drift. Raw keyboard actions provide a unified control interface for scene roaming and third-person character interaction, while reference-character memory provides persistent appearance cues for identity consistency during third-person rollouts. For deployment, we co-design a streaming inference stack with a lightweight VAE decoder, efficient attention, memory-aware scheduling, and low-bit DiT inference. Across optimized low-bit configurations, ABot-World-0 streams 720P video at up to 16 FPS on a single NVIDIA RTX 5090 desktop GPU, with 1.2s action-to-first-frame latency and approximately 19GiB peak VRAM. Experiments on WorldRoamBench and extended interactive rollouts demonstrate competitive controllability and coherent long-horizon world evolution.",
+      "authors": [
+        "Fan Jiang",
+        "Zhaoxu Sun",
+        "Mengchao Wang",
+        "Ziyu Zhu",
+        "Chiyu Wang",
+        "Yunpeng Zhang",
+        "Wenlin Liu",
+        "Yun Wang",
+        "Xue Zheng",
+        "Rui Sun",
+        "Junfeng Ni",
+        "Hongyu Pan",
+        "Zhongxu Sun",
+        "Fei Yu",
+        "Zengye Ge",
+        "Mengmeng Du",
+        "Nianfei Fan",
+        "Mingchao Sun",
+        "Yu Liu",
+        "Yongchang",
+        "Yanqing Zhu",
+        "Jiahang Wang",
+        "Ning Ying",
+        "Yuze Xuan",
+        "Di Yang",
+        "Zhicheng Liu",
+        "Zhe Gao",
+        "Tingbing Xu",
+        "Jiacheng Sui",
+        "Wenjin Yang",
+        "Junnan Lai",
+        "Shufeng Liu",
+        "Yuan Liu",
+        "Zheng Zhou",
+        "Yingliang Peng",
+        "Dawei Cao",
+        "Kaifeng Sheng",
+        "Yuxiang Cai",
+        "Fei Lu",
+        "Mu Xu",
+        "Ning Guo"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-21T15:26:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.19191v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Action-conditioned video world model for infinite rollout",
+      "llm_evidence_cn": "用于无限交互的动作条件视频世界模型",
+      "llm_evidence": "用于无限交互的动作条件视频世界模型",
+      "canonical_evidence": "用于无限交互的动作条件视频世界模型",
+      "llm_tldr_en": "Presents ABot-World-0, an action-conditioned video world model for real-time long-horizon closed-loop interaction, using a multi-source data pipeline and progressive distillation for infinite rollout on a single GPU.",
+      "llm_tldr_cn": "该论文提出ABot-World-0，一个动作条件视频世界模型，支持在单桌面GPU上实时、长程闭环交互。通过多源数据（AAA游戏、模拟器、互联网视频）和基于训练反馈的探索性数据收集，模型学习可控世界动态。采用渐进式知识蒸馏（双向教师到因果学生）和LongForcing对齐策略，缓解了自回归分布偏移。实验表明该模型能够生成无限长的交互式视频，为虚拟环境中的世界模型应用提供了高效方案。",
+      "llm_tldr": "该论文提出ABot-World-0，一个动作条件视频世界模型，支持在单桌面GPU上实时、长程闭环交互。通过多源数据（AAA游戏、模拟器、互联网视频）和基于训练反馈的探索性数据收集，模型学习可控世界动态。采用渐进式知识蒸馏（双向教师到因果学生）和LongForcing对齐策略，缓解了自回归分布偏移。实验表明该模型能够生成无限长的交互式视频，为虚拟环境中的世界模型应用提供了高效方案。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19343v1",
+      "source": "arxiv",
+      "title": "Masked Visual Actions for Unified World Modeling",
+      "abstract": "Video models absorb rich priors over how the visual world moves, interacts, and responds to contact, making them promising substrates for robotic world modeling. The central challenge is how to communicate action to such models in a form aligned with the visual space in which they learned these interaction priors, yet still grounded in physical manipulation. We introduce Masked Visual Actions, a pixel-space control interface that expresses action as a partially revealed trajectory of an arbitrary entity in a video. Revealing robot motion makes the model act as a forward dynamics model that predicts the scene's response to low-level robot actions, while revealing desired object motion makes the same model recover robot behavior consistent with that outcome. Finetuned with only 15 hours of masked examples from real videos and simulation, a single checkpoint achieves strong visual fidelity and controllability across diverse scenes and multiple embodiments. In downstream manipulation settings, the model produces imagined rollouts whose outcomes correlate with real-world execution for policy evaluation, improves decision making by ranking candidate futures in model-based planning, and supports inverse modeling by synthesizing robot motion from desired object motion.",
+      "authors": [
+        "Hadi Alzayer",
+        "Wenlong Huang",
+        "Haonan Chen",
+        "Christopher Luey",
+        "Lvmin Zhang",
+        "Maneesh Agrawala",
+        "Gordon Wetzstein",
+        "Li Fei-Fei",
+        "Yilun Du",
+        "Jiajun Wu",
+        "Jia-Bin Huang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-07-21T17:59:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.19343v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Masked visual actions for unified world modeling directly bridges action and world prediction",
+      "llm_evidence_cn": "遮蔽视觉动作实现统一世界建模，直接桥接动作与世界预测",
+      "llm_evidence": "遮蔽视觉动作实现统一世界建模，直接桥接动作与世界预测",
+      "canonical_evidence": "遮蔽视觉动作实现统一世界建模，直接桥接动作与世界预测",
+      "llm_tldr_en": "Proposes Masked Visual Actions as a pixel-space control interface that turns video models into forward dynamics models for robotic world modeling.",
+      "llm_tldr_cn": "针对如何将动作信息以视觉对齐的方式输入世界模型的问题，本文提出遮蔽视觉动作（MVA）方法，将动作表示为视频中任意实体的部分轨迹。通过揭示机器人运动，模型可作为前向动力学模型预测场景对低级机器人动作的响应；通过揭示目标物体运动，模型可恢复一致的操作行为。该方法在多种机器人操作任务上验证了有效性，为统一世界建模提供了新范式。",
+      "llm_tldr": "针对如何将动作信息以视觉对齐的方式输入世界模型的问题，本文提出遮蔽视觉动作（MVA）方法，将动作表示为视频中任意实体的部分轨迹。通过揭示机器人运动，模型可作为前向动力学模型预测场景对低级机器人动作的响应；通过揭示目标物体运动，模型可恢复一致的操作行为。该方法在多种机器人操作任务上验证了有效性，为统一世界建模提供了新范式。",
+      "llm_tags": [
+        "query:world:composite"
+      ],
+      "matched_query_tag": "query:world:composite",
+      "matched_query_text": "Papers central to 查找有关world action model的论文 可以是foundation model, especially work that connects or combines: r; m; w; world model; foundation model; world action model foundation model; action model with world representation.",
+      "matched_requirement_id": "req-composite-world",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.18709v1",
+      "source": "arxiv",
+      "title": "RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation",
+      "abstract": "Existing robot datasets remain expensive to curate, embodiment-specific, and insufficiently annotated with the fine-grained structure required for generalizable reasoning, execution, or long-horizon environment dynamics simulation. Building on our prior work, RoboInter1.0, we present RoboInter1.5, an extended and holistic suite of intermediate representations for both robotic manipulation and embodied world modeling. RoboInter1.5 provides a unified resource of data, benchmarks, and models centered on dense manipulation-oriented intermediate representations. Specifically, RoboInter-Data contains over 230k manipulation episodes across 571 scenes with dense per-frame annotations covering more than ten types of intermediate representations, including subtasks, primitive skills, object and gripper grounding, segmentation, affordance, grasp poses, contact points, motion traces, etc. Built upon these annotations, RoboInter-VQA introduces spatial and temporal embodied VQA tasks to benchmark and improve the intermediate-representation reasoning capabilities of our RoboInter-VLM. RoboInter-VLA further studies how such representations benefit action execution through implicit, explicit, and modular plan-then-execute paradigms. To better model the physical world, we further introduce RoboInter-World, which leverages intermediate representations as structured conditioning signals for controllable prediction of future world states. Extensive evaluations demonstrate that RoboInter1.5 provides a unified spatiotemporal scaffolding for intermediate representations. Rather than treating intermediate representations merely as interpretable signals, RoboInter1.5 conceptualizes them as a bidirectional interface that both regularizes low-level action spaces and constrains the latent rollouts of open-world physical simulators.",
+      "authors": [
+        "Ziqin Wang",
+        "Hao Li",
+        "Weijun Wang",
+        "Junhao Cai",
+        "Jia Zeng",
+        "Yilun Chen",
+        "Jiangmiao Pang",
+        "Si Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-21T05:05:01+00:00",
+      "link": "https://arxiv.org/pdf/2607.18709v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "holistic intermediate representation suite for embodied world modeling and robotic manipulation",
+      "llm_evidence_cn": "用于具身世界建模和机器人操作的全面中间表示套件",
+      "llm_evidence": "用于具身世界建模和机器人操作的全面中间表示套件",
+      "canonical_evidence": "用于具身世界建模和机器人操作的全面中间表示套件",
+      "llm_tldr_en": "RoboInter1.5 provides a unified resource of data, benchmarks, and models centered on dense manipulation-oriented intermediate representations for embodied world modeling and robotic manipulation, with over 230k episodes.",
+      "llm_tldr_cn": "现有机器人数据集成本高、具身特定且缺乏细粒度结构。RoboInter1.5扩展了中间表示套件，包含超过23万操作回合、571场景，提供密集的逐帧标注，覆盖十多种中间表示。该资源统一了具身世界建模和机器人操作的数据、基准和模型，为通用推理和执行提供了基础。",
+      "llm_tldr": "现有机器人数据集成本高、具身特定且缺乏细粒度结构。RoboInter1.5扩展了中间表示套件，包含超过23万操作回合、571场景，提供密集的逐帧标注，覆盖十多种中间表示。该资源统一了具身世界建模和机器人操作的数据、基准和模型，为通用推理和执行提供了基础。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.19190v1",
+      "source": "arxiv",
+      "title": "Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents",
+      "abstract": "Real-to-sim conversion for robotic interaction with objects remains labor-intensive because it requires more than visual reconstruction: a streamlined real2sim process must recover scene geometries and object states, infer physical parameters, and assemble actors, objects, cameras, poses, and trajectories into a runnable physical simulation. Today this process still depends on manual tuning of visual foundation models, mesh cleanup, coordinate-frame alignment, and brittle workflow glue across visual perception tools and simulators. We introduce \\textit{Agentic Real2Sim}, a framework for generalized physical world modeling with vision-language agents, converting a real-world recording of object-robot interaction into a simulatable episodic twin which preserves observations, geometries, robot interactions, and object states. We evaluate Agentic Real2Sim on rigid-object manipulation, deformable-object interaction, and humanoid motion scenes, spanning domains that are usually handled by separate Real2Sim pipelines, marking a first step toward scalable conversion. The framework's agentic decisions can be driven by an open-weight VLM backend at a small fraction of the cost of frontier models, while attaining comparable conversion success rate. We aim to use the resulting real-world-aligned twins for downstream robotics tasks, specifically policy learning and evaluation. The project site is available at https://ericchen321.github.io/agentic_real2sim.github.io/.",
+      "authors": [
+        "Guanxiong Chen",
+        "Qianjun Xia",
+        "Jiawei Peng",
+        "Heng Zhang",
+        "Bole Ma",
+        "Justin Qian",
+        "Ziyi Jiao",
+        "Bingyang Zhou",
+        "Luoxin Ye",
+        "Kaifeng Zhang",
+        "Kunyi Wang",
+        "Weijia Zeng",
+        "Yunuo Chen",
+        "Pengzhi Yang",
+        "Ziqiu Zeng",
+        "Huamin Wang",
+        "Chao Liu",
+        "Alan Yuille",
+        "Fan Shi",
+        "Changxi Zheng",
+        "Yunzhu Li",
+        "Chenfanfu Jiang",
+        "Peter Yichen Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-21T15:23:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.19190v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "physics-based world modeling with vision-language agents",
+      "llm_evidence_cn": "基于视觉-语言代理的物理世界建模",
+      "llm_evidence": "基于视觉-语言代理的物理世界建模",
+      "canonical_evidence": "基于视觉-语言代理的物理世界建模",
+      "llm_tldr_en": "Agentic Real2Sim converts real-world recordings into simulatable physical twins using vision-language agents, automating scene geometry, physics, and trajectory assembly.",
+      "llm_tldr_cn": "真实到仿真转换需要恢复场景几何、物体状态、物理参数等，当前依赖手动调整。本文提出Agentic Real2Sim框架，利用视觉-语言代理自动化物理世界建模，将真实记录转换为可模拟物理孪生，减少人工干预。实验表明能生成逼真仿真环境。",
+      "llm_tldr": "真实到仿真转换需要恢复场景几何、物体状态、物理参数等，当前依赖手动调整。本文提出Agentic Real2Sim框架，利用视觉-语言代理自动化物理世界建模，将真实记录转换为可模拟物理孪生，减少人工干预。实验表明能生成逼真仿真环境。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2607.13597v2",
+      "source": "arxiv",
+      "title": "Semantic Anchoring for Robotic Action Representations",
+      "abstract": "Vision-Language-Action (VLA) models inherit rich semantic representations from pretrained Vision-Language Models, yet fine-tuning on limited robot demonstrations degrades this structure and undermines generalization. A fundamental question therefore arises: what constitutes a good action representation? Inspired by the mirror neuron theory's insight that observation and execution share an intention-level encoding, we examine whether a robot's action representations preserve the semantic structure captured by pretrained encoders. Systematic probing confirms that this structure erodes during finetuning, and that its quality synchronizes with both task success and out-of-distribution generalization. We further introduce a plug-and-play method that anchors action representations to a semantic manifold while decomposing representations into a shared semantic channel and a private channel, all discarded at inference, leaving the deployed model unchanged. Validated on different VLA backbones across simulation and real-world benchmarks, our method yields up to +18.7% on real-world in-distribution tasks and +21.5% on out-of-distribution generalization.",
+      "authors": [
+        "Yuan Xu",
+        "Youheng Shi",
+        "Chengyang Li",
+        "Wentao Zhu",
+        "Yizhou Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-15T08:45:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.13597v2",
+      "tags": [
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Action representations anchored in semantic structure from foundation models",
+      "llm_evidence_cn": "利用基础模型语义结构锚定动作表征",
+      "llm_evidence": "利用基础模型语义结构锚定动作表征",
+      "canonical_evidence": "利用基础模型语义结构锚定动作表征",
+      "llm_tldr_en": "Proposes semantic anchoring for robotic action representations to preserve pretrained semantic structure during VLA fine-tuning.",
+      "llm_tldr_cn": "视觉-语言-动作（VLA）模型在微调过程中会丢失预训练视觉语言模型保留的语义结构，从而限制泛化能力。本文受镜像神经元理论启发，系统探究了动作表征的语义结构保持问题，发现其质量与任务成功率和分布外泛化高度相关。提出一种即插即用的语义锚定方法，在微调时约束动作表征结构，有效提升了模型性能。",
+      "llm_tldr": "视觉-语言-动作（VLA）模型在微调过程中会丢失预训练视觉语言模型保留的语义结构，从而限制泛化能力。本文受镜像神经元理论启发，系统探究了动作表征的语义结构保持问题，发现其质量与任务成功率和分布外泛化高度相关。提出一种即插即用的语义锚定方法，在微调时约束动作表征结构，有效提升了模型性能。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.18589v1",
+      "source": "arxiv",
+      "title": "Planning as Emergent Behavior in Reinforcement Learning with Relational Hidden States",
+      "abstract": "Reinforcement learning is conventionally divided into model-based and model-free methods. In this taxonomy, model-based methods perform lookahead planning over a learned world model, whereas model-free methods learn a reactive state-action mapping. Recent work, however, has shown that planning can emerge from model-free reinforcement learning alone. The conditions under which this behavior emerges from a pure reward-maximization objective have so far remained unclear. In this paper, we present evidence that, in the observed cases, the hidden-state structure of the neural architecture is the deciding factor. We find that a network of relational hidden states, each anchored to an environment state and exchanging messages along learned relations, acquires a planning mechanism. These hidden states recover the environment's transition structure in their learned relations, and improve the policy at decision time by planning over the learned graph. In a matched control agent that must additionally discover which cells represent which states, no such binding arises, and no planning follows from it. We argue that this explains the observed phenomenon of emergent planning in model-free reinforcement learning and raises the question of how common such emergent planning might be more generally. Finally, we hypothesize that the discovered mechanism could describe how planning emerges from pure reward maximization in the human brain through a neural architectural prior.",
+      "authors": [
+        "Armin Sommer"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T23:49:42+00:00",
+      "link": "https://arxiv.org/pdf/2607.18589v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Planning emergence in RL with relational hidden states and world model mention",
+      "llm_evidence_cn": "强化学习中规划涌现现象与关系隐藏状态的关联，提及世界模型",
+      "llm_evidence": "强化学习中规划涌现现象与关系隐藏状态的关联，提及世界模型",
+      "canonical_evidence": "强化学习中规划涌现现象与关系隐藏状态的关联，提及世界模型",
+      "llm_tldr_en": "Shows that planning can emerge from model-free RL when using relational hidden states, challenging the model-based vs model-free dichotomy.",
+      "llm_tldr_cn": "本文探索了规划行为在模型无关强化学习中的涌现条件。发现神经架构的隐藏状态结构是关键因素：当使用关系隐藏状态（每个状态锚定一个环境状态并通过消息传递交互）时，模型无关的奖励最大化目标也能产生类似于基于世界模型的规划行为。这一发现为理解规划起源提供了新视角，并暗示世界模型并非规划的必要条件。",
+      "llm_tldr": "本文探索了规划行为在模型无关强化学习中的涌现条件。发现神经架构的隐藏状态结构是关键因素：当使用关系隐藏状态（每个状态锚定一个环境状态并通过消息传递交互）时，模型无关的奖励最大化目标也能产生类似于基于世界模型的规划行为。这一发现为理解规划起源提供了新视角，并暗示世界模型并非规划的必要条件。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.13651v1",
+      "source": "arxiv",
+      "title": "From Surface Forecasting to Observability Forecasting: A Latent World Model for Cloud-Aware EO Monitoring",
+      "abstract": "The bottleneck of Earth Observation processing chains is not the arrival of new imagery but whether the surface is actually visible when the image arrives. We study this as an observability forecasting problem on EarthNet2021. Given recent multispectral imagery and exogenous weather drivers, the goal is to predict whether the next acquisition will be usable and, if not, when a usable view is likely to return. To do this, we adapt LeWorldModel, a joint-embedding predictive architecture world model, to cloud-aware Earth Observation sequences. The final pipeline converts raw minicubes into episodic HDF5 sequences with five image channels (blue, green, red, near-infrared, cloud mask) and eight meteorological and calendar covariates. The resulting model has 18.0M trainable parameters and is trained from scratch on 23,904 training episodes. The trained leWorldModel is evaluated under a locked protocol: linear probes are fit on train only, calibration choices are set on an internal validation split, and the fitted heads are then frozen for valsplit, IID, OOD, and extreme evaluation. On the full frozen-bundle observability benchmark, LeWorldModel consistently outperforms persistence. For next-step usability, balanced accuracy ranges from 0.769 to 0.887, compared with 0.493 to 0.556 for persistence. For exact first-usable-horizon prediction, accuracy ranges from 0.602 to 0.806, compared with 0.120 to 0.369 for persistence. Against a frozen LightGBM baseline fit on the same training windows, LeWorldModel is better on continuous clear/cloud regression and on exact recovery timing on valsplit, IID, and extreme, while LightGBM is stronger on the simpler binary any-usable-within-six task and is more robust on OOD. In separate sampled diagnostic analyses, LeWM also produces strong ranking-based anomaly signals under synthetic temporal inconsistencies.",
+      "authors": [
+        "Mohanad Albughdadi"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-15T09:52:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.13651v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Latent world model for cloud-aware EO monitoring",
+      "llm_evidence_cn": "用于云感知地球观测的潜在世界模型",
+      "llm_evidence": "用于云感知地球观测的潜在世界模型",
+      "canonical_evidence": "用于云感知地球观测的潜在世界模型",
+      "llm_tldr_en": "Adapts a latent world model for observability forecasting in Earth observation, predicting cloud-induced occlusion and usable view availability from multispectral imagery and weather drivers.",
+      "llm_tldr_cn": "该论文研究地球观测中的可观测性预测问题，即预测图像是否被云遮挡以及何时可获得清晰视图。作者将LeWorldModel这一联合嵌入预测架构世界模型适配到云感知地球观测序列中。通过处理多光谱图像和气象日历数据，模型能够预测下一次采集是否可用。这项工作将世界模型扩展到环境监测领域，展示了其在地球科学中的应用潜力。",
+      "llm_tldr": "该论文研究地球观测中的可观测性预测问题，即预测图像是否被云遮挡以及何时可获得清晰视图。作者将LeWorldModel这一联合嵌入预测架构世界模型适配到云感知地球观测序列中。通过处理多光谱图像和气象日历数据，模型能够预测下一次采集是否可用。这项工作将世界模型扩展到环境监测领域，展示了其在地球科学中的应用潜力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.17171v1",
+      "source": "arxiv",
+      "title": "VIDAR: Visual-Inertial Dense Alignment and Reconstruction via a Geometric Foundation Model",
+      "abstract": "Monocular foundation models provide dense geometry but usually lack a stable metric scale. This paper presents VIDAR, a visual-inertial dense reconstruction framework that couples SVO+IMU odometry with Depth Anything 3. VIDAR uses the visual-inertial front end as a metric anchor: it provides camera poses, scale, and a consistent world frame for aligning dense foundation-model predictions across time. The foundation model then contributes detailed local geometry that is fused into a global reconstruction. We study both pose-conditioned DA3 and a decoupled alignment strategy. On EuRoC, pose injection reduces scale error to about 1\\% and reaches 0.463 mean F@0.10; the decoupled hybrid improves this to 0.676 without ground-truth poses. Results on EuRoC and TUM RGB-D show that VIDAR is a practical route to metric dense monocular reconstruction.",
+      "authors": [
+        "Diyari Mohammed Salih",
+        "Lingxiang Hu",
+        "Naima AitOufroukh-Mammar",
+        "Fabien Bonardi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-19T10:12:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.17171v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "geometric foundation model for dense reconstruction",
+      "llm_evidence_cn": "使用几何基础模型进行密集重建",
+      "llm_evidence": "使用几何基础模型进行密集重建",
+      "canonical_evidence": "使用几何基础模型进行密集重建",
+      "llm_tldr_en": "VIDAR combines visual-inertial odometry with a geometric foundation model to produce metric-scale dense reconstructions, achieving low error on EuRoC.",
+      "llm_tldr_cn": "单目基础模型提供密集几何但缺乏稳定度量尺度。本文提出VIDAR框架，将视觉-惯性前端作为度量锚，与深度基础模型Depth Anything 3耦合，实现密集重建的尺度校正。在EuRoC数据集上，姿态注入将尺度误差降至约1%，解耦混合策略进一步提升精度。该方法无需额外传感器，为密集重建提供实用解决方案。",
+      "llm_tldr": "单目基础模型提供密集几何但缺乏稳定度量尺度。本文提出VIDAR框架，将视觉-惯性前端作为度量锚，与深度基础模型Depth Anything 3耦合，实现密集重建的尺度校正。在EuRoC数据集上，姿态注入将尺度误差降至约1%，解耦混合策略进一步提升精度。该方法无需额外传感器，为密集重建提供实用解决方案。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.18504v1",
+      "source": "arxiv",
+      "title": "Now We Know? A Systematic Comparison of TerraMind and THOR",
+      "abstract": "Benchmarks for Geospatial Foundation Models (GFMs) increasingly rank models by aggregate score, but such rankings obscure why models differ: how much of the gap is architecture, how much is decoder capacity, and how much is a use-case-specific artefact? This study addresses that gap through a controlled comparison of two GFMs developed under European Space Agency's $Φ$-lab with contrasting design philosophies: THOR, which introduces a compute-adaptive architecture supporting variable patch sizes and unifies Sentinel-1, -2, and -3 data at their native resolutions; and TerraMind, a multimodal generative GFM pretrained with a dual-scale token/pixel objective that enables any-to-any cross-modal generation (Thinking-in-Modalities) to infer missing sensors at inference time. Rather than reporting a single leaderboard, we investigate the axes along which the two architectures actually differ - patch size, decoder complexity, finetuning regime, input modality, and model scale - across ten use cases spanning segmentation and regression in diverse domains, including climate disaster response, methane leak detection, snow monitoring, or sea ice mapping. We find that architectural design choices - patch size and decoder type in particular - explain more performance variance than model identity itself, that the two models embody complementary investment strategies (pretraining-time scale for TerraMind versus inference-time tokenisation for THOR), and that correctly interpreting results requires dataset-level characterisation. The resulting picture is not a single winner but a set of hypotheses and a diagnostic ablation methodology that we expect to generalise to future GFMs beyond THOR and TerraMind.",
+      "authors": [
+        "Frederick Schindlegger",
+        "Kenzo Bounegta",
+        "Eva Gmelich Meijling",
+        "Johannes Jakubik",
+        "Arnt-Børre Salberg",
+        "Theodor Forgaard",
+        "Nicolas Longepe",
+        "Valerio Marsocci"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-20T20:55:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.18504v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "systematic comparison of geospatial foundation models",
+      "llm_evidence_cn": "地理空间基础模型的系统比较",
+      "llm_evidence": "地理空间基础模型的系统比较",
+      "canonical_evidence": "地理空间基础模型的系统比较",
+      "llm_tldr_en": "Controlled comparison of two geospatial foundation models, revealing architecture and decoder capacity contributions to performance gaps.",
+      "llm_tldr_cn": "地理空间基础模型（GFM）的排名常掩盖架构差异。本文系统比较了TerraMind和THOR两种GFM，分析了架构、解码器容量等因素对性能差距的影响，为GFM设计提供见解。",
+      "llm_tldr": "地理空间基础模型（GFM）的排名常掩盖架构差异。本文系统比较了TerraMind和THOR两种GFM，分析了架构、解码器容量等因素对性能差距的影响，为GFM设计提供见解。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
