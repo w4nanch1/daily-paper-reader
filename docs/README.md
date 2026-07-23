@@ -6,58 +6,38 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-22
-- 运行时间：2026-07-22 21:04:37 UTC
+- 最新运行日期：2026-07-23
+- 运行时间：2026-07-23 20:24:22 UTC
 - 运行状态：成功
-- 本次总论文数：12
-- 精读区：6
-- 速读区：6
+- 本次总论文数：6
+- 精读区：3
+- 速读区：3
 
 ### 今日简报（AI）
-今日聚焦世界模型强化学习与动作探索，两篇高分精读揭示分离世界效应与动作探索的前沿方法。  
-最值得看的方向：将物理动作与视觉世界模型解耦（DWM）及主动动作探索策略（PAVXploreRL），均获9.0高分。  
-建议关注世界模型在机器人物理仿真中的落地，尤其是结合视觉语言代理的“Real2Sim”建模（8.0分）为后续实践提供直接接口。
-- 详情：[/202607/22/README](/202607/22/README)
+今日精读3篇、速读3篇，聚焦端到端自动驾驶先验世界建模与稳定潜动态世界模型。重点推荐9分《PerceptDrive》和8分《Koopman Dreamer》，前者以自适应专家路由实现感知驱动的世界-动作建模，后者用谱约束稳定潜动态、提升想象可靠性。建议关注自动驾驶与世界模型的融合方向，同时留意无环境数据生成及具身世界模型基准测试。
+- 详情：[/202607/23/README](/202607/23/README)
 
 ### 精读区论文标签
-1. [PAVXploreRL: Physical-Action-Visual World Model Reinforcement Learning with Action Exploration](/202607/22/2607.16602v2-pavxplorerl-physical-action-visual-world-model-reinforcement-learning-with-action-exploration)  
+1. [PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving](/202607/23/2607.20175v1-perceptdrive-perception-prior-world-action-modeling-with-adaptive-expert-routing-for-end-to-end-autonomous-driving)  
    标签：评分：9.0/10、query:world
-   evidence：动作条件世界模型及PAV优化
-2. [DWM: Separating World Effects from Actions in Latent World Models](/202607/22/2607.18715v1-dwm-separating-world-effects-from-actions-in-latent-world-models)  
-   标签：评分：9.0/10、query:world
-   evidence：在潜在世界模型中区分世界效应与动作效应
-3. [WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory](/202607/22/2607.18840v1-worldscape-policy-20-empowering-steerable-world-action-modeling-with-reasoning-augmented-memory)  
-   标签：评分：9.0/10、query:world
-   evidence：基于推理增强记忆的世界动作模型
-4. [ABot-World-0: Infinite Interactive World Rollout on a Single Desktop GPU](/202607/22/2607.19191v1-abot-world-0-infinite-interactive-world-rollout-on-a-single-desktop-gpu)  
-   标签：评分：9.0/10、query:world
-   evidence：用于无限交互的动作条件视频世界模型
-5. [Masked Visual Actions for Unified World Modeling](/202607/22/2607.19343v1-masked-visual-actions-for-unified-world-modeling)  
-   标签：评分：9.0/10、query:world
-   evidence：遮蔽视觉动作实现统一世界建模，直接桥接动作与世界预测
-6. [RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation](/202607/22/2607.18709v1-robointer15-a-holistic-intermediate-representation-suite-for-embodied-world-modeling-and-robotic-manipulation)  
+   evidence：世界-动作建模结合感知基础模型
+2. [Koopman Dreamer: Spectrally Constrained Latent Dynamics for Stable World-Model Imagination](/202607/23/2607.19719v1-koopman-dreamer-spectrally-constrained-latent-dynamics-for-stable-world-model-imagination)  
    标签：评分：8.0/10、query:world
-   evidence：用于具身世界建模和机器人操作的全面中间表示套件
+   evidence：世界模型结合谱约束潜在动力学用于稳定想象
+3. [Dreamer-CPC: Message Learning with World Models for Decentralized Multi-agent Reinforcement Learning](/202607/23/2607.19809v1-dreamer-cpc-message-learning-with-world-models-for-decentralized-multi-agent-reinforcement-learning)  
+   标签：评分：8.0/10、query:world
+   evidence：在去中心化多智能体强化学习中集成DreamerV3世界模型
 
 ### 速读区论文标签
-1. [Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents](/202607/22/2607.19190v1-agentic-real2sim-physics-based-world-modeling-with-vision-language-agents)  
-   标签：评分：8.0/10、query:world
-   evidence：基于视觉-语言代理的物理世界建模
-2. [Semantic Anchoring for Robotic Action Representations](/202607/22/2607.13597v2-semantic-anchoring-for-robotic-action-representations)  
+1. [Environment-free Synthetic Data Generation for API-Calling Agents](/202607/23/2607.16900v2-environment-free-synthetic-data-generation-for-api-calling-agents)  
    标签：评分：7.0/10、query:world
-   evidence：利用基础模型语义结构锚定动作表征
-3. [From Surface Forecasting to Observability Forecasting: A Latent World Model for Cloud-Aware EO Monitoring](/202607/22/2607.13651v1-from-surface-forecasting-to-observability-forecasting-a-latent-world-model-for-cloud-aware-eo-monitoring)  
+   evidence：使用LLM作为数字世界模型生成轨迹
+2. [KineBench: Benchmarking Embodied World Models via IDM-Free Kinematic Grounding](/202607/23/2607.19876v1-kinebench-benchmarking-embodied-world-models-via-idm-free-kinematic-grounding)  
    标签：评分：7.0/10、query:world
-   evidence：用于云感知地球观测的潜在世界模型
-4. [VIDAR: Visual-Inertial Dense Alignment and Reconstruction via a Geometric Foundation Model](/202607/22/2607.17171v1-vidar-visual-inertial-dense-alignment-and-reconstruction-via-a-geometric-foundation-model)  
+   evidence：具身世界模型基准
+3. [Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids](/202607/23/2607.20345v1-closing-the-lab-to-store-gap-a-data-efficient-post-training-and-experience-driven-learning-vla-framework-for-retail-humanoids)  
    标签：评分：7.0/10、query:world
-   evidence：使用几何基础模型进行密集重建
-5. [Now We Know? A Systematic Comparison of TerraMind and THOR](/202607/22/2607.18504v1-now-we-know-a-systematic-comparison-of-terramind-and-thor)  
-   标签：评分：7.0/10、query:world
-   evidence：地理空间基础模型的系统比较
-6. [Planning as Emergent Behavior in Reinforcement Learning with Relational Hidden States](/202607/22/2607.18589v1-planning-as-emergent-behavior-in-reinforcement-learning-with-relational-hidden-states)  
-   标签：评分：6.0/10、query:world
-   evidence：强化学习中规划涌现现象与关系隐藏状态的关联，提及世界模型
+   evidence：使用GR00T N1.6基础模型进行VLA人形机器人控制
 
 
 <div class="dpr-home-promo-card">

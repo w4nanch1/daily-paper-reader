@@ -1,0 +1,264 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-23T20:17:58.603937+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.20175v1",
+      "source": "arxiv",
+      "title": "PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving",
+      "abstract": "Frozen perception foundation models encode rich geometric, semantic, and dynamic knowledge. Yet narrow conditioning interfaces may attenuate task-relevant cues, while static fusion cannot adjust expert contributions to each scene. We cast this challenge as the prior-to-plan transfer problem and introduce PerceptDrive, a perception prior world-action modeling framework with adaptive expert routing. PerceptDrive feeds teacher-distilled priors from a frozen, driving-adapted provider and dense observation latents from a frozen self-supervised video encoder into a trainable expert-routed world-action model. Expert-specific query branches process these signals, while a prior-retention objective anchors each branch to its prior. A router predicts soft gates from a shared scene representation and combines the expert conditions before trajectory generation. During training, privileged rule-based sub-metric estimates for branch-specific trajectory drafts provide soft-gate distillation targets. The predicted action-free future latent conditions a flow-matching actor. At inference, privileged components are absent; with one front-facing camera, PerceptDrive generates one trajectory per planning step without test-time scoring, reranking, or search. Experiments show that PerceptDrive achieves state-of-the-art performance with 90.4 PDMS on NAVSIM v1 and 90.2 EPDMS on NAVSIM v2, outperforming existing methods. Ablations confirm complementary gains from prior retention and scene-conditioned routing, alongside differential reliance on the three priors. These results demonstrate that preserving and adaptively routing perception priors improves direct planning without test-time candidate selection.",
+      "authors": [
+        "Yushan Liu",
+        "Tianxiong Lv",
+        "Bohua Wang",
+        "Hangqi Fan",
+        "Chenxu Zhao",
+        "He Zheng",
+        "Xuchang Zhong",
+        "Yifan Xie",
+        "Congyang Zhao",
+        "Zhihao Liao",
+        "Leigang Luo",
+        "Yang Cai",
+        "Xiao-Ping Zhang",
+        "Wenbo Ding"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-22T14:09:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.20175v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "World-Action Modeling with perception foundation model",
+      "llm_evidence_cn": "世界-动作建模结合感知基础模型",
+      "llm_evidence": "世界-动作建模结合感知基础模型",
+      "canonical_evidence": "世界-动作建模结合感知基础模型",
+      "llm_tldr_en": "Proposes PerceptDrive, a world-action modeling framework that leverages frozen perception foundation models via teacher-distilled priors and adaptive expert routing for end-to-end autonomous driving, achieving better task-relevant cue preservation and scene-adaptive fusion.",
+      "llm_tldr_cn": "现有驾驶模型依赖冻结的感知基础模型，但窄条件接口会削弱任务相关信号，而静态融合无法自适应场景。本文提出PerceptDrive，一种世界-动作建模框架，通过教师蒸馏先验和自适应专家路由，将感知先验与密集观测潜变量融合到可训练的世界-动作模型中。实验表明，该方法在端到端自动驾驶中有效提升了规划质量。该工作展示了如何将基础模型知识与动作建模结合，为世界模型驱动的决策提供了新范式。",
+      "llm_tldr": "现有驾驶模型依赖冻结的感知基础模型，但窄条件接口会削弱任务相关信号，而静态融合无法自适应场景。本文提出PerceptDrive，一种世界-动作建模框架，通过教师蒸馏先验和自适应专家路由，将感知先验与密集观测潜变量融合到可训练的世界-动作模型中。实验表明，该方法在端到端自动驾驶中有效提升了规划质量。该工作展示了如何将基础模型知识与动作建模结合，为世界模型驱动的决策提供了新范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19719v1",
+      "source": "arxiv",
+      "title": "Koopman Dreamer: Spectrally Constrained Latent Dynamics for Stable World-Model Imagination",
+      "abstract": "Latent world models improve sample efficiency in continuous control by optimizing policies over imagined latent trajectories, but common neural transitions offer limited direct control over modal persistence and error accumulation in long rollouts. We propose Koopman Dreamer, a Dreamer-style world model with a spectrally constrained deterministic latent dynamics core. Its Koopman-inspired backbone uses two-dimensional rotation--scaling blocks with bounded radii to represent damping, rotation, and near-periodic modes. Linear and low-rank bilinear action terms capture global and state-dependent control effects, while stochastic-state modulation supplies local correction information. To reduce the mismatch between posterior-conditioned training and prior-only imagination, the model combines posterior-conditioned EMA teacher targets with one-step consistency, multi-step rollout, and open-loop observation-prediction objectives. We further derive a multi-step rollout-error bound that separates amplification by the spectral backbone and bilinear interaction from the additive effects of stochastic-state mismatch and modeling residuals, clarifying the trade-off between error attenuation and long-term information retention. Experimental results on proprioceptive continuous-control tasks from the DeepMind Control Suite and UAV-LiDAR autonomous navigation demonstrate that Koopman Dreamer improves the stability of long-horizon latent rollouts and achieves stronger closed-loop control performance on tasks that rely on high-quality multi-step imagination.",
+      "authors": [
+        "Jiaqi Li",
+        "Xinglong Zhang",
+        "Haibin Xie",
+        "Yixing Lan",
+        "Wei Pan",
+        "Xin Xu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-07-22T03:38:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.19719v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "World model with spectrally constrained latent dynamics for stable imagination",
+      "llm_evidence_cn": "世界模型结合谱约束潜在动力学用于稳定想象",
+      "llm_evidence": "世界模型结合谱约束潜在动力学用于稳定想象",
+      "canonical_evidence": "世界模型结合谱约束潜在动力学用于稳定想象",
+      "llm_tldr_en": "Proposes Koopman Dreamer, a Dreamer-style world model with a Koopman-inspired spectrally constrained latent dynamics core, enabling stable long-rollout imagination and improved sample efficiency in continuous control.",
+      "llm_tldr_cn": "现有潜在世界模型在长时间展开中模态持续性和误差累积控制有限。本文提出Koopman Dreamer，采用Koopman启发的二维旋转-缩放模块构建谱约束确定性潜在动力学，结合线性/双线性动作项和随机状态调制，减少了后验条件化不匹配。在连续控制任务上，该方法实现了更稳定的想象轨迹和更高的样本效率。该工作为世界模型中的动力学稳定性提供了新的理论视角。",
+      "llm_tldr": "现有潜在世界模型在长时间展开中模态持续性和误差累积控制有限。本文提出Koopman Dreamer，采用Koopman启发的二维旋转-缩放模块构建谱约束确定性潜在动力学，结合线性/双线性动作项和随机状态调制，减少了后验条件化不匹配。在连续控制任务上，该方法实现了更稳定的想象轨迹和更高的样本效率。该工作为世界模型中的动力学稳定性提供了新的理论视角。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.19809v1",
+      "source": "arxiv",
+      "title": "Dreamer-CPC: Message Learning with World Models for Decentralized Multi-agent Reinforcement Learning",
+      "abstract": "In multi-agent reinforcement learning (MARL), inter-agent communication is effective for improving performance under partial observability. Representation learning-based approaches enable decentralized agents to learn messages grounded in their own observations, but they rely only on current observations and cannot convey information accumulated over time. We propose Dreamer-CPC, a decentralized model-based MARL method that integrates message learning based on Collective Predictive Coding (CPC) into the world model of DreamerV3. Each agent independently maintains a world model and a message module, and infers and exchanges messages from the latent states of the world model that reflect the history of past observations and actions. We evaluated Dreamer-CPC in two environments: Observer, a non-cooperative information-sharing task, and CatchApple, a newly introduced task in which task-relevant observations are temporarily missing. In both environments, Dreamer-CPC outperformed IPPO-CPC, an existing CPC-based method that generates messages from current observations, as well as no-communication baselines. In particular, in CatchApple, Dreamer-CPC achieved 4 to 5 times the episode return of IPPO-CPC, demonstrating effective coordination where other methods fail due to missing observations. These results suggest that communication grounded in the latent dynamics of world models can support decentralized decision-making when current observations alone are insufficient.",
+      "authors": [
+        "Taisuke Takayama",
+        "Naoto Yoshida",
+        "Tadahiro Taniguchi"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.LG"
+      ],
+      "published": "2026-07-22T06:42:03+00:00",
+      "link": "https://arxiv.org/pdf/2607.19809v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "integrates world model (DreamerV3) for multi-agent RL",
+      "llm_evidence_cn": "在去中心化多智能体强化学习中集成DreamerV3世界模型",
+      "llm_evidence": "在去中心化多智能体强化学习中集成DreamerV3世界模型",
+      "canonical_evidence": "在去中心化多智能体强化学习中集成DreamerV3世界模型",
+      "llm_tldr_en": "Dreamer-CPC integrates Collective Predictive Coding into DreamerV3 world models for decentralized MARL, enabling agents to learn messages from latent states that capture historical information.",
+      "llm_tldr_cn": "在多智能体强化学习中，传统通信方法仅依赖当前观测而无法传递累积信息。本文提出Dreamer-CPC方法，将集体预测编码（CPC）融入DreamerV3世界模型，每个智能体独立维护世界模型并从其潜在状态中推断和交换消息。实验表明，该方法在部分可观测环境下显著提升了协作性能。",
+      "llm_tldr": "在多智能体强化学习中，传统通信方法仅依赖当前观测而无法传递累积信息。本文提出Dreamer-CPC方法，将集体预测编码（CPC）融入DreamerV3世界模型，每个智能体独立维护世界模型并从其潜在状态中推断和交换消息。实验表明，该方法在部分可观测环境下显著提升了协作性能。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.16900v2",
+      "source": "arxiv",
+      "title": "Environment-free Synthetic Data Generation for API-Calling Agents",
+      "abstract": "Training API-calling large language model (LLM) agents demands massive amounts of high-quality trajectories. However, collecting such data at scale typically requires fully implemented environments with executable APIs and realistic, pre-populated backend databases, creating a major bottleneck for scalability. To overcome this, we propose an environment-free synthetic data generation approach that leverages LLMs as on-the-fly digital world models. Given only API specifications, our method generates trajectories mimicking interactions between an agent and a stateful environment. Specifically, an LLM first generates diverse tasks solvable with the provided APIs. A teacher agent then iteratively solves each task while an LLM simulator generates coherent synthetic API responses conditioned on the task context and simulation history. Finally, an LLM judge filters the trajectories to ensure the quality of the resulting dataset. We evaluate our approach on the challenging AppWorld and OfficeBench benchmarks, which include both information-retrieval and state-changing tasks. Fine-tuning models on our synthetic data yields significant performance gains, demonstrating that effective supervision for API-calling agents can be generated without any executable environment. Our results establish LLM-based API simulation as a practical, scalable solution for training agents across diverse API ecosystems.",
+      "authors": [
+        "Seanie Lee",
+        "Sanjoy Chowdhury",
+        "Chao Jiang",
+        "Cheng-Yu Hsieh",
+        "Ting-Yao Hu",
+        "Alexander T Toshev",
+        "Oncel Tuzel",
+        "Raviteja Vemulapalli"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-18T17:36:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.16900v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "uses LLM as digital world model for trajectory generation",
+      "llm_evidence_cn": "使用LLM作为数字世界模型生成轨迹",
+      "llm_evidence": "使用LLM作为数字世界模型生成轨迹",
+      "canonical_evidence": "使用LLM作为数字世界模型生成轨迹",
+      "llm_tldr_en": "Proposes environment-free synthetic data generation for API agents by leveraging LLM as an on-the-fly digital world model, enabling scalable training without real environments.",
+      "llm_tldr_cn": "针对API调用智能体训练数据获取困难的问题，提出了无环境合成数据生成方法，将大语言模型作为即时数字世界模型来模拟状态环境，仅需API规范即可生成高质量轨迹。实验表明该方法能有效替代真实环境，显著提升智能体训练的可扩展性。",
+      "llm_tldr": "针对API调用智能体训练数据获取困难的问题，提出了无环境合成数据生成方法，将大语言模型作为即时数字世界模型来模拟状态环境，仅需API规范即可生成高质量轨迹。实验表明该方法能有效替代真实环境，显著提升智能体训练的可扩展性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.19876v1",
+      "source": "arxiv",
+      "title": "KineBench: Benchmarking Embodied World Models via IDM-Free Kinematic Grounding",
+      "abstract": "Evaluating the physical consistency of embodied world models(EWMs) is a critical open challenge. While closed-loop evaluation via simulator rollouts offers a more faithful assessment of physical plausibility than open-loop alternatives, existing frameworks almost exclusively rely on Inverse Dynamics Models(IDMs) for action extraction. Due to the intricate mapping from 2D pixel space to 3D kinematic space, the learned IDMs can be brittle to data outside their training distribution, resulting in unreliable action extraction from the generated videos with novel objects and scenarios. This creates an unavoidable attribution ambiguity between world model inaccuracies and extractor errors. To reduce this ambiguity, we present KineBench, an IDM-free closed-loop benchmark for EWMs, built upon an explicit kinematic grounding pipeline. Given a generated video, KineBench employs cascaded visual foundation models to directly extract 6D end-effector poses from individual frames, which are then executed in a physics simulator for closed-loop validation. Beyond execution-based task success, KineBench incorporates two classical 3D kinematic metrics--Spectral Arc Length (SPARC) and the Maruyama Manipulability Index--to characterize trajectory smoothness and kinematic feasibility from a robot-centric perspective. Built on 20 diverse manipulation tasks in ManiSkill3, KineBench evaluates EWMs across four progressive suites: basic execution, task transfer, visual out-of-distribution generalization, and complexity-conditioned scaling. Evaluation across frontier models reveals task-complexity-bounded nonlinear scaling in embodied video generation, providing empirical guidance for future data-scaling strategies.",
+      "authors": [
+        "Zeyu Liu",
+        "Zhangzhe Zhu",
+        "Yang Zhang",
+        "Chenyou Fan",
+        "Chenjia Bai",
+        "Xuelong Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-22T08:04:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.19876v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "benchmark for embodied world models",
+      "llm_evidence_cn": "具身世界模型基准",
+      "llm_evidence": "具身世界模型基准",
+      "canonical_evidence": "具身世界模型基准",
+      "llm_tldr_en": "Introduces KineBench, an IDM-free benchmark for evaluating embodied world models using kinematic grounding, removing attribution ambiguity between model inaccuracies and action extraction errors.",
+      "llm_tldr_cn": "具身世界模型的物理一致性评估是重要挑战，现有闭环评估依赖逆动力学模型，易引入动作提取误差。本文提出KineBench，一种免逆动力学模型的基准，通过运动学接地直接评价世界模型生成的视频质量。实验表明KineBench能有效区分世界模型缺陷和提取器错误，为世界模型评估提供了更可靠的工具，有助于推动具身AI研究。",
+      "llm_tldr": "具身世界模型的物理一致性评估是重要挑战，现有闭环评估依赖逆动力学模型，易引入动作提取误差。本文提出KineBench，一种免逆动力学模型的基准，通过运动学接地直接评价世界模型生成的视频质量。实验表明KineBench能有效区分世界模型缺陷和提取器错误，为世界模型评估提供了更可靠的工具，有助于推动具身AI研究。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.20345v1",
+      "source": "arxiv",
+      "title": "Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids",
+      "abstract": "Closing the gap between benchmark performance and reliable real-world operation remains a central challenge for Vision-Language-Action (VLA) humanoid robots, which must handle execution errors, distribution shifts, and environmental variability. This paper presents DEED (Data-Efficient Post-Training and Experience-Driven Learning), a systems-level approach evaluated on a supermarket chip-restocking task using a Unitree G1-Edu humanoid robot and the GR00T N1.6 foundation model. DEED comprises three key components: (1) a data-efficient post-training pipeline with control-frequency alignment, data curation, task-relevant visual highlighting, and reduced VLA dependence; (2) a real-world study of experience-driven refinement, adapted from RECAP via a text-based advantage prefix and a vision-language value function; and (3) a latent-space analysis tool for studying in- and out-of-distribution behavior. Our results suggest that bridging the lab-to-store gap is primarily a systems integration challenge rather than an architectural one: careful data design and targeted post-training can transform a policy that fails under naive fine-tuning into a competent real-world system using only a single GPU.",
+      "authors": [
+        "Roger Sala Sisó",
+        "Tiago Silvério",
+        "Jakob Sand",
+        "Tran Nguyen Le"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-22T16:30:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.20345v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "uses GR00T N1.6 foundation model for VLA humanoid",
+      "llm_evidence_cn": "使用GR00T N1.6基础模型进行VLA人形机器人控制",
+      "llm_evidence": "使用GR00T N1.6基础模型进行VLA人形机器人控制",
+      "canonical_evidence": "使用GR00T N1.6基础模型进行VLA人形机器人控制",
+      "llm_tldr_en": "DEED is a systems-level VLA framework that uses the GR00T N1.6 foundation model to close the lab-to-store gap for retail humanoids via data-efficient post-training and experience-driven learning.",
+      "llm_tldr_cn": "该工作针对视觉-语言-动作（VLA）人形机器人从实验室到实际部署的泛化差距问题，提出了DEED框架。该方法利用GR00T N1.6基础模型，通过数据高效的后训练和基于经验的学习管道，在超市货架补货任务中实现了可靠操作。实验表明，该框架能有效减少执行错误和分布偏移，为VLA机器人实用化提供了可扩展方案。",
+      "llm_tldr": "该工作针对视觉-语言-动作（VLA）人形机器人从实验室到实际部署的泛化差距问题，提出了DEED框架。该方法利用GR00T N1.6基础模型，通过数据高效的后训练和基于经验的学习管道，在超市货架补货任务中实现了可靠操作。实验表明，该框架能有效减少执行错误和分布偏移，为VLA机器人实用化提供了可扩展方案。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
