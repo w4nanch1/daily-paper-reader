@@ -6,38 +6,42 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-23
-- 运行时间：2026-07-23 20:24:22 UTC
+- 最新运行日期：2026-07-24
+- 运行时间：2026-07-24 20:48:49 UTC
 - 运行状态：成功
 - 本次总论文数：6
 - 精读区：3
 - 速读区：3
 
 ### 今日简报（AI）
-今日精读3篇、速读3篇，聚焦端到端自动驾驶先验世界建模与稳定潜动态世界模型。重点推荐9分《PerceptDrive》和8分《Koopman Dreamer》，前者以自适应专家路由实现感知驱动的世界-动作建模，后者用谱约束稳定潜动态、提升想象可靠性。建议关注自动驾驶与世界模型的融合方向，同时留意无环境数据生成及具身世界模型基准测试。
-- 详情：[/202607/23/README](/202607/23/README)
+今日精选6篇论文，精读聚焦于混合世界建模的自动驾驶VLA与流式多智能体自回归扩散模型，均获9.0高分。
+
+最值得关注的方向是HyWorldVLA的混合世界建模提升驾驶决策泛化性，以及Streaming Multi-Agent扩散模型利用世界状态寄存器实现高效协同。
+
+建议读者深入理解混合世界建模思想，并尝试将多智能体扩散框架应用于LLM驱动的知识图谱或城市语义模型生成任务。
+- 详情：[/202607/24/README](/202607/24/README)
 
 ### 精读区论文标签
-1. [PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving](/202607/23/2607.20175v1-perceptdrive-perception-prior-world-action-modeling-with-adaptive-expert-routing-for-end-to-end-autonomous-driving)  
+1. [HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving](/202607/24/2607.20988v1-hyworldvla-a-vision-language-action-model-with-hybrid-world-modeling-for-autonomous-driving)  
    标签：评分：9.0/10、query:world
-   evidence：世界-动作建模结合感知基础模型
-2. [Koopman Dreamer: Spectrally Constrained Latent Dynamics for Stable World-Model Imagination](/202607/23/2607.19719v1-koopman-dreamer-spectrally-constrained-latent-dynamics-for-stable-world-model-imagination)  
+   evidence：混合世界-视觉-语言-动作模型用于自动驾驶
+2. [Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers](/202607/24/2607.21594v1-streaming-multi-agent-autoregressive-diffusion-model-with-world-state-registers)  
+   标签：评分：9.0/10、query:world
+   evidence：流式多智能体世界模型，带有世界状态寄存器
+3. [Robostral Navigate](/202607/24/2607.20785v1-robostral-navigate)  
    标签：评分：8.0/10、query:world
-   evidence：世界模型结合谱约束潜在动力学用于稳定想象
-3. [Dreamer-CPC: Message Learning with World Models for Decentralized Multi-agent Reinforcement Learning](/202607/23/2607.19809v1-dreamer-cpc-message-learning-with-world-models-for-decentralized-multi-agent-reinforcement-learning)  
-   标签：评分：8.0/10、query:world
-   evidence：在去中心化多智能体强化学习中集成DreamerV3世界模型
+   evidence：使用单目RGB图像预测航点的视觉语言导航模型
 
 ### 速读区论文标签
-1. [Environment-free Synthetic Data Generation for API-Calling Agents](/202607/23/2607.16900v2-environment-free-synthetic-data-generation-for-api-calling-agents)  
+1. [VirtualSet: Typed Ontology Worlds as an LLM Generation Target for Grounded Queries and Guarded Decisions](/202607/24/2607.18821v2-virtualset-typed-ontology-worlds-as-an-llm-generation-target-for-grounded-queries-and-guarded-decisions)  
    标签：评分：7.0/10、query:world
-   evidence：使用LLM作为数字世界模型生成轨迹
-2. [KineBench: Benchmarking Embodied World Models via IDM-Free Kinematic Grounding](/202607/23/2607.19876v1-kinebench-benchmarking-embodied-world-models-via-idm-free-kinematic-grounding)  
+   evidence：类型化本体世界作为LLM生成目标用于接地查询
+2. [GS-Agent: Creating 4D Physical Worlds With Generative Simulation](/202607/24/2607.21522v1-gs-agent-creating-4d-physical-worlds-with-generative-simulation)  
    标签：评分：7.0/10、query:world
-   evidence：具身世界模型基准
-3. [Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids](/202607/23/2607.20345v1-closing-the-lab-to-store-gap-a-data-efficient-post-training-and-experience-driven-learning-vla-framework-for-retail-humanoids)  
-   标签：评分：7.0/10、query:world
-   evidence：使用GR00T N1.6基础模型进行VLA人形机器人控制
+   evidence：使用基础模型和生成模拟创建4D物理世界
+3. [CityLLM: A framework for natural-language querying of semantic 3D city models](/202607/24/2607.14542v1-cityllm-a-framework-for-natural-language-querying-of-semantic-3d-city-models)  
+   标签：评分：6.0/10、query:world
+   evidence：用于三维城市查询的世界模型
 
 
 <div class="dpr-home-promo-card">
