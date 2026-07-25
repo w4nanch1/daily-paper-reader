@@ -1,0 +1,312 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-25T20:37:42.869215+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2607.20988v1",
+      "source": "arxiv",
+      "title": "HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving",
+      "abstract": "Vision-Language-Action (VLA) models augmented with world modeling represent a promising paradigm for end-to-end autonomous driving. While pixel-level future prediction enables fine-grained spatiotemporal reasoning, it compromises robustness in noisy driving scenarios. Conversely, latent-based world models alleviate this sensitivity but often incur limited interpretability and representational degradation due to absent pixel-level grounding. To reconcile this trade-off, we propose HyWorldVLA, a hybrid world-VLA framework that unifies pixel-level supervision and latent representation learning. In the pre-training stage, HyWorldVLA predicts video latents encoded by a pre-trained video VAE, while simultaneously reconstructing video frames to provide precise pixel-level grounding. During the subsequent co-fine-tuning phase, the model exclusively predicts latent features, which are fed into an action expert to generate trajectories. Extensive experiments on NAVSIM v1 and v2 benchmarks demonstrate that HyWorldVLA significantly outperforms both pixel-based and latent-based world model baselines. Notably, we present the first comprehensive qualitative and quantitative analysis of world model noise robustness in autonomous driving, establishing a new benchmark for evaluating future architectures.",
+      "authors": [
+        "Quanfu Yu",
+        "Xian Wu",
+        "Hao Xu",
+        "Liulong Ma"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-23T07:11:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.20988v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "hybrid world modeling unifying pixel-level supervision and latent representation for VLA models",
+      "llm_evidence_cn": "混合世界建模，统一像素级监督和潜在表示，用于视觉-语言-动作模型",
+      "llm_evidence": "混合世界建模，统一像素级监督和潜在表示，用于视觉-语言-动作模型",
+      "canonical_evidence": "混合世界建模，统一像素级监督和潜在表示，用于视觉-语言-动作模型",
+      "llm_tldr_en": "Proposes HyWorldVLA, a hybrid world-VLA framework that combines pixel-level video reconstruction and latent prediction for robust autonomous driving.",
+      "llm_tldr_cn": "现有VLA模型要么依赖于像素级未来预测，鲁棒性差；要么使用潜在世界模型，可解释性有限。HyWorldVLA通过混合框架同时进行像素级视频重建和潜在表示学习，在预训练中预测视频VAE潜变量并重建视频帧。在nuScenes等数据集上，该模型在驾驶决策任务中实现了更优的鲁棒性和可解释性。",
+      "llm_tldr": "现有VLA模型要么依赖于像素级未来预测，鲁棒性差；要么使用潜在世界模型，可解释性有限。HyWorldVLA通过混合框架同时进行像素级视频重建和潜在表示学习，在预训练中预测视频VAE潜变量并重建视频帧。在nuScenes等数据集上，该模型在驾驶决策任务中实现了更优的鲁棒性和可解释性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.17250v1",
+      "source": "arxiv",
+      "title": "EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World",
+      "abstract": "This paper introduces EvolvingWorld, a framework and benchmark for character and world co-evolution in interactive literary worlds. Existing systems either treat interactive literary simulation as static persona imitation or isolated scene generation, failing to capture how characters and worlds evolve together over time. To address this, EvolvingWorld models literary simulation as a long-horizon process where characters interact, scenes progress, and character and world states are persistently updated. Unlike prior systems relying on fixed schemas, EvolvingWorld adopts an open-schema framework to support simulation across diverse literary worlds. The framework consists of two coupled modules: a Character Agent for multi-character role-play and persistent profile evolution, and an LLM-based World Model for global and location/entity-level state maintenance and scene progression. Based on this architecture, we formulate 7 trainable tasks for scene initialization, interaction generation, and state update. We construct a dataset from 57 books, producing 138,596 supervised training samples and 222 snapshots for testing. Furthermore, we introduce a trajectory-level LLM-as-Judge evaluation protocol spanning 10 dimensions and 20 metrics. Experiments show that EvolvingWorld can improve long-horizon simulation by effectively maintaining persistent, coherent character and world development.",
+      "authors": [
+        "Qing Zong",
+        "Yue Guo",
+        "Mengxin Yang",
+        "Yiwen Guo",
+        "Yangqiu Song"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-19T13:40:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.17250v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "World model for interactive literary worlds",
+      "llm_evidence_cn": "交互式文学世界中的世界模型",
+      "llm_evidence": "交互式文学世界中的世界模型",
+      "canonical_evidence": "交互式文学世界中的世界模型",
+      "llm_tldr_en": "Proposes EvolvingWorld, an open-schema framework for co-evolving character agents and world models in interactive literary worlds, enabling long-horizon simulation.",
+      "llm_tldr_cn": "该论文提出EvolvingWorld框架和基准，用于交互式文学世界中角色与世界的共同演化。现有系统要么将交互式文学模拟视为静态角色模仿，要么视为孤立的场景生成，未能捕捉角色和世界随时间共同演化的动态。EvolvingWorld采用开放模式框架，将文学模拟建模为长期过程，角色交互、场景推进和状态持续更新，由角色模块和世界模块耦合驱动。实验表明该框架能有效支持多样文学世界的仿真。",
+      "llm_tldr": "该论文提出EvolvingWorld框架和基准，用于交互式文学世界中角色与世界的共同演化。现有系统要么将交互式文学模拟视为静态角色模仿，要么视为孤立的场景生成，未能捕捉角色和世界随时间共同演化的动态。EvolvingWorld采用开放模式框架，将文学模拟建模为长期过程，角色交互、场景推进和状态持续更新，由角色模块和世界模块耦合驱动。实验表明该框架能有效支持多样文学世界的仿真。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.17653v1",
+      "source": "arxiv",
+      "title": "LFM: Leveraging Foundation Models for Source-Free Universal Domain Adaptation",
+      "abstract": "Source-free universal domain adaptation (SF-UniDA) adapts a pre-trained source model to an unlabeled target domain under both covariate and label shifts, without access to source data. However, existing SF-UniDA methods rely on inefficient techniques such as threshold tuning and clustering. Foundation models (FMs), known for their generalization and zero-shot capabilities, remain underexplored in SF-UniDA. In this paper, we propose a framework that leverages foundation models (LFM) for SF-UniDA. We use a vision-language model (VLM) to compute similarities between target samples and text labels, including those for unknown classes generated by prompting a large language model. The label shift type is determined by analyzing the coefficient of variation of a similarity-based sample-level score. Unknown samples are identified using a binary Gaussian mixture model fitted to another similarity-based metric. Under a consensus strategy, the pseudo-labels generated by the VLM are refined by the target model initialized with the pre-trained source model, integrating knowledge from both the source domain and foundation models. Finally, these refined pseudo-labels are used to train the target model. Extensive experiments across all possible label shifts and multiple benchmarks demonstrate the effectiveness and superiority of our proposed LFM framework. Our code is available at https://github.com/iamjingli/LFM.",
+      "authors": [
+        "Jing Li",
+        "Pan Liu",
+        "Meng Zhao",
+        "Wanli Xue",
+        "Yanhong Yang",
+        "Xu Cheng",
+        "Fan Shi",
+        "Jianhua Zhang",
+        "Qinghua Hu",
+        "Shengyong Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.LG",
+        "cs.MM"
+      ],
+      "published": "2026-07-20T08:06:44+00:00",
+      "link": "https://arxiv.org/pdf/2607.17653v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "leverages vision-language foundation models for domain adaptation",
+      "llm_evidence_cn": "利用视觉语言基础模型进行域适应",
+      "llm_evidence": "利用视觉语言基础模型进行域适应",
+      "canonical_evidence": "利用视觉语言基础模型进行域适应",
+      "llm_tldr_en": "LFM proposes a framework leveraging vision-language foundation models for source-free universal domain adaptation by computing similarities with text labels and generating unknown class labels via LLM prompting.",
+      "llm_tldr_cn": "现有无源域适应方法依赖阈值调优和聚类，效率低下。提出LFM框架，使用视觉语言模型计算目标样本与文本标签的相似度，并用大语言模型提示生成未知类标签，确定标签偏移类型。在多个域适应基准上取得竞争性能，展示了基础模型在无源域适应中的有效性。",
+      "llm_tldr": "现有无源域适应方法依赖阈值调优和聚类，效率低下。提出LFM框架，使用视觉语言模型计算目标样本与文本标签的相似度，并用大语言模型提示生成未知类标签，确定标签偏移类型。在多个域适应基准上取得竞争性能，展示了基础模型在无源域适应中的有效性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.16619v2",
+      "source": "arxiv",
+      "title": "SAGE: A Socially-Aware Generative Engine for Heterogeneous Multi-Agent Navigation",
+      "abstract": "Safe and socially compliant navigation in open human-robot environments requires robots to reason about heterogeneous participants with different dynamics, autonomy levels, and social roles. Existing trajectory prediction and planning methods often rely on homogeneous interaction assumptions or enforce only geometric collision constraints, making it difficult to jointly model asymmetric interactions, coupled prediction-planning, and soft social norms. This paper proposes SAGE, a socially-aware generative engine for heterogeneous multi-agent navigation. SAGE represents robots and surrounding entities as a directed heterogeneous graph and employs a Heterogeneous Graph Transformer (HGT) to encode type-specific asymmetric interactions. Conditioned on the resulting context, a diffusion-based generative module jointly models future entity trajectories and robot trajectory plans. During inference, a training-free safety-social energy guidance mechanism refines sampled robot trajectories using differentiable collision, kinematic, task-progress, and role-conditioned social-compliance terms. Extensive experiments on real-world (ETH/UCY and SDD) and synthetic datasets verify the effectiveness of SAGE in improving safety and social compliance while maintaining task performance. The proposed guidance mechanism consistently reduces collision and social-violation rates, scales to teams of up to 20 robots, and enables explicit control of the safety-accuracy-task trade-off without retraining. These findings demonstrate the potential of SAGE as a scalable framework for socially-aware multi-agent navigation in complex environments.",
+      "authors": [
+        "Lan Hu",
+        "Minghui Liwang",
+        "Wenbo Zhu",
+        "Xinlei Yi",
+        "Yiguang Hong",
+        "Xianbin Wang",
+        "Zhenzhen Jiao",
+        "Seyyedali Hosseinalipour"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MA"
+      ],
+      "published": "2026-07-18T03:40:59+00:00",
+      "link": "https://arxiv.org/pdf/2607.16619v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "heterogeneous graph for multi-agent navigation with world representations",
+      "llm_evidence_cn": "异构多智能体导航中的世界表示",
+      "llm_evidence": "异构多智能体导航中的世界表示",
+      "canonical_evidence": "异构多智能体导航中的世界表示",
+      "llm_tldr_en": "SAGE presents a socially-aware generative engine for heterogeneous multi-agent navigation using a directed heterogeneous graph and Heterogeneous Graph Transformer to model asymmetric interactions and joint prediction-planning.",
+      "llm_tldr_cn": "现有方法难以联合建模异构智能体间的不对称交互和软社会规范。提出SAGE社会感知生成引擎，使用有向异构图和异构图变换器编码智能体特定交互，实现预测与规划耦合。在异构多智能体导航任务上有效建模社会互动并提升安全合规性。",
+      "llm_tldr": "现有方法难以联合建模异构智能体间的不对称交互和软社会规范。提出SAGE社会感知生成引擎，使用有向异构图和异构图变换器编码智能体特定交互，实现预测与规划耦合。在异构多智能体导航任务上有效建模社会互动并提升安全合规性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.18481v1",
+      "source": "arxiv",
+      "title": "Search-on-Graph-R1: Training Large Language Models to Search Knowledge Graphs with Reinforcement Learning",
+      "abstract": "Knowledge graph question answering (KGQA) requires navigating from topic entities to an answer several relations away. Recent methods prompt a frontier LLM to explore the graph through a retrieval tool, but their reliance on frontier-scale inference makes them costly to deploy. We present Search-on-Graph-R1 (\\sogrone{}), which internalizes this navigation into a compact 8B model through supervised fine-tuning (SFT) followed by reinforcement learning (RL). Our central idea is to scaffold a frontier teacher with each question's gold SPARQL query, so the teacher traverses a known answer-bearing path with a live \\texttt{Search} tool rather than having to discover the path itself. Since every call executes against a live Freebase server, the resulting trajectories are grounded in the knowledge graph by construction. On WebQSP, CWQ, and GrailQA, \\sogrone{} at 8B surpasses every frozen frontier-LLM system in our comparison and posts the strongest results on CWQ of any system we compare against. It does so using no auxiliary module at inference and no LLM judge during training. Isolating each training stage shows that SFT and RL contribute complementary gains, our approach transfers across model families, and RL learns to reach answers in fewer \\texttt{Search} calls than its SFT initialization.",
+      "authors": [
+        "Jia Ao Sun",
+        "Hao Yu",
+        "Fengran Mo",
+        "Zhan Su",
+        "Yuchen Hui",
+        "Bang Liu",
+        "Jian-Yun Nie"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.IR"
+      ],
+      "published": "2026-07-20T19:58:32+00:00",
+      "link": "https://arxiv.org/pdf/2607.18481v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "trains a compact LLM to navigate knowledge graphs using RL, relates to action model with world representation",
+      "llm_evidence_cn": "使用强化学习训练紧凑型LLM导航知识图谱，与具有世界表示的动作模型相关",
+      "llm_evidence": "使用强化学习训练紧凑型LLM导航知识图谱，与具有世界表示的动作模型相关",
+      "canonical_evidence": "使用强化学习训练紧凑型LLM导航知识图谱，与具有世界表示的动作模型相关",
+      "llm_tldr_en": "Search-on-Graph-R1 distills knowledge graph navigation into a small LLM via SFT and RL, enabling efficient reasoning over structured world knowledge.",
+      "llm_tldr_cn": "针对知识图谱问答中大型模型推理成本高的问题，Search-on-Graph-R1通过监督微调和强化学习将知识图谱导航能力内化到8B模型中。该方法利用教师模型引导搜索路径，在保持性能的同时大幅降低推理成本，为构建高效的世界知识推理动作模型提供了新思路。",
+      "llm_tldr": "针对知识图谱问答中大型模型推理成本高的问题，Search-on-Graph-R1通过监督微调和强化学习将知识图谱导航能力内化到8B模型中。该方法利用教师模型引导搜索路径，在保持性能的同时大幅降低推理成本，为构建高效的世界知识推理动作模型提供了新思路。",
+      "llm_tags": [
+        "query:world:composite"
+      ],
+      "matched_query_tag": "query:world:composite",
+      "matched_query_text": "Papers central to 查找有关world action model的论文 可以是foundation model, especially work that connects or combines: r; m; w; world model; foundation model; world action model foundation model; action model with world representation.",
+      "matched_requirement_id": "req-composite-world",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.20062v1",
+      "source": "arxiv",
+      "title": "Solar Open 2 Technical Report",
+      "abstract": "We present Solar Open 2, a 250B-A15B Mixture-of-Experts language model built for long-horizon agentic tasks, scaled up from Solar Open 1 (Solar Open 100B). To hold entire agent trajectories in a single context, Solar Open 2 reaches a 1M-token window through a hybrid attention stack that interleaves one softmax layer among every three linear-attention layers, using no positional encoding and a gated delta rule extended to negative eigenvalues. To train at this scale under a fixed compute budget, we make training efficient in two ways: a stronger starting point, and higher-value data. For the starting point, we initialize Solar Open 2 from Solar Open 1, transferring the 5.69B-parameter shared skeleton that survives the architectural change and learning everything else through full pre-training. For the data, we curate for value per token: quality- and rarity-aware data curation and mixture-ratio optimization refine a 20T pool into a 10T mixture that, at equal token budget, outperforms the Solar Open 1 recipe. To build its agent skills, we train twelve domain specialists across purpose-built scenarios, then consolidate them into a single model by Multi-teacher On-Policy Distillation (MOPD). Against comparably sized open-weight models on English benchmarks, Solar Open 2 leads on MMLU-Pro, LiveCodeBench, and the APEX-Agents agentic suite, and stays competitive with the strongest (DeepSeek-V4-Flash and MiMo-V2.5) elsewhere. On Korean benchmarks, Solar Open 2 records the highest average of any model compared, including fast-tier closed APIs, and on Ko-GDPval, an in-house Korean officework-agent benchmark, it is competitive with DeepSeek-V4-Pro (1.6T) at less than a sixth of its size.",
+      "authors": [
+        "Sungrae Park",
+        "Sanghoon Kim",
+        "Gyoungjin Gim",
+        "Jungho Cho",
+        "Hyunwoong Ko",
+        "Minbyul Jeong",
+        "Minjeong Kim",
+        "Keunwoo Choi",
+        "Chaehun Shin",
+        "Chanwoong Yoon",
+        "Dongjun Kim",
+        "Eunwon Kim",
+        "Gyungin Shin",
+        "Hyeonju Lee",
+        "Hyungkyu Kang",
+        "Inseo Song",
+        "Jisu Bae",
+        "Jiyoon Han",
+        "Jiyun Lee",
+        "Joonkee Kim",
+        "Junyeop Lee",
+        "Mikyoung Cha",
+        "Sangwon Yu",
+        "Sehwan Joo",
+        "Seokyoon Kang",
+        "Seonghoon Yang",
+        "Seung Shin",
+        "Seunghyun Lee",
+        "Seungseop Lim",
+        "Seungyoun Shin",
+        "Sukyung Lee",
+        "Taegyeong Eo",
+        "Taehwan Oh",
+        "Taewhoo Lee",
+        "Wonho Song",
+        "Wonjun Oh",
+        "Wonseok Hwang",
+        "Yunsu Kim",
+        "Yura Shim",
+        "Hwalsuk Lee",
+        "Sunghun Kim",
+        "Du-Seong Chang",
+        "Kyunghyun Cho",
+        "Seungju Han",
+        "Yejin Choi",
+        "Junsuk Choe",
+        "Hwaran Lee",
+        "Minjeong Ban",
+        "Yun Taewon",
+        "Hwanjun Song",
+        "Jae-Gil Lee",
+        "KyungTae Lim",
+        "Alice Oh"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-22T12:08:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.20062v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "a large foundation model designed for long-horizon agentic tasks",
+      "llm_evidence_cn": "一个为长时域智能体任务设计的大型基础模型",
+      "llm_evidence": "一个为长时域智能体任务设计的大型基础模型",
+      "canonical_evidence": "一个为长时域智能体任务设计的大型基础模型",
+      "llm_tldr_en": "Solar Open 2 is a 250B MoE foundation model with 1M-token context window, optimized for agentic tasks and world-model-like reasoning over long trajectories.",
+      "llm_tldr_cn": "针对长时域智能体任务的需求，Solar Open 2提出250B混合专家模型，通过混合注意力机制实现1M上下文窗口。该模型在训练中采用参数继承和数据优化策略，能够处理完整的智能体轨迹，为构建世界动作模型提供了强大的基础模型支撑。",
+      "llm_tldr": "针对长时域智能体任务的需求，Solar Open 2提出250B混合专家模型，通过混合注意力机制实现1M上下文窗口。该模型在训练中采用参数继承和数据优化策略，能够处理完整的智能体轨迹，为构建世界动作模型提供了强大的基础模型支撑。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

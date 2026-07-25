@@ -6,42 +6,38 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-24
-- 运行时间：2026-07-24 20:48:49 UTC
+- 最新运行日期：2026-07-25
+- 运行时间：2026-07-25 20:41:34 UTC
 - 运行状态：成功
 - 本次总论文数：6
-- 精读区：3
-- 速读区：3
+- 精读区：2
+- 速读区：4
 
 ### 今日简报（AI）
-今日精选6篇论文，精读聚焦于混合世界建模的自动驾驶VLA与流式多智能体自回归扩散模型，均获9.0高分。
-
-最值得关注的方向是HyWorldVLA的混合世界建模提升驾驶决策泛化性，以及Streaming Multi-Agent扩散模型利用世界状态寄存器实现高效协同。
-
-建议读者深入理解混合世界建模思想，并尝试将多智能体扩散框架应用于LLM驱动的知识图谱或城市语义模型生成任务。
-- 详情：[/202607/24/README](/202607/24/README)
+今日精读2篇高分论文，聚焦自动驾驶混合世界建模与交互式文学世界协同进化框架。重点关注HyWorldVLA的9.0分混合世界建模方案，以及EvolvingWorld的开放架构角色扮演系统。建议优先精读这两篇10分内的核心论文，获取前沿思路。
+- 详情：[/202607/25/README](/202607/25/README)
 
 ### 精读区论文标签
-1. [HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving](/202607/24/2607.20988v1-hyworldvla-a-vision-language-action-model-with-hybrid-world-modeling-for-autonomous-driving)  
+1. [HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving](/202607/25/2607.20988v1-hyworldvla-a-vision-language-action-model-with-hybrid-world-modeling-for-autonomous-driving)  
    标签：评分：9.0/10、query:world
-   evidence：混合世界-视觉-语言-动作模型用于自动驾驶
-2. [Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers](/202607/24/2607.21594v1-streaming-multi-agent-autoregressive-diffusion-model-with-world-state-registers)  
-   标签：评分：9.0/10、query:world
-   evidence：流式多智能体世界模型，带有世界状态寄存器
-3. [Robostral Navigate](/202607/24/2607.20785v1-robostral-navigate)  
+   evidence：混合世界建模，统一像素级监督和潜在表示，用于视觉-语言-动作模型
+2. [EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World](/202607/25/2607.17250v1-evolvingworld-an-open-schema-framework-for-co-evolving-role-play-agents-and-world-model-in-interactive-literary-world)  
    标签：评分：8.0/10、query:world
-   evidence：使用单目RGB图像预测航点的视觉语言导航模型
+   evidence：交互式文学世界中的世界模型
 
 ### 速读区论文标签
-1. [VirtualSet: Typed Ontology Worlds as an LLM Generation Target for Grounded Queries and Guarded Decisions](/202607/24/2607.18821v2-virtualset-typed-ontology-worlds-as-an-llm-generation-target-for-grounded-queries-and-guarded-decisions)  
+1. [LFM: Leveraging Foundation Models for Source-Free Universal Domain Adaptation](/202607/25/2607.17653v1-lfm-leveraging-foundation-models-for-source-free-universal-domain-adaptation)  
    标签：评分：7.0/10、query:world
-   evidence：类型化本体世界作为LLM生成目标用于接地查询
-2. [GS-Agent: Creating 4D Physical Worlds With Generative Simulation](/202607/24/2607.21522v1-gs-agent-creating-4d-physical-worlds-with-generative-simulation)  
-   标签：评分：7.0/10、query:world
-   evidence：使用基础模型和生成模拟创建4D物理世界
-3. [CityLLM: A framework for natural-language querying of semantic 3D city models](/202607/24/2607.14542v1-cityllm-a-framework-for-natural-language-querying-of-semantic-3d-city-models)  
+   evidence：利用视觉语言基础模型进行域适应
+2. [SAGE: A Socially-Aware Generative Engine for Heterogeneous Multi-Agent Navigation](/202607/25/2607.16619v2-sage-a-socially-aware-generative-engine-for-heterogeneous-multi-agent-navigation)  
    标签：评分：6.0/10、query:world
-   evidence：用于三维城市查询的世界模型
+   evidence：异构多智能体导航中的世界表示
+3. [Search-on-Graph-R1: Training Large Language Models to Search Knowledge Graphs with Reinforcement Learning](/202607/25/2607.18481v1-search-on-graph-r1-training-large-language-models-to-search-knowledge-graphs-with-reinforcement-learning)  
+   标签：评分：6.0/10、query:world
+   evidence：使用强化学习训练紧凑型LLM导航知识图谱，与具有世界表示的动作模型相关
+4. [Solar Open 2 Technical Report](/202607/25/2607.20062v1-solar-open-2-technical-report)  
+   标签：评分：6.0/10、query:world
+   evidence：一个为长时域智能体任务设计的大型基础模型
 
 
 <div class="dpr-home-promo-card">
