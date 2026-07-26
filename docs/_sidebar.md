@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-07-26 <!--dpr-date:20260726-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/26/2607.16560v1-from-modalities-to-propositions-a-language-centric-framework-for-multimodal-intelligence" data-sidebar-item="{&quot;title&quot;: &quot;From Modalities to Propositions: A Language-Centric Framework for Multimodal Intelligence&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.16560v1-from-modalities-to-propositions-a-language-centric-framework-for-multimodal-intelligence&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;使用原子命题表示多模态世界&quot;}">From Modalities to Propositions: A Language-Centric Framework for Multimodal Intelligence</a>
   * 2026-07-25 <!--dpr-date:20260725-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/25/2607.20988v1-hyworldvla-a-vision-language-action-model-with-hybrid-world-modeling-for-autonomous-driving" data-sidebar-item="{&quot;title&quot;: &quot;HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.20988v1-hyworldvla-a-vision-language-action-model-with-hybrid-world-modeling-for-autonomous-driving&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;混合世界建模，统一像素级监督和潜在表示，用于视觉-语言-动作模型&quot;}">HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving</a>

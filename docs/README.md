@@ -6,38 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-25
-- 运行时间：2026-07-25 20:41:34 UTC
+- 最新运行日期：2026-07-26
+- 运行时间：2026-07-26 20:52:28 UTC
 - 运行状态：成功
-- 本次总论文数：6
-- 精读区：2
-- 速读区：4
+- 本次总论文数：1
+- 精读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-今日精读2篇高分论文，聚焦自动驾驶混合世界建模与交互式文学世界协同进化框架。重点关注HyWorldVLA的9.0分混合世界建模方案，以及EvolvingWorld的开放架构角色扮演系统。建议优先精读这两篇10分内的核心论文，获取前沿思路。
-- 详情：[/202607/25/README](/202607/25/README)
+今日精读0篇，速读1篇《From Modalities to Propositions》，关注多模态智能的语言中心框架。  
+该文提出将不同模态转化为命题表达，核心方向是统一多模态表示的语言化。  
+建议对多模态或大模型感兴趣的读者，可先从该文的语言中心假设入手，思考其与现有视觉-语言模型的关联。
+- 详情：[/202607/26/README](/202607/26/README)
 
 ### 精读区论文标签
-1. [HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving](/202607/25/2607.20988v1-hyworldvla-a-vision-language-action-model-with-hybrid-world-modeling-for-autonomous-driving)  
-   标签：评分：9.0/10、query:world
-   evidence：混合世界建模，统一像素级监督和潜在表示，用于视觉-语言-动作模型
-2. [EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World](/202607/25/2607.17250v1-evolvingworld-an-open-schema-framework-for-co-evolving-role-play-agents-and-world-model-in-interactive-literary-world)  
-   标签：评分：8.0/10、query:world
-   evidence：交互式文学世界中的世界模型
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [LFM: Leveraging Foundation Models for Source-Free Universal Domain Adaptation](/202607/25/2607.17653v1-lfm-leveraging-foundation-models-for-source-free-universal-domain-adaptation)  
-   标签：评分：7.0/10、query:world
-   evidence：利用视觉语言基础模型进行域适应
-2. [SAGE: A Socially-Aware Generative Engine for Heterogeneous Multi-Agent Navigation](/202607/25/2607.16619v2-sage-a-socially-aware-generative-engine-for-heterogeneous-multi-agent-navigation)  
+1. [From Modalities to Propositions: A Language-Centric Framework for Multimodal Intelligence](/202607/26/2607.16560v1-from-modalities-to-propositions-a-language-centric-framework-for-multimodal-intelligence)  
    标签：评分：6.0/10、query:world
-   evidence：异构多智能体导航中的世界表示
-3. [Search-on-Graph-R1: Training Large Language Models to Search Knowledge Graphs with Reinforcement Learning](/202607/25/2607.18481v1-search-on-graph-r1-training-large-language-models-to-search-knowledge-graphs-with-reinforcement-learning)  
-   标签：评分：6.0/10、query:world
-   evidence：使用强化学习训练紧凑型LLM导航知识图谱，与具有世界表示的动作模型相关
-4. [Solar Open 2 Technical Report](/202607/25/2607.20062v1-solar-open-2-technical-report)  
-   标签：评分：6.0/10、query:world
-   evidence：一个为长时域智能体任务设计的大型基础模型
+   evidence：使用原子命题表示多模态世界
 
 
 <div class="dpr-home-promo-card">
