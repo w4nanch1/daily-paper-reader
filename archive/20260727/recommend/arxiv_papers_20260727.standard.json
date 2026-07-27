@@ -1,0 +1,390 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-27T20:49:06.045932+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2607.21918v1",
+      "source": "arxiv",
+      "title": "Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound",
+      "abstract": "We present an action-conditioned world model framework for goal plane probe guidance in robotic ultrasound, with a focus on neck ultrasound scanning. Autonomous ultrasound tasks often require large numbers of probe-motion trajectories for training, but collecting high-quality demonstrations is labor-intensive and explicit simulators are difficult to build because ultrasound appearance depends on contact, tissue deformation, and view-dependent acoustic artifacts. We address this problem with a two-stage model-based learning pipeline. First, a latent conditional diffusion world model predicts future ultrasound observations from recent context frames, probe motions and temporal offset. Second, a goal-conditioned temporal transformer predicts ordered probe motions and is fine-tuned using rewards from the frozen world model. Experiments on the self-collected dataset show that the world model preserves action-dependent anatomical structure on target-directed scans. In real-world closed loop experiments, the framework achieves success rates of 70.0\\% for carotid guidance and 65.0\\% for thyroid guidance. These results demonstrate the potential of learned ultrasound dynamics for training goal-directed robotic probe navigation.",
+      "authors": [
+        "Siqi Fan",
+        "Mingcong Chen",
+        "Ran Liu",
+        "Zixuan Yang",
+        "Xiaoyu Fu",
+        "Xiaoqing Gao",
+        "Yunhui Liu",
+        "Hongbin Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-24T02:48:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.21918v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "action-conditioned world model for robotic ultrasound, directly matches action model with world representation",
+      "llm_evidence_cn": "动作条件世界模型用于机器人超声，直接匹配动作模型与世界表示",
+      "llm_evidence": "动作条件世界模型用于机器人超声，直接匹配动作模型与世界表示",
+      "canonical_evidence": "动作条件世界模型用于机器人超声，直接匹配动作模型与世界表示",
+      "llm_tldr_en": "Proposes an action-conditioned world model for goal plane probe guidance in robotic ultrasound, using a latent conditional diffusion world model to predict future observations and a goal-conditioned temporal transformer for planning.",
+      "llm_tldr_cn": "该论文针对机器人超声扫描中需要大量高质量示范数据的问题，提出了一种动作条件世界模型框架。首先使用潜在条件扩散世界模型根据上下文帧和探头运动预测未来超声观测，然后通过目标条件时间变换器进行规划。此方法减少了对真实数据的依赖，在颈部超声扫描任务中表现优异。该工作为机器人自主超声引导提供了一种新颖的模型化学习方案。",
+      "llm_tldr": "该论文针对机器人超声扫描中需要大量高质量示范数据的问题，提出了一种动作条件世界模型框架。首先使用潜在条件扩散世界模型根据上下文帧和探头运动预测未来超声观测，然后通过目标条件时间变换器进行规划。此方法减少了对真实数据的依赖，在颈部超声扫描任务中表现优异。该工作为机器人自主超声引导提供了一种新颖的模型化学习方案。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22000v1",
+      "source": "arxiv",
+      "title": "Music-JEPA: Learning a World Model of Sound from Action",
+      "abstract": "Joint Embedding Predictive Architectures (JEPA) have recently emerged as a paradigm for learning world models by predicting latent representations, offering a promising direction for self-supervised learning. While initial attempts have applied JEPA to the music domain, it remains unclear how such frameworks can naturally support the formation of a world model for music. In this work, we propose to learn a world model of piano sound using JEPA by framing music as an action-conditioned system: the audio is treated as the state, and the pianoroll as the instrument action. Given a current audio state and an action, the model predicts the resulting future audio state, mirroring how humans learn musical sound through interaction. The model is trained in a fully offline setting using paired audio-pianoroll data, without environment interaction. Experiments show that the learned model captures the relationships between musical actions and their resulting sound. The resulting representations support downstream tasks, including beat tracking, composer identification, and key estimation, and enable piano transcription via planning, by searching for actions that best explain a target sound.",
+      "authors": [
+        "Ziyu Wang",
+        "Kun Fang",
+        "Yann LeCun"
+      ],
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD"
+      ],
+      "published": "2026-07-24T05:59:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.22000v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "world model of sound from action",
+      "llm_evidence_cn": "从动作中学习声音世界模型",
+      "llm_evidence": "从动作中学习声音世界模型",
+      "canonical_evidence": "从动作中学习声音世界模型",
+      "llm_tldr_en": "Music-JEPA learns a world model of piano sound by predicting future audio states given current audio and piano roll actions, using a Joint Embedding Predictive Architecture in a fully offline setting.",
+      "llm_tldr_cn": "针对音乐领域缺乏从交互中学习世界模型的问题，Music-JEPA 将音乐视为动作条件系统，利用联合嵌入预测架构（JEPA）从当前音频状态和钢琴卷帘动作预测未来音频状态，模拟人类通过交互学习声音的机制。该方法在完全离线设置下训练，实验表明能有效学习钢琴音色的物理模型，为世界模型在音乐领域的应用开辟了新方向。",
+      "llm_tldr": "针对音乐领域缺乏从交互中学习世界模型的问题，Music-JEPA 将音乐视为动作条件系统，利用联合嵌入预测架构（JEPA）从当前音频状态和钢琴卷帘动作预测未来音频状态，模拟人类通过交互学习声音的机制。该方法在完全离线设置下训练，实验表明能有效学习钢琴音色的物理模型，为世界模型在音乐领域的应用开辟了新方向。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22430v1",
+      "source": "arxiv",
+      "title": "On the Identifiability of Controlled World Models",
+      "abstract": "Learning world models that infer environment dynamics from high-dimensional observations and predict outcomes under candidate actions is central to planning and control. Joint-Embedding Predictive Architectures (JEPAs) provide a compelling framework for learning such models in representation space. Recent action-conditioned extensions perform promisingly in visual control and latent-space planning, but leave a fundamental question unresolved: when does controlled latent prediction identify both the underlying state and the controlled dynamics? This is challenging under nonlinear observations and behavior policies with limited conditional action variation, where state-dependent evolution and action effects can be statistically confounded. We establish a joint identifiability theory for controlled world models with Gaussian latent states under state-dependent Gaussian behavior policies. We identify two policy-dependent conditions: spectral separation of the predictable signal governs representation identifiability, while non-degenerate conditional action variation governs transition identifiability. We prove that when both conditions hold, every global minimizer of the JEPA objective identifies the latent state and controlled transition up to an orthogonal transformation. We further derive quantitative bounds on representation and transition identifiability under approximate optimization. Finally, we construct predictor perturbations along weakly excited action directions whose counterfactual-to-on-policy error ratio is the inverse transition-identifiability margin, revealing the cost of limited action coverage. Experiments across nonlinear observation maps and behavior policies corroborate the theory and demonstrate implications for transition identifiability, counterfactual prediction, and goal-conditioned latent planning.",
+      "authors": [
+        "Xiangteng Zhang",
+        "Yang Guan",
+        "Bo Zhang",
+        "Ya-Qin Zhang",
+        "Shengbo Eben Li"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-24T15:49:12+00:00",
+      "link": "https://arxiv.org/pdf/2607.22430v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "identifiability of world models under actions",
+      "llm_evidence_cn": "可控世界模型的可识别性",
+      "llm_evidence": "可控世界模型的可识别性",
+      "canonical_evidence": "可控世界模型的可识别性",
+      "llm_tldr_en": "Establishes joint identifiability conditions for latent world models under controlled settings, addressing confounding between state evolution and action effects.",
+      "llm_tldr_cn": "针对联合嵌入预测架构（JEPA）学习的世界模型，研究了可控潜在预测何时能同时识别底层状态和受控动力学。在非线性观测和有限条件动作变异下，状态演化与动作效应可能统计混淆。该论文建立了联合可识别性条件，为可靠的世界模型学习提供了理论基础。",
+      "llm_tldr": "针对联合嵌入预测架构（JEPA）学习的世界模型，研究了可控潜在预测何时能同时识别底层状态和受控动力学。在非线性观测和有限条件动作变异下，状态演化与动作效应可能统计混淆。该论文建立了联合可识别性条件，为可靠的世界模型学习提供了理论基础。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22530v1",
+      "source": "arxiv",
+      "title": "ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation",
+      "abstract": "Contact-rich robot manipulation requires physical interaction cues that are often invisible to cameras, making tactile sensing essential for robust control. However, scaling visuo-tactile robot learning remains difficult because real tactile interaction data are expensive to collect, hardware-dependent, and limited in task and scene diversity. We present ViTacWorld, an action-conditioned visuo-tactile world model for scalable contact-rich robot manipulation. ViTacWorld leverages public real tactile datasets and a constructed simulation environment to scale visuo-tactile-action data, exploiting the fact that tactile signals are directly grounded in physical contact and can exhibit a smaller simulation-to-real gap than purely visual observations. The model is first pretrained with large-scale real and simulated visuo-tactile trajectories, and then finetuned with real-world policy rollouts to better match downstream manipulation behaviors. Given robot actions, ViTacWorld predicts temporally aligned visual observations and tactile feedback, enabling visuo-tactile-action rollout generation. To the best of our knowledge, ViTacWorld is the first framework that uses a world model for robot visuo-tactile-action trajectory generation and policy evaluation. It serves two roles: synthesizing rollouts to improve downstream tactile policies, and evaluating policies by predicting action-conditioned visuo-tactile outcomes under controlled action sequences. Experiments on contact-rich manipulation tasks show that ViTacWorld generates physically meaningful rollouts, improves policy performance through scalable data augmentation, and enables action-conditioned policy evaluation. Project page: https://vitacworld.github.io/",
+      "authors": [
+        "Yunao Huang",
+        "Shiyu Sang",
+        "Haotao Lu",
+        "Suting Ni",
+        "Shijie Wu",
+        "Ziyang Guo",
+        "Ye Shi",
+        "Jingya Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-24T17:59:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.22530v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Presents ViTacWorld, an action-conditioned visuo-tactile world model for scalable contact-rich robot manipulation",
+      "llm_evidence_cn": "提出了ViTacWorld，一个用于可扩展接触丰富机器人操作的动作条件视觉-触觉世界模型",
+      "llm_evidence": "提出了ViTacWorld，一个用于可扩展接触丰富机器人操作的动作条件视觉-触觉世界模型",
+      "canonical_evidence": "提出了ViTacWorld，一个用于可扩展接触丰富机器人操作的动作条件视觉-触觉世界模型",
+      "llm_tldr_en": "ViTacWorld introduces an action-conditioned visuo-tactile world model that leverages public real tactile datasets and simulation to scale contact-rich robot manipulation, achieving robust control with tactile sensing.",
+      "llm_tldr_cn": "接触丰富的机器人操作需要触觉感知，但真实触觉数据昂贵且难以扩展。本文提出ViTacWorld，一个动作条件视觉-触觉世界模型，通过利用公开真实触觉数据集和构建仿真环境，大规模生成视觉-触觉-动作数据。实验表明，该模型在多种接触丰富的操作任务中实现了鲁棒的控制性能，且触觉信号具有较小的仿真到现实差距。该工作为可扩展的触觉机器人学习提供了新范式。",
+      "llm_tldr": "接触丰富的机器人操作需要触觉感知，但真实触觉数据昂贵且难以扩展。本文提出ViTacWorld，一个动作条件视觉-触觉世界模型，通过利用公开真实触觉数据集和构建仿真环境，大规模生成视觉-触觉-动作数据。实验表明，该模型在多种接触丰富的操作任务中实现了鲁棒的控制性能，且触觉信号具有较小的仿真到现实差距。该工作为可扩展的触觉机器人学习提供了新范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22535v1",
+      "source": "arxiv",
+      "title": "Robot-Factored World Models via Robot Rendering",
+      "abstract": "Action-conditioned video world models predict future observations from an initial observation and an action signal. In robotics, actions influence future observations through two distinct processes: they are first realized into robot motion by the robot body and controller, and the scene then responds through contact and object motion. Conditioning directly on action commands asks the world model to learn the realization process itself, while conditioning on logged future states leaks the interaction outcomes it is meant to predict. We propose robot-factored world models, which move two robot-specific factors outside the world model. First, action realization: each command is rolled through the robot's own controller and kinematics into a deployment-available nominal trajectory, a middle signal that avoids both action-realization learning and future-state leakage. Second, robot rendering: this nominal trajectory is rendered through the robot URDF, factoring the robot's geometry, kinematics, and appearance out of the model and into explicit rendered robot geometry. To resolve depth ambiguity, we pair end-effector depth with scene depth, giving geometric cues for contact and occlusion beyond image-plane overlap. Together, camera-aware static RGB/depth context and rendered robot geometry form a shared visual world-model interface that stays consistent across viewpoints and robot embodiments, so the model sees the action only as visible robot geometry and learns how objects respond to it. Our experiments show that the rendered interface outperforms vector-conditioned baselines and generalizes to unseen robot embodiments at inference. We further demonstrate that our model generates robot manipulation videos from human demonstrations by retargeting and rendering the hand motion as robot geometry.",
+      "authors": [
+        "Byungjun Kim",
+        "Taeksoo Kim",
+        "Hyunsoo Cha",
+        "Hanbyul Joo"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-24T17:59:57+00:00",
+      "link": "https://arxiv.org/pdf/2607.22535v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes robot-factored world models that separate robot-specific factors (action realization and future states) from the world model, improving generalization",
+      "llm_evidence_cn": "提出机器人因子世界模型，将机器人特定因素（动作实现和未来状态）从世界模型中分离，提升泛化性",
+      "llm_evidence": "提出机器人因子世界模型，将机器人特定因素（动作实现和未来状态）从世界模型中分离，提升泛化性",
+      "canonical_evidence": "提出机器人因子世界模型，将机器人特定因素（动作实现和未来状态）从世界模型中分离，提升泛化性",
+      "llm_tldr_en": "Proposes robot-factored world models that separate robot-specific factors from the world model, improving generalization across robots by avoiding learning action realization and future state leakage.",
+      "llm_tldr_cn": "该论文针对动作条件视频世界模型中机器人动作实现的挑战，提出机器人因子世界模型。通过将动作实现和未来状态这两个机器人特定因素移出世界模型，仅预测场景响应，避免了模型学习冗余的物理实现过程。该方法提高了世界模型在不同机器人上的泛化能力，在多个机器人任务上展示了有效性。",
+      "llm_tldr": "该论文针对动作条件视频世界模型中机器人动作实现的挑战，提出机器人因子世界模型。通过将动作实现和未来状态这两个机器人特定因素移出世界模型，仅预测场景响应，避免了模型学习冗余的物理实现过程。该方法提高了世界模型在不同机器人上的泛化能力，在多个机器人任务上展示了有效性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.22014v1",
+      "source": "arxiv",
+      "title": "Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents",
+      "abstract": "Multimodal Large Language Models (MLLMs) are emerging as core reasoning modules for embodied agents, yet it remains unclear how well general-purpose models can solve long-horizon embodied tasks from a single high-level instruction. We introduce MissionBench, a benchmark for mission-level evaluation of MLLMs in aerial 3D environments. It comprises 120 missions across five simulated 3D environments and four task families. Agents must autonomously plan, navigate, and report outcomes using only egocentric observations and its action history, without aerial-specific fine-tuning. Across 22 open- and closed-source MLLMs, the strongest model succeeds on fewer than 35% of missions compared to 84.4% human performance, highlighting the difficulty of multi-step embodied tasks. Despite large variations between model families, we observe gains from scaling, indicating that larger general-purpose models possess stronger zero-shot embodied capabilities. Our analysis shows that mission-level competence requires coordinating multiple capabilities beyond spatial perception, including multi-step planning and adaptive reasoning. This motivates closed-loop evaluation and highlights both the promise and risk of scaling-driven improvements for embodied AI.",
+      "authors": [
+        "Suman Navaratnarajah",
+        "Taehyoung Kim",
+        "Jona Ruthardt",
+        "Ishaan Bhimwal",
+        "Ryousuke Yamada",
+        "Yannik Blei",
+        "Wolfram Burgard",
+        "Yuki M Asano"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-07-24T06:22:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.22014v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "evaluates agents with world representation and action",
+      "llm_evidence_cn": "评估具有世界表征和动作的智能体",
+      "llm_evidence": "评估具有世界表征和动作的智能体",
+      "canonical_evidence": "评估具有世界表征和动作的智能体",
+      "llm_tldr_en": "MissionBench evaluates MLLM agents in aerial 3D environments on long-horizon embodied tasks requiring planning, navigation, and reporting using only egocentric observations and action history.",
+      "llm_tldr_cn": "针对多模态大语言模型在现实环境中执行长程具身任务的能力评估不足的问题，MissionBench 提出了一个包含 120 个任务、跨越五个模拟 3D 环境的标准基准。智能体必须仅凭自我中心观察和动作历史自主规划与导航，无需空中领域微调。实验发现最强的模型成功率不到 35%，远低于人类 84.4%，揭示了当前多模态大模型在复杂多步具身任务中的巨大差距。",
+      "llm_tldr": "针对多模态大语言模型在现实环境中执行长程具身任务的能力评估不足的问题，MissionBench 提出了一个包含 120 个任务、跨越五个模拟 3D 环境的标准基准。智能体必须仅凭自我中心观察和动作历史自主规划与导航，无需空中领域微调。实验发现最强的模型成功率不到 35%，远低于人类 84.4%，揭示了当前多模态大模型在复杂多步具身任务中的巨大差距。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.17037v1",
+      "source": "arxiv",
+      "title": "Apeliotes: A Diffusion-Based Modeling Framework for km-scale Multi-Level Atmospheric Fields",
+      "abstract": "High-resolution atmospheric data are required to resolve mesoscale and localized meteorological structures, however such datasets remain limited in many regions of the world. Existing high-resolution weather products are typically produced through dynamical downscaling, which is computationally expensive and difficult to scale across locations, variables, and forecast scenarios. These limitations motivate machine-learning-based downscaling systems that can generate multiple weather variables stochastically while producing new high-resolution fields directly. In this paper we present Apeliotes, a framework for high-resolution weather forecasting. Built on the global re-analysis atmospheric data, a pre-trained global weather foundation model, and a regionally trained generative diffusion model, Apeliotes not only provides accurate kilometer-scale weather variables, but also multi-level atmospheric fields which are not directly available in the existing global atmospheric data. Our comprehensive evaluation demonstrates that Apeliotes achieves highly competitive performance. The model predicts vertical wind profile with less than 3\\% error between truth and predicted fields, achieving correlations of 0.91 for 10-m wind speed and 0.99 for 2-m temperature, with NRMSE values of 0.42 and 0.17, respectively.",
+      "authors": [
+        "Evangelia Rafaela Frastali",
+        "Achyut Paudel",
+        "Maryam Golbazi",
+        "Frank Liu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CE"
+      ],
+      "published": "2026-07-19T02:50:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.17037v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "diffusion-based world model for weather",
+      "llm_evidence_cn": "基于扩散的天气世界模型",
+      "llm_evidence": "基于扩散的天气世界模型",
+      "canonical_evidence": "基于扩散的天气世界模型",
+      "llm_tldr_en": "Presents Apeliotes, a diffusion-based framework for km-scale multi-level atmospheric downscaling using a pre-trained global weather foundation model.",
+      "llm_tldr_cn": "高分辨率大气数据对解析天气结构至关重要，但现有动力降尺度方法计算昂贵。本文提出Apeliotes框架，基于全球再分析数据预训练的天气基础模型，通过扩散模型实现随机多变量天气降尺度。该方法能直接生成高分辨率天气场，计算效率显著高于传统方法。",
+      "llm_tldr": "高分辨率大气数据对解析天气结构至关重要，但现有动力降尺度方法计算昂贵。本文提出Apeliotes框架，基于全球再分析数据预训练的天气基础模型，通过扩散模型实现随机多变量天气降尺度。该方法能直接生成高分辨率天气场，计算效率显著高于传统方法。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.22083v1",
+      "source": "arxiv",
+      "title": "Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Mode",
+      "abstract": "We present Nanbeige4.2-3B, a compact general agentic model with 3B non-embedding parameters. It delivers strong performance across code-agent, office-agent, and complex tool-use tasks while maintaining highly competitive reasoning capabilities in mathematics, coding, and science. Nanbeige4.2-3B is pretrained from scratch on 28T tokens with a Looped Transformer that reuses the layer stack to increase capacity without adding parameters. For SFT data and trajectory construction, we expand the diversity of executable environments, task assets, and agentic scaffolds through real-world deployment and large-scale synthesis. Our RL pipeline applies mixed-mode RLHF over Think and Non-Think responses to improve overall model quality and reduce failure cases, length-controlled reasoning RL to balance accuracy and reasoning efficiency, and agentic RL with outcome and process rewards to stabilize long-horizon training. Extensive evaluations show that Nanbeige4.2-3B outperforms larger models, including Qwen3.5-9B and Gemma4-12B, across diverse agentic benchmarks while remaining competitive on reasoning and alignment tasks. Performance with OpenClaw further supports its use as a compact local personal assistant.",
+      "authors": [
+        "Nanbeige Lab",
+        ":",
+        "Chen Yang",
+        "Chengrui Huang",
+        "Fufeng Lan",
+        "Hanhui Chen",
+        "Hao Zhou",
+        "Huatong Song",
+        "Jiaqi Cao",
+        "Jiaying Zhu",
+        "Jinlin Niu",
+        "Kai Wang",
+        "Lisheng Huang",
+        "Qiliang Liang",
+        "Ran Le",
+        "Ruixiang Feng",
+        "Shuang Sun",
+        "Tao Gu",
+        "Tao Zhang",
+        "Tianyu Luo",
+        "Yang Song",
+        "Yun Xing",
+        "Yuntao Wen",
+        "Ziyao Xu",
+        "Zongchao Chen",
+        "Zongqiang Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-24T08:33:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.22083v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "compact agentic foundation model",
+      "llm_evidence_cn": "紧凑型智能体基座模型",
+      "llm_evidence": "紧凑型智能体基座模型",
+      "canonical_evidence": "紧凑型智能体基座模型",
+      "llm_tldr_en": "Nanbeige4.2-3B is a 3B parameter agentic model pretrained from scratch with a Looped Transformer, achieving strong performance on code-agent and tool-use tasks through diverse SFT and mixed-mode RLHF.",
+      "llm_tldr_cn": "为了在紧凑模型中实现强大的智能体能力，Nanbeige4.2-3B 从零开始使用循环 Transformer 在 28T 令牌上预训练，并通过真实部署和大规模合成数据扩展任务多样性，结合混合模式 RLHF 微调。该模型在代码智能体和复杂工具使用任务上表现优异，验证了小模型在智能体场景中的潜力。",
+      "llm_tldr": "为了在紧凑模型中实现强大的智能体能力，Nanbeige4.2-3B 从零开始使用循环 Transformer 在 28T 令牌上预训练，并通过真实部署和大规模合成数据扩展任务多样性，结合混合模式 RLHF 微调。该模型在代码智能体和复杂工具使用任务上表现优异，验证了小模型在智能体场景中的潜力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.21910v1",
+      "source": "arxiv",
+      "title": "TRW: TRACE-RealWorld---An Auditable Consistency Contract for World Models as Materialized Views",
+      "abstract": "TRACE-RealWorld addresses a core data-management problem: maintaining an actionable materialized view over a continuously changing physical world when reads of the base state are priced, delayed, heterogeneous, and fallible. Its data-management contributions are a commitment-level validity abstraction for materialized predictions; consequence-conditioned adaptive view maintenance; transaction-style, dependency-scoped compensation for commitments invalidated after authorization; and append-only provenance supporting exact replay. The work builds directly on materialized-view maintenance, adaptive stream synchronization, transaction recovery, sagas, data freshness, and provenance. The end-to-end Flood-SAR evaluation treats sensing as physical data acquisition and measures freshness, verification cost, stale reads, recovery scope, restoration failure, and replayability through six pre-registered questions with held-out seeds. The contribution is therefore not a new predictive model, but a consistency, recovery, and accountability contract for deploying learned world representations as operational data systems.",
+      "authors": [
+        "Edward Y. Chang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "published": "2026-07-24T02:31:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.21910v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "TRACE-RealWorld proposes an auditable consistency contract for world models as materialized views",
+      "llm_evidence_cn": "TRACE-RealWorld提出了世界模型作为物化视图的可审计一致性合约",
+      "llm_evidence": "TRACE-RealWorld提出了世界模型作为物化视图的可审计一致性合约",
+      "canonical_evidence": "TRACE-RealWorld提出了世界模型作为物化视图的可审计一致性合约",
+      "llm_tldr_en": "TRACE-RealWorld introduces a data-management approach treating world models as materialized views, with commitment-level validity and adaptive view maintenance for consistent predictions over changing physical worlds.",
+      "llm_tldr_cn": "维护物理世界的可行动物化视图面临数据延迟和不可靠等挑战。本文提出TRACE-RealWorld，将世界模型视为物化视图，通过承诺级有效性抽象、自适应视图维护和事务式补偿机制，确保预测的一致性。在洪水SAR评估中展示了端到端有效性。该工作融合了数据管理与世界模型，为实现可信赖的世界预测提供了新视角。",
+      "llm_tldr": "维护物理世界的可行动物化视图面临数据延迟和不可靠等挑战。本文提出TRACE-RealWorld，将世界模型视为物化视图，通过承诺级有效性抽象、自适应视图维护和事务式补偿机制，确保预测的一致性。在洪水SAR评估中展示了端到端有效性。该工作融合了数据管理与世界模型，为实现可信赖的世界预测提供了新视角。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
