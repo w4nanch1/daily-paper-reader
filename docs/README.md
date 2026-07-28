@@ -6,49 +6,69 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-27
-- 运行时间：2026-07-27 20:54:50 UTC
+- 最新运行日期：2026-07-28
+- 运行时间：2026-07-28 21:44:28 UTC
 - 运行状态：成功
-- 本次总论文数：9
-- 精读区：6
-- 速读区：3
+- 本次总论文数：15
+- 精读区：7
+- 速读区：8
 
 ### 今日简报（AI）
-1. 今日精读两篇9分世界模型论文，分别应用于机器人超声导航与音乐声音学习。  
-2. 最值得关注：《Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound》与《Music-JEPA: Learning a World Model of Sound from Action》，展示了世界模型在不同模态下的强大泛化能力。  
-3. 建议优先阅读这两篇精读文章，理解世界模型如何通过动作条件化实现目标引导与表征学习。
-- 详情：[/202607/27/README](/202607/27/README)
+今日聚焦世界模型与智能体系统前沿，精读两篇高分论文揭示统一扩散架构与可控性理论。
+
+最值得关注《WorldDiT》的世界-动作统一扩散架构（10分）及《False Prophets》对智能体世界模型安全性的审视（8分）。
+
+建议普通读者优先精读《WorldDiT》理解技术趋势，并留意世界模型在真实部署中的安全风险。
+- 详情：[/202607/28/README](/202607/28/README)
 
 ### 精读区论文标签
-1. [Action-Conditioned World Model for Goal Plane Probe Guidance in Robotic Ultrasound](/202607/27/2607.21918v1-action-conditioned-world-model-for-goal-plane-probe-guidance-in-robotic-ultrasound)  
+1. [WorldDiT: A Unified Diffusion Architecture for World and Action Modeling](/202607/28/2607.23909v1-worlddit-a-unified-diffusion-architecture-for-world-and-action-modeling)  
+   标签：评分：10.0/10、query:world
+   evidence：统一扩散架构用于世界与动作建模
+2. [On the Identifiability of Controlled World Models](/202607/28/2607.22430v2-on-the-identifiability-of-controlled-world-models)  
    标签：评分：9.0/10、query:world
-   evidence：动作条件世界模型用于机器人超声，直接匹配动作模型与世界表示
-2. [Music-JEPA: Learning a World Model of Sound from Action](/202607/27/2607.22000v1-music-jepa-learning-a-world-model-of-sound-from-action)  
+   evidence：受控世界模型的可辨识性
+3. [WCM: World-Cognition Model for Generalizable Human-Robot Interaction](/202607/28/2607.22999v1-wcm-world-cognition-model-for-generalizable-human-robot-interaction)  
    标签：评分：9.0/10、query:world
-   evidence：从动作中学习声音世界模型
-3. [On the Identifiability of Controlled World Models](/202607/27/2607.22430v1-on-the-identifiability-of-controlled-world-models)  
+   evidence：用于人机交互的世界认知模型，分离感知、推理、控制和记忆
+4. [Real-Time Human-Centric World Modeling for Upper-Body Human-Object Interaction](/202607/28/2607.23517v1-real-time-human-centric-world-modeling-for-upper-body-human-object-interaction)  
    标签：评分：9.0/10、query:world
-   evidence：可控世界模型的可识别性
-4. [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](/202607/27/2607.22530v1-vitacworld-scaling-visuo-tactile-world-models-for-contact-rich-robot-manipulation)  
+   evidence：实时以人为中心的世界模型用于上半身交互
+5. [Action from Adjacent Set in Physical Space Outperforms the Best Prediction in World Models](/202607/28/2607.23602v1-action-from-adjacent-set-in-physical-space-outperforms-the-best-prediction-in-world-models)  
    标签：评分：9.0/10、query:world
-   evidence：提出了ViTacWorld，一个用于可扩展接触丰富机器人操作的动作条件视觉-触觉世界模型
-5. [Robot-Factored World Models via Robot Rendering](/202607/27/2607.22535v1-robot-factored-world-models-via-robot-rendering)  
+   evidence：物理空间相邻动作集优于世界模型中的最佳预测
+6. [$N_0$-TWAM: Scaling Tactile-Native World-Action Model for Contact-Rich Manipulation](/202607/28/2607.23783v1-n0-twam-scaling-tactile-native-world-action-model-for-contact-rich-manipulation)  
    标签：评分：9.0/10、query:world
-   evidence：提出机器人因子世界模型，将机器人特定因素（动作实现和未来状态）从世界模型中分离，提升泛化性
-6. [Zero-Shot Mission-Level Evaluation for Aerial MLLM Agents](/202607/27/2607.22014v1-zero-shot-mission-level-evaluation-for-aerial-mllm-agents)  
-   标签：评分：8.0/10、query:world
-   evidence：评估具有世界表征和动作的智能体
+   evidence：提出了一种大规模训练的触觉原生世界-动作模型
+7. [LeapBot-WA: World-Anchor Action Models via Predictive Latent Alignments](/202607/28/2607.23969v1-leapbot-wa-world-anchor-action-models-via-predictive-latent-alignments)  
+   标签：评分：9.0/10、query:world
+   evidence：通过预测潜在对齐的世界锚点动作模型
 
 ### 速读区论文标签
-1. [Apeliotes: A Diffusion-Based Modeling Framework for km-scale Multi-Level Atmospheric Fields](/202607/27/2607.17037v1-apeliotes-a-diffusion-based-modeling-framework-for-km-scale-multi-level-atmospheric-fields)  
+1. [False Prophets: On the Security of World Models in Agentic Systems](/202607/28/2607.23147v1-false-prophets-on-the-security-of-world-models-in-agentic-systems)  
+   标签：评分：8.0/10、query:world
+   evidence：世界模型安全漏洞
+2. [Towards Dual-Brain Minimal Sufficient Representation for Vision-Language Navigation](/202607/28/2607.23181v1-towards-dual-brain-minimal-sufficient-representation-for-vision-language-navigation)  
+   标签：评分：8.0/10、query:world
+   evidence：用最小充分表示改进基于世界模型的导航
+3. [Scaling GUI Agents with Visual State Transitions](/202607/28/2607.24112v1-scaling-gui-agents-with-visual-state-transitions)  
+   标签：评分：8.0/10、query:world
+   evidence：状态转移预训练构建了GUI动态的内部世界模型
+4. [DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning](/202607/28/2607.24159v1-deva-decoupled-video-action-model-with-physical-guidance-for-robot-policy-learning)  
+   标签：评分：8.0/10、query:world
+   evidence：解耦的视频-动作模型结合物理引导
+5. [Offline Vision-Language Navigation with Geometric Goal Localization for Outdoor Environments](/202607/28/2607.22226v1-offline-vision-language-navigation-with-geometric-goal-localization-for-outdoor-environments)  
    标签：评分：7.0/10、query:world
-   evidence：基于扩散的天气世界模型
-2. [TRW: TRACE-RealWorld---An Auditable Consistency Contract for World Models as Materialized Views](/202607/27/2607.21910v1-trw-trace-realworld---an-auditable-consistency-contract-for-world-models-as-materialized-views)  
+   evidence：基于基础模型的离线视觉语言导航与几何目标定位
+6. [Stress-testing large language model agents in a robotic chemistry laboratory](/202607/28/2607.23045v1-stress-testing-large-language-model-agents-in-a-robotic-chemistry-laboratory)  
    标签：评分：7.0/10、query:world
-   evidence：TRACE-RealWorld提出了世界模型作为物化视图的可审计一致性合约
-3. [Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Mode](/202607/27/2607.22083v1-nanbeige42-3b-unlocking-agentic-capabilities-in-a-compact-mode)  
+   evidence：用机器人化学实验室作为物理世界测试平台评估LLM智能体
+7. [Data Pyramid for Embodied Manipulation](/202607/28/2607.24744v1-data-pyramid-for-embodied-manipulation)  
+   标签：评分：7.0/10、query:world
+   evidence：论述了具身基础模型的数据配方
+8. [Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline](/202607/28/2607.22997v1-real2sim2real-for-vision-language-action-manipulation-an-amd-rocm-based-pipeline)  
    标签：评分：6.0/10、query:world
-   evidence：紧凑型智能体基座模型
+   evidence：用于视觉-语言-动作操作的虚实转换流水线
 
 
 <div class="dpr-home-promo-card">
