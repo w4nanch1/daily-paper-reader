@@ -1,0 +1,131 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-29T20:12:42.303684+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.25236v1",
+      "source": "arxiv",
+      "title": "VisualPatchWorld: Code World Models as Latent Structured Representations for Planning",
+      "abstract": "Different research lines use the term world model in different ways, yet they share a common aim: to capture how the world evolves under action in a form that supports perception, simulation, and planning. Two prominent realizations are neural predictors that learn dynamics in continuous vector spaces, and hand-built physics engines that expose explicit state and physical laws. Neural predictors scale from data but leave the form of the dynamics implicit; physics engines are inspectable and editable but difficult to construct at scale. We introduce VisualPatchWorld (VPW), which represents world dynamics as code. VPW first selects a qualitative dynamical form with short active probes, then fits that form's free parameters from recorded state-action traces by minimizing multi-step prediction error. The resulting programs can be rolled forward like a simulator, inspected in source form, and used inside model-predictive control; image-derived scene graphs can supply the live state at replan time. Across comparisons with prior code-based world models, VPW attains 69.0% mean planning success and exceeds the strongest code baseline by 23.5 points. The largest gains arise when choosing the correct qualitative dynamics is essential. Under the same planner, the induced models approach ground-truth engine success on navigation and grasp-rich control; a residual gap remains for contact-rich pushing, and checking a shortlist of promising plans in the engine closes most of that gap. These results establish a practical route toward automatically constructed code world models that are useful for planning. Code is available at https://github.com/HKBU-KnowComp/VisualPatchWorld/.",
+      "authors": [
+        "Jiaxin Bai",
+        "Jiaxuan Xiong"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.RO"
+      ],
+      "published": "2026-07-28T03:23:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.25236v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "code world models for planning",
+      "llm_evidence_cn": "用于规划的代码世界模型",
+      "llm_evidence": "用于规划的代码世界模型",
+      "canonical_evidence": "用于规划的代码世界模型",
+      "llm_tldr_en": "VisualPatchWorld represents world dynamics as code, combining the scalability of neural predictors with the inspectability of physics engines, enabling efficient planning via structured latent representations.",
+      "llm_tldr_cn": "传统世界模型要么是隐式神经预测器难以检查，要么是手工物理引擎扩展困难。本文提出VisualPatchWorld，将世界动力学表示为可执行代码：先通过短主动探针选择定性动力学形式，再从记录数据中拟合参数。该方法既保持了数据驱动的可扩展性，又提供了可编辑和可检查的显式结构，在规划任务中表现出高效性和可解释性。",
+      "llm_tldr": "传统世界模型要么是隐式神经预测器难以检查，要么是手工物理引擎扩展困难。本文提出VisualPatchWorld，将世界动力学表示为可执行代码：先通过短主动探针选择定性动力学形式，再从记录数据中拟合参数。该方法既保持了数据驱动的可扩展性，又提供了可编辑和可检查的显式结构，在规划任务中表现出高效性和可解释性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26056v1",
+      "source": "arxiv",
+      "title": "INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models",
+      "abstract": "Forward latent world models predict how actions change a scene, but recover actions for a desired change only through expensive test-time search. We introduce INTACT (INtent-To-ACTion), an end-to-end JEPA that turns action-labeled, reward-free trajectories into a deployable intent-to-action interface. Each transition supplies physical intent $z_{t+1}-z_t$, while a future goal supplies deployment intent $\\operatorname{sg}(z_g)-z_t$. The architecture is isomorphic between the local and goal motion-intent backbone-input graphs through an identical four-slot grammar and shared parameters, and between supported local and goal motion-intent families through action-law semantics induced by the same predictor rather than pointwise latent equality. INTACT also provides intact transfer from RGB evidence to action-effective latent intent coordinates and from intent families to their corresponding action-law families. Asymmetric endpoint gradients ground physical successors and fix future goals as anchors, joining representation learning and control without pointwise latent matching or globally linear dynamics. The resulting coordinates support a robust distributional action law: its conditional mean serves directly as a search-free policy, while sampling remains available for diversity or optional verification. On the four official LeWM tasks, one-epoch, zero-search models reach 85.78\\%, 100.00\\%, 97.67\\%, and 97.89\\% success. Optional local CEM centered on the Direct plan reaches 96.86\\% macro success using 384 instead of 9,000 candidate sequences, reducing sampling by $23.44\\times$ while improving pure CEM by 16.00 points. One shared four-task encoder reaches 89.39\\% E5 Direct macro and improves every task over jointly trained LeWM, while predicted--expert action-family kNN tracks Direct success at $r=0.954$. Direct inference takes 2.9--5.5 ms.",
+      "authors": [
+        "Junhan Sun",
+        "Hao Zhao",
+        "Guofeng Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T17:59:40+00:00",
+      "link": "https://arxiv.org/pdf/2607.26056v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "intent-to-action world model without search",
+      "llm_evidence_cn": "无需搜索的意图到动作世界模型",
+      "llm_evidence": "无需搜索的意图到动作世界模型",
+      "canonical_evidence": "无需搜索的意图到动作世界模型",
+      "llm_tldr_en": "INTACT learns an end-to-end mapping from intent to action by using an isomorphic JEPA architecture that turns action-labeled trajectories into a deployable world model, eliminating expensive test-time search.",
+      "llm_tldr_cn": "现有前向潜在世界模型能预测动作如何改变场景，但需要昂贵的测试时搜索才能恢复实现期望变化的动作。本文提出INTACT，一个端到端的联合嵌入预测架构，通过同构的图结构和共享参数，直接学习从物理意图和部署意图到动作的映射。在机器人操控任务中，INTACT在无需搜索的情况下达到了与搜索方法相当的性能，显著降低了推理成本。",
+      "llm_tldr": "现有前向潜在世界模型能预测动作如何改变场景，但需要昂贵的测试时搜索才能恢复实现期望变化的动作。本文提出INTACT，一个端到端的联合嵌入预测架构，通过同构的图结构和共享参数，直接学习从物理意图和部署意图到动作的映射。在机器人操控任务中，INTACT在无需搜索的情况下达到了与搜索方法相当的性能，显著降低了推理成本。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.19069v1",
+      "source": "arxiv",
+      "title": "Delineate Anything v2: A Global Foundation Model for Field Delineation",
+      "abstract": "Accurate agricultural field boundary delineation at large scale is a foundational task for food security, supply chain transparency, and carbon accounting. While vision foundation models like SAM show remarkable zero-shot capabilities, they frequently fail in geospatial domains due to topological complexity, cropland texturing patterns, and a lack of physical scale awareness. In this work, we introduce Delineate Anything v2, a globally scalable foundation model designed specifically for wide-area field boundary mapping. We construct FBIS-73M, a 73-million-instance multi-resolution dataset spanning 61 countries. To address the pervasive issue of multi-field administrative parcel merging, we introduce a resolution-specific data curation pipeline that leverages topological image-space adaptation to homogenize merged parcels and strengthen weak physical boundaries. Furthermore, we establish a novel, manually curated evaluation benchmark covering 100 countries to assess independent zero-shot generalization. Our results show that Delineate Anything v2 surpasses the current state-of-the-art, including the Delineate Anything framework, by 0.284 mAP@0.5 (+103.3% relative gain), while maintaining execution speeds suitable for rapid national- and global-scale deployment, as demonstrated by nationwide mapping of Ukraine (603,000 km^2) in 5.4 hours on a consumer-grade workstation. Code, pre-trained weights, the FBIS-73M dataset, and ready-to-use national-scale vector boundary products are publicly available at https://github.com/Lavreniuk/Delineate-Anything.",
+      "authors": [
+        "Mykola Lavreniuk",
+        "Nataliia Kussul",
+        "Andrii Shelestov",
+        "Yevhenii Salii",
+        "Volodymyr Kuzin",
+        "Charlotte Julia Li-Xing Wang",
+        "Zoltan Szantoi"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-21T12:59:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.19069v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "global foundation model for field delineation",
+      "llm_evidence_cn": "农业领域分割的全球基础模型",
+      "llm_evidence": "农业领域分割的全球基础模型",
+      "canonical_evidence": "农业领域分割的全球基础模型",
+      "llm_tldr_en": "Delineate Anything v2 is a globally scalable foundation model for wide-area agricultural field boundary mapping, using a 73M-instance multi-resolution dataset and resolution-specific data curation to overcome SAM's failures in geospatial domains.",
+      "llm_tldr_cn": "现有视觉基础模型如SAM在地理空间领域的田地边界分割中表现不佳，因为缺乏对拓扑复杂性和物理尺度的感知。为此，本文提出Delineate Anything v2，一个全球可扩展的专用基础模型。它构建了涵盖61个国家、7300万个实例的多分辨率数据集FBIS-73M，并引入分辨率特定的数据筛选管道以解决多田块合并问题。实验表明，该模型在跨区域田地分割上达到SOTA性能，为粮食安全和碳核算提供了可靠的大规模基础工具。",
+      "llm_tldr": "现有视觉基础模型如SAM在地理空间领域的田地边界分割中表现不佳，因为缺乏对拓扑复杂性和物理尺度的感知。为此，本文提出Delineate Anything v2，一个全球可扩展的专用基础模型。它构建了涵盖61个国家、7300万个实例的多分辨率数据集FBIS-73M，并引入分辨率特定的数据筛选管道以解决多田块合并问题。实验表明，该模型在跨区域田地分割上达到SOTA性能，为粮食安全和碳核算提供了可靠的大规模基础工具。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
