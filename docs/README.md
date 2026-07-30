@@ -6,29 +6,33 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-29
-- 运行时间：2026-07-29 20:16:13 UTC
+- 最新运行日期：2026-07-30
+- 运行时间：2026-07-30 21:43:41 UTC
 - 运行状态：成功
-- 本次总论文数：3
-- 精读区：2
-- 速读区：1
+- 本次总论文数：4
+- 精读区：4
+- 速读区：0
 
 ### 今日简报（AI）
-今日精读两篇9分世界模型论文，聚焦潜在结构化表示与无搜索意图-动作学习；《VisualPatchWorld》与《INTACT》共同探索如何让智能体高效规划与推理，值得重点研读；建议关注世界模型在机器人自主规划中的实际应用，尤其学习用潜在表示减少搜索开销。
-- 详情：[/202607/29/README](/202607/29/README)
+今日精读两篇世界模型高分论文，分别从多智能体隐式因果建模和大型世界状态数据集展开突破。最值得关注的是：通过隐式因果世界模型可从多智能体演示中学习因果结构，而CG-World数据集为世界模型提供了标准化评估协议。建议动手复现CG-World的评估流程，检验因果建模方法在复杂环境中的泛化能力。
+- 详情：[/202607/30/README](/202607/30/README)
 
 ### 精读区论文标签
-1. [VisualPatchWorld: Code World Models as Latent Structured Representations for Planning](/202607/29/2607.25236v1-visualpatchworld-code-world-models-as-latent-structured-representations-for-planning)  
+1. [Learning Implicit Causal World Models from Multi-Agent Demonstrations](/202607/30/2607.26336v1-learning-implicit-causal-world-models-from-multi-agent-demonstrations)  
    标签：评分：9.0/10、query:world
-   evidence：用于规划的代码世界模型
-2. [INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models](/202607/29/2607.26056v1-intact-isomorphic-intent-to-action-learning-for-search-free-world-models)  
+   evidence：从多智能体演示中学习隐式因果世界模型
+2. [CG-World: A Large-Scale World-State Dataset and Protocol for World Models](/202607/30/2607.26452v1-cg-world-a-large-scale-world-state-dataset-and-protocol-for-world-models)  
    标签：评分：9.0/10、query:world
-   evidence：无需搜索的意图到动作世界模型
+   evidence：大规模世界状态数据集，用于世界模型
+3. [Mental World Modeling](/202607/30/2607.27201v1-mental-world-modeling)  
+   标签：评分：9.0/10、query:world
+   evidence：心理世界建模框架
+4. [Foundation Models and Fine-Tuning: Toward a New Generation of Models for Time Series Forecasting](/202607/30/2607.23146v1-foundation-models-and-fine-tuning-toward-a-new-generation-of-models-for-time-series-forecasting)  
+   标签：评分：8.0/10、query:world
+   evidence：时间序列预测的基础模型
 
 ### 速读区论文标签
-1. [Delineate Anything v2: A Global Foundation Model for Field Delineation](/202607/29/2607.19069v1-delineate-anything-v2-a-global-foundation-model-for-field-delineation)  
-   标签：评分：6.0/10、query:world
-   evidence：农业领域分割的全球基础模型
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">

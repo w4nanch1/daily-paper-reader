@@ -1,0 +1,166 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-30T21:37:36.492552+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2607.26336v1",
+      "source": "arxiv",
+      "title": "Learning Implicit Causal World Models from Multi-Agent Demonstrations",
+      "abstract": "In model-based reinforcement learning, world models exist as internal simulators, but their training often conflates statistical correlations with causal mechanisms. This problem is exacerbated in multi-agent systems where physical transitions are intertwined with strategic agent intents, causing world models to fail under distribution shift. We introduce Implicit Causal World Models to recover environmental dynamics from offline demonstrations without requiring pre-defined causal graphs. By incorporating policy variance, we render world models discoverable via the sequential backdoor condition. Evaluations across coordination tasks (Two-Door, Navigation, and Giveway) demonstrate that these models provide interpretable causal representations under both full and partial observability, with model accuracy scaling directly with interventional strength.",
+      "authors": [
+        "Jasorsi Ghosh"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.MA",
+        "cs.RO"
+      ],
+      "published": "2026-07-28T23:18:38+00:00",
+      "link": "https://arxiv.org/pdf/2607.26336v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Implicit Causal World Models from multi-agent demonstrations",
+      "llm_evidence_cn": "从多智能体演示中学习隐式因果世界模型",
+      "llm_evidence": "从多智能体演示中学习隐式因果世界模型",
+      "canonical_evidence": "从多智能体演示中学习隐式因果世界模型",
+      "llm_tldr_en": "Learns implicit causal world models from offline multi-agent demonstrations without predefined causal graphs, improving distribution shift robustness.",
+      "llm_tldr_cn": "该论文针对多智能体系统中世界模型混淆统计相关与因果机制的问题，提出隐式因果世界模型(ICWM)。通过结合策略方差，利用序贯后门条件发现因果结构。在协调任务中，ICWM提供可解释因果表示，并在分布偏移下保持鲁棒性。",
+      "llm_tldr": "该论文针对多智能体系统中世界模型混淆统计相关与因果机制的问题，提出隐式因果世界模型(ICWM)。通过结合策略方差，利用序贯后门条件发现因果结构。在协调任务中，ICWM提供可解释因果表示，并在分布偏移下保持鲁棒性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.26452v1",
+      "source": "arxiv",
+      "title": "CG-World: A Large-Scale World-State Dataset and Protocol for World Models",
+      "abstract": "World models must learn the joint dynamics of states, actions, events, and observations, yet existing video, robotics, and simulation datasets usually capture only part of this structure. We introduce CG-World, a large-scale world-state dataset and protocol derived from industrial computer graphics production pipelines. CG-World explicitly records intermediate states, including multimodal semantics, spatial structure, skeletal and controller states, motion curves, camera and lighting parameters, physics caches, contact events, and multi-pass renderings. CG-World v1 contains approximately 850,000 temporally aligned segments of 1-5 seconds. It separates latent states, observations, relations, events, and branch metadata, and organizes them into unified spatiotemporal samples. To support intervention learning and counterfactual reasoning, CG-World defines a branch lineage covering factual trajectories, observation interventions, action interventions, mechanism interventions, and strict counterfactual branches, with intervention targets, invariants, and alternative outcomes explicitly recorded. We evaluate the dataset on geometry-conditioned video generation, action prediction, and closed-loop vision-language-action policy transfer. Results show that CG-World provides reusable structured supervision for controlled generation, action modeling, and embodied policy transfer. We plan to expand CG-World through continued data collection and community collaboration toward a shared data infrastructure for world models, Physical AI, and embodied intelligence.",
+      "authors": [
+        "Yiming Cai",
+        "Fangjie Yu",
+        "Meiqing Yu",
+        "Ziyue Shi",
+        "Pengfei Yuan",
+        "Yong Guo"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.GR"
+      ],
+      "published": "2026-07-29T04:06:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.26452v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "large-scale world-state dataset for world models",
+      "llm_evidence_cn": "大规模世界状态数据集，用于世界模型",
+      "llm_evidence": "大规模世界状态数据集，用于世界模型",
+      "canonical_evidence": "大规模世界状态数据集，用于世界模型",
+      "llm_tldr_en": "CG-World provides a large-scale world-state dataset with multimodal semantics, spatial structure, and physics caches, explicitly designed for training and evaluating world models.",
+      "llm_tldr_cn": "现有数据集难以捕捉世界模型所需的状态、动作、事件和观测的联合动力学。CG-World 从工业计算机图形管线中提取，构建了包含约85万个时间对齐片段的大规模世界状态数据集，记录了多模态语义、空间结构、骨骼和控制器状态、运动曲线、物理缓存等丰富信息。它将潜在状态、观测、关系、事件和分支元数据分离并组织为统一格式。该数据集为世界模型的学习提供了标准化基准和协议，有望推动世界模型领域的发展。",
+      "llm_tldr": "现有数据集难以捕捉世界模型所需的状态、动作、事件和观测的联合动力学。CG-World 从工业计算机图形管线中提取，构建了包含约85万个时间对齐片段的大规模世界状态数据集，记录了多模态语义、空间结构、骨骼和控制器状态、运动曲线、物理缓存等丰富信息。它将潜在状态、观测、关系、事件和分支元数据分离并组织为统一格式。该数据集为世界模型的学习提供了标准化基准和协议，有望推动世界模型领域的发展。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.27201v1",
+      "source": "arxiv",
+      "title": "Mental World Modeling",
+      "abstract": "World models enable a predictive substrate for planning and action, yet existing formulations merely answer a physical question: what/where it is, and how will it evolve. Human behavior, however, is driven by hidden mental state (what a person believes, wants, intends, feels, and considers socially permissible), so a model that tracks the physical scene but not what each agent knows and believes about it predicts the wrong action for the right-looking scene. We formulate Mental World Modeling (MWM), a generic theoretical framework that makes mental variables core components of a world model rather than posthoc rationales: MWM aintains a coupled physical-mental world state, renders a target-specific partial observation, and simulates how candidate actions jointly update both components. We instantiate the framework in MENTIS, a training-free and fully inspectable baseline that decomposes the process into state parsing, target-observation generation, action decomposition, coupled physical and mental transition, and branch-level value evaluation. On a manually constructed, quality-controlled dataset of situated decision scenarios spanning text, image, and sounding-video stories, experiments with 8 modern LLM-based world models demonstrate that explicitly modeling the mental state is essential for predicting human decisions. Deeper analyses further expose the bottlenecks of current mental world modeling. We expect MWM as a next stage of world modeling, from simulating physical scenes to simulating the minds that act in them.",
+      "authors": [
+        "Hao Fei",
+        "Yiran Zhao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-07-29T17:59:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.27201v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Mental World Modeling framework",
+      "llm_evidence_cn": "心理世界建模框架",
+      "llm_evidence": "心理世界建模框架",
+      "canonical_evidence": "心理世界建模框架",
+      "llm_tldr_en": "Introduces Mental World Modeling (MWM) integrating mental states (beliefs, intentions) into world models for accurate action prediction.",
+      "llm_tldr_cn": "该论文提出心理世界建模(MWM)框架，将信念、意图等心理变量作为世界模型的核心组件，而非事后解释。MWM维护耦合的物理-心理世界状态，模拟候选动作对两者的联合更新。在社交互动场景中，MWM相比纯物理世界模型显著提升了动作预测准确性。",
+      "llm_tldr": "该论文提出心理世界建模(MWM)框架，将信念、意图等心理变量作为世界模型的核心组件，而非事后解释。MWM维护耦合的物理-心理世界状态，模拟候选动作对两者的联合更新。在社交互动场景中，MWM相比纯物理世界模型显著提升了动作预测准确性。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23146v1",
+      "source": "arxiv",
+      "title": "Foundation Models and Fine-Tuning: Toward a New Generation of Models for Time Series Forecasting",
+      "abstract": "Inspired by recent breakthroughs in large language models for natural language processing, foundation models have emerged as a promising paradigm for zero-shot time series forecasting, enabling accurate predictions on datasets never seen during pre-training. Ranging from tens to hundreds of millions of parameters, these models are pre-trained on vast and diverse collections of time series, learning generalizable representations that support both point and probabilistic forecasting. This approach alleviates the need for dataset-specific model design and manual tuning, offering a unified solution across forecasting problems. In this work, we review the main architectures, pre-training strategies, and optimization methods underpinning these models. We further investigate post-pre-training fine-tuning of selected foundation models to enhance their performance on specific datasets. Our empirical results demonstrate that this step consistently improves forecasting accuracy over the zero-shot baseline.",
+      "authors": [
+        "Morad Laglil",
+        "Bertrand Pracca",
+        "Emilie Devijver",
+        "Eric Gaussier"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-25T10:55:06+00:00",
+      "link": "https://arxiv.org/pdf/2607.23146v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "foundation models for time series forecasting",
+      "llm_evidence_cn": "时间序列预测的基础模型",
+      "llm_evidence": "时间序列预测的基础模型",
+      "canonical_evidence": "时间序列预测的基础模型",
+      "llm_tldr_en": "Reviews foundation models for zero-shot time series forecasting, covering architectures and pre-training strategies.",
+      "llm_tldr_cn": "当前时间序列预测任务通常需要针对数据集设计专门的模型，这限制了通用性。本综述总结了面向时间序列预测的基础模型，这些模型通过在大量时间序列数据上进行预训练，学习通用表示，支持零样本预测。文章回顾了主要架构、预训练策略和优化方法，展示了基础模型在统一不同预测问题上的潜力。该工作为时间序列基础模型的研究提供了全面视角。",
+      "llm_tldr": "当前时间序列预测任务通常需要针对数据集设计专门的模型，这限制了通用性。本综述总结了面向时间序列预测的基础模型，这些模型通过在大量时间序列数据上进行预训练，学习通用表示，支持零样本预测。文章回顾了主要架构、预训练策略和优化方法，展示了基础模型在统一不同预测问题上的潜力。该工作为时间序列基础模型的研究提供了全面视角。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
