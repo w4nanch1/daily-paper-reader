@@ -1,0 +1,289 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-31T21:14:07.402338+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 2,
+    "quick_skim_target": 11,
+    "quick_selected": 2
+  },
+  "deep_dive": [
+    {
+      "id": "2607.27599v1",
+      "source": "arxiv",
+      "title": "World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models",
+      "abstract": "Building generalizable agents for diverse applications remains a fundamental challenge. While imitation learning-based policies succeed in specific training environments, they often fail to generalize to novel scenes and tasks. In this work, we propose World Action Planner, a robot planning system that leverages the reasoning capabilities of Vision-Language Models (VLMs) and the physical grounding of a multi-task pose-image conditioned world model. Our system enables an agent to propose initial action plans and iteratively refine them via optimization and search, reasoning over imagined world model rollouts. We demonstrate that our approach achieves superior performance across compositional tasks, new layouts, and zero-shot generalization scenarios, significantly outperforming state-of-the-art end-to-end policy models such as VLAs and WAMs. Project website at worldactionplanner.github.io",
+      "authors": [
+        "Xiangcheng Zhang",
+        "Yilun Du"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-07-30T02:41:52+00:00",
+      "link": "https://arxiv.org/pdf/2607.27599v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "action-conditioned world models with VLM-based planning and refinement",
+      "llm_evidence_cn": "基于VLM规划与动作条件世界模型的决策系统",
+      "llm_evidence": "基于VLM规划与动作条件世界模型的决策系统",
+      "canonical_evidence": "基于VLM规划与动作条件世界模型的决策系统",
+      "llm_tldr_en": "World Action Planner combines VLMs with a multi-task pose-image conditioned world model, enabling agents to propose and iteratively refine action plans through imagined rollouts.",
+      "llm_tldr_cn": "模仿学习策略难以泛化到新场景和新任务，导致通用决策困难。论文提出 World Action Planner，将视觉语言模型（VLM）的推理能力与多任务姿态-图像条件世界模型的物理接地相结合，先提出初始动作计划，再通过优化和搜索对世界模型展开的想象轨迹进行迭代修正。在组合任务、新布局和零样本泛化上均取得优越性能，展示了动作条件世界模型在通用决策中的价值。",
+      "llm_tldr": "模仿学习策略难以泛化到新场景和新任务，导致通用决策困难。论文提出 World Action Planner，将视觉语言模型（VLM）的推理能力与多任务姿态-图像条件世界模型的物理接地相结合，先提出初始动作计划，再通过优化和搜索对世界模型展开的想象轨迹进行迭代修正。在组合任务、新布局和零样本泛化上均取得优越性能，展示了动作条件世界模型在通用决策中的价值。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28226v1",
+      "source": "arxiv",
+      "title": "Security of World-Model-Based Embodied AI: A Lifecycle of Threats, Defenses, and Evaluation",
+      "abstract": "World models give embodied AI a predictive core: they compress observations into states, simulate action-conditioned futures, and enable planning beyond reactive control. This predictive layer, however, opens a new security boundary-compromise can propagate from data, sensors, prompts, or feedback into physical action. Rather than treating world models as an isolated component, this survey traces threats across their entire lifecycle-from data construction and representation learning, through state grounding and imagination, to trajectory evaluation, execution, and long-term adaptation via memory and tools. We show that familiar attack families: poisoning, backdoors, adversarial examples, sensor spoofing, prompt injection, trajectory manipulation, and supply-chain attacks take on distinct meanings when they corrupt world states, learned dynamics, affordance estimates, or safety costs. We also highlight a duality: world models can serve as runtime safety shields, yet when compromised or over-trusted they generate predictive safety illusions. The survey offers a lifecycle taxonomy, maps existing attacks to world-model security properties, outlines evaluation protocols for safety failures, and structures defenses across provenance, robust grounding, uncertainty-aware prediction, trajectory gating, feedback auditing, and deployment assurance.",
+      "authors": [
+        "Fazhong Liu",
+        "Zhuoyan Chen",
+        "Haozhen Tan",
+        "Yan Meng",
+        "Guoxing Chen",
+        "Haojin Zhu"
+      ],
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR",
+        "cs.AI"
+      ],
+      "published": "2026-07-30T13:58:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.28226v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Survey of security threats for world-model-based embodied AI, covering world models, action-conditioned futures, planning",
+      "llm_evidence_cn": "世界模型具身AI安全的综述，涵盖世界模型、动作条件未来与规划",
+      "llm_evidence": "世界模型具身AI安全的综述，涵盖世界模型、动作条件未来与规划",
+      "canonical_evidence": "世界模型具身AI安全的综述，涵盖世界模型、动作条件未来与规划",
+      "llm_tldr_en": "Surveys the security lifecycle of world-model-based embodied AI, tracing threats from data to physical action and mapping defenses for the predictive world-model core.",
+      "llm_tldr_cn": "该综述关注世界模型驱动的具身AI面临的安全问题：世界模型作为预测核心，在压缩状态、模拟动作条件未来和规划的同时，也引入了从数据、传感器、提示到物理动作的攻击面。工作按生命周期梳理了投毒、后门、对抗样本、传感器欺骗、提示注入等威胁，并讨论了相应的防御与评估方法。它为理解安全世界模型设计提供了系统化的视角。",
+      "llm_tldr": "该综述关注世界模型驱动的具身AI面临的安全问题：世界模型作为预测核心，在压缩状态、模拟动作条件未来和规划的同时，也引入了从数据、传感器、提示到物理动作的攻击面。工作按生命周期梳理了投毒、后门、对抗样本、传感器欺骗、提示注入等威胁，并讨论了相应的防御与评估方法。它为理解安全世界模型设计提供了系统化的视角。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28405v1",
+      "source": "arxiv",
+      "title": "QuantWAMs: Calibrating at the Right Granularity for World Action Models",
+      "abstract": "World Action Models (WAMs) jointly predict future observations and actions, but their iterative denoising and closed-loop execution make efficient deployment costly. Existing post-training quantization (PTQ) methods are poorly suited to WAMs because they rely on open-loop objectives, homogeneous model assumptions, and calibration distributions that do not reflect deployment. We present QuantWAMs, a PTQ framework that aligns quantization decisions with the calibration context defined by model structure, rollout distribution, and task objective. QuantWAMs introduces three strategies: shared-basis outlier calibration, which pools activation evidence only across coordinate-compatible modules; co-training-objective saliency, which computes empirical-Fisher scores from the joint video--action gradient and assigns weight precision at a calibration-stable layer granularity; and fixed-intervention rollout auditing, which revises denoising-step protection schedules using reachable closed-loop states without changing the precision budget. We evaluate QuantWAMs on Fast-WAM and LingBot-VA across RoboTwin 2.0, LIBERO, and real-robot manipulation with an AgiBot G2. Under a W4A4-dominant setting, the reported simulation means differ from FP16 by 0.2--0.7 percentage points. Real-robot trials further establish deployment feasibility on three manipulation tasks. For the targeted video and action blocks, QuantWAMs reduces peak weight-and-activation memory to about 29\\% of FP16 and provides 1.4--1.6$\\times$ block-level speedups.",
+      "authors": [
+        "Jiacheng Zhou",
+        "Jinfan Lv",
+        "Ruixuan Li",
+        "Longtai Zhang",
+        "Yan Wang",
+        "Wenqiang Zhang",
+        "Lizhe Qi"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-30T15:54:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.28405v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Specifically targets World Action Models for post-training quantization.",
+      "llm_evidence_cn": "专门针对世界动作模型的后训练量化。",
+      "llm_evidence": "专门针对世界动作模型的后训练量化。",
+      "canonical_evidence": "专门针对世界动作模型的后训练量化。",
+      "llm_tldr_en": "Presents QuantWAMs, a post-training quantization framework for World Action Models, aligning calibration granularity with model structure, rollout distribution, and task objective to enable efficient deployment.",
+      "llm_tldr_cn": "世界动作模型（WAM）联合预测未来观测与动作，但其迭代去噪和闭环执行导致部署成本高昂。现有后训练量化方法依赖开环目标和同质模型假设，不适合WAM。本文提出QuantWAMs，通过共享基异常值校准、共训练目标显著性和部署感知校准三种策略，将量化决策与模型结构、rollout分布和任务目标对齐。实验证明该方法能显著降低WAM部署成本并保持性能，推动了动作世界模型的实际应用。",
+      "llm_tldr": "世界动作模型（WAM）联合预测未来观测与动作，但其迭代去噪和闭环执行导致部署成本高昂。现有后训练量化方法依赖开环目标和同质模型假设，不适合WAM。本文提出QuantWAMs，通过共享基异常值校准、共训练目标显著性和部署感知校准三种策略，将量化决策与模型结构、rollout分布和任务目标对齐。实验证明该方法能显著降低WAM部署成本并保持性能，推动了动作世界模型的实际应用。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28415v1",
+      "source": "arxiv",
+      "title": "QQWorld: Quantile-Quantile Matching for World Model Regularization",
+      "abstract": "Latent world models enable efficient planning by predicting future states in a compact representation space, but their performance depends critically on the quality of the learned latent distribution. LeWorldModel (LeWM) regularizes its latents toward an isotropic Gaussian using the Epps-Pulley (EP) objective. We show that the corrective gradients of EP rapidly vanish for isolated tail samples, leaving heavy-tailed deviations insufficiently controlled. To address this limitation, we propose QQWorld, which replaces EP with a quantile-quantile matching objective that directly aligns projected latent samples with rank-matched Gaussian quantiles, thereby maintaining effective corrective gradients in the tails. We further develop cross-batch QQ, which enlarges the effective ranking pool using detached samples from previous batches, and characterize its bias-variance trade-off. Across four control environments, QQWorld effectively improves the average planning success rate of LeWM, while consistently yielding better Gaussian alignment and thinner latent tails.",
+      "authors": [
+        "Zhoushun Yu",
+        "Xiaoyu Hu",
+        "Xiangyu Xu"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CV",
+        "cs.MM",
+        "cs.RO"
+      ],
+      "published": "2026-07-30T16:00:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.28415v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Directly addresses world model latent distribution regularization.",
+      "llm_evidence_cn": "直接解决世界模型潜在分布正则化问题。",
+      "llm_evidence": "直接解决世界模型潜在分布正则化问题。",
+      "canonical_evidence": "直接解决世界模型潜在分布正则化问题。",
+      "llm_tldr_en": "Proposes QQWorld, a quantile-quantile matching objective to regularize latent world models, overcoming vanishing corrective gradients of Epps-Pulley for tail samples, and extends to cross-batch QQ for better latent fit.",
+      "llm_tldr_cn": "潜在世界模型通过预测紧凑表征中的未来状态实现高效规划，其性能高度依赖潜在分布质量。现有LeWorldModel使用Epps-Pulley目标向各向同性高斯正则化，但对孤立尾部样本的校正梯度易消失。为此，本文提出QQWorld，以分位数-分位数匹配替代EP目标，直接对齐投影潜在样本与秩匹配的高斯分位数，保持尾部有效梯度；进一步提出跨批次QQ扩大样本支持。实验表明，QQWorld显著改善重尾偏差控制，提升潜在世界模型的表示质量与下游规划效果。",
+      "llm_tldr": "潜在世界模型通过预测紧凑表征中的未来状态实现高效规划，其性能高度依赖潜在分布质量。现有LeWorldModel使用Epps-Pulley目标向各向同性高斯正则化，但对孤立尾部样本的校正梯度易消失。为此，本文提出QQWorld，以分位数-分位数匹配替代EP目标，直接对齐投影潜在样本与秩匹配的高斯分位数，保持尾部有效梯度；进一步提出跨批次QQ扩大样本支持。实验表明，QQWorld显著改善重尾偏差控制，提升潜在世界模型的表示质量与下游规划效果。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28624v1",
+      "source": "arxiv",
+      "title": "PhiZero: A World Model Built Around Physical Language",
+      "abstract": "We introduce PhiZero, a physical world model built around physical language, a compact discrete representation of world-state transitions. Existing physical world models typically predict future videos directly in pixel space, leaving the underlying world dynamics implicit within high-dimensional visual predictors. Motivated by humans' ability to abstract predictive structure from visual experience and organize it in natural language for explicit reasoning, we learn physical language from in-the-wild videos through self-supervision and use it to explicitly reason about how the physical world evolves. Accordingly, PhiZero adopts a reason-then-render paradigm: it first infers future world evolution as a physical-language sequence and then renders the inferred transitions into videos. Extensive experiments across generation and understanding benchmarks validate the ability of PhiZero to model physically coherent world evolution. We further show its potential for realistic and interactive world modeling, fine-grained action-conditioned simulation, and zero-shot motion transfer.",
+      "authors": [
+        "Shuyao Shang",
+        "Yuqi Wang",
+        "Ruopeng Gao",
+        "Xu Chen",
+        "Tieniu Tan",
+        "Lue Fan",
+        "Zhaoxiang Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-30T17:59:46+00:00",
+      "link": "https://arxiv.org/pdf/2607.28624v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "physical world model with language-based prediction",
+      "llm_evidence_cn": "基于物理语言的物理世界模型",
+      "llm_evidence": "基于物理语言的物理世界模型",
+      "canonical_evidence": "基于物理语言的物理世界模型",
+      "llm_tldr_en": "Introduces PhiZero, a world model that reasons about physical state transitions using a compact discrete physical language, addressing the limitations of pixel-space predictors.",
+      "llm_tldr_cn": "现有物理世界模型通常在像素空间直接预测视频，底层动态隐含在高维视觉预测器中。PhiZero 提出一种以物理语言为核心的物理世界模型，通过自监督从野外视频学习离散的物理语言，并采用先推理后渲染的范式，先以符号序列推断未来演化再渲染生成，从而实现对物理世界更显式的推理和预测。",
+      "llm_tldr": "现有物理世界模型通常在像素空间直接预测视频，底层动态隐含在高维视觉预测器中。PhiZero 提出一种以物理语言为核心的物理世界模型，通过自监督从野外视频学习离散的物理语言，并采用先推理后渲染的范式，先以符号序列推断未来演化再渲染生成，从而实现对物理世界更显式的推理和预测。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.27797v1",
+      "source": "arxiv",
+      "title": "Revisiting Predictive Process Monitoring in the Age of Foundation Models: A Comparative Study of Sequence, Tabular, and LLM Approaches",
+      "abstract": "Predictive process monitoring (PPM) leverages event logs to forecast the future of running process instances, for instance, predicting the next activity, the remaining time until case completion, or the time to the next event. While PPM research in recent years has been dominated by deep sequence models trained from scratch, such as Long Short-Term Memory (LSTM) models, foundation-model approaches---particularly large language models (LLMs)---are increasingly explored for PPM. At the same time, tabular foundation models with in-context learning capabilities offer a promising alternative but have not yet been systematically benchmarked for PPM. Thus, it remains unclear whether classical sequence-based models remain competitive in this evolving landscape. This paper compares the three modeling paradigms both conceptually and empirically through a controlled benchmark across multiple datasets and prediction tasks. The results show that sequence models consistently perform best for next activity prediction, whereas tabular foundation models are competitive on temporal tasks, with LLMs usually lagging behind despite higher cost.",
+      "authors": [
+        "Lennart Fertig",
+        "Lukas Kirchdorfer",
+        "Tobias Sesterhenn"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-07-30T07:36:34+00:00",
+      "link": "https://arxiv.org/pdf/2607.27797v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "comparative study of foundation-model approaches for predictive process monitoring",
+      "llm_evidence_cn": "面向预测性过程监控的基础模型方法对比研究",
+      "llm_evidence": "面向预测性过程监控的基础模型方法对比研究",
+      "canonical_evidence": "面向预测性过程监控的基础模型方法对比研究",
+      "llm_tldr_en": "This paper systematically benchmarks sequence, tabular, and LLM foundation models for predictive process monitoring, clarifying the potential of tabular in-context learning.",
+      "llm_tldr_cn": "预测性过程监控（PPM）通常使用从头训练的深度序列模型，但基础模型尤其是大语言模型正被越来越多地探索。论文对序列模型、表格基础模型和 LLM 进行了系统比较，重点考察表格基础模型的上下文学习能力在下一活动、剩余时间等预测任务中的表现。研究为在 PPM 中选用基础模型类型提供了基准和洞见。",
+      "llm_tldr": "预测性过程监控（PPM）通常使用从头训练的深度序列模型，但基础模型尤其是大语言模型正被越来越多地探索。论文对序列模型、表格基础模型和 LLM 进行了系统比较，重点考察表格基础模型的上下文学习能力在下一活动、剩余时间等预测任务中的表现。研究为在 PPM 中选用基础模型类型提供了基准和洞见。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.28432v1",
+      "source": "arxiv",
+      "title": "A foundation model of numerical intelligence with cross-disciplinary generalization",
+      "abstract": "Intelligence is commonly understood as the ability to acquire and apply knowledge, adapt to unfamiliar situations and solve new problems. Large language models exhibit this capacity by inferring task-relevant knowledge from textual context and applying it to new tasks. Yet intelligence need not be confined to language. For scientific and social systems, we need models that acquire and apply knowledge from numerical context-an ability we call numerical intelligence. Here we introduce UNified In-Context Operator Networks (UNICON), a foundation model that exhibits numerical intelligence across disciplines. Using graph-based examples from a system as context, UNICON infers the predictive relation shared across them and applies it to queries from the same system. Across scientific and social systems, including those from disciplines absent from training, the same model approaches specialist performance without retraining. Combining UNICON with language-model agents yields further gains, enabling it to surpass state-of-the-art specialists in a discipline unseen in training. We further show that training-corpus diversity improves generalization to unseen disciplines. Together, these results establish UNICON as a foundation model of numerical intelligence and position it as a building block for a broader ecosystem of artificial intelligence.",
+      "authors": [
+        "Chenghan Wu",
+        "Zongmin Yu",
+        "Liu Yang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-07-30T16:09:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.28432v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Introduces UNICON, a foundation model for numerical intelligence.",
+      "llm_evidence_cn": "提出UNICON，一个面向数值智能的基础模型。",
+      "llm_evidence": "提出UNICON，一个面向数值智能的基础模型。",
+      "canonical_evidence": "提出UNICON，一个面向数值智能的基础模型。",
+      "llm_tldr_en": "UNICON is a foundation model that infers predictive relations from numeric context and generalizes across disciplines, enabling in-context learning on numerical data.",
+      "llm_tldr_cn": "论文提出数值智能概念并介绍UNICON基础模型，该模型从系统的图结构示例中推断共有预测关系，并将其应用于新查询。UNICON展示了跨学科数值数据上的上下文学习能力，为科学和社会系统提供了超越语言的智能模型。",
+      "llm_tldr": "论文提出数值智能概念并介绍UNICON基础模型，该模型从系统的图结构示例中推断共有预测关系，并将其应用于新查询。UNICON展示了跨学科数值数据上的上下文学习能力，为科学和社会系统提供了超越语言的智能模型。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

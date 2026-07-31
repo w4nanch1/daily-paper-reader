@@ -6,33 +6,43 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-30
-- 运行时间：2026-07-30 21:43:41 UTC
+- 最新运行日期：2026-07-31
+- 运行时间：2026-07-31 21:20:10 UTC
 - 运行状态：成功
-- 本次总论文数：4
-- 精读区：4
-- 速读区：0
+- 本次总论文数：7
+- 精读区：5
+- 速读区：2
 
 ### 今日简报（AI）
-今日精读两篇世界模型高分论文，分别从多智能体隐式因果建模和大型世界状态数据集展开突破。最值得关注的是：通过隐式因果世界模型可从多智能体演示中学习因果结构，而CG-World数据集为世界模型提供了标准化评估协议。建议动手复现CG-World的评估流程，检验因果建模方法在复杂环境中的泛化能力。
-- 详情：[/202607/30/README](/202607/30/README)
+1) 今日聚焦7篇AI前沿，精读世界模型决策与安全双高论文，横扫智能体核心进展。
+2) 最值得关注：动作条件世界模型提升泛化能力（10分），及其安全威胁全生命周期解析（9分）。
+3) 建议普通读者优先看世界模型落地风险，再顺路瞄一眼基础模型在数值智能上的跨界潜力。
+- 详情：[/202607/31/README](/202607/31/README)
 
 ### 精读区论文标签
-1. [Learning Implicit Causal World Models from Multi-Agent Demonstrations](/202607/30/2607.26336v1-learning-implicit-causal-world-models-from-multi-agent-demonstrations)  
+1. [World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models](/202607/31/2607.27599v1-world-action-planner-generalizable-decision-making-with-action-conditioned-world-models)  
+   标签：评分：10.0/10、query:world
+   evidence：基于VLM规划与动作条件世界模型的决策系统
+2. [Security of World-Model-Based Embodied AI: A Lifecycle of Threats, Defenses, and Evaluation](/202607/31/2607.28226v1-security-of-world-model-based-embodied-ai-a-lifecycle-of-threats-defenses-and-evaluation)  
    标签：评分：9.0/10、query:world
-   evidence：从多智能体演示中学习隐式因果世界模型
-2. [CG-World: A Large-Scale World-State Dataset and Protocol for World Models](/202607/30/2607.26452v1-cg-world-a-large-scale-world-state-dataset-and-protocol-for-world-models)  
+   evidence：世界模型具身AI安全的综述，涵盖世界模型、动作条件未来与规划
+3. [QuantWAMs: Calibrating at the Right Granularity for World Action Models](/202607/31/2607.28405v1-quantwams-calibrating-at-the-right-granularity-for-world-action-models)  
    标签：评分：9.0/10、query:world
-   evidence：大规模世界状态数据集，用于世界模型
-3. [Mental World Modeling](/202607/30/2607.27201v1-mental-world-modeling)  
+   evidence：专门针对世界动作模型的后训练量化。
+4. [QQWorld: Quantile-Quantile Matching for World Model Regularization](/202607/31/2607.28415v1-qqworld-quantile-quantile-matching-for-world-model-regularization)  
    标签：评分：9.0/10、query:world
-   evidence：心理世界建模框架
-4. [Foundation Models and Fine-Tuning: Toward a New Generation of Models for Time Series Forecasting](/202607/30/2607.23146v1-foundation-models-and-fine-tuning-toward-a-new-generation-of-models-for-time-series-forecasting)  
-   标签：评分：8.0/10、query:world
-   evidence：时间序列预测的基础模型
+   evidence：直接解决世界模型潜在分布正则化问题。
+5. [PhiZero: A World Model Built Around Physical Language](/202607/31/2607.28624v1-phizero-a-world-model-built-around-physical-language)  
+   标签：评分：9.0/10、query:world
+   evidence：基于物理语言的物理世界模型
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Revisiting Predictive Process Monitoring in the Age of Foundation Models: A Comparative Study of Sequence, Tabular, and LLM Approaches](/202607/31/2607.27797v1-revisiting-predictive-process-monitoring-in-the-age-of-foundation-models-a-comparative-study-of-sequence-tabular-and-llm-approaches)  
+   标签：评分：7.0/10、query:world
+   evidence：面向预测性过程监控的基础模型方法对比研究
+2. [A foundation model of numerical intelligence with cross-disciplinary generalization](/202607/31/2607.28432v1-a-foundation-model-of-numerical-intelligence-with-cross-disciplinary-generalization)  
+   标签：评分：7.0/10、query:world
+   evidence：提出UNICON，一个面向数值智能的基础模型。
 
 
 <div class="dpr-home-promo-card">
