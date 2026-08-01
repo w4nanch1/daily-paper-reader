@@ -1,0 +1,78 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-01T20:55:18.858553+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.22083v2",
+      "source": "arxiv",
+      "title": "Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Model",
+      "abstract": "We present Nanbeige4.2-3B, a compact general agentic model with 3B non-embedding parameters. It delivers strong performance across code-agent, office-agent, and complex tool-use tasks while maintaining highly competitive reasoning capabilities in mathematics, coding, and science. Nanbeige4.2-3B is pretrained from scratch on 28T tokens with a Looped Transformer that reuses the layer stack to increase capacity without adding parameters. For SFT data and trajectory construction, we expand the diversity of executable environments, task assets, and agentic scaffolds through real-world deployment and large-scale synthesis. Our RL pipeline applies mixed-mode RLHF over Think and Non-Think responses to improve overall model quality and reduce failure cases, length-controlled reasoning RL to balance accuracy and reasoning efficiency, and agentic RL with outcome and process rewards to stabilize long-horizon training. Extensive evaluations show that Nanbeige4.2-3B outperforms larger models, including Qwen3.5-9B and Gemma4-12B, across diverse agentic benchmarks while remaining competitive on reasoning and alignment tasks. Performance with OpenClaw further supports its use as a compact local personal assistant.",
+      "authors": [
+        "Nanbeige Lab",
+        ":",
+        "Chen Yang",
+        "Chengrui Huang",
+        "Fufeng Lan",
+        "Hanhui Chen",
+        "Hao Zhou",
+        "Huatong Song",
+        "Jiaqi Cao",
+        "Jiaying Zhu",
+        "Jinlin Niu",
+        "Kai Wang",
+        "Lisheng Huang",
+        "Qiliang Liang",
+        "Ran Le",
+        "Ruixiang Feng",
+        "Shuang Sun",
+        "Tao Gu",
+        "Tao Zhang",
+        "Tianyu Luo",
+        "Yang Song",
+        "Yun Xing",
+        "Yuntao Wen",
+        "Ziyao Xu",
+        "Zongchao Chen",
+        "Zongqiang Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-24T08:33:26+00:00",
+      "link": "https://arxiv.org/pdf/2607.22083v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Presents a compact agentic foundation model; relevant to foundation model requirement.",
+      "llm_evidence_cn": "提出紧凑智能体基础模型，涉及动作与工具调用，匹配基础模型需求",
+      "llm_evidence": "提出紧凑智能体基础模型，涉及动作与工具调用，匹配基础模型需求",
+      "canonical_evidence": "提出紧凑智能体基础模型，涉及动作与工具调用，匹配基础模型需求",
+      "llm_tldr_en": "Introduces Nanbeige4.2-3B, a compact 3B-parameter agentic foundation model using a Looped Transformer and mixed-mode RLHF, achieving strong tool-use and reasoning performance.",
+      "llm_tldr_cn": "该论文提出Nanbeige4.2-3B，一个3B非嵌入参数的紧凑通用智能体基础模型。使用Looped Transformer循环复用层堆栈以在参数不变情况下提升容量，并借助真实部署和大规模合成数据扩充可执行环境与智能体轨迹；RL阶段采用混合模式RLHF同时优化思考与非思考响应。实验显示它在代码智能体、办公智能体和复杂工具调用任务上性能强劲，并在数学、编程和科学推理上保持竞争力。",
+      "llm_tldr": "该论文提出Nanbeige4.2-3B，一个3B非嵌入参数的紧凑通用智能体基础模型。使用Looped Transformer循环复用层堆栈以在参数不变情况下提升容量，并借助真实部署和大规模合成数据扩充可执行环境与智能体轨迹；RL阶段采用混合模式RLHF同时优化思考与非思考响应。实验显示它在代码智能体、办公智能体和复杂工具调用任务上性能强劲，并在数学、编程和科学推理上保持竞争力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

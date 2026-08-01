@@ -1,0 +1,24 @@
+{
+  "label": "2026-08-01",
+  "date": "2026-08-01",
+  "generated_at": "2026-08-01T20:56:53",
+  "count": 1,
+  "papers": [
+    {
+      "paper_id": "202608/01/2607.22083v2-nanbeige42-3b-unlocking-agentic-capabilities-in-a-compact-model",
+      "section": "quick",
+      "title_en": "Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Model",
+      "authors": "Nanbeige Lab, :, Chen Yang, Chengrui Huang, Fufeng Lan, Hanhui Chen, Hao Zhou, Huatong Song, Jiaqi Cao, Jiaying Zhu, Jinlin Niu, Kai Wang, Lisheng Huang, Qiliang Liang, Ran Le, Ruixiang Feng, Shuang Sun, Tao Gu, Tao Zhang, Tianyu Luo, Yang Song, Yun Xing, Yuntao Wen, Ziyao Xu, Zongchao Chen, Zongqiang Li",
+      "date": "2026-07-24",
+      "pdf": "https://arxiv.org/pdf/2607.22083v2",
+      "score": "7.0",
+      "evidence": "提出紧凑智能体基础模型，涉及动作与工具调用，匹配基础模型需求",
+      "tldr": "紧凑模型在代理任务上常因容量不足而受限，大模型又部署昂贵。本工作从零训练3B参数的Nanbeige4.2-3B，用循环Transformer复用层堆栈，在28T tokens上预训练。结合真实环境与合成数据构造SFT轨迹，采用混合RLHF、长度控制推理RL和带结果/过程奖励的代理RL。在代码代理等基准上超越Qwen3.5-9B和Gemma4-12B，推理保持竞争力，适合做本地助手。",
+      "tags": "query:world",
+      "abstract_en": "We present Nanbeige4.2-3B, a compact general agentic model with 3B non-embedding parameters. It delivers strong performance across code-agent, office-agent, and complex tool-use tasks while maintaining highly competitive reasoning capabilities in mathematics, coding, and science. Nanbeige4.2-3B is pretrained from scratch on 28T tokens with a Looped Transformer that reuses the layer stack to increase capacity without adding parameters. For SFT data and trajectory construction, we expand the diversity of executable environments, task assets, and agentic scaffolds through real-world deployment and large-scale synthesis. Our RL pipeline applies mixed-mode RLHF over Think and Non-Think responses to improve overall model quality and reduce failure cases, length-controlled reasoning RL to balance accuracy and reasoning efficiency, and agentic RL with outcome and process rewards to stabilize long-horizon training. Extensive evaluations show that Nanbeige4.2-3B outperforms larger models, including Qwen3.5-9B and Gemma4-12B, across diverse agentic benchmarks while remaining competitive on reasoning and alignment tasks. Performance with OpenClaw further supports its use as a compact local personal assistant.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

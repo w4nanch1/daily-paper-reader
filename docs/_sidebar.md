@@ -1,6 +1,9 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-01 <!--dpr-date:20260801-->
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/01/2607.22083v2-nanbeige42-3b-unlocking-agentic-capabilities-in-a-compact-model" data-sidebar-item="{&quot;title&quot;: &quot;Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Model&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.22083v2-nanbeige42-3b-unlocking-agentic-capabilities-in-a-compact-model&quot;, &quot;score&quot;: &quot;7.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;提出紧凑智能体基础模型，涉及动作与工具调用，匹配基础模型需求&quot;}">Nanbeige4.2-3B: Unlocking Agentic Capabilities in a Compact Model</a>
   * 2026-07-31 <!--dpr-date:20260731-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202607/31/2607.27599v1-world-action-planner-generalizable-decision-making-with-action-conditioned-world-models" data-sidebar-item="{&quot;title&quot;: &quot;World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2607.27599v1-world-action-planner-generalizable-decision-making-with-action-conditioned-world-models&quot;, &quot;score&quot;: &quot;10.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;基于VLM规划与动作条件世界模型的决策系统&quot;}">World Action Planner: Generalizable Decision-Making with Action-Conditioned World Models</a>
