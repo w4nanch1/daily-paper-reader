@@ -6,47 +6,53 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-03
-- 运行时间：2026-08-03 20:46:26 UTC
+- 最新运行日期：2026-08-04
+- 运行时间：2026-08-04 22:00:51 UTC
 - 运行状态：成功
-- 本次总论文数：9
-- 精读区：8
+- 本次总论文数：11
+- 精读区：10
 - 速读区：1
 
 ### 今日简报（AI）
-今日精读8篇、速读1篇，聚焦世界动作模型与具身智能；两篇满分研究均围绕视觉分布偏移下的鲁棒操控与流匹配异步反馈机制，值得优先关注；建议读者后续追踪世界模型在零样本导航任务中的泛化表现。
-- 详情：[/202608/03/README](/202608/03/README)
+今日精读10篇、速读1篇，聚焦世界动作模型与视频世界模型。最值得关注的是满分论文《SelfWAM》实现快速机器人控制、《EndoWAM》支撑泛化内镜导航，均属“接地”世界动作模型。下一步建议顺藤摸瓜，看看《MiniWorld》如何从零低成本训练视频世界模型，以补足通用场景能力。
+- 详情：[/202608/04/README](/202608/04/README)
 
 ### 精读区论文标签
-1. [ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts](/202608/03/2607.28993v1-st-wam-semantic-temporal-world-action-model-for-robust-manipulation-under-visual-distribution-shifts)  
+1. [SelfWAM: A Self-Grounded Unified World Action Model for Fast Robot Control](/202608/04/2608.00725v1-selfwam-a-self-grounded-unified-world-action-model-for-fast-robot-control)  
    标签：评分：10.0/10、query:world
-   evidence：论文标题即包含World Action Model，结合语义-时间建模提升操作鲁棒性
-2. [FBFM: A Training-Free Asynchronous Feedback Mechanism for Flow-Matching in World-Action Models Execution](/202608/03/2607.29235v1-fbfm-a-training-free-asynchronous-feedback-mechanism-for-flow-matching-in-world-action-models-execution)  
+   evidence：统一世界动作模型，联合预测动作与未来观测
+2. [EndoWAM: A Grounded World-Action Model for Generalizable Endoscopic Navigation](/202608/04/2608.01221v1-endowam-a-grounded-world-action-model-for-generalizable-endoscopic-navigation)  
    标签：评分：10.0/10、query:world
-   evidence：直接针对世界-动作模型及其流匹配执行，通过真实观测重新接地提升长程机器人控制可靠性
-3. [WorldDiT: A Unified Diffusion Architecture for World and Action Modeling](/202608/03/2607.23909v2-worlddit-a-unified-diffusion-architecture-for-world-and-action-modeling)  
+   evidence：首次将世界-动作模型用于机器人内镜导航，结合视觉动态预测与动作生成
+3. [Disentangling Visuo-Tactile Foresight: Oracle-Guided Interface Discovery for World Action Models](/202608/04/2608.00547v1-disentangling-visuo-tactile-foresight-oracle-guided-interface-discovery-for-world-action-models)  
    标签：评分：9.0/10、query:world
-   evidence：统一扩散Transformer耦合动作生成与视觉世界建模
-4. [Auto-JEPA: A Latent World Model of Continuous Intent for End-to-End Autonomous Driving](/202608/03/2607.29031v1-auto-jepa-a-latent-world-model-of-continuous-intent-for-end-to-end-autonomous-driving)  
+   evidence：触觉世界动作模型与视觉-触觉预见
+4. [Why Does the Future Branch? Identifiable Closure Tests for Stochastic Physical World Models](/202608/04/2608.00591v1-why-does-the-future-branch-identifiable-closure-tests-for-stochastic-physical-world-models)  
    标签：评分：9.0/10、query:world
-   evidence：面向动作的潜在世界模型，预测未来驾驶意图
-5. [BWM: A Low-Cost High-Fidelity World Simulator for Robot Learning](/202608/03/2607.29302v1-bwm-a-low-cost-high-fidelity-world-simulator-for-robot-learning)  
+   evidence：随机物理世界模型及其可辨识评估
+5. [FlowPilot: Real-Time World-Action Modeling for Agile UAV Navigation](/202608/04/2608.00635v1-flowpilot-real-time-world-action-modeling-for-agile-uav-navigation)  
    标签：评分：9.0/10、query:world
-   evidence：面向机器人学习的低成本高保真动作条件世界模拟器
-6. [AquaJEPA: Action-Conditioned Multimodal Predictive Representations for Underwater Robot Dynamics](/202608/03/2607.29393v1-aquajepa-action-conditioned-multimodal-predictive-representations-for-underwater-robot-dynamics)  
+   evidence：联合预测未来观测与轨迹的世界-动作模型
+6. [DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation](/202608/04/2608.00793v1-dynamicwam-dual-path-motion-conditioning-for-world-action-models-in-dynamic-manipulation)  
    标签：评分：9.0/10、query:world
-   evidence：动作条件的多模态预测世界模型，用于水下机器人动力学
-7. [FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling](/202608/03/2607.29596v1-fibvla-an-efficient-temporal-vision-language-action-model-with-fibonacci-sampling)  
+   evidence：面向动态操作的世界行动模型双路径运动条件化
+7. [SG-WAM: Self-Guided World Modeling in Geometry-Aware Policy Space](/202608/04/2608.01397v1-sg-wam-self-guided-world-modeling-in-geometry-aware-policy-space)  
    标签：评分：9.0/10、query:world
-   evidence：面向具身动作的视觉-语言-动作基础模型，包含世界时序表征
-8. [WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning](/202608/03/2607.29613v1-wcm-a-world-critic-model-for-vision-language-action-reinforcement-learning)  
+   evidence：世界动作模型结合动作生成与几何感知的未来状态预测
+8. [FedWorld: Scope-Aware Federation of Agent World Models](/202608/04/2608.01561v1-fedworld-scope-aware-federation-of-agent-world-models)  
    标签：评分：9.0/10、query:world
-   evidence：面向视觉-语言-动作强化学习的世界评论员模型，引入显式世界建模目标
+   evidence：智能体世界模型的联邦学习，用于共享世界动态知识
+9. [Faster-WAM: Do World Action Models Need Deep Action Modules?](/202608/04/2608.02365v1-faster-wam-do-world-action-models-need-deep-action-modules)  
+   标签：评分：9.0/10、query:world
+   evidence：面向世界动作模型，在预训练视频Transformer上使用轻量动作模块
+10. [DF$^3$: World Modeling via Decoder-Free Feature Forecasting in Autonomous Navigation](/202608/04/2608.02428v1-df3-world-modeling-via-decoder-free-feature-forecasting-in-autonomous-navigation)  
+   标签：评分：9.0/10、query:world
+   evidence：通过无解码器特征预测进行世界建模
 
 ### 速读区论文标签
-1. [HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot Vision-and-Language Navigation](/202608/03/2607.29600v1-ham-vln-harnessing-hierarchical-agentic-memory-for-zero-shot-vision-and-language-navigation)  
-   标签：评分：6.0/10、query:world
-   evidence：在视觉导航中用持久深度世界图谱进行动作选择
+1. [MiniWorld: Democratizing the Training of Video World Models from Scratch](/202608/04/2608.01127v1-miniworld-democratizing-the-training-of-video-world-models-from-scratch)  
+   标签：评分：8.0/10、query:world
+   evidence：从头训练视频世界模型，与world model直接相关
 
 
 <div class="dpr-home-promo-card">
