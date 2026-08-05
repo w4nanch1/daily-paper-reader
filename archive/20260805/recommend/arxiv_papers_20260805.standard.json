@@ -1,0 +1,239 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-05T20:54:09.674335+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2608.01049v1",
+      "source": "arxiv",
+      "title": "FactorJEPA: Factorizing Monolithic Futures into Layout-Agent-Interaction Channels for Crowded and Chaotic Global South Urban Worlds",
+      "abstract": "World models have attracted significant attention for their ability to capture and predict the structure and dynamics of the physical world. In this emerging landscape, Joint Embedding Predictive Architectures (JEPA) offer a particularly compelling direction.   We study a largely unexplored regime: populous, crowded, and chaotic Global South urban environments, which we call DENSEWORLD. Unlike the lower-density, lane-structured settings that dominate existing evaluations, these scenes exhibit soft spatial boundaries, extreme agent heterogeneity, persistent occlusion, and rapid social negotiation under mixed traffic. We introduce the first large-scale dataset for this regime: 1,000 hours of drive-through, walk-through, and aerial video across 22 cities. Existing JEPA formulations struggle to preserve dense interaction dynamics under heterogeneity and partial observability.   We introduce FactorJEPA, which makes world structure a first-class predictive primitive. Rather than encoding the future in a monolithic latent, it composes layout, entities, and interactions, using a visibility gate and separated subspaces to preserve partially observed agents and discourage cross-factor shortcuts. FactorJEPA improves (i) future-latent accuracy (Future-frame L1), (ii) intervention-sensitive prediction (Causal L1), and (iii) robustness to reduced visual evidence (Mask-ratio slope), while exposing (iv) a reproducible motion-information trade-off (Motion cosine). Method rankings replicate across 2B and 1B V-JEPA 2.1 backbones, with rho = 0.895 to 0.978.   We publicly release the DENSEWORLD-115k dataset (https://huggingface.co/datasets/anonymousML123/denseworld-115k) and the surgery-trained FactorJEPA checkpoints (https://huggingface.co/datasets/anonymousML123/factorjepa-outputs/tree/main/outputs/full/vjepa_2_1_vitg_1B/train/m09c_surgery_3stage_DI_diheavy_encoder).",
+      "authors": [
+        "Kapil Wanaskar",
+        "Gaytri Jena",
+        "Aman Chadha",
+        "Vinija Jain",
+        "Vasu Sharma",
+        "Amitava Das"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-02T07:32:46+00:00",
+      "link": "https://arxiv.org/pdf/2608.01049v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "World models and JEPA for crowded urban scene prediction",
+      "llm_evidence_cn": "面向拥挤城市场景预测的世界模型与JEPA方法",
+      "llm_evidence": "面向拥挤城市场景预测的世界模型与JEPA方法",
+      "canonical_evidence": "面向拥挤城市场景预测的世界模型与JEPA方法",
+      "llm_tldr_en": "FactorJEPA learns world models for dense, chaotic Global South urban scenes by factorizing predictive futures into layout, agent, and interaction channels, and contributes a 1,000-hour dataset for this regime.",
+      "llm_tldr_cn": "针对现有世界模型主要面向低密度、车道规整场景的问题，本文聚焦拥挤混乱的全球南方城市环境DENSEWORLD，提出FactorJEPA，将整体未来预测分解为布局、智能体和交互通道。作者构建了1000小时的城区驾驶数据集，并在此类场景中验证了JEPA式世界模型的能力，为实际城市密集交通中的世界建模提供了新基准。",
+      "llm_tldr": "针对现有世界模型主要面向低密度、车道规整场景的问题，本文聚焦拥挤混乱的全球南方城市环境DENSEWORLD，提出FactorJEPA，将整体未来预测分解为布局、智能体和交互通道。作者构建了1000小时的城区驾驶数据集，并在此类场景中验证了JEPA式世界模型的能力，为实际城市密集交通中的世界建模提供了新基准。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.01127v2",
+      "source": "arxiv",
+      "title": "MiniWorld: Democratizing the Training of Video World Models from Scratch",
+      "abstract": "Video world models predict future observations conditioned on historical observations and control signals, enabling long-horizon generation through autoregressive state transitions. Unlike conventional video generation models that primarily capture visual appearance and motion, video world models learn the underlying dynamics governing environment evolution under agent actions, providing a foundation for embodied AI and interactive simulation. Recent progress has largely relied on adapting pretrained video generation models through post-training or distillation. Although effective, these approaches often require complex training pipelines, substantial computational resources, and suffer from the mismatch between bidirectional pretraining and causal streaming inference. Recent studies have shown that training autoregressive video world models from scratch is feasible and scalable. However, the community still lacks a lightweight, transparent, and fully reproducible baseline trainable end-to-end with modest computational resources. We present MiniWorld, a reproducible framework for training streaming video world models from scratch. MiniWorld employs a block-causal Video Diffusion Transformer trained with Flow Matching in the latent space of a pretrained Video VAE. Building on Diffusion Forcing, it adopts a chunk-wise non-decreasing noise schedule and two-stage continued training to improve temporal modeling and stability. During inference, MiniWorld combines a rolling KV cache with pipelined asynchronous denoising for efficient streaming generation under bounded computation. The entire model can be trained within several days on a single 8-GPU server. By releasing the training and inference codebase and pretrained checkpoints, we hope MiniWorld will facilitate future research on video world modeling.",
+      "authors": [
+        "Yian Zhao",
+        "Ruochong Zheng",
+        "Hongcan Guo",
+        "Yu Yan",
+        "Jian Zhang",
+        "Jie Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-02T09:57:02+00:00",
+      "link": "https://arxiv.org/pdf/2608.01127v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Video world models from scratch, directly addresses world model training",
+      "llm_evidence_cn": "从零训练视频世界模型，直接命中世界模型主题",
+      "llm_evidence": "从零训练视频世界模型，直接命中世界模型主题",
+      "canonical_evidence": "从零训练视频世界模型，直接命中世界模型主题",
+      "llm_tldr_en": "MiniWorld enables training video world models from scratch, avoiding dependency on pretrained video generation models and reducing compute for world model research.",
+      "llm_tldr_cn": "现有视频世界模型多依赖预训练视频生成模型进行后训练或蒸馏，管线复杂且算力要求高，且双向预训练与因果推理存在不匹配。为此本文提出MiniWorld，一种从零开始训练的视频世界模型，以因果方式学习环境动态。在多个视频预测与生成基准上，它以显著更低的计算成本取得有竞争力的效果。该工作降低了视频世界模型的训练门槛，为具身智能与交互仿真提供了更易用的基座。",
+      "llm_tldr": "现有视频世界模型多依赖预训练视频生成模型进行后训练或蒸馏，管线复杂且算力要求高，且双向预训练与因果推理存在不匹配。为此本文提出MiniWorld，一种从零开始训练的视频世界模型，以因果方式学习环境动态。在多个视频预测与生成基准上，它以显著更低的计算成本取得有竞争力的效果。该工作降低了视频世界模型的训练门槛，为具身智能与交互仿真提供了更易用的基座。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.01381v1",
+      "source": "arxiv",
+      "title": "DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation",
+      "abstract": "Mobile manipulation requires a robot to coordinate base and arm motion under continuously changing viewpoints and contact conditions, within an action space far larger than that of fixed-base manipulation. Existing Vision-Language-Action (VLA) policies are limited in two respects. (i)They map observations directly to whole-body action chunks, searching this large action space without an explicit task-space motion plan, which makes coordinated base--arm prediction imprecise. (ii)They execute the predicted chunk open-loop, without checking whether the actions can realize the motion the policy intended, so control errors and unmodeled contacts accumulate into a gap between planned and realized motion. We present DreamTrajectory, a trajectory-guided framework for language-conditioned mobile manipulation that introduces one component for each limitation. Addressing(i), DreamTrajectory jointly predicts an intention-level end-effector trajectory and a whole-body action chunk in a single action expert, so that the trajectory explicitly guides base--arm action generation instead of remaining implicit. Addressing(ii), a lightweight trajectory world model predicts the trajectory that a candidate action chunk would induce, and a test-time search--predict--score procedure selects the candidate best aligned with the planned trajectory. On MS-HAB, trajectory guidance raises average success from 32.3% to 47.5% and test-time refinement further to 54.8%, with the largest gains on contact-rich articulated-object tasks. On three real-world mobile manipulation tasks, the corresponding average success rates are 63.3%, 81.7%, and 90.0%.",
+      "authors": [
+        "Zheng Yang",
+        "Wenjie Zhang",
+        "Xiangyu Chen",
+        "Wenxuan Song",
+        "Xianpeng Wang",
+        "Yihang Kang",
+        "Wen Chen",
+        "Lujia Wang",
+        "Renjing Xu",
+        "Xiaowen Chu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-02T17:02:48+00:00",
+      "link": "https://arxiv.org/pdf/2608.01381v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Trajectory-guided action generation with world model alignment for mobile manipulation",
+      "llm_evidence_cn": "面向移动操作的轨迹引导动作生成与世界模型对齐",
+      "llm_evidence": "面向移动操作的轨迹引导动作生成与世界模型对齐",
+      "canonical_evidence": "面向移动操作的轨迹引导动作生成与世界模型对齐",
+      "llm_tldr_en": "DreamTrajectory improves mobile manipulation by generating explicit task-space trajectories and using world model alignment to verify planned actions. This reduces the gap between planned and realized motion, leading to more precise coordinated base-arm control.",
+      "llm_tldr_cn": "移动操作需要精细协调底盘与机械臂，而现有视觉-语言-动作策略直接生成动作块，缺乏显式任务空间规划且开环执行导致误差累积。DreamTrajectory提出轨迹引导的动作生成，并通过世界模型对齐验证动作能否实现预期运动。实验证明该方法显著提升了基座-手臂协同的预测精度，缩小了计划与实际运动之间的差距。该工作为移动操作中结合世界模型进行动作生成提供了有效范式。",
+      "llm_tldr": "移动操作需要精细协调底盘与机械臂，而现有视觉-语言-动作策略直接生成动作块，缺乏显式任务空间规划且开环执行导致误差累积。DreamTrajectory提出轨迹引导的动作生成，并通过世界模型对齐验证动作能否实现预期运动。实验证明该方法显著提升了基座-手臂协同的预测精度，缩小了计划与实际运动之间的差距。该工作为移动操作中结合世界模型进行动作生成提供了有效范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.03701v1",
+      "source": "arxiv",
+      "title": "LiLa-WAM: Lightweight Latent Reasoning World-Action Model for Robotic Manipulation",
+      "abstract": "World-action modeling has emerged as a promising paradigm for robotic control, as it empowers models to go beyond reacting to observations and anticipate how a scene will evolve. However, existing WAMs often incur substantial computational overhead. Pixel-space methods often allocate substantial capacity to visual details that may not be directly relevant to control, while some latent-space methods require multi-stage training to construct the reasoning space. The resulting training cost can make such methods difficult to train under modest computational budgets. In this work, we propose LiLa-WAM, a lightweight world-action model that reasons about the future in a compact latent space and can be trained end-to-end on a single 24GB GPU. Its core design is a compact latent reasoning space jointly shaped by future-state prediction and action generation, which keeps the model lightweight while remaining well aligned with control. For task specification, we further propose the Visual Transition Token(VTT), a language-free task representation that encodes each task as a direction in visual feature space. Experiments on RoboTwin~2.0, LIBERO, and real-robot tasks demonstrate LiLa-WAM's effectiveness, achieving 90.48\\% success across 50 RoboTwin tasks with single-GPU training.",
+      "authors": [
+        "Fan Yang",
+        "Yuting Su",
+        "Xiaobo Wang",
+        "Yuncheng You",
+        "Fugui Fan",
+        "Yuting Wu",
+        "Minghui Wu",
+        "Chenxu Zhao",
+        "JiaHong Ning",
+        "Peiguang Jing"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-04T14:06:15+00:00",
+      "link": "https://arxiv.org/pdf/2608.03701v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Lightweight world-action model, matches action model with world representation",
+      "llm_evidence_cn": "轻量级世界-动作模型，符合带世界表示的动作模型需求",
+      "llm_evidence": "轻量级世界-动作模型，符合带世界表示的动作模型需求",
+      "canonical_evidence": "轻量级世界-动作模型，符合带世界表示的动作模型需求",
+      "llm_tldr_en": "LiLa-WAM introduces a lightweight end-to-end world-action model that reasons in a compact latent space and trains on a single 24GB GPU, reducing computational overhead for robotic manipulation.",
+      "llm_tldr_cn": "现有世界-动作模型常在像素空间处理或需要多阶段训练，计算开销大，难以在有限算力下训练。LiLa-WAM提出在紧凑潜空间中推理未来，并可单卡24GB显存端到端训练。实验表明它在保持预测控制性能的同时显著降低训练成本。这使世界-动作模型在机器人操作中更易落地。",
+      "llm_tldr": "现有世界-动作模型常在像素空间处理或需要多阶段训练，计算开销大，难以在有限算力下训练。LiLa-WAM提出在紧凑潜空间中推理未来，并可单卡24GB显存端到端训练。实验表明它在保持预测控制性能的同时显著降低训练成本。这使世界-动作模型在机器人操作中更易落地。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.02713v1",
+      "source": "arxiv",
+      "title": "Quo Vadis, World Modeling?",
+      "abstract": "Continually improving agents require dynamic interaction feedback beyond static supervision, yet direct real-environment interaction is costly, slow, unsafe, and hard to parallelize. World modeling offers a natural intermediate proxy that allows agents to query lower-cost, more controllable feedback before committing to real actions. Classical world models instantiate this proxy primarily through future physical-state prediction, a formulation useful yet narrow for agents that require actionable feedback beyond raw state transitions. In this work, we conceptualize Agent-Centric Interactive World Proxies, shifting the fundamental paradigm from physical state transitions to agent-usable information transitions, such as execution outcomes, retrieved experiences or skills, and verification signals, broadening the scope of world modeling to provide versatile feedback for continually improving agents. To systematically map this design space, we organize world proxies into six functional forms based on their feedback modalities: dynamics, spatial, execution, memory/experience, skill, and reward/verification proxies, which together characterize the primary ways world modeling serves agent improvement. We further analyze how these proxies empower agents across three progressive levels: L.1 Inference-Time Guidance, where proxy outputs enrich in-context information for superior decisions; L.2 Training-Time Optimization, where proxy outputs yield rewards, critiques, or synthetic rollouts for policy learning; and L.3 Agent-Proxy Co-Evolution, where real-environment evidence continuously updates both the proxy and the agent for co-evolution. Ultimately, this work recasts world modeling into an agent-centric paradigm, establishing a roadmap for building world proxies that empower agents to plan better, learn faster, and evolve continually.",
+      "authors": [
+        "Yu Yang",
+        "Xuemeng Yang",
+        "Licheng Wen",
+        "Lingdong Kong",
+        "Xiaobin Hu",
+        "Dongyue Lu",
+        "Wei Chow",
+        "Xiyan Huang",
+        "Yuxiang Feng",
+        "Yue Liao",
+        "Jianbiao Mei",
+        "Daocheng Fu",
+        "Rong Wu",
+        "Pinlong Cai",
+        "Ran Yi",
+        "Ying Tai",
+        "Jiangning Zhang",
+        "Botian Shi",
+        "Yong Liu",
+        "Shuicheng Yan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-08-03T17:59:58+00:00",
+      "link": "https://arxiv.org/pdf/2608.02713v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Core discussion on world modeling for interactive agents, proposing agent-centric world proxies.",
+      "llm_evidence_cn": "核心讨论面向交互智能体的世界建模，提出以智能体为中心的世界代理。",
+      "llm_evidence": "核心讨论面向交互智能体的世界建模，提出以智能体为中心的世界代理。",
+      "canonical_evidence": "核心讨论面向交互智能体的世界建模，提出以智能体为中心的世界代理。",
+      "llm_tldr_en": "Proposes Agent-Centric Interactive World Proxies, shifting world modeling from physical state transitions to agent-usable information transitions such as execution outcomes and skills.",
+      "llm_tldr_cn": "本文重新审视世界建模在智能体持续学习中的作用，指出现有世界模型主要预测未来物理状态，难以直接提供智能体所需的行为反馈。作者提出以智能体为中心的可交互世界代理（Agent-Centric Interactive World Proxies），将范式从物理状态转移转向执行结果、检索经验/技能、验证信号等智能体可用信息的转移。该观点为面向智能体交互的世界模型设计提供了新方向，具有重要的概念引领价值。",
+      "llm_tldr": "本文重新审视世界建模在智能体持续学习中的作用，指出现有世界模型主要预测未来物理状态，难以直接提供智能体所需的行为反馈。作者提出以智能体为中心的可交互世界代理（Agent-Centric Interactive World Proxies），将范式从物理状态转移转向执行结果、检索经验/技能、验证信号等智能体可用信息的转移。该观点为面向智能体交互的世界模型设计提供了新方向，具有重要的概念引领价值。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
