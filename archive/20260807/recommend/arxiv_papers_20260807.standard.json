@@ -1,184 +1,17 @@
 {
   "mode": "standard",
-  "generated_at": "2026-08-07T01:55:05.150840+00:00",
+  "generated_at": "2026-08-07T20:51:16.563428+00:00",
   "stats": {
     "mode": "standard",
     "tag_count": 1,
-    "deep_divecandidates": 8,
+    "deep_divecandidates": 6,
     "deep_cap": 6,
     "deep_selected": 6,
-    "quick_candidates": 3,
+    "quick_candidates": 2,
     "quick_skim_target": 11,
-    "quick_selected": 3
+    "quick_selected": 2
   },
   "deep_dive": [
-    {
-      "id": "2608.04404v1",
-      "source": "arxiv",
-      "title": "Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models",
-      "abstract": "World Action Models (WAMs) improve robot manipulation by learning how the environment evolves beyond the current observation. However, existing approaches face a fundamental dilemma: Joint-WAMs preserve future-aware representations during inference but incur prohibitive computation costs, while efficient alternatives remove future modeling at inference time and may lose the robustness benefits of temporal reasoning. In this work, we revisit the role of future representations in WAMs and show that inference-time future conditioning is critical for generalization under distribution shifts. This observation motivates Faster-WAM, an efficient future-conditioning WAM that preserves future representations while avoiding expensive video-action interaction. Faster-WAM introduces a sparse future-conditioning framework that computes future representations once and selectively reuses them throughout action denoising. Specifically, we propose SparseMoT to replace ubiquitous layer-wise fusion with selective video-action interaction at a compact subset of network stages, and Interval KV-Fusion to aggregate multi-depth future representations without increasing attention complexity. Experiments demonstrate that Faster-WAM achieves a substantially better performance-efficiency trade-off than existing WAMs. On the out-of-distribution LIBERO-Plus benchmark, Faster-WAM improves success rate from 49.14% to 73.57% compared with Fast-WAM, while running 2.21$\\times$ faster than Joint-WAM. It further achieves state-of-the-art performance on LIBERO and RoboTwin 2.0, while demonstrating strong robustness in real-world manipulation.",
-      "authors": [
-        "Weiheng Zhao",
-        "Haoyi Jiang",
-        "Xin Shi",
-        "Liu Liu",
-        "Fan Huang",
-        "Zhizhong Su",
-        "Wei Sui",
-        "Xinggang Wang"
-      ],
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-05T03:18:58+00:00",
-      "link": "https://arxiv.org/pdf/2608.04404v1",
-      "tags": [
-        "keyword:world",
-        "query:world"
-      ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "addresses inference-time future conditioning in World Action Models",
-      "llm_evidence_cn": "解决世界动作模型推理期未来条件化的效率与鲁棒性",
-      "llm_evidence": "解决世界动作模型推理期未来条件化的效率与鲁棒性",
-      "canonical_evidence": "解决世界动作模型推理期未来条件化的效率与鲁棒性",
-      "llm_tldr_en": "Faster-WAM shows inference-time future conditioning is critical for WAM generalization under distribution shifts, and proposes an efficient future-conditioned WAM preserving future representations without expensive video-action computation.",
-      "llm_tldr_cn": "现有世界动作模型存在联合型推理代价高、高效型失去未来建模的困境。论文指出推理期未来条件化对分布偏移下泛化至关重要，进而设计Faster-WAM，在保留未来表示的同时避免昂贵的视频-动作计算。实验证明该方法在效率和鲁棒性上均优于现有替代方案，为实时机器人操控提供更实用的世界动作模型。",
-      "llm_tldr": "现有世界动作模型存在联合型推理代价高、高效型失去未来建模的困境。论文指出推理期未来条件化对分布偏移下泛化至关重要，进而设计Faster-WAM，在保留未来表示的同时避免昂贵的视频-动作计算。实验证明该方法在效率和鲁棒性上均优于现有替代方案，为实时机器人操控提供更实用的世界动作模型。",
-      "llm_tags": [
-        "query:world"
-      ],
-      "matched_query_tag": "query:world",
-      "matched_query_text": "world action model foundation model",
-      "matched_requirement_id": "req-6",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2608.04653v1",
-      "source": "arxiv",
-      "title": "Overcoming Statistical Bias in Action-Controllable World Models",
-      "abstract": "Action-conditioned world models aim to predict how visual environments evolve under an agent's actions. Yet future frames are often highly predictable from visual inertia and recurring motion patterns alone. This creates a shortcut: models can fit the data by exploiting statistical biases without making their visible dynamics meaningfully depend on the action. As a result, different actions may produce similar futures, while motion may persist even under zero action. The key question is how to reduce reliance on statistical shortcuts from dominating action-conditioned prediction. We argue that action control requires more than injecting action features; it requires enforcing consistency under counterfactual changes to actions and observations. Based on this insight, we introduce CoCo, a Counterfactual Consistency framework to enhance action controllability through two complementary constraints. Multi-step counterfactual consistency constrains reference, inverse-action, and zero-action rollouts, while action-spatial counterfactual consistency enforces consistent predictions under mirrored scenes and transformed actions. Together, they reduce reliance on statistical shortcuts from substituting for action-dependent dynamics. We further introduce Action Response Consistency (ARC) and Drift Energy (DE) to assess action controllability, together with Mini-SSMB for same-state, multi-action counterfactual evaluation. On Mini-SSMB, our full model achieved ARC_inv of 0.412 and ARC_ref of 0.483, while reducing DE by 17.07% relative to the baseline. On VP2 visual planning, it achieves the highest average success rate among SOTA models, at 73.1%. Experiments on BAIR and RoboNet further show that these gains preserve video prediction quality and transfer across model settings.",
-      "authors": [
-        "Yuhong Shi",
-        "Zhenhao Chu",
-        "Jie Wei",
-        "Jun Hao",
-        "Jianyi Liu",
-        "Jingwen Fu"
-      ],
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "published": "2026-08-05T10:10:36+00:00",
-      "link": "https://arxiv.org/pdf/2608.04653v1",
-      "tags": [
-        "keyword:world",
-        "query:world"
-      ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "Addresses statistical bias in action-conditioned world models and enforces counterfactual consistency",
-      "llm_evidence_cn": "针对动作条件世界模型中的统计偏差，提出反事实一致性约束",
-      "llm_evidence": "针对动作条件世界模型中的统计偏差，提出反事实一致性约束",
-      "canonical_evidence": "针对动作条件世界模型中的统计偏差，提出反事实一致性约束",
-      "llm_tldr_en": "The paper identifies that action-conditioned world models often rely on statistical shortcuts, and proposes enforcing counterfactual consistency between actions and observations to make dynamics genuinely action-dependent.",
-      "llm_tldr_cn": "动作条件世界模型常利用视觉惯性和重复运动模式等统计捷径，导致动作并未真正影响预测。为此，作者提出仅注入动作特征不足以保证可控性，必须通过反事实动作与观测变化的一致性来消除统计偏差。该方法在动作条件预测中强制模型对反事实变化保持一致，从而显著提高动作对动态的实际控制力。这项工作为构建真正可交互的世界模型提供了重要思路。",
-      "llm_tldr": "动作条件世界模型常利用视觉惯性和重复运动模式等统计捷径，导致动作并未真正影响预测。为此，作者提出仅注入动作特征不足以保证可控性，必须通过反事实动作与观测变化的一致性来消除统计偏差。该方法在动作条件预测中强制模型对反事实变化保持一致，从而显著提高动作对动态的实际控制力。这项工作为构建真正可交互的世界模型提供了重要思路。",
-      "llm_tags": [
-        "query:world"
-      ],
-      "matched_query_tag": "query:world",
-      "matched_query_text": "action model with world representation",
-      "matched_requirement_id": "req-7",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2608.04657v1",
-      "source": "arxiv",
-      "title": "MobileWAM: Bridging World Action Models to Mobile Manipulation with Chain-of-Foresight",
-      "abstract": "World action models (WAMs) built on video generation backbones are a rising recipe for robot learning, yet remain confined to tabletop manipulation. Mobile manipulation demands simultaneous locomotion and whole-body manipulation amid scene-scale dynamics, yet is still dominated by dynamics-blind visual encoders with hand-crafted coordination. We bridge this gap with MobileWAM, a mixture-of-transformers architecture that fuses a pretrained video diffusion transformer with a lightweight action expert through layerwise joint attention, translating internet-scale motion priors into whole-body control. To reconcile the heterogeneous dynamics of moving and manipulating, each feed-forward layer of the action expert becomes a three-expert mixture of shared, locomotion, and manipulation experts, softly routed by the motion intent in the action tokens. To densify supervision, we further propose Chain-of-Foresight (CoF): intermediate representations sequentially predict a chain of future latent chunks, each step conditioned on its predecessor. CoF pairs naturally with our decoupled video--action denoising scheme. At deployment, the WAM serves as a pure current-frame encoder; foresight acts only through gradients, so at inference the foresight chain and video generation are discarded, leaving only policy-level cost. MobileWAM surpasses state-of-the-art mobile manipulation policies on ManiSkill-HAB and fine-tunes to a real ARX Lift2 mobile manipulator across diverse tasks with strong generalization. Code will be released soon.",
-      "authors": [
-        "Zehua Fan",
-        "Junjie He",
-        "Wenxuan Song",
-        "Xi Wang",
-        "Wenqi Lyu",
-        "Linge Zhao",
-        "Fuhao Li",
-        "Zihan You",
-        "Yifei Yang",
-        "Kaiming Xu",
-        "Qi Jiang",
-        "Yue Jiang",
-        "Haoang Li",
-        "Cheng Chi",
-        "Bailin Li",
-        "Yan Wang"
-      ],
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-05T10:12:37+00:00",
-      "link": "https://arxiv.org/pdf/2608.04657v1",
-      "tags": [
-        "keyword:world",
-        "query:world"
-      ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "World action model foundation model for mobile manipulation, directly matches requirement.",
-      "llm_evidence_cn": "面向移动操作的世界动作模型基础模型，直接匹配需求。",
-      "llm_evidence": "面向移动操作的世界动作模型基础模型，直接匹配需求。",
-      "canonical_evidence": "面向移动操作的世界动作模型基础模型，直接匹配需求。",
-      "llm_tldr_en": "MobileWAM extends world action models to mobile manipulation by fusing a pretrained video diffusion transformer with a lightweight action expert via mixture-of-transformers, enabling whole-body control from internet-scale motion priors.",
-      "llm_tldr_cn": "世界动作模型虽在桌面操作中展现出潜力，但移动操作仍需同时处理全身动态与场景级动力学。MobileWAM提出一种混合变换器架构，将预训练视频扩散模型与轻量动作专家通过逐层联合注意力融合，以协调移动与操作的异质动态。实验表明，该方法可有效利用互联网规模运动先验，显著提升移动操作性能，拓展了世界动作模型的应用范围。",
-      "llm_tldr": "世界动作模型虽在桌面操作中展现出潜力，但移动操作仍需同时处理全身动态与场景级动力学。MobileWAM提出一种混合变换器架构，将预训练视频扩散模型与轻量动作专家通过逐层联合注意力融合，以协调移动与操作的异质动态。实验表明，该方法可有效利用互联网规模运动先验，显著提升移动操作性能，拓展了世界动作模型的应用范围。",
-      "llm_tags": [
-        "query:world"
-      ],
-      "matched_query_tag": "query:world",
-      "matched_query_text": "world action model foundation model",
-      "matched_requirement_id": "req-6",
-      "selection_source": "fresh_fetch"
-    },
-    {
-      "id": "2608.04933v1",
-      "source": "arxiv",
-      "title": "Mimir: A Neuro-Symbolic Memory System with Dynamic Grounding for Embodied Agents in Interactive Environments",
-      "abstract": "Long-horizon embodied task requires agents to act under partial observability while preserving both scene belief and execution progress. Flat histories or implicit policy states may contain past observations, but they do not provide an explicit interface for deciding which world facts support the currently active goal. We introduce Mimir, a neuro-symbolic memory that separates world memory from task memory and dynamically grounds them before each action. World memory maintains object locations, object states, and perceptual evidence, while task memory maintains an ordered goal agenda, progress state, hand state, failures, and execution constraints. A grounding module binds the active goal to recalled world candidates, fills missing source locations, and attaches evidence before planning and embodiment-specific execution. Across tested backbones, Mimir consistently improves on different EB-ALFRED and EB-Habitat tasks, with maximum gains of 42.5% and average gains of 23.0%, respectively. Compared with the best results among prior agent and memory systems evaluated under the same backbone, Mimir improves the overall average success rate by 8.5%. Finally, on the EB-Habitat Long-horizon subset, Mimir achieves 86.0% success rate, substantially outperforming current closed-source models. Our code will be released soon.",
-      "authors": [
-        "Haoming Xu",
-        "Zhenlin He",
-        "Hengyi Wang",
-        "Jiafeng Xu",
-        "Hao Dong"
-      ],
-      "primary_category": "cs.RO",
-      "categories": [
-        "cs.RO"
-      ],
-      "published": "2026-08-05T14:57:24+00:00",
-      "link": "https://arxiv.org/pdf/2608.04933v1",
-      "tags": [
-        "keyword:world"
-      ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "Separates world memory from task memory and dynamically grounds them to support embodied agent actions",
-      "llm_evidence_cn": "将世界记忆与任务记忆分离并在动作前动态接地，支撑具身智能体长时程动作",
-      "llm_evidence": "将世界记忆与任务记忆分离并在动作前动态接地，支撑具身智能体长时程动作",
-      "canonical_evidence": "将世界记忆与任务记忆分离并在动作前动态接地，支撑具身智能体长时程动作",
-      "llm_tldr_en": "Introduces Mimir, a neuro-symbolic memory system that maintains separate world memory and task memory, dynamically grounding active goals to recalled world facts before each action for long-horizon embodied tasks.",
-      "llm_tldr_cn": "长时程具身任务要求智能体在部分可观测环境下同时维护场景信念与执行进度，而扁平历史或隐式策略状态难以提供显式的世界事实索引。该论文提出Mimir神经符号记忆系统，将世界记忆（对象位置、状态、感知证据）与任务记忆（目标议程、进度、约束）分离，并在每次动作前动态接地。该设计让智能体能够显式查询与当前目标相关的世界事实，提高了长时程任务的可解释性与可靠性。",
-      "llm_tldr": "长时程具身任务要求智能体在部分可观测环境下同时维护场景信念与执行进度，而扁平历史或隐式策略状态难以提供显式的世界事实索引。该论文提出Mimir神经符号记忆系统，将世界记忆（对象位置、状态、感知证据）与任务记忆（目标议程、进度、约束）分离，并在每次动作前动态接地。该设计让智能体能够显式查询与当前目标相关的世界事实，提高了长时程任务的可解释性与可靠性。",
-      "llm_tags": [
-        "query:world"
-      ],
-      "matched_query_tag": "query:world",
-      "matched_query_text": "action model with world representation",
-      "matched_requirement_id": "req-7",
-      "selection_source": "fresh_fetch"
-    },
     {
       "id": "2608.04996v1",
       "source": "arxiv",
@@ -205,14 +38,14 @@
         "keyword:world",
         "query:world"
       ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "proposes DreamWAM, a WAM that predicts structured future beyond RGB",
-      "llm_evidence_cn": "提出DreamWAM，预测超越RGB的结构化未来的世界动作模型",
-      "llm_evidence": "提出DreamWAM，预测超越RGB的结构化未来的世界动作模型",
-      "canonical_evidence": "提出DreamWAM，预测超越RGB的结构化未来的世界动作模型",
-      "llm_tldr_en": "DreamWAM reformulates WAM future prediction as structured world modeling beyond RGB, using joint latent denoising of RGB/motion with gated branches for geometry and semantics.",
-      "llm_tldr_cn": "现有世界动作模型通常仅在未来 RGB 空间中预测，导致任务相关状态变化与纹理光照等无关变化纠缠。DreamWAM 将未来预测重构为超越 RGB 的结构化世界建模，同时表征外观、运动、几何和语义。训练采用 RGB 与运动联合潜在去噪，并加入轻量级门控残差分支，改善动作相关表示的学习。",
-      "llm_tldr": "现有世界动作模型通常仅在未来 RGB 空间中预测，导致任务相关状态变化与纹理光照等无关变化纠缠。DreamWAM 将未来预测重构为超越 RGB 的结构化世界建模，同时表征外观、运动、几何和语义。训练采用 RGB 与运动联合潜在去噪，并加入轻量级门控残差分支，改善动作相关表示的学习。",
+      "llm_score": 10.0,
+      "llm_evidence_en": "World Action Model with structured future prediction beyond RGB",
+      "llm_evidence_cn": "超越RGB的结构化未来预测的World Action Model",
+      "llm_evidence": "超越RGB的结构化未来预测的World Action Model",
+      "canonical_evidence": "超越RGB的结构化未来预测的World Action Model",
+      "llm_tldr_en": "DreamWAM reformulates WAM future prediction as structured world modeling beyond RGB, using appearance, motion, geometry, and semantics with joint latent denoising, improving action-relevant state prediction.",
+      "llm_tldr_cn": "DreamWAM指出World Action Models不应仅依赖RGB未来预测，而应显式预测动作相关的未来状态。其将未来预测重构为外观、运动、几何和语义的互补视图，并使用联合潜在去噪与轻量门控残差分支进行训练。这一方法减少了与任务无关的纹理和光照变化干扰，增强了动作相关表示的鲁棒性。",
+      "llm_tldr": "DreamWAM指出World Action Models不应仅依赖RGB未来预测，而应显式预测动作相关的未来状态。其将未来预测重构为外观、运动、几何和语义的互补视图，并使用联合潜在去噪与轻量门控残差分支进行训练。这一方法减少了与任务无关的纹理和光照变化干扰，增强了动作相关表示的鲁棒性。",
       "llm_tags": [
         "query:world"
       ],
@@ -222,42 +55,46 @@
       "selection_source": "fresh_fetch"
     },
     {
-      "id": "2608.05042v1",
+      "id": "2608.05903v1",
       "source": "arxiv",
-      "title": "BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation",
-      "abstract": "Leveraging pre-trained vision-language models (VLMs) to construct vision-language-action (VLA) models has emerged as a promising paradigm for 3D robot manipulation. However, existing 3D VLA methods remain data-hungry, exhibit limited generalization under distribution shifts, and lack explicit memory of past observations. These limitations hinder their application to data-scarce, open-world, and memory-dependent manipulation scenarios. Our previous work, BridgeVLA, improves data efficiency and generalization by preserving the input--output alignment of a pre-trained VLM during 3D action learning: raw point clouds are projected into multi-view images, and intermediate heatmaps are predicted before generating robot actions. In this work, we develop BridgeVLA++ by equipping BridgeVLA with a unified spatio-temporal memory architecture that models persistent spatial context and temporal interaction history. The resulting memory-augmented framework can reason over observation histories while preserving BridgeVLA's data efficiency and generalization capabilities. Extensive experiments show that our framework achieves strong performance on spatial manipulation tasks while exhibiting robust generalization. BridgeVLA++ further achieves state-of-the-art performance on two challenging memory-dependent manipulation benchmarks without sacrificing the data efficiency and generalization of the original BridgeVLA. In addition, BridgeVLA++ performs effectively in bimanual manipulation settings and is validated on an additional real-world robotic platform, demonstrating its scalability across tasks, environments, and robotic platforms. These results establish BridgeVLA++ as a unified 3D vision-language-action framework that simultaneously supports data-efficient learning, robust generalization, and effective memory-aware robot manipulation. Project website: https://bridgevla-plus.github.io/.",
+      "title": "Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models",
+      "abstract": "Mainstream World-Action Models (WAMs) adapt pretrained video generation models (VGMs) for robot control, transferring their learned dynamics prior for action prediction. These VGMs are typically trained in a variational autoencoder (VAE) latent space. However, the VAE latent space is optimized for pixel reconstruction, which rewards fine appearance detail and leaves the action prediction fragile under visual shifts. Recent works build WAMs in semantic latent space, which are more robust to appearance shifts. However, these models cannot leverage the large-scale VGM pretraining that exists only in VAE space. To overcome this dilemma, we propose Robust-WAM, a general post-training method for video-generation-based WAMs that preserves the VAE-based generative path and adds a lightweight semantic foresight alignment objective on the action stream. This retains the large-scale VGM pretraining while grounding actions in appearance-invariant dynamics that stay reliable under illumination shifts and other visual out-of-distribution conditions. Specifically, we employ learnable query tokens to bring future-scene semantics into the action stream by aligning their output hidden states with the semantic foresight of future ground-truth frames. To establish the temporal correspondence between each query and the future step it describes, we give it the positional encoding of the matching action tokens. Experiments on out-of-distribution generalization simulation benchmarks and a real-robot setup show that our Robust-WAM consistently improves the success rates of multiple WAM baselines without sacrificing in-distribution performance.",
       "authors": [
-        "Peiyan Li",
-        "Yuze Zhu",
-        "Yixiang Chen",
-        "Qisen Ma",
-        "Yuan Xu",
-        "Jiabing Yang",
-        "He Guan",
-        "Yan Huang",
-        "Hongtao Wu",
-        "Xiao Ma",
-        "Tao Kong",
-        "Liang Wang",
-        "Tieniu Tan"
+        "Haodong Yan",
+        "Junfeng Li",
+        "Junjie He",
+        "Zhide Zhong",
+        "MingMing Yu",
+        "Wenxuan Song",
+        "Jiaguan Zhu",
+        "Yangyang Zheng",
+        "Yuqiao Du",
+        "Jiadi You",
+        "Yingjie Cai",
+        "Xu Yan",
+        "Guanyi Zhao",
+        "Bingbing Liu",
+        "Haoang Li"
       ],
-      "primary_category": "cs.RO",
+      "primary_category": "cs.CV",
       "categories": [
+        "cs.CV",
         "cs.RO"
       ],
-      "published": "2026-08-05T16:54:25+00:00",
-      "link": "https://arxiv.org/pdf/2608.05042v1",
+      "published": "2026-08-06T11:31:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.05903v1",
       "tags": [
-        "keyword:world"
+        "keyword:world",
+        "query:world"
       ],
-      "llm_score": 9.0,
-      "llm_evidence_en": "Builds a vision-language-action model from pre-trained foundation VLMs for 3D manipulation with memory augmentation",
-      "llm_evidence_cn": "基于预训练视觉语言基础模型构建面向3D操作的视觉-语言-动作模型，并增强记忆",
-      "llm_evidence": "基于预训练视觉语言基础模型构建面向3D操作的视觉-语言-动作模型，并增强记忆",
-      "canonical_evidence": "基于预训练视觉语言基础模型构建面向3D操作的视觉-语言-动作模型，并增强记忆",
-      "llm_tldr_en": "Proposes BridgeVLA++, a VLA framework that preserves VLM input-output alignment, projects point clouds to multi-view images, predicts intermediate heatmaps, and augments explicit memory for data-efficient and generalizable 3D manipulation.",
-      "llm_tldr_cn": "该工作针对3D机器人操作中数据效率低、分布偏移泛化差和缺乏显式记忆的问题，提出BridgeVLA++框架。它通过保留预训练视觉-语言模型的对齐结构，将点云投影为多视角图像并预测中间热图，同时引入显式记忆增强。实验表明该方法在数据稀缺场景下大幅提升学习效率和泛化能力，并支持记忆依赖的操作任务，为构建带世界表征的动作模型提供了可行路径。",
-      "llm_tldr": "该工作针对3D机器人操作中数据效率低、分布偏移泛化差和缺乏显式记忆的问题，提出BridgeVLA++框架。它通过保留预训练视觉-语言模型的对齐结构，将点云投影为多视角图像并预测中间热图，同时引入显式记忆增强。实验表明该方法在数据稀缺场景下大幅提升学习效率和泛化能力，并支持记忆依赖的操作任务，为构建带世界表征的动作模型提供了可行路径。",
+      "llm_score": 10.0,
+      "llm_evidence_en": "Presents a general post-training method for video-generation-based World-Action Models",
+      "llm_evidence_cn": "提出针对视频生成类世界动作模型的通用后训练方法",
+      "llm_evidence": "提出针对视频生成类世界动作模型的通用后训练方法",
+      "canonical_evidence": "提出针对视频生成类世界动作模型的通用后训练方法",
+      "llm_tldr_en": "Robust-WAM bridges VAE-space generative pretraining and semantic foresight, making World-Action Models more robust to visual shifts without losing VGM pretraining.",
+      "llm_tldr_cn": "现有基于视频生成模型（VGM）的世界动作模型在VAE潜在空间中优化像素重建，导致动作预测在视觉偏移下脆弱；而语义空间方法鲁棒但无法利用大规模预训练。为此提出Robust-WAM，一种通用后训练方法，同时保留VGM在VAE空间的预训练先验和语义空间的迁移不变性。实验表明其在不同视觉偏移下显著提升动作预测鲁棒性，为WAM的稳健部署提供了可行方案。",
+      "llm_tldr": "现有基于视频生成模型（VGM）的世界动作模型在VAE潜在空间中优化像素重建，导致动作预测在视觉偏移下脆弱；而语义空间方法鲁棒但无法利用大规模预训练。为此提出Robust-WAM，一种通用后训练方法，同时保留VGM在VAE空间的预训练先验和语义空间的迁移不变性。实验表明其在不同视觉偏移下显著提升动作预测鲁棒性，为WAM的稳健部署提供了可行方案。",
       "llm_tags": [
         "query:world"
       ],
@@ -265,9 +102,218 @@
       "matched_query_text": "world action model foundation model",
       "matched_requirement_id": "req-6",
       "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.00793v2",
+      "source": "arxiv",
+      "title": "DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation",
+      "abstract": "Dynamic manipulation requires robots to infer target motion and respond promptly, yet existing World-Action Models (WAMs) typically condition only on the current frame and execute large backbones synchronously, limiting motion awareness and responsive control in dynamic scenes. We propose DynamicWAM, a compact WAM for dynamic object manipulation with dual-path motion conditioning. DynamicWAM introduces history-flow conditioning, encoding temporally aligned optical-flow frames alongside the current observation through a frozen pretrained video VAE to preserve spatial motion structure, while injecting kinematic descriptors of displacement, duration, velocity, and acceleration into the action expert to provide motion magnitude and timing. The two complementary paths are fused through joint world-action attention. A distilled compact backbone and real-time chunking (RTC)-based asynchronous execution further enable responsive control. On DOMINO, DynamicWAM achieves a 38.2% success rate and a 53.2 manipulation score, outperforming all evaluated baselines. Across 12 real-world tasks spanning linear, circular, and compound target motion, it achieves a 46.7% average success rate, exceeding the strongest baseline by 22.9 percentage points.",
+      "authors": [
+        "Yunfan Lou",
+        "Hewen Gao",
+        "Xiyu Zhu",
+        "Zhuoran Qiao",
+        "Xuan Han",
+        "Yifan Yang",
+        "Yifan Ye",
+        "Boxian Yao",
+        "Zhibo Pang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-01T17:49:39+00:00",
+      "link": "https://arxiv.org/pdf/2608.00793v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "World-action model for dynamic manipulation with dual-path motion conditioning",
+      "llm_evidence_cn": "面向动态操作的世界-动作模型，具备双路径运动条件化",
+      "llm_evidence": "面向动态操作的世界-动作模型，具备双路径运动条件化",
+      "canonical_evidence": "面向动态操作的世界-动作模型，具备双路径运动条件化",
+      "llm_tldr_en": "DynamicWAM is a compact world-action model for dynamic manipulation that adds history-flow and kinematic motion conditioning, improving motion awareness and enabling responsive control in dynamic scenes.",
+      "llm_tldr_cn": "现有世界-动作模型（WAM）在动态操作中通常仅依赖当前帧，且骨架庞大，导致运动感知不足、响应迟缓。DynamicWAM 提出双路径运动条件化：一方面利用冻结的预训练视频VAE对时间对齐的光流帧与当前观测联合编码，保持空间运动结构；另一方面将位移、时长、速度与加速度等运动学描述注入动作专家，提供运动幅度与时机信息。实验表明该紧凑模型能有效提升动态场景下的操作性能，为动态操作中的世界-动作建模提供了新思路。",
+      "llm_tldr": "现有世界-动作模型（WAM）在动态操作中通常仅依赖当前帧，且骨架庞大，导致运动感知不足、响应迟缓。DynamicWAM 提出双路径运动条件化：一方面利用冻结的预训练视频VAE对时间对齐的光流帧与当前观测联合编码，保持空间运动结构；另一方面将位移、时长、速度与加速度等运动学描述注入动作专家，提供运动幅度与时机信息。实验表明该紧凑模型能有效提升动态场景下的操作性能，为动态操作中的世界-动作建模提供了新思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.05720v1",
+      "source": "arxiv",
+      "title": "PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models",
+      "abstract": "We propose PhyLatent, a dynamics-relevant training objective for JointEmbedding Predictive Architecture (JEPA) world models. Our key observation is that preventing global latent collapse does not ensure that a representation preserves physical states and action consequences. We identify three failure modes in JEPA world models: physical invariance collapse, physical identifiability collapse, and counterfactual dynamics collapse. PhyLatent addresses them through three training pathways: physical invariance, physical identifiability, and counterfactual dynamics, implemented with physical state grounding, future representation alignment, static visual invariance, counterfactual branch separation, and latent denoising. On OGBench-Cube, PhyLatent reduces the three failure rates from 15.60%, 6.71%, and 8.41% to 7.53%, 0.95%, and 4.62%, respectively, and improves model predictive control (MPC) success from 70.0% to 78.1%. With the same architecture and planner, it further improves success from 81.0% to 98.0% on TwoRooms and remains competitive on Reacher and PushT. These results show that global non-collapse alone is insufficient for learning a reliable JEPA worldmodel state space.",
+      "authors": [
+        "Xi Zeng",
+        "Haojie Ren",
+        "Ziying Song"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-06T08:02:15+00:00",
+      "link": "https://arxiv.org/pdf/2608.05720v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "JEPA world model with dynamics-relevant representations",
+      "llm_evidence_cn": "面向JEPA世界模型的动态相关知识表示",
+      "llm_evidence": "面向JEPA世界模型的动态相关知识表示",
+      "canonical_evidence": "面向JEPA世界模型的动态相关知识表示",
+      "llm_tldr_en": "PhyLatent proposes a dynamics-relevant training objective for JEPA world models, preventing latent collapse in physical states and action consequences, improving world model learning on OGBench-Cube.",
+      "llm_tldr_cn": "PhyLatent针对JEPA世界模型提出一种动态相关的训练目标，揭示了仅防止全局潜在坍缩不足以保留物理状态与动作后果。它通过物理状态接地、未来表示对齐、静态视觉不变性、反事实分支分离和潜在去噪三条路径，在OGBench-Cube上显著降低了表示退化。该工作为学习动作条件世界模型提供了关键方法，推动更稳健的物理世界理解。",
+      "llm_tldr": "PhyLatent针对JEPA世界模型提出一种动态相关的训练目标，揭示了仅防止全局潜在坍缩不足以保留物理状态与动作后果。它通过物理状态接地、未来表示对齐、静态视觉不变性、反事实分支分离和潜在去噪三条路径，在OGBench-Cube上显著降低了表示退化。该工作为学习动作条件世界模型提供了关键方法，推动更稳健的物理世界理解。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.05891v1",
+      "source": "arxiv",
+      "title": "AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents",
+      "abstract": "Mobile GUI agents can operate apps through pixel perception and touch actions, making them a promising interface for collecting and improving long-horizon mobile interaction policies. However, real trajectories are difficult to obtain for sensitive apps and privacy-critical operations. At the same time, existing simulated environments are costly to scale up, and GUI world models still suffer from unstable generation, limited modality coverage, and inconsistent action-transition logic. To address these limitations, we propose AppDeltaWorld, a transition-grounded delta code world model that predicts the next GUI as a reachable code update rather than as an unconstrained image or text description. AppDeltaWorld retrieves app-specific Level-1 HTML references under an action-transition constraint, generates Level-2 executable HTML conditioned on the current screen, action, predicted next-screen text, and retrieved structure, and inserts generated visual assets into image slots before browser rendering. As a world model, AppDeltaWorld achieves the highest fidelity on CMGUIBench-500 under Code2World evaluation, with clear gains in structural layout and UI element reconstruction over image-only and code-only baselines. As a training environment, AppDeltaWorld supports filtered closed-loop SFT data construction that, when combined with public supervision, enables AppDeltaAgent to achieve state-of-the-art performance on AndroidLens and consistent gains on MobileGym and MobileWorld. Moreover, world-model-based test-time reinforcement learning enables policy adaptation and shows further improvements without additional interaction with real apps.",
+      "authors": [
+        "Weikai Xu",
+        "Yunren Feng",
+        "Haoxiang Lei",
+        "Kun Huang",
+        "Yuxuan Liu",
+        "Kang Zhao",
+        "Xiaolin Hu",
+        "Shuo Shang",
+        "Bo An"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-08-06T11:15:41+00:00",
+      "link": "https://arxiv.org/pdf/2608.05891v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "World model for mobile GUI with transition-grounded actions",
+      "llm_evidence_cn": "面向移动GUI的转换接地世界模型",
+      "llm_evidence": "面向移动GUI的转换接地世界模型",
+      "canonical_evidence": "面向移动GUI的转换接地世界模型",
+      "llm_tldr_en": "AppDeltaWorld is a transition-grounded delta code world model predicting next GUI states as reachable code updates, improving action-transition consistency for mobile GUI agents.",
+      "llm_tldr_cn": "AppDeltaWorld为移动GUI智能体提出一种转换接地delta代码世界模型，将下一GUI状态预测为可到达的代码更新而非无约束图像。它利用应用级HTML检索和delta代码输出，缓解了现有GUI世界模型生成不稳定和动作转换不一致的问题。该模型为长时程移动交互策略提供更好的模拟环境。",
+      "llm_tldr": "AppDeltaWorld为移动GUI智能体提出一种转换接地delta代码世界模型，将下一GUI状态预测为可到达的代码更新而非无约束图像。它利用应用级HTML检索和delta代码输出，缓解了现有GUI世界模型生成不稳定和动作转换不一致的问题。该模型为长时程移动交互策略提供更好的模拟环境。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.06257v1",
+      "source": "arxiv",
+      "title": "MASS: Multiplayer World Models with Authoritative Shared State",
+      "abstract": "Current video world models struggle in multiplayer environments because they entangle world state with view-dependent visual latents, leading to redundant compute, view inconsistencies, and poor scalability. We propose MAS (Multiplayer world models with Authoritative Shared State) to resolve this limitation. Inspired by multiplayer game architectures, MAS disentangles world dynamics and view rendering. A learned Logic Engine advances a global, authoritative typed state from joint actions without any hand-written transition function, acting as the sole recurrent memory and synchronization reference. From this shared state, a learned Rendering Engine generates independent and consistent views for any requested camera on demand. This explicit disentangling allows MAS to achieve superior state accuracy and lower cross-view inconsistency compared to state-of-the-art multi-view baselines on a matched multiplayer Snake benchmark. It advances predicted worlds with 1,024 concurrent players for 10,000 recurrent steps. Our results show that explicit, authoritative state modeling provides a practical foundation for scalable and consistent multi-agent world simulation.",
+      "authors": [
+        "Ziqi Cai",
+        "Siqi Yang",
+        "Yimu Wang",
+        "Zixian Gao",
+        "Yunheng Liu",
+        "Shuchen Weng",
+        "Erwin Wu",
+        "Kaipeng Zhang",
+        "Boxin Shi"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "published": "2026-08-06T16:47:24+00:00",
+      "link": "https://arxiv.org/pdf/2608.06257v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "shared-state multiplayer world model with action-conditioned dynamics",
+      "llm_evidence_cn": "共享状态的多人世界模型，由联合动作推进动力学",
+      "llm_evidence": "共享状态的多人世界模型，由联合动作推进动力学",
+      "canonical_evidence": "共享状态的多人世界模型，由联合动作推进动力学",
+      "llm_tldr_en": "MASS resolves the entanglement of world state and view-dependent latents in multiplayer video world models by learning a shared authoritative state, then generating consistent camera views on demand for scalable multi-agent simulation.",
+      "llm_tldr_cn": "当前视频世界模型在多人环境中将世界状态与视角相关的视觉潜变量纠缠在一起，导致计算冗余和视角不一致。本文提出MASS，受多人游戏架构启发，将世界动力学与视角渲染解耦：逻辑引擎从联合动作推进全局权威状态，渲染引擎按需生成一致视角。实验表明该方法能够减少冗余计算并支持任意相机视角的一致性渲染，为可扩展的多智能体世界建模提供了新思路。",
+      "llm_tldr": "当前视频世界模型在多人环境中将世界状态与视角相关的视觉潜变量纠缠在一起，导致计算冗余和视角不一致。本文提出MASS，受多人游戏架构启发，将世界动力学与视角渲染解耦：逻辑引擎从联合动作推进全局权威状态，渲染引擎按需生成一致视角。实验表明该方法能够减少冗余计算并支持任意相机视角的一致性渲染，为可扩展的多智能体世界建模提供了新思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
     }
   ],
   "quick_skim": [
+    {
+      "id": "2608.06020v1",
+      "source": "arxiv",
+      "title": "From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models",
+      "abstract": "Economic World Models (EWMs) are generative economic models that simulate how economies evolve from within by modeling heterogeneous agents, their beliefs and actions, and the market and institutional mechanisms through which their interactions produce aggregate outcomes. This paper develops an implementation roadmap for building economic world models as generative engines in which heterogeneous agents act, interact, adapt, and co-evolve with markets and institutions, thereby producing economic dynamics from the inside. We organize EWM systems into a six-level capability ladder, from fixed rule-based agent worlds to adaptive and LLM-based agent worlds, self-evolving agents, evolving institutional worlds, and sim-to-real economic twins aligned with real observations. A systematic literature survey across these levels reveals that existing work remains concentrated in lower-level agent and simulation environments, while systems with self-evolving agents, endogenous institutions, persistent empirical alignment, and validated economic mechanisms remain rare. By translating the EWM agenda into an implementation blueprint, this paper aims to accelerate the development of the next generation of economic simulation environments that can serve as high-fidelity sandboxes for human decision-makers and as training, planning, evaluation, and safety substrates for AI agents. We release a curated paper list and related resources to support future research.",
+      "authors": [
+        "Jiale Han",
+        "Xiang Li",
+        "Jing Qian",
+        "Wenyuan Gu",
+        "Pin Gao",
+        "Ye Luo",
+        "Hongyuan Zha",
+        "Dacheng Tao",
+        "Benyou Wang",
+        "Lin William Cong"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-06T13:26:46+00:00",
+      "link": "https://arxiv.org/pdf/2608.06020v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "economic world models with heterogeneous agents and actions",
+      "llm_evidence_cn": "经济世界模型，建模异构智能体行为与制度演化",
+      "llm_evidence": "经济世界模型，建模异构智能体行为与制度演化",
+      "canonical_evidence": "经济世界模型，建模异构智能体行为与制度演化",
+      "llm_tldr_en": "This paper provides a systems blueprint for Economic World Models (EWMs), a six-level capability ladder from rule-based to self-evolving agent economies, connecting agent actions and market institutions.",
+      "llm_tldr_cn": "经济世界模型旨在生成经济演化，但现有架构缺乏统一设计蓝图。本文提出 EWM 系统蓝图，将经济建模组织为六层能力阶梯，从固定规则智能体到自适应 LLM 智能体、自进化智能体以及制度演化世界。该方法强调异构智能体的信念、行为与市场制度机制的协同进化，并通过 sim-to-real 经济孪生连接。该工作为构建能够内生演化经济动态的世界模型提供了系统性路线图。",
+      "llm_tldr": "经济世界模型旨在生成经济演化，但现有架构缺乏统一设计蓝图。本文提出 EWM 系统蓝图，将经济建模组织为六层能力阶梯，从固定规则智能体到自适应 LLM 智能体、自进化智能体以及制度演化世界。该方法强调异构智能体的信念、行为与市场制度机制的协同进化，并通过 sim-to-real 经济孪生连接。该工作为构建能够内生演化经济动态的世界模型提供了系统性路线图。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
     {
       "id": "2608.01066v1",
       "source": "arxiv",
@@ -287,16 +333,17 @@
       "published": "2026-08-02T08:06:20+00:00",
       "link": "https://arxiv.org/pdf/2608.01066v1",
       "tags": [
-        "keyword:world"
+        "keyword:world",
+        "query:world"
       ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "Action model with visual-geometry world representation; geometry-guided cross-view consistency for robotic manipulation",
-      "llm_evidence_cn": "嵌入视觉几何世界表征的动作模型，利用跨视角一致性提升机器人操纵视角鲁棒性",
-      "llm_evidence": "嵌入视觉几何世界表征的动作模型，利用跨视角一致性提升机器人操纵视角鲁棒性",
-      "canonical_evidence": "嵌入视觉几何世界表征的动作模型，利用跨视角一致性提升机器人操纵视角鲁棒性",
-      "llm_tldr_en": "OC-VLA++ extends vision-language-action models with geometry-guided paired-view supervision and cross-view action-equivariance, enabling viewpoint-robust robotic manipulation under limited camera coverage by grounding predictions to the same robot-frame action.",
-      "llm_tldr_cn": "现有视觉-语言-动作模型在相机坐标系中标注动作，容易过拟合训练时有限的视角，导致视角泛化能力不足。为此，OC-VLA++ 引入几何引导的成对视角监督和显式跨视角动作等变目标，要求同一操纵场景在不同几何相关视角下的预测对应于同一机器人坐标系动作。实验表明该方法在有限相机覆盖下能有效提升操纵视角鲁棒性。这项工作为动作模型结合几何世界表征提供了有力方案。",
-      "llm_tldr": "现有视觉-语言-动作模型在相机坐标系中标注动作，容易过拟合训练时有限的视角，导致视角泛化能力不足。为此，OC-VLA++ 引入几何引导的成对视角监督和显式跨视角动作等变目标，要求同一操纵场景在不同几何相关视角下的预测对应于同一机器人坐标系动作。实验表明该方法在有限相机覆盖下能有效提升操纵视角鲁棒性。这项工作为动作模型结合几何世界表征提供了有力方案。",
+      "llm_score": 6.0,
+      "llm_evidence_en": "action model with world representation, cross-view action equivariance",
+      "llm_evidence_cn": "带世界表示的动作模型，跨视角动作等变性",
+      "llm_evidence": "带世界表示的动作模型，跨视角动作等变性",
+      "canonical_evidence": "带世界表示的动作模型，跨视角动作等变性",
+      "llm_tldr_en": "OC-VLA++ enhances viewpoint robustness for robotic manipulation by geometry-guided paired-view supervision and explicit cross-view action-equivariance, aligning camera-space predictions to robot-frame actions.",
+      "llm_tldr_cn": "机器人操作模型常因训练视角有限而对新视角过拟合。OC-VLA++ 在相机坐标接地基础上，引入几何引导的成对视角监督和显式跨视角动作等变性目标，使不同相机视角下的预测能对应同一机器人坐标系动作。实验验证该方法能显著改善有限视角条件下的视角泛化能力。该工作为动作模型利用几何结构提升世界表示鲁棒性提供了有效思路。",
+      "llm_tldr": "机器人操作模型常因训练视角有限而对新视角过拟合。OC-VLA++ 在相机坐标接地基础上，引入几何引导的成对视角监督和显式跨视角动作等变性目标，使不同相机视角下的预测能对应同一机器人坐标系动作。实验验证该方法能显著改善有限视角条件下的视角泛化能力。该工作为动作模型利用几何结构提升世界表示鲁棒性提供了有效思路。",
       "llm_tags": [
         "query:world"
       ],
@@ -304,94 +351,7 @@
       "matched_query_text": "action model with world representation",
       "matched_requirement_id": "req-7",
       "selection_source": "fresh_fetch",
-      "quick_tier": "8plus"
-    },
-    {
-      "id": "2608.00925v1",
-      "source": "arxiv",
-      "title": "Look Up and Look Back: Hidden Attention and Latent Orientation in a Frozen Foundation Model for Panoramic SLAM",
-      "abstract": "Monocular panoramic SLAM benefits from substantial visual overlap under large camera rotations, yet remains prone to errors caused by camera tilt, scale drift, and false loop closures. We show that a frozen panoramic geometry foundation model provides useful internal cues beyond its explicit geometric outputs: intermediate tokens encode gravity in the camera frame, while cross-view attention provides a compatibility cue for potential revisits. Building on these cues, we present HALO-SLAM. A gravity readout enables IMU-free spherical upright canonicalization. For loop closure, we introduce a cost-aware three-stage cascade combining DBoW2 event-level retrieval, attention-based compatibility filtering, and dense geometric validation through symmetric submap augmentation. Accepted revisits yield pixel-aligned 3D--3D correspondences in both local gauges, from which robust $\\mathrm{Sim}(3)$ constraints are estimated and jointly optimized with sequential constraints in a global pose graph. Across 125 sequences from five real-world panoramic benchmarks, our method achieves \\textbf{100\\%} sequence success (\\textbf{125/125}) under the stated criterion and the lowest ATE among the evaluated methods on all five benchmarks, reducing ATE by \\textbf{30--88\\%} relative to the best ERP-native baseline on each benchmark.",
-      "authors": [
-        "Zhuang Xiong",
-        "Guohao Zhang",
-        "Chen Zhang",
-        "Zheyu Jiang",
-        "Yuchao Mei",
-        "Qingshan Xu",
-        "Wenbing Tao"
-      ],
-      "primary_category": "cs.CV",
-      "categories": [
-        "cs.CV"
-      ],
-      "published": "2026-08-02T01:33:01+00:00",
-      "link": "https://arxiv.org/pdf/2608.00925v1",
-      "tags": [
-        "keyword:world"
-      ],
-      "llm_score": 6.0,
-      "llm_evidence_en": "Uses internal cues of a frozen panoramic geometry foundation model for SLAM",
-      "llm_evidence_cn": "利用冻结全景几何基础模型的内部线索进行SLAM",
-      "llm_evidence": "利用冻结全景几何基础模型的内部线索进行SLAM",
-      "canonical_evidence": "利用冻结全景几何基础模型的内部线索进行SLAM",
-      "llm_tldr_en": "Shows that a frozen panoramic geometry foundation model provides internal cues (gravity in camera frame and cross-view attention) and builds HALO-SLAM with IMU-free spherical upright canonicalization and attention-based loop closure filtering.",
-      "llm_tldr_cn": "研究显示冻结的全景几何基础模型除显式几何输出外，其中间token编码了相机坐标系中的重力方向，跨视角注意力提供重访兼容性线索。论文基于此提出HALO-SLAM，实现无IMU的球面直立规范化，并设计三阶段回环级联结合DBoW2与注意力过滤。该方法缓解了倾斜、尺度漂移和假回环问题，展示了冻结基础模型内部表示对视觉定位任务的额外价值。",
-      "llm_tldr": "研究显示冻结的全景几何基础模型除显式几何输出外，其中间token编码了相机坐标系中的重力方向，跨视角注意力提供重访兼容性线索。论文基于此提出HALO-SLAM，实现无IMU的球面直立规范化，并设计三阶段回环级联结合DBoW2与注意力过滤。该方法缓解了倾斜、尺度漂移和假回环问题，展示了冻结基础模型内部表示对视觉定位任务的额外价值。",
-      "llm_tags": [
-        "query:world"
-      ],
-      "matched_query_tag": "query:world",
-      "matched_query_text": "foundation model",
-      "matched_requirement_id": "req-5",
-      "selection_source": "fresh_fetch",
       "quick_tier": "6"
-    },
-    {
-      "id": "2608.04964v1",
-      "source": "arxiv",
-      "title": "WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models",
-      "abstract": "Interactive video world models are essential for long-horizon planning and exploration, yet they suffer from compounding errors. Post-training methods such as reinforcement learning (RL) can improve these models, but they hit a verification bottleneck: for arbitrary action sequences, no ground-truth future state exists to measure long-term drift. Our key insight is that reversible action cycles make this verification possible: a sequence composed with its inverse must analytically return to the initial state, yielding annotation-free supervision on long-horizon correctness. Building on this, we introduce WorldCycle, a self-verifiable RL framework that constructs closed action cycles and their repeated executions from ordinary action sequences, and optimizes two complementary rewards: a spatial closure reward enforcing symmetry between mirrored forward and reverse segments, and a temporal consistency reward aligning states across repeated cycle executions. These rewards force the model to learn actions as consistent state operators rather than memorized temporal patterns, and extend naturally to out-of-distribution composite action cycles that the base model handles poorly. We further release CycleBench, a diagnostic benchmark for state-returning ability under complex action structures. WorldCycle reduces state returning drift by up to 44% and lifts composite-action accuracy nearly 4x over the base model, providing a vital foundation for physically grounded world models.",
-      "authors": [
-        "Bohai Gu",
-        "Yueyang Yuan",
-        "Taiyi Wu",
-        "Dazhao Du",
-        "Jian Liu",
-        "Xiaoyi Pang",
-        "Jie Zhang",
-        "Xiaocheng Lu",
-        "Haobin Zhong",
-        "Xiaotong Zhao",
-        "Alan Zhao",
-        "Song Guo"
-      ],
-      "primary_category": "cs.AI",
-      "categories": [
-        "cs.AI",
-        "cs.LG"
-      ],
-      "published": "2026-08-05T15:34:47+00:00",
-      "link": "https://arxiv.org/pdf/2608.04964v1",
-      "tags": [
-        "keyword:world",
-        "query:world"
-      ],
-      "llm_score": 8.0,
-      "llm_evidence_en": "Proposes self-verifiable RL for long-horizon video world models using reversible action cycles",
-      "llm_evidence_cn": "提出利用可逆动作循环对长视界视频世界模型进行自验证强化学习",
-      "llm_evidence": "提出利用可逆动作循环对长视界视频世界模型进行自验证强化学习",
-      "canonical_evidence": "提出利用可逆动作循环对长视界视频世界模型进行自验证强化学习",
-      "llm_tldr_en": "WorldCycle proposes a self-verifiable RL framework that constructs closed reversible action cycles to provide annotation-free long-horizon supervision for interactive video world models.",
-      "llm_tldr_cn": "交互式视频世界模型在长视界规划中容易累积误差，而后训练强化学习又缺少真实未来状态来验证。WorldCycle的关键洞察是：动作序列与其逆序列必须回到初始状态，从而提供无标注的长视界正确性监督。该方法通过构造可逆动作循环及其重复执行来自我验证，支持强化学习优化。实验显示WorldCycle能显著降低累积漂移，提升长期规划与探索能力。",
-      "llm_tldr": "交互式视频世界模型在长视界规划中容易累积误差，而后训练强化学习又缺少真实未来状态来验证。WorldCycle的关键洞察是：动作序列与其逆序列必须回到初始状态，从而提供无标注的长视界正确性监督。该方法通过构造可逆动作循环及其重复执行来自我验证，支持强化学习优化。实验显示WorldCycle能显著降低累积漂移，提升长期规划与探索能力。",
-      "llm_tags": [
-        "query:world"
-      ],
-      "matched_query_tag": "query:world",
-      "matched_query_text": "world model",
-      "matched_requirement_id": "req-4",
-      "selection_source": "fresh_fetch",
-      "quick_tier": "8plus"
     }
   ]
 }
