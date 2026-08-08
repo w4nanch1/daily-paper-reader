@@ -6,44 +6,26 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-07
-- 运行时间：2026-08-07 20:56:47 UTC
+- 最新运行日期：2026-08-08
+- 运行时间：2026-08-08 20:26:51 UTC
 - 运行状态：成功
-- 本次总论文数：8
-- 精读区：6
-- 速读区：2
+- 本次总论文数：1
+- 精读区：1
+- 速读区：0
 
 ### 今日简报（AI）
-今日精读聚焦世界动作模型，两篇满分论文《DreamWAM》与《Robust-WAM》引领跨模态预测与语义前瞻；速读另涉经济世界模型与机器人视角鲁棒操作。最值得关注的是“生成式预训练+语义前瞻”融合方向，以及超越RGB的未来预测思路。建议普通读者持续追踪世界模型在决策与具身智能中的落地进展。
-- 详情：[/202608/07/README](/202608/07/README)
+今日精读1篇论文，聚焦世界模型评测基准。  
+最值得看的是《WorldExam》从显像外观到内在反应性的分层评估，获8.0分。  
+普通读者可借此关注模型能否从“看得像”进阶到“动得对”。
+- 详情：[/202608/08/README](/202608/08/README)
 
 ### 精读区论文标签
-1. [DreamWAM: Beyond RGB Future Prediction for World Action Models](/202608/07/2608.04996v1-dreamwam-beyond-rgb-future-prediction-for-world-action-models)  
-   标签：评分：10.0/10、query:world
-   evidence：超越RGB的结构化未来预测的World Action Model
-2. [Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models](/202608/07/2608.05903v1-robust-wam-bridging-generative-pretraining-and-semantic-foresight-in-world-action-models)  
-   标签：评分：10.0/10、query:world
-   evidence：提出针对视频生成类世界动作模型的通用后训练方法
-3. [DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation](/202608/07/2608.00793v2-dynamicwam-dual-path-motion-conditioning-for-world-action-models-in-dynamic-manipulation)  
-   标签：评分：9.0/10、query:world
-   evidence：面向动态操作的世界-动作模型，具备双路径运动条件化
-4. [PhyLatent: Learning Dynamics-Relevant Representations for JEPA World Models](/202608/07/2608.05720v1-phylatent-learning-dynamics-relevant-representations-for-jepa-world-models)  
-   标签：评分：9.0/10、query:world
-   evidence：面向JEPA世界模型的动态相关知识表示
-5. [AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents](/202608/07/2608.05891v1-appdeltaworld-transition-grounded-delta-code-world-model-for-mobile-gui-agents)  
-   标签：评分：9.0/10、query:world
-   evidence：面向移动GUI的转换接地世界模型
-6. [MASS: Multiplayer World Models with Authoritative Shared State](/202608/07/2608.06257v1-mass-multiplayer-world-models-with-authoritative-shared-state)  
-   标签：评分：9.0/10、query:world
-   evidence：共享状态的多人世界模型，由联合动作推进动力学
+1. [WorldExam: Benchmarking World Models from Apparent Appearance to Inherent Reactivity](/202608/08/2608.02603v1-worldexam-benchmarking-world-models-from-apparent-appearance-to-inherent-reactivity)  
+   标签：评分：8.0/10、query:world
+   evidence：WorldExam从内在反应性等层面对世界模型进行基准评测，直接关系世界模型评估
 
 ### 速读区论文标签
-1. [From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models](/202608/07/2608.06020v1-from-economic-agents-to-agentic-economies-a-systems-blueprint-for-economic-world-models)  
-   标签：评分：7.0/10、query:world
-   evidence：经济世界模型，建模异构智能体行为与制度演化
-2. [OC-VLA++: Monocular Geometry-Guided Cross-View Consistency for Viewpoint-Robust Robotic Manipulation](/202608/07/2608.01066v1-oc-vla-monocular-geometry-guided-cross-view-consistency-for-viewpoint-robust-robotic-manipulation)  
-   标签：评分：6.0/10、query:world
-   evidence：带世界表示的动作模型，跨视角动作等变性
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">

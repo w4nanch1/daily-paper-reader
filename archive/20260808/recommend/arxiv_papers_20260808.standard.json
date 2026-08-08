@@ -1,0 +1,66 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-08T20:25:17.030130+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2608.02603v1",
+      "source": "arxiv",
+      "title": "WorldExam: Benchmarking World Models from Apparent Appearance to Inherent Reactivity",
+      "abstract": "Controllable video generation models are increasingly being developed as world models. Accordingly, evaluating them in this role extends beyond the apparent appearance of generated videos to the inherent reactivity of the worlds they depict: the ability to infer from the scene state how the world should react and to generate plausible consequences not explicitly described in the input. Yet existing benchmarks mainly assess visual quality or explicit instruction fulfillment by checking whether requested actions and interaction outcomes are realized, leaving inherent reactivity underexamined. We introduce WorldExam, a hierarchical diagnostic benchmark spanning four levels: Visual Quality, Control Adherence, Spatial Consistency, and World Reactivity. It comprises 1,474 cases across eight dedicated tasks and supports unified evaluation of camera-, action-, and language-driven model paradigms. The World Reactivity level evaluates scene-conditioned reactions and goal-directed behaviors beyond what is explicitly specified in the input. Evaluation of 20 representative models reveals a clear capability split. Camera-driven models excel at camera control, but their interfaces do not support dynamic interaction; action-driven models control subjects more precisely but often leave the world unresponsive; and language-driven models perform better on interaction but follow complex controls less faithfully. No model combines broad task coverage with consistently strong performance, showing that high visual quality and explicit instruction fulfillment do not guarantee inherent reactivity.",
+      "authors": [
+        "Yuxue Yang",
+        "Shuyao Shang",
+        "Jiahe Wang",
+        "Zitong Zhou",
+        "Liang Tan",
+        "Junhan Zeng",
+        "Ruizhi Li",
+        "Junyan Li",
+        "Yu Liu",
+        "Xiao Yang",
+        "Yong Li",
+        "Jun Zhu",
+        "Hongsheng Li",
+        "Tieniu Tan",
+        "Lue Fan",
+        "Zhaoxiang Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-03T17:59:54+00:00",
+      "link": "https://arxiv.org/pdf/2608.02603v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "WorldExam benchmarks world models on intrinsic reactivity, directly relevant to world model evaluation",
+      "llm_evidence_cn": "WorldExam从内在反应性等层面对世界模型进行基准评测，直接关系世界模型评估",
+      "llm_evidence": "WorldExam从内在反应性等层面对世界模型进行基准评测，直接关系世界模型评估",
+      "canonical_evidence": "WorldExam从内在反应性等层面对世界模型进行基准评测，直接关系世界模型评估",
+      "llm_tldr_en": "WorldExam is a hierarchical benchmark that evaluates video-generation world models across visual quality, control adherence, spatial consistency, and intrinsic reactivity, revealing major gaps in current models.",
+      "llm_tldr_cn": "可控视频生成模型常被视为世界模型，但现有评测忽视其内在反应性。本文提出WorldExam，一个分层诊断基准，从视觉质量、控制遵循、空间一致性和世界反应性四个层面评测模型。实验发现现有模型在反应性上存在明显短板，说明仅看生成外观远不足以判断世界模型质量。该基准为评估和推动反应式世界模型提供了系统化工具。",
+      "llm_tldr": "可控视频生成模型常被视为世界模型，但现有评测忽视其内在反应性。本文提出WorldExam，一个分层诊断基准，从视觉质量、控制遵循、空间一致性和世界反应性四个层面评测模型。实验发现现有模型在反应性上存在明显短板，说明仅看生成外观远不足以判断世界模型质量。该基准为评估和推动反应式世界模型提供了系统化工具。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}
