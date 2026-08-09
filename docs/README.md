@@ -6,26 +6,28 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-08
-- 运行时间：2026-08-08 20:26:51 UTC
+- 最新运行日期：2026-08-09
+- 运行时间：2026-08-09 20:35:25 UTC
 - 运行状态：成功
-- 本次总论文数：1
+- 本次总论文数：2
 - 精读区：1
-- 速读区：0
+- 速读区：1
 
 ### 今日简报（AI）
-今日精读1篇论文，聚焦世界模型评测基准。  
-最值得看的是《WorldExam》从显像外观到内在反应性的分层评估，获8.0分。  
-普通读者可借此关注模型能否从“看得像”进阶到“动得对”。
-- 详情：[/202608/08/README](/202608/08/README)
+今日精读《K-EXAONE 2.0 Technical Report》（9.0分），另速读一篇机器人调度论文；核心聚焦多模态大模型技术报告，值得重点关注。  
+最值得看的是K-EXAONE 2.0技术报告，评分高达9.0，代表高价值技术进展；速读的《Action Chunk Scheduling for Batched Robot Policy Serving》仅6.0分，可做背景参考。  
+建议优先精读该技术报告，了解其模型架构与训练方法，后续再按需深入机器人调度方向。
+- 详情：[/202608/09/README](/202608/09/README)
 
 ### 精读区论文标签
-1. [WorldExam: Benchmarking World Models from Apparent Appearance to Inherent Reactivity](/202608/08/2608.02603v1-worldexam-benchmarking-world-models-from-apparent-appearance-to-inherent-reactivity)  
-   标签：评分：8.0/10、query:world
-   evidence：WorldExam从内在反应性等层面对世界模型进行基准评测，直接关系世界模型评估
+1. [K-EXAONE 2.0 Technical Report](/202608/09/2608.04505v1-k-exaone-20-technical-report)  
+   标签：评分：9.0/10、query:world
+   evidence：基础模型，包含MoE升级与多语言扩展
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [Action Chunk Scheduling for Batched Robot Policy Serving](/202608/09/2608.00337v1-action-chunk-scheduling-for-batched-robot-policy-serving)  
+   标签：评分：6.0/10、query:world
+   evidence：提出了面向批量机器人策略服务的调度系统，为视觉-语言-动作等机器人基础模型调度动作块。
 
 
 <div class="dpr-home-promo-card">

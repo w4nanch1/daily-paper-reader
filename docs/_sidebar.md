@@ -1,6 +1,11 @@
 * <a class="dpr-sidebar-root-link" href="#/">首页</a>
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 * Daily Papers
+  * 2026-08-09 <!--dpr-date:20260809-->
+    * 精读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/09/2608.04505v1-k-exaone-20-technical-report" data-sidebar-item="{&quot;title&quot;: &quot;K-EXAONE 2.0 Technical Report&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.04505v1-k-exaone-20-technical-report&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;基础模型，包含MoE升级与多语言扩展&quot;}">K-EXAONE 2.0 Technical Report</a>
+    * 速读区
+      * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/09/2608.00337v1-action-chunk-scheduling-for-batched-robot-policy-serving" data-sidebar-item="{&quot;title&quot;: &quot;Action Chunk Scheduling for Batched Robot Policy Serving&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.00337v1-action-chunk-scheduling-for-batched-robot-policy-serving&quot;, &quot;score&quot;: &quot;6.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;提出了面向批量机器人策略服务的调度系统，为视觉-语言-动作等机器人基础模型调度动作块。&quot;}">Action Chunk Scheduling for Batched Robot Policy Serving</a>
   * 2026-08-08 <!--dpr-date:20260808-->
     * 精读区
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/202608/08/2608.02603v1-worldexam-benchmarking-world-models-from-apparent-appearance-to-inherent-reactivity" data-sidebar-item="{&quot;title&quot;: &quot;WorldExam: Benchmarking World Models from Apparent Appearance to Inherent Reactivity&quot;, &quot;link&quot;: &quot;https://arxiv.org/abs/2608.02603v1-worldexam-benchmarking-world-models-from-apparent-appearance-to-inherent-reactivity&quot;, &quot;score&quot;: &quot;8.0&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;world&quot;}], &quot;evidence&quot;: &quot;WorldExam从内在反应性等层面对世界模型进行基准评测，直接关系世界模型评估&quot;}">WorldExam: Benchmarking World Models from Apparent Appearance to Inherent Reactivity</a>
