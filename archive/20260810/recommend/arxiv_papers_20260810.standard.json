@@ -1,0 +1,316 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-10T20:55:21.778179+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 6,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2608.05903v2",
+      "source": "arxiv",
+      "title": "Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models",
+      "abstract": "Mainstream World-Action Models (WAMs) adapt pretrained video generation models (VGMs) for robot control, transferring their learned dynamics prior for action prediction. These VGMs are typically trained in a variational autoencoder (VAE) latent space. However, the VAE latent space is optimized for pixel reconstruction, which rewards fine appearance detail and leaves the action prediction fragile under visual shifts. Recent works build WAMs in semantic latent space, which are more robust to appearance shifts. However, these models cannot leverage the large-scale VGM pretraining that exists only in VAE space. To overcome this dilemma, we propose Robust-WAM, a general post-training method for video-generation-based WAMs that preserves the VAE-based generative path and adds a lightweight semantic foresight alignment objective on the action stream. This retains the large-scale VGM pretraining while grounding actions in appearance-invariant dynamics that stay reliable under illumination shifts and other visual out-of-distribution conditions. Specifically, we employ learnable query tokens to bring future-scene semantics into the action stream by aligning their output hidden states with the semantic foresight of future ground-truth frames. To establish the temporal correspondence between each query and the future step it describes, we give it the positional encoding of the matching action tokens. Experiments on out-of-distribution generalization simulation benchmarks and a real-robot setup show that our Robust-WAM consistently improves the success rates of multiple WAM baselines without sacrificing in-distribution performance.",
+      "authors": [
+        "Haodong Yan",
+        "Junfeng Li",
+        "Junjie He",
+        "Zhide Zhong",
+        "MingMing Yu",
+        "Wenxuan Song",
+        "Jiaguan Zhu",
+        "Yangyang Zheng",
+        "Yuqiao Du",
+        "Jiadi You",
+        "Yingjie Cai",
+        "Xu Yan",
+        "Guanyi Zhao",
+        "Bingbing Liu",
+        "Haoang Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-08-06T11:31:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.05903v2",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "explicitly proposes World-Action Models (WAMs) adapting pretrained VGMs for robot control, directly matches world action model foundation model requirement",
+      "llm_evidence_cn": "明确提出世界-行动模型(WAM)，适配预训练视频生成模型用于机器人控制，直接命中需求",
+      "llm_evidence": "明确提出世界-行动模型(WAM)，适配预训练视频生成模型用于机器人控制，直接命中需求",
+      "canonical_evidence": "明确提出世界-行动模型(WAM)，适配预训练视频生成模型用于机器人控制，直接命中需求",
+      "llm_tldr_en": "Robust-WAM post-trains video-generation-based World-Action Models to preserve large-scale VAE-space generative pretraining while gaining semantic-latent-space robustness for action prediction.",
+      "llm_tldr_cn": "世界-行动模型(WAM)通常利用预训练视频生成模型的动力学先验进行机器人控制，但VAE潜空间针对像素重建优化，使动作预测在视觉变化下脆弱；语义潜空间虽鲁棒却无法利用VAE空间的大规模预训练。Robust-WAM提出一种通用后训练方法，兼顾两者优势：保留生成式预训练能力，同时引入语义前瞻使动作预测更稳健。实验表明其在视觉偏移下显著改善动作预测鲁棒性。该方法为视频生成式世界行动模型提供通用增强范式。",
+      "llm_tldr": "世界-行动模型(WAM)通常利用预训练视频生成模型的动力学先验进行机器人控制，但VAE潜空间针对像素重建优化，使动作预测在视觉变化下脆弱；语义潜空间虽鲁棒却无法利用VAE空间的大规模预训练。Robust-WAM提出一种通用后训练方法，兼顾两者优势：保留生成式预训练能力，同时引入语义前瞻使动作预测更稳健。实验表明其在视觉偏移下显著改善动作预测鲁棒性。该方法为视频生成式世界行动模型提供通用增强范式。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.01402v1",
+      "source": "arxiv",
+      "title": "Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them",
+      "abstract": "We address the problem of understanding when and why Vision-Language-Action models struggle with contact-rich manipulation tasks that require precise physical interaction. Prior work has primarily focused on addressing contact failures through force-augmented architectures and training-time regularizers, yet the root causes of these failures remain underexplored. We identify two distinct failure modes underlying this gap. Precision failures are rooted in a flow-matching policy training mismatch, and force failures arise from the distinctive structure of force signals. We address each failure mode with a targeted mechanism and combine them into FACT, which achieves 66% average success rate across five contact-rich tasks against 41% for the best prior baseline, in an evaluation spanning almost 2,500 real-world rollouts.",
+      "authors": [
+        "Carlota Parés-Morlans",
+        "Nils Kuhn",
+        "Isabel Liu",
+        "Alberta Longhini",
+        "Jeannette Bohg"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-02T17:34:19+00:00",
+      "link": "https://arxiv.org/pdf/2608.01402v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Vision-Language-Action models are action models with world representation; paper analyzes and fixes their failures in contact-rich tasks",
+      "llm_evidence_cn": "直接研究视觉-语言-动作模型这一带世界表征的动作模型在接触密集任务中的失败与修复",
+      "llm_evidence": "直接研究视觉-语言-动作模型这一带世界表征的动作模型在接触密集任务中的失败与修复",
+      "canonical_evidence": "直接研究视觉-语言-动作模型这一带世界表征的动作模型在接触密集任务中的失败与修复",
+      "llm_tldr_en": "This paper identifies precision and force failure modes in Vision-Language-Action models for contact-rich manipulation, proposes targeted mechanisms combined into FACT, and improves average success from 41% to 66% over strong baselines.",
+      "llm_tldr_cn": "视觉-语言-动作模型在需要精确物理交互的接触密集操作中经常失败，既有工作主要靠力增强结构和训练正则缓解，但根因不清。论文将失败划分为精度失败和力感知失败两类，分别对应流匹配策略训练不匹配和力信号结构特点，并提出针对性机制组成FACT。在五个接触密集任务上FACT取得66%的平均成功率，远高于最强基线41%。这项工作为理解与修复VLA提供的世界表征与动作策略的融合提供了系统思路。",
+      "llm_tldr": "视觉-语言-动作模型在需要精确物理交互的接触密集操作中经常失败，既有工作主要靠力增强结构和训练正则缓解，但根因不清。论文将失败划分为精度失败和力感知失败两类，分别对应流匹配策略训练不匹配和力信号结构特点，并提出针对性机制组成FACT。在五个接触密集任务上FACT取得66%的平均成功率，远高于最强基线41%。这项工作为理解与修复VLA提供的世界表征与动作策略的融合提供了系统思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.06994v1",
+      "source": "arxiv",
+      "title": "Decoupling Intention from Trajectory: A Representational Deduction Framework for World Action Models",
+      "abstract": "World Action Models (WAMs) aim to construct a unified architecture capable of understanding world state evolution and guiding to generative motion planning. However, existing visual branches focus on predicting static visual observation, rather than reflecting potential transition information that captures the evolution of world states under motion interactions. This leads to representational entanglement between high-level physical condition evolution and low-level action trajectory generation within the Action Model, creating a structural bottleneck while weakening the predictive capability of world evolution modeling for action generation. We propose PILOT (Physical Inference for Latent Optimized Trajectories), whose core Representational Deduction (RD) bridges this gap by integrating motion thought-of-chain (CoT) guidance as a native model capability. Specifically, RD aims to encourage the action branch to explicitly model potential state transition tokens, which are retained as CoT in the reasoning space to guide fine-grained motion trajectory. Experiments demonstrate that RD not only significantly improves the success rate and generalization ability of WAMs in complex robotic manipulation tasks but also enhances the model's physical interpretability by decoupling high-level motion semantics from low-level trajectory details. Furthermore, the abundant state transition supervision signals introduced by RD effectively alleviate the sparse supervision in action generation, enabling it to serve as an efficient few-shot real-robot fine-tuning strategy and demonstrating superior scalability for migration to mainstream WAM architectures.",
+      "authors": [
+        "Xiangkai Ma",
+        "Yue Ma",
+        "Junjie Wang",
+        "Sheng Xu",
+        "Mingyang Li",
+        "Han Zhang",
+        "Yuzheng Zhuang",
+        "Wenzhong Li",
+        "Zhihao Yuan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-07T09:12:15+00:00",
+      "link": "https://arxiv.org/pdf/2608.06994v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Framework for disentangling intention and trajectory in World Action Models",
+      "llm_evidence_cn": "面向世界动作模型的意图与轨迹解耦表示框架",
+      "llm_evidence": "面向世界动作模型的意图与轨迹解耦表示框架",
+      "canonical_evidence": "面向世界动作模型的意图与轨迹解耦表示框架",
+      "llm_tldr_en": "PILOT decouples high-level physical intention from low-level action trajectory in World Action Models, using a representational deduction framework to enhance world-evolution prediction for action generation.",
+      "llm_tldr_cn": "现有世界动作模型往往将高层次物理状态演化与低层次动作轨迹生成纠缠在一起，导致结构瓶颈。PILOT提出意图与轨迹解耦的表示推导框架，分离物理条件演化与动作生成。该框架增强了世界演化建模对动作生成的预测能力，改进了生成运动规划的统一架构设计。",
+      "llm_tldr": "现有世界动作模型往往将高层次物理状态演化与低层次动作轨迹生成纠缠在一起，导致结构瓶颈。PILOT提出意图与轨迹解耦的表示推导框架，分离物理条件演化与动作生成。该框架增强了世界演化建模对动作生成的预测能力，改进了生成运动规划的统一架构设计。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07107v1",
+      "source": "arxiv",
+      "title": "MemWM: Memory-Augmented Text-Based World Model",
+      "abstract": "World models are increasingly used to support planning in agents by predicting how environment states evolve in response to agent actions. Yet fluent next-state predictions can still omit task-critical facts, corrupt product attributes, or apply incorrect transition rules. To address such systematic prediction errors, we introduce MemWM, a memory-augmented text-based world model. MemWM uses world memory, a curated memory bank of transition rules, state caches, and hard-to-predict facts, to condition next-state imagination. We evaluate factual state preservation with Structured State Fidelity (SSF), which scores predicted states through benchmark-specific facts and fields. Compared with SFT, memory-augmented training improves SSF by up to 206.3%. In the full planning setting, we keep the policy model frozen and provide policy-side world skill: retrieved task-level skills and step-wise corrective guidance for action selection. Across ALFWorld, WebShop, and ScienceWorld, memory-augmented agents improve downstream success over an SFT-trained world-model agent, with up to a 65.4% relative gain. Sensitivity analyses further show that retrieved memory improves task success and efficiency under different memory and action-budget settings.",
+      "authors": [
+        "Yujun Wang",
+        "Tao Zhang",
+        "Jinhe Bi",
+        "Aniri",
+        "Wenxuan Ye",
+        "Boliang Liu",
+        "Sikuan Yan",
+        "Shuning Wang",
+        "Xuebing Zhou",
+        "Sören Pirk",
+        "Hinrich Schütze",
+        "Yunpu Ma"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-07T11:03:32+00:00",
+      "link": "https://arxiv.org/pdf/2608.07107v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "proposes MemWM, a memory-augmented text-based world model for accurate state prediction in planning agents",
+      "llm_evidence_cn": "提出MemWM，一种记忆增强的文本世界模型，用于智能体规划中准确预测状态演化",
+      "llm_evidence": "提出MemWM，一种记忆增强的文本世界模型，用于智能体规划中准确预测状态演化",
+      "canonical_evidence": "提出MemWM，一种记忆增强的文本世界模型，用于智能体规划中准确预测状态演化",
+      "llm_tldr_en": "MemWM augments a text-based world model with a curated world memory bank of transition rules, state caches, and hard-to-predict facts, improving Structured State Fidelity by up to 206.3% over SFT in planning settings.",
+      "llm_tldr_cn": "文本世界模型用于智能体规划时常会遗漏关键事实、破坏产品属性或应用错误转换规则，导致预测偏差。本文提出MemWM，通过引入世界记忆库，存储转换规则、状态缓存与难以预测的事实，并用其条件化下一状态想象，从而系统性修正预测错误。在记忆增强训练下，结构化状态保真度相比SFT提升最高206.3%，显著增强了规划任务中的事实保持能力。",
+      "llm_tldr": "文本世界模型用于智能体规划时常会遗漏关键事实、破坏产品属性或应用错误转换规则，导致预测偏差。本文提出MemWM，通过引入世界记忆库，存储转换规则、状态缓存与难以预测的事实，并用其条件化下一状态想象，从而系统性修正预测错误。在记忆增强训练下，结构化状态保真度相比SFT提升最高206.3%，显著增强了规划任务中的事实保持能力。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07267v1",
+      "source": "arxiv",
+      "title": "WNM-3D: A World Navigation Model with 3D Scene Conditioning for Closed-Loop VLN",
+      "abstract": "Recent vision-language navigation (VLN) systems increasingly adapt pretrained vision-language models (VLMs) into vision-language-action (VLA) policies that map egocentric observations and language instructions directly to navigation actions. Although semantically capable, such action-centric training does not explicitly model how the agent's visual observations should evolve under its predicted motion. Generative world-action models (WAMs) jointly predict future observations and actions, yet existing WAMs for continuous VLN do not condition joint future-view and action generation on geometry-aware representations inferred from the observed history. We present WNM-3D, a generative World Navigation Model with 3D scene conditioning for continuous VLN. To consolidate past observations into persistent scene context, a frozen feed-forward geometry encoder extracts geometry-aware representations from the monocular egocentric RGB history, and a trainable 3D Scene-to-Token Adapter converts them into a fixed-length prefix in the token space of the world-action Diffusion Transformer. Through block-causal attention, this prefix conditions every future video-action block, providing a shared geometric context for both future-view and action generation. We train WNM-3D through supervised world-action fine-tuning on A*-generated demonstrations, DAgger-style adaptation on policy-visited states, and DanceGRPO-based closed-loop policy optimization. Experiments on GN-Bench show that WNM-3D outperforms strong VLM-based navigation policies and its 2D-conditioned counterpart in closed-loop navigation. On a fixed near-goal evaluation set, WNM-3D also achieves higher flow-action consistency and lower visual-motion error.",
+      "authors": [
+        "Yuehao Huang",
+        "Yunzi Wu",
+        "Xiaotao Zhang",
+        "Xinhai Li",
+        "Jiankun Dong",
+        "Jiajun Lv",
+        "Chi Zhang",
+        "Chenjia Bai",
+        "Yong Liu",
+        "Xuelong Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-08-07T14:29:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.07267v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Generative world-action models jointly predicting future observations and actions with 3D scene conditioning",
+      "llm_evidence_cn": "生成式世界-动作模型结合三维场景条件联合预测未来观察与动作",
+      "llm_evidence": "生成式世界-动作模型结合三维场景条件联合预测未来观察与动作",
+      "canonical_evidence": "生成式世界-动作模型结合三维场景条件联合预测未来观察与动作",
+      "llm_tldr_en": "WNM-3D proposes a generative world navigation model with 3D scene conditioning, jointly predicting future views and actions, directly matching the world action model requirement.",
+      "llm_tldr_cn": "视觉语言导航中的动作中心训练未显式建模观察在预测动作下的演变，而现有世界动作模型也未利用几何感知表示。WNM-3D在连续视觉语言导航中引入基于三维场景条件的生成式世界导航模型，联合预测未来视角与动作，并结合从观察历史推断的几何感知表示。实验表明其在闭环导航任务上改善了预测与控制的协调性。这一工作直接体现了世界模型与动作生成相结合的设计范式，切合需求。",
+      "llm_tldr": "视觉语言导航中的动作中心训练未显式建模观察在预测动作下的演变，而现有世界动作模型也未利用几何感知表示。WNM-3D在连续视觉语言导航中引入基于三维场景条件的生成式世界导航模型，联合预测未来视角与动作，并结合从观察历史推断的几何感知表示。实验表明其在闭环导航任务上改善了预测与控制的协调性。这一工作直接体现了世界模型与动作生成相结合的设计范式，切合需求。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07409v1",
+      "source": "arxiv",
+      "title": "UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual World Modeling",
+      "abstract": "Joint-Embedding Predictive Architectures (JEPAs) have emerged as a principled framework for self-supervised learning of world models in compact latent spaces, yet existing methods are fragmented: some predict masked parts of a single image in latent space (I-JEPA), others learn to predict global photometric transformations (Image World Models), while video-scale JEPAs predict future temporal states and are post-trained for action-conditioned planning (V-JEPA~2, DINO-World, DINO-WM). These objectives are treated as distinct recipes with separate encoders, predictors, and anti-collapse regularizers, hindering a single model from unifying image-level and video-level world modeling. We present UniJEPA, a unified JEPA that jointly learns photometric prediction (image-level transformations) and temporal prediction (video-level next-state dynamics) in one shared latent space. A single end-to-end objective, composed of a next-embedding prediction loss and a Gaussian regularizer, yields a provably anti-collapse encoder-predictor pair trainable from raw pixels without EMA, stop-gradient, or pre-trained encoders. We show that the same latent space supports controllable abstraction: photometric prediction learns invariant structure while temporal prediction learns equivariant dynamics. After action-conditioned post-training on offline trajectories, UniJEPA enables zero-shot planning by treating goal features as prediction targets. On image, video, and control benchmarks, UniJEPA matches or surpasses task-specific JEPAs while requiring a single loss hyperparameter, and plans up to tens of times faster than generative world models at comparable accuracy.",
+      "authors": [
+        "An Lanji",
+        "Dawei Liu",
+        "Jin Li",
+        "Haoran Xu",
+        "Mei Chen",
+        "Yu Tian"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-07T16:55:58+00:00",
+      "link": "https://arxiv.org/pdf/2608.07409v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Unified JEPA architecture for task-agnostic visual world modeling",
+      "llm_evidence_cn": "统一JEPA架构，面向任务无关的视觉世界建模",
+      "llm_evidence": "统一JEPA架构，面向任务无关的视觉世界建模",
+      "canonical_evidence": "统一JEPA架构，面向任务无关的视觉世界建模",
+      "llm_tldr_en": "UniJEPA unifies image-level and video-level joint-embedding predictive architectures into a single world model, jointly training encoders, predictors and anti-collapse regularizers to support action-conditioned planning.",
+      "llm_tldr_cn": "现有JEPA世界模型在图像级与视频级目标上做法割裂，阻碍了统一模型的构建。UniJEPA提出统一的联合嵌入预测架构，将图像级和视频级世界建模目标、编码器、预测器与防坍塌正则化联合在一起。这使得单一模型同时支持图像级与视频级世界建模，并可后训练用于动作条件规划，推动了通用视觉世界模型的发展。",
+      "llm_tldr": "现有JEPA世界模型在图像级与视频级目标上做法割裂，阻碍了统一模型的构建。UniJEPA提出统一的联合嵌入预测架构，将图像级和视频级世界建模目标、编码器、预测器与防坍塌正则化联合在一起。这使得单一模型同时支持图像级与视频级世界建模，并可后训练用于动作条件规划，推动了通用视觉世界模型的发展。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.06898v1",
+      "source": "arxiv",
+      "title": "How Should I Pick a Foundation Model for My Robot? In Favor of a Community Evaluation Framework for Social Robots",
+      "abstract": "Researchers who seek to build social robot applications on foundation models are faced with a difficult question: how should we pick a model? Public leaderboards offer little guidance: the demands of real-time, embodied social interaction lie largely outside their focus. And direct evaluation is impractical at scale: each embodied study requires scarce participant, robot, and experimenter time. In this paper, we identify five evaluation dimensions for foundation models in social robots: (i) conversational competence, (ii) user safety, (iii) embodied character, (iv) target scene effectiveness, and (v) audience appropriateness. To make model selection cheaper and better informed, we propose a three-tiered evaluation funnel paradigm that first filters with general metrics, then extends to simulated interactions, and terminates in more expensive, robot-specific evaluation. We map all five dimensions across all three tiers, chart where applicable evaluation methods exist and are missing, and close with a call to action: let's build the evaluation framework together as a community.",
+      "authors": [
+        "Eric Nichols",
+        "Alva Markelius",
+        "Hatice Gunes"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CL",
+        "cs.HC"
+      ],
+      "published": "2026-08-07T07:33:25+00:00",
+      "link": "https://arxiv.org/pdf/2608.06898v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "foundation model selection and evaluation framework for social robots, relevant to foundation model requirement",
+      "llm_evidence_cn": "面向社交机器人的基础模型评估框架，契合基础模型需求",
+      "llm_evidence": "面向社交机器人的基础模型评估框架，契合基础模型需求",
+      "canonical_evidence": "面向社交机器人的基础模型评估框架，契合基础模型需求",
+      "llm_tldr_en": "A paper identifying evaluation dimensions and proposing a three-tiered community evaluation framework for picking foundation models for embodied social robots, making model selection cheaper and more informed.",
+      "llm_tldr_cn": "社交机器人开发者面对如何从公开排行榜中挑选合适基础模型的难题，因为实时具身交互需求超出榜单覆盖且直接评估成本极高。论文提出五个评估维度并设计三级社区评估框架，兼顾会话能力、安全、具身角色、场景效果和受众适配，以更低成本为机器人基础模型选择提供依据。该框架有助于推动社交机器人基础模型的系统评测与社区协作。",
+      "llm_tldr": "社交机器人开发者面对如何从公开排行榜中挑选合适基础模型的难题，因为实时具身交互需求超出榜单覆盖且直接评估成本极高。论文提出五个评估维度并设计三级社区评估框架，兼顾会话能力、安全、具身角色、场景效果和受众适配，以更低成本为机器人基础模型选择提供依据。该框架有助于推动社交机器人基础模型的系统评测与社区协作。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "foundation model",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
