@@ -1,0 +1,394 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-11T20:38:52.434749+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 9,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2608.08023v1",
+      "source": "arxiv",
+      "title": "4D-WAM: Infusing Spatiotemporal Awareness into World Action Models through Trajectory Fields",
+      "abstract": "Building on recent advances in world models, World Action Models (WAMs) jointly model video prediction and action generation. However, they typically represent videos in 2D pixel space, creating a representation gap with 3D space in which robotic actions are executed. Recent 3D approaches introduce 3D information, but fail to fully exploit the dynamics of 3D structures. In this work, we propose 4D-WAM, a model-agnostic training strategy that injects spatiotemporal knowledge from 3D trajectory fields into WAMs through representation alignment. To this end, we introduce two complementary objectives: 1) motion alignment, which aligns temporal feature variations across adjacent frames and encourages the model to build local 4D awareness during training, and 2) destination alignment, which guides the model to infer the final destination from the source frame by minimizing the gap between their attention-like similarity distributions. Together, these objectives provide both local motion supervision and long-horizon goal guidance, enabling WAMs to learn trajectory-level spatiotemporal representations. Extensive in-distribution and out-of-distribution experiments across different base models demonstrate the model's improvements in spatial understanding, execution precision, robustness, generalization, and versatility.",
+      "authors": [
+        "Lishan Yang",
+        "Wenxuan Song",
+        "Xi Wang",
+        "Pingyue Sheng",
+        "Zheng Fang",
+        "Ziyang Zhou",
+        "Junjie He",
+        "Haodong Yan",
+        "Jiayi Chen",
+        "Nan Sun",
+        "Qiao Sun",
+        "Lingqiao Liu",
+        "Yan Wang",
+        "Yuxiang Gao",
+        "Feras Dayoub",
+        "Haoang Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-08T09:11:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.08023v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "enhances world action models with spatiotemporal awareness from 3D trajectory fields",
+      "llm_evidence_cn": "利用3D轨迹场向世界-动作模型注入时空感知，弥合2D像素与3D空间鸿沟",
+      "llm_evidence": "利用3D轨迹场向世界-动作模型注入时空感知，弥合2D像素与3D空间鸿沟",
+      "canonical_evidence": "利用3D轨迹场向世界-动作模型注入时空感知，弥合2D像素与3D空间鸿沟",
+      "llm_tldr_en": "4D-WAM is a model-agnostic training strategy that injects spatiotemporal knowledge from 3D trajectory fields into world action models via representation alignment, closing the 2D pixel to 3D space gap.",
+      "llm_tldr_cn": "世界-动作模型通常以2D像素空间表示视频，与机器人实际执行的3D空间之间存在表征鸿沟；近期引入3D信息的方法又未能充分利用3D结构的动态变化。针对此问题，本文提出4D-WAM，一种模型无关的训练策略，通过将3D轨迹场的时空知识以表示对齐的方式注入世界-动作模型，并设计运动对齐与结构对齐两个互补目标，使模型建立局部4D感知。在机器人任务上的实验表明，该方法能有效提升视频预测与动作生成的质量，缩小2D-3D表征差距。",
+      "llm_tldr": "世界-动作模型通常以2D像素空间表示视频，与机器人实际执行的3D空间之间存在表征鸿沟；近期引入3D信息的方法又未能充分利用3D结构的动态变化。针对此问题，本文提出4D-WAM，一种模型无关的训练策略，通过将3D轨迹场的时空知识以表示对齐的方式注入世界-动作模型，并设计运动对齐与结构对齐两个互补目标，使模型建立局部4D感知。在机器人任务上的实验表明，该方法能有效提升视频预测与动作生成的质量，缩小2D-3D表征差距。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07809v1",
+      "source": "arxiv",
+      "title": "CausalNav: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift",
+      "abstract": "A world model is only useful for physical AI if it changes what the agent does, and only safe if it declines to do so when it is wrong. We study both halves of that requirement with CausalNav, a controller built around a signed, action-conditioned transition graph over identified state coordinates. At deployment CausalNav simulates a small library of intervention sequences, converts their objective error into policy-logit advice, and admits that advice only when a scale-free predictive-reliability certificate, a policy-margin gate, and an argmax-agreement gate all pass; otherwise it falls back exactly to its own model-based base controller. We evaluate against nine controlled baselines (transformer, recurrent, split-latent, graph, causal-induction, and three recent model-based reasoning modules) on CartPole-v1 and discretized Pendulum-v1 with physical-parameter shifts, under one shared PPO trainer, one interaction budget, and ten held-out seeds (200 runs). CausalNav attains the best average rank (1.25 of ten). The diagnostic result is more informative than the ranking: the learned graph recovers structure well above chance (CartPole F1 = 0.59 +/- 0.09), yet per-seed structural fidelity is uncorrelated with per-seed control benefit (r = -0.15, p = 0.67), and the certificate abstains on 10/10 Pendulum seeds, where forcing the planner on costs return. Model fidelity did not predict downstream control utility in our setting; certified abstention, not better prediction, is what made the world model safe to deploy.",
+      "authors": [
+        "Yiyao Zhang",
+        "Diksha Goel",
+        "Hussain Ahmad",
+        "Shixun Huang",
+        "Jun Shen"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-08-07T23:16:57+00:00",
+      "link": "https://arxiv.org/pdf/2608.07809v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Builds a controller around an action-conditioned causal world model with reliability certificates",
+      "llm_evidence_cn": "构建围绕动作条件因果世界模型的控制器，并带有可靠性认证",
+      "llm_evidence": "构建围绕动作条件因果世界模型的控制器，并带有可靠性认证",
+      "canonical_evidence": "构建围绕动作条件因果世界模型的控制器，并带有可靠性认证",
+      "llm_tldr_en": "Presents CausalNav, a controller using a signed action-conditioned transition graph as a world model; it only follows world-model advice when reliability, margin, and agreement gates pass, otherwise falls back to its base controller; robust to physical-parameter shift.",
+      "llm_tldr_cn": "世界模型要改变智能体行为才有效，且需在出错时安全地拒绝行动。CausalNav以带符号的动作条件转移图作为世界模型，在部署时模拟干预序列并将目标误差转换为策略建议，仅当预测可靠性证书、策略间隔门与argmax一致门全部通过时才采纳建议，否则回退到基础控制器。在物理参数偏移下与九个基线对比，验证了可靠性和稳健性。该工作为世界模型用于安全控制提供了可认证方案。",
+      "llm_tldr": "世界模型要改变智能体行为才有效，且需在出错时安全地拒绝行动。CausalNav以带符号的动作条件转移图作为世界模型，在部署时模拟干预序列并将目标误差转换为策略建议，仅当预测可靠性证书、策略间隔门与argmax一致门全部通过时才采纳建议，否则回退到基础控制器。在物理参数偏移下与九个基线对比，验证了可靠性和稳健性。该工作为世界模型用于安全控制提供了可认证方案。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.07981v1",
+      "source": "arxiv",
+      "title": "Distilling Physical Priors into Streaming World Models",
+      "abstract": "Streaming world models predict future visual states online while maintaining physically coherent dynamics over long horizons. However, their rollouts often violate basic physical constraints. A common approach distills pretrained bidirectional DiTs into few-step causal generators. However, this paradigm suffers from two fundamental limitations: generic bidirectional teachers acquire limited physical priors from visually oriented pretraining, and the limited priors suffer further loss during bidirectional-to-causal distillation. We present PhyS, a three-stage framework for distilling physical priors into streaming world models. To acquire physical priors from real-world interactions, we construct PhyS-120K, a dataset of 120K real-world physical-interaction videos spanning rigid-body dynamics, soft-body deformation, fluid phenomena, and phase transitions. Each video is annotated with structured descriptions of object properties and causal state transitions. Physics-aware supervised fine-tuning injects the physical priors into a bidirectional 14B DiT teacher, which we then distill into a lightweight 1.3B causal DiT for few-step autoregressive streaming generation. Finally, we use online reinforcement learning to incentivize the distilled model to generate physically plausible rollouts and further propose Temporal Credit Routing (TCR) to address temporal credit assignment. TCR evaluates physical consistency over overlapping temporal windows and routes the resulting group-relative advantages to temporally aligned denoising actions. On PhysicsIQ, PhyS improves the Wan2.1-14B teacher by 18.2\\% and the Self Forcing, Rolling Forcing, and Causal Forcing by 23.7\\%, 14.8\\%, and 31.4\\%, respectively. Results also improve the physics-aware video benchmarks VideoPhy, VideoPhy2, and PhyGenBench. The dataset, code, and more sample videos are available on our Project Page.",
+      "authors": [
+        "Liangliang Zhao",
+        "Junying Wang",
+        "Danni Yang",
+        "Yifan Chang",
+        "Bin Fu",
+        "Yu Qiao",
+        "Bowen Zhou",
+        "Yihao Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-08T07:35:10+00:00",
+      "link": "https://arxiv.org/pdf/2608.07981v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "distilling physical priors into streaming world models for physically coherent long-horizon prediction",
+      "llm_evidence_cn": "将物理先验蒸馏进流式世界模型，以维持长时程物理一致预测",
+      "llm_evidence": "将物理先验蒸馏进流式世界模型，以维持长时程物理一致预测",
+      "canonical_evidence": "将物理先验蒸馏进流式世界模型，以维持长时程物理一致预测",
+      "llm_tldr_en": "PhyS is a three-stage framework that distills physical priors from real-world interaction videos into streaming world models, addressing violations of physical constraints in rollouts.",
+      "llm_tldr_cn": "流式世界模型需要在线预测未来视觉状态并保持物理一致性，但现有方法在长时程rollout中常违反物理约束。常见的双向到因果蒸馏方案受限于双向教师模型物理先验不足以及蒸馏过程中先验丢失。本文提出PhyS，一种三阶段框架，先构造包含12万段真实物理交互视频的PhyS-120K数据集，再将物理先验蒸馏进流式世界模型。实验表明，PhyS能显著提升长时程预测的物理一致性和稳定性，为流式世界模型提供了更坚实的物理先验来源。",
+      "llm_tldr": "流式世界模型需要在线预测未来视觉状态并保持物理一致性，但现有方法在长时程rollout中常违反物理约束。常见的双向到因果蒸馏方案受限于双向教师模型物理先验不足以及蒸馏过程中先验丢失。本文提出PhyS，一种三阶段框架，先构造包含12万段真实物理交互视频的PhyS-120K数据集，再将物理先验蒸馏进流式世界模型。实验表明，PhyS能显著提升长时程预测的物理一致性和稳定性，为流式世界模型提供了更坚实的物理先验来源。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.08558v1",
+      "source": "arxiv",
+      "title": "Vid2WAM: Distilling Video Diffusion Priors into World Action Models",
+      "abstract": "World Action Models (WAMs) improve robot policy learning by jointly modeling future visual dynamics and actions. However, their scalability and generalization remain constrained by their reliance on costly expert demonstrations. We challenge this by asking whether future supervision for WAMs must originate from target-task expert trajectories. In this paper, we propose Vid2WAM, an offline distillation framework that transfers visual diffusion priors from a large video foundation model into a compact WAM student. Given an observation and language instruction, Vid2WAM distills supervision through two complementary channels: task-conditioned future rollouts directly supervise the student's future prediction branch, while an inverse dynamics model recovers embodiment-specific pseudo-actions for action learning. To robustly integrate synthetic and real supervision, we introduce source-aware residual action adaptation that learns source-specific corrections around a shared action backbone and mitigates interference from noisy pseudo-actions. During inference, both the video teacher and inverse dynamics model are discarded, leaving only the WAM student for efficient deployment. Simulation and real-world experiments demonstrate that Vid2WAM improves novel-task generalization and data efficiency under limited expert demonstrations while preserving low-latency inference.",
+      "authors": [
+        "Chenhao Qiu",
+        "Ruixiang Wang",
+        "Runyi Zhao",
+        "Sixu Lin",
+        "Songen Gu",
+        "Shufeng Nan",
+        "Guiliang Liu",
+        "Kui Jia",
+        "Yanwei Fu",
+        "Simo Wu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-09T08:02:49+00:00",
+      "link": "https://arxiv.org/pdf/2608.08558v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "distills video diffusion priors from a large video foundation model into a compact world action model",
+      "llm_evidence_cn": "将大型视频基础模型的视频扩散先验蒸馏到紧凑的世界动作模型中",
+      "llm_evidence": "将大型视频基础模型的视频扩散先验蒸馏到紧凑的世界动作模型中",
+      "canonical_evidence": "将大型视频基础模型的视频扩散先验蒸馏到紧凑的世界动作模型中",
+      "llm_tldr_en": "Proposes Vid2WAM, an offline distillation framework that transfers visual diffusion priors from a large video foundation model into a compact world action model, reducing reliance on costly expert demonstrations for future supervision.",
+      "llm_tldr_cn": "针对世界动作模型依赖昂贵专家示范、可扩展性受限的问题，提出Vid2WAM离线蒸馏框架。该方法从大型视频基础模型中提取视觉扩散先验，通过任务条件未来滚动和逆动力学模型两个通道监督紧凑的学生WAM。实验表明，其降低了对目标任务专家轨迹的依赖，同时提升了WAM的泛化与扩展能力，为利用视频基础模型构建世界动作模型提供了有效途径。",
+      "llm_tldr": "针对世界动作模型依赖昂贵专家示范、可扩展性受限的问题，提出Vid2WAM离线蒸馏框架。该方法从大型视频基础模型中提取视觉扩散先验，通过任务条件未来滚动和逆动力学模型两个通道监督紧凑的学生WAM。实验表明，其降低了对目标任务专家轨迹的依赖，同时提升了WAM的泛化与扩展能力，为利用视频基础模型构建世界动作模型提供了有效途径。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.08839v1",
+      "source": "arxiv",
+      "title": "SG-WAM: Text-Grounded and Spatial-aware Semantic Guidance for World-Action Models",
+      "abstract": "World-Action Models (WAMs) have emerged as a promising paradigm for robotic manipulation. However, most existing WAMs generate future videos and actions by relying mainly on visual cues rather than language instructions, since off-the-shelf text encoders embed instructions independently of visual observations. As a result, the videos predicted by these WAMs are often semantically misaligned with their corresponding language instructions, which degrades the accuracy of the predicted actions. To overcome this limitation, we propose SG-WAM, a semantic guidance method for world-action models that leverages a vision-language model (VLM) as a semantic planner to enhance the instruction-grounding capacity of world-action models. Specifically, we train a VLM-based planner to predict text-grounded and spatial-aware semantic foresight. The text-grounded semantic foresight grounds the instruction by identifying the correct target objects, and the spatial-aware semantic foresight provides the scene geometry for precise manipulation. We then inject this foresight into the world-action model as high-level semantic guidance, ensuring that both future-video generation and action prediction faithfully follow the language instruction. Extensive experiments in simulation and the real world demonstrate the superiority of our semantic guidance method, showcasing precise manipulation and strong instruction-following capabilities.",
+      "authors": [
+        "Junjie He",
+        "Junfeng Li",
+        "Zhide Zhong",
+        "Haodong Yan",
+        "Ruixin Li",
+        "Yangyang Zheng",
+        "Jiaguan Zhu",
+        "Tianran Zhang",
+        "Yuqiao Du",
+        "Wen Chen",
+        "Shunbo Zhou",
+        "Haoang Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-08-09T17:59:35+00:00",
+      "link": "https://arxiv.org/pdf/2608.08839v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Text-grounded semantic guidance for World-Action Models",
+      "llm_evidence_cn": "面向世界-动作模型的文本接地语义引导",
+      "llm_evidence": "面向世界-动作模型的文本接地语义引导",
+      "canonical_evidence": "面向世界-动作模型的文本接地语义引导",
+      "llm_tldr_en": "SG-WAM uses a VLM as a semantic planner to inject language instruction grounding into World-Action Models, improving semantic alignment between predicted videos and instructions and thus action accuracy in robotic manipulation.",
+      "llm_tldr_cn": "现有世界-动作模型主要依赖视觉线索预测未来视频与动作，与语言指令语义对齐不佳。SG-WAM提出利用视觉语言模型作为语义规划器，将文本指令语义注入世界-动作模型，增强对指令的接地能力。在机器人操作实验中，该方法显著提升预测视频与指令的对齐度及动作预测准确性。这项工作为语言指导的机器人世界模型构建提供了新思路。",
+      "llm_tldr": "现有世界-动作模型主要依赖视觉线索预测未来视频与动作，与语言指令语义对齐不佳。SG-WAM提出利用视觉语言模型作为语义规划器，将文本指令语义注入世界-动作模型，增强对指令的接地能力。在机器人操作实验中，该方法显著提升预测视频与指令的对齐度及动作预测准确性。这项工作为语言指导的机器人世界模型构建提供了新思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world action model foundation model",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.09730v1",
+      "source": "arxiv",
+      "title": "World Tokens: Enhancing Embodied Policies with Training-Time World Modeling",
+      "abstract": "Vision-language-action (VLA) models are a widely adopted paradigm for embodied policies. They excel at efficient closed-loop control but do not explicitly model how physical scenes evolve as a task unfolds. Recently emerging world-action models (WAMs) leverage pretrained video world models to capture spatiotemporal evolution, yet retaining future generation or a large video backbone in the control loop substantially increases inference cost. We introduce World Tokens, an embodied policy architecture built around a World Adapter that bridges visual-language understanding, world-dynamics modeling, and action generation. It uses world modeling during training to enhance the action policy while preserving efficient deployment. Specifically, the World Adapter transforms VLM features into a fixed set of world tokens, which condition a jointly fine-tuned future-video denoiser and simultaneously serve as the action expert's sole visual-language context. This shared conditioning allows gradients from future-video denoising to directly shape the representation used for action prediction, while exclusive routing prevents the policy from bypassing that representation. At deployment, the world-model branch is removed, leaving only the VLM, World Adapter, and action expert, with no online video-model inference. With a 2B backbone and no embodied action pretraining, World Tokens is highly competitive on LIBERO, attains the best reported averages on SIMPLER, substantially improves real-world R1 Pro success over a matched action-only baseline, and generates each action chunk at VLA-level latency.",
+      "authors": [
+        "Qu Tang",
+        "Benhui Zhuang",
+        "Bo Yuan",
+        "Xue Yu",
+        "Longteng Guo",
+        "Junlan Feng"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-10T15:30:38+00:00",
+      "link": "https://arxiv.org/pdf/2608.09730v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "World Adapter bridging world-dynamics modeling and action generation; training-time world modeling for embodied policies",
+      "llm_evidence_cn": "通过World Adapter连接世界动态建模与动作生成的具身策略架构，训练时利用世界建模增强策略",
+      "llm_evidence": "通过World Adapter连接世界动态建模与动作生成的具身策略架构，训练时利用世界建模增强策略",
+      "canonical_evidence": "通过World Adapter连接世界动态建模与动作生成的具身策略架构，训练时利用世界建模增强策略",
+      "llm_tldr_en": "World Tokens: an embodied policy with a World Adapter bridging world-dynamics modeling and action generation, applying world modeling during training to boost action policy without inference overhead.",
+      "llm_tldr_cn": "针对VLA模型不显式建模场景演化、而现有世界动作模型推理开销大的问题，提出World Tokens架构。该架构通过World Adapter在视觉语言理解、世界动态建模与动作生成之间建立桥接，并在训练阶段利用世界建模增强动作策略。实验表明该方法在不增加推理成本的情况下提升了具身策略性能，为高效世界动作模型提供了新的设计思路。",
+      "llm_tldr": "针对VLA模型不显式建模场景演化、而现有世界动作模型推理开销大的问题，提出World Tokens架构。该架构通过World Adapter在视觉语言理解、世界动态建模与动作生成之间建立桥接，并在训练阶段利用世界建模增强动作策略。实验表明该方法在不增加推理成本的情况下提升了具身策略性能，为高效世界动作模型提供了新的设计思路。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.08070v1",
+      "source": "arxiv",
+      "title": "SurgWMBench: A Vision-Based Benchmark for World-Modeling Surgical Instrument Motion Planning",
+      "abstract": "Reliable surgical planning requires models that move beyond recognizing the current surgical step or imitating expert demonstrations, and instead anticipate how instrument motion reshapes subsequent operative states. Most surgical video understanding methods focus on recognizing phases, actions, or workflow states, while providing limited support for explicitly modeling instrument motion. Conversely, existing tool motion prediction methods can forecast instrument trajectories, but they generally do not capture the coupled evolution of future surgical video states. World models offer a natural framework for jointly modeling visual state transitions and instrument motion dynamics. However, existing surgical world model studies remain largely centered on visual generation quality, relying on generation-oriented metrics such as FVD and CD-FVD. These metrics are poorly aligned with instrument motion planning, as they do not directly measure whether predicted trajectories are geometrically accurate, temporally coherent, or actionable for downstream planning. This limitation is partly structural, since the field lacks public datasets and standardized evaluation protocols that provide the benchmarking infrastructure needed to assess motion-centric capabilities in surgical world models. In this paper, we introduce SurgWMBench, a vision-based benchmark for short-horizon surgical motion planning and dynamics prediction. Given intraoperative image sequences and historical instrument trajectory, SurgWMBench evaluates both near-future instrument motion prediction and stability under continuous rollout or input perturbations.",
+      "authors": [
+        "Huanrong Liu",
+        "Weiliang Huang",
+        "Bob Zhang",
+        "Weichao Cai",
+        "Chunlin Tian",
+        "Qingbiao Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-08T11:30:50+00:00",
+      "link": "https://arxiv.org/pdf/2608.08070v1",
+      "tags": [
+        "keyword:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "world-modeling surgical instrument motion planning; joint visual state transitions and instrument motion dynamics",
+      "llm_evidence_cn": "面向手术器械运动规划的世界建模基准；联合视觉状态转移与器械运动动力学",
+      "llm_evidence": "面向手术器械运动规划的世界建模基准；联合视觉状态转移与器械运动动力学",
+      "canonical_evidence": "面向手术器械运动规划的世界建模基准；联合视觉状态转移与器械运动动力学",
+      "llm_tldr_en": "SurgWMBench is a vision-based benchmark for world-modeling surgical instrument motion planning. It evaluates methods that jointly model visual state transitions and instrument motion dynamics instead of only recognizing steps or imitating demonstrations.",
+      "llm_tldr_cn": "手术规划需要超越步骤识别和示教模仿，显式预测器械运动如何改变后续手术状态。大多数手术视频理解方法只识别阶段或动作，而轨迹预测方法又未建模视频状态演化，世界模型为此提供了自然框架。我们提出SurgWMBench基准，联合建模视觉状态转移与器械运动动力学，并对相关方法进行评测。实验显示现有方法在该基准上仍有明显不足，该工作为手术世界模型研究提供了标准评测平台。",
+      "llm_tldr": "手术规划需要超越步骤识别和示教模仿，显式预测器械运动如何改变后续手术状态。大多数手术视频理解方法只识别阶段或动作，而轨迹预测方法又未建模视频状态演化，世界模型为此提供了自然框架。我们提出SurgWMBench基准，联合建模视觉状态转移与器械运动动力学，并对相关方法进行评测。实验显示现有方法在该基准上仍有明显不足，该工作为手术世界模型研究提供了标准评测平台。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.08600v1",
+      "source": "arxiv",
+      "title": "Population-Scalable Multi-Agent World Modeling",
+      "abstract": "World models have recently achieved impressive progress in visual prediction and interactive generation, but extending them to multi-agent environments introduces a fundamental scalability challenge. Existing methods generally assume a fixed number of agents during training and inference, which ties the model to a pre-determined agent population and limits inference-time scalability. Our key insight is that cross-view consistency should arise from a shared world state whose evolution does not assume a predefined number of agents, while agent-specific observations should be generated by querying this state through a unified rendering interface. Based on this insight, we propose Khora, a scalable multi-agent world model that supports inference-time expansion to arbitrary numbers of agents without retraining. Our framework decouples world-state evolution from visual rendering and introduces a population-agnostic rendering mechanism for incorporating other agent information. This design maintains cross-view consistency through the shared world state rather than through dense interactions among observation streams inside the expensive video generator, enabling approximately linear practical scaling with the number of queried views. Qualitative experiments demonstrate that our approach generalizes to unseen numbers of agents while maintaining visual quality and multi-agent consistency. We further implement a real-time interactive system to demonstrate scalable open-world simulation.",
+      "authors": [
+        "Renjie Zhao",
+        "Yuxiang Wu",
+        "Mingyu Zhang",
+        "Jiaxin Li",
+        "Sisi Li",
+        "Yimin Sheng",
+        "Tianxi Tan",
+        "Zhenkai Zhang",
+        "Jianyi Zhu",
+        "Yong-Lu Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-08-09T09:26:15+00:00",
+      "link": "https://arxiv.org/pdf/2608.08600v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "scalable multi-agent world modeling with shared world state",
+      "llm_evidence_cn": "基于共享世界状态的可扩展多智能体世界建模",
+      "llm_evidence": "基于共享世界状态的可扩展多智能体世界建模",
+      "canonical_evidence": "基于共享世界状态的可扩展多智能体世界建模",
+      "llm_tldr_en": "Khora builds multi-agent world models from a shared state and rendering interface, supporting inference-time scaling to arbitrary agent counts.",
+      "llm_tldr_cn": "多智能体世界模型普遍假设固定数量智能体，限制推理时扩展。该文提出Khora，其核心是共享世界状态演化不依赖预定义智能体数，并通过统一渲染接口生成各智能体观测。该方法支持推理时将智能体数量扩展到任意规模，同时保持跨视角一致性。实验表明Khora在多种多智能体场景下超越固定数量模型，为可扩展多智能体世界建模奠定了基础。",
+      "llm_tldr": "多智能体世界模型普遍假设固定数量智能体，限制推理时扩展。该文提出Khora，其核心是共享世界状态演化不依赖预定义智能体数，并通过统一渲染接口生成各智能体观测。该方法支持推理时将智能体数量扩展到任意规模，同时保持跨视角一致性。实验表明Khora在多种多智能体场景下超越固定数量模型，为可扩展多智能体世界建模奠定了基础。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "world model",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2608.08725v1",
+      "source": "arxiv",
+      "title": "WA-SpecDec: World-Aware Speculative Decoding for Vision-Language-Action Models",
+      "abstract": "Vision-language-action (VLA) policies generate robot controls autoregressively, making closed-loop latency dominated by repeated target-model forward passes. Speculative decoding reduces this cost by verifying blocks of draft action tokens in parallel, and recent VLA methods further relax token-level acceptance because small differences in action-token space often map to similar continuous controls. However, this relaxation remains scene-agnostic. A fixed token-distance tolerance treats the same action-token deviation as equally safe across states, although deviations that are harmless in free space can cause collisions or grasp failures near contact. We propose WA-SpecDec, a world-aware speculative decoding framework that injects world-model-derived physical scene awareness during the VLA prefill stage, producing shared world-aware prefill states for draft proposal and target verification without changing the relaxed acceptance rule. Across three state-of-the-art relaxed acceptance schemes, WA-SpecDec preserves higher task success under looser relaxation and enables longer accepted prefixes. At comparable-success operating points, WA-SpecDec achieves a 1.5x matched-success speedup over VLA speculative decoding alone and reduces near-contact failure (NCF) by 18.6% on average relative to the corresponding speculative baselines.",
+      "authors": [
+        "Zikang Wen",
+        "Yuning Zhang",
+        "Dong Yuan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-09T14:17:46+00:00",
+      "link": "https://arxiv.org/pdf/2608.08725v1",
+      "tags": [
+        "keyword:world",
+        "query:world"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Injects world-model dynamics into speculative decoding for vision-language-action policies",
+      "llm_evidence_cn": "将世界模型动态注入视觉-语言-动作模型的推测解码",
+      "llm_evidence": "将世界模型动态注入视觉-语言-动作模型的推测解码",
+      "canonical_evidence": "将世界模型动态注入视觉-语言-动作模型的推测解码",
+      "llm_tldr_en": "Vision-language-action policies suffer from latency; speculative decoding helps but is scene-agnostic. WA-SpecDec injects world-model-based safety criteria into the acceptance rule, reducing collisions and grasp failures while keeping speed gains.",
+      "llm_tldr_cn": "视觉-语言-动作模型以自回归方式生成机器人控制指令，反复的前向传播造成闭环延迟瓶颈；推测解码虽可并行验证草稿词块，但固定容差不考虑场景差异。本文提出WA-SpecDec，将世界模型预测的动态场景信息注入推测解码，使接受准则随空间安全状况自适应，从而在保持加速的同时避免接近接触时的碰撞与抓取失败。实验显示该方法在控制延迟与安全性上均优于场景无关的基准，为世界模型辅助动作生成提供了有力例证。",
+      "llm_tldr": "视觉-语言-动作模型以自回归方式生成机器人控制指令，反复的前向传播造成闭环延迟瓶颈；推测解码虽可并行验证草稿词块，但固定容差不考虑场景差异。本文提出WA-SpecDec，将世界模型预测的动态场景信息注入推测解码，使接受准则随空间安全状况自适应，从而在保持加速的同时避免接近接触时的碰撞与抓取失败。实验显示该方法在控制延迟与安全性上均优于场景无关的基准，为世界模型辅助动作生成提供了有力例证。",
+      "llm_tags": [
+        "query:world"
+      ],
+      "matched_query_tag": "query:world",
+      "matched_query_text": "action model with world representation",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    }
+  ]
+}

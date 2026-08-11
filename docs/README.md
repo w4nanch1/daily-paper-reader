@@ -6,41 +6,47 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-10
-- 运行时间：2026-08-10 21:00:38 UTC
+- 最新运行日期：2026-08-11
+- 运行时间：2026-08-11 20:45:59 UTC
 - 运行状态：成功
-- 本次总论文数：7
+- 本次总论文数：9
 - 精读区：6
-- 速读区：1
+- 速读区：3
 
 ### 今日简报（AI）
-今日机器人研究聚焦世界动作模型预训练与VLA触觉任务鲁棒性，精读两篇高分论文均指向模型泛化与修复策略。最值得看：10分《Robust-WAM》打通生成预训练与语义前瞻，9分研究揭示VLA在接触丰富任务中失败根因并给出修复方案。普通读者若关注实际部署，可留意社交机器人基础模型社区评估框架的落地价值。
-- 详情：[/202608/10/README](/202608/10/README)
+今日聚焦世界模型在具身智能中的时空感知与因果控制，精读两篇高分论文，另扫描三篇应用与效率方向。最值得关注《4D-WAM》引入轨迹场时空建模，以及《CausalNav》在物理参数偏移下提供可靠性认证。建议普通读者从速读中的手术规划或推测解码用例入手，快速理解世界模型的实际落地价值。
+- 详情：[/202608/11/README](/202608/11/README)
 
 ### 精读区论文标签
-1. [Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models](/202608/10/2608.05903v2-robust-wam-bridging-generative-pretraining-and-semantic-foresight-in-world-action-models)  
+1. [4D-WAM: Infusing Spatiotemporal Awareness into World Action Models through Trajectory Fields](/202608/11/2608.08023v1-4d-wam-infusing-spatiotemporal-awareness-into-world-action-models-through-trajectory-fields)  
    标签：评分：10.0/10、query:world
-   evidence：明确提出世界-行动模型(WAM)，适配预训练视频生成模型用于机器人控制，直接命中需求
-2. [Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them](/202608/10/2608.01402v1-demystifying-when-and-why-vlas-fail-in-contact-rich-tasks-and-how-to-fix-them)  
+   evidence：利用3D轨迹场向世界-动作模型注入时空感知，弥合2D像素与3D空间鸿沟
+2. [CausalNav: Reliability-Certified Causal World Models for Control under Physical-Parameter Shift](/202608/11/2608.07809v1-causalnav-reliability-certified-causal-world-models-for-control-under-physical-parameter-shift)  
    标签：评分：9.0/10、query:world
-   evidence：直接研究视觉-语言-动作模型这一带世界表征的动作模型在接触密集任务中的失败与修复
-3. [Decoupling Intention from Trajectory: A Representational Deduction Framework for World Action Models](/202608/10/2608.06994v1-decoupling-intention-from-trajectory-a-representational-deduction-framework-for-world-action-models)  
+   evidence：构建围绕动作条件因果世界模型的控制器，并带有可靠性认证
+3. [Distilling Physical Priors into Streaming World Models](/202608/11/2608.07981v1-distilling-physical-priors-into-streaming-world-models)  
    标签：评分：9.0/10、query:world
-   evidence：面向世界动作模型的意图与轨迹解耦表示框架
-4. [MemWM: Memory-Augmented Text-Based World Model](/202608/10/2608.07107v1-memwm-memory-augmented-text-based-world-model)  
+   evidence：将物理先验蒸馏进流式世界模型，以维持长时程物理一致预测
+4. [Vid2WAM: Distilling Video Diffusion Priors into World Action Models](/202608/11/2608.08558v1-vid2wam-distilling-video-diffusion-priors-into-world-action-models)  
    标签：评分：9.0/10、query:world
-   evidence：提出MemWM，一种记忆增强的文本世界模型，用于智能体规划中准确预测状态演化
-5. [WNM-3D: A World Navigation Model with 3D Scene Conditioning for Closed-Loop VLN](/202608/10/2608.07267v1-wnm-3d-a-world-navigation-model-with-3d-scene-conditioning-for-closed-loop-vln)  
+   evidence：将大型视频基础模型的视频扩散先验蒸馏到紧凑的世界动作模型中
+5. [SG-WAM: Text-Grounded and Spatial-aware Semantic Guidance for World-Action Models](/202608/11/2608.08839v1-sg-wam-text-grounded-and-spatial-aware-semantic-guidance-for-world-action-models)  
    标签：评分：9.0/10、query:world
-   evidence：生成式世界-动作模型结合三维场景条件联合预测未来观察与动作
-6. [UniJEPA: A Unified Joint-Embedding Predictive Architecture for Task-Agnostic Visual World Modeling](/202608/10/2608.07409v1-unijepa-a-unified-joint-embedding-predictive-architecture-for-task-agnostic-visual-world-modeling)  
-   标签：评分：8.0/10、query:world
-   evidence：统一JEPA架构，面向任务无关的视觉世界建模
+   evidence：面向世界-动作模型的文本接地语义引导
+6. [World Tokens: Enhancing Embodied Policies with Training-Time World Modeling](/202608/11/2608.09730v1-world-tokens-enhancing-embodied-policies-with-training-time-world-modeling)  
+   标签：评分：9.0/10、query:world
+   evidence：通过World Adapter连接世界动态建模与动作生成的具身策略架构，训练时利用世界建模增强策略
 
 ### 速读区论文标签
-1. [How Should I Pick a Foundation Model for My Robot? In Favor of a Community Evaluation Framework for Social Robots](/202608/10/2608.06898v1-how-should-i-pick-a-foundation-model-for-my-robot-in-favor-of-a-community-evaluation-framework-for-social-robots)  
-   标签：评分：7.0/10、query:world
-   evidence：面向社交机器人的基础模型评估框架，契合基础模型需求
+1. [SurgWMBench: A Vision-Based Benchmark for World-Modeling Surgical Instrument Motion Planning](/202608/11/2608.08070v1-surgwmbench-a-vision-based-benchmark-for-world-modeling-surgical-instrument-motion-planning)  
+   标签：评分：8.0/10、query:world
+   evidence：面向手术器械运动规划的世界建模基准；联合视觉状态转移与器械运动动力学
+2. [Population-Scalable Multi-Agent World Modeling](/202608/11/2608.08600v1-population-scalable-multi-agent-world-modeling)  
+   标签：评分：8.0/10、query:world
+   evidence：基于共享世界状态的可扩展多智能体世界建模
+3. [WA-SpecDec: World-Aware Speculative Decoding for Vision-Language-Action Models](/202608/11/2608.08725v1-wa-specdec-world-aware-speculative-decoding-for-vision-language-action-models)  
+   标签：评分：8.0/10、query:world
+   evidence：将世界模型动态注入视觉-语言-动作模型的推测解码
 
 
 <div class="dpr-home-promo-card">
